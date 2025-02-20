@@ -16,36 +16,36 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: 1,
-    title: "30-Day Coding Challenge",
-    description: "Build 30 different mini-projects using JavaScript, HTML, and CSS. Start with simple projects and gradually increase complexity.",
+    title: "Build a Weather App",
+    description: "Create a simple weather application that fetches and displays current weather data for a given location.",
     category: "coding",
     difficulty: "Medium",
-    timeEstimate: "1 hour/day",
+    timeEstimate: "2-3 hours",
   },
   {
     id: 2,
-    title: "90-Day Fitness Journey",
-    description: "Complete a comprehensive fitness program combining cardio, strength training, and flexibility exercises. Track your progress daily.",
+    title: "30-Minute HIIT Workout",
+    description: "Complete a high-intensity interval training workout focusing on full-body exercises.",
     category: "fitness",
     difficulty: "Hard",
-    timeEstimate: "45 mins/day",
+    timeEstimate: "30 minutes",
   },
   {
     id: 3,
-    title: "100 Days of Art",
-    description: "Create one piece of art daily using different mediums like pencil, watercolor, digital art, or photography. Share your progress online.",
+    title: "Daily Sketch Challenge",
+    description: "Draw an object from your surroundings using only basic shapes and lines.",
     category: "creativity",
-    difficulty: "Medium",
-    timeEstimate: "30 mins/day",
+    difficulty: "Easy",
+    timeEstimate: "15-30 minutes",
   },
   {
     id: 4,
-    title: "Brain Training Challenge",
-    description: "Solve daily puzzles, riddles, and brain teasers. Each day focuses on different cognitive skills like memory, logic, and pattern recognition.",
+    title: "Logic Puzzle Master",
+    description: "Solve a complex logic puzzle involving pattern recognition and deductive reasoning.",
     category: "problem-solving",
-    difficulty: "Easy",
-    timeEstimate: "20 mins/day",
-  }
+    difficulty: "Medium",
+    timeEstimate: "45 minutes",
+  },
 ];
 
 const Index = () => {
