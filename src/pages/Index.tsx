@@ -16,36 +16,36 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: 1,
-    title: "Build a Weather App",
-    description: "Create a simple weather application that fetches and displays current weather data for a given location.",
+    title: "Task Management System",
+    description: "Build a full-stack task management application with user authentication, task creation, categories, and real-time updates.",
     category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  },
+  {
+    id: 2,
+    title: "Workout Tracking System",
+    description: "Create a fitness tracking system that logs exercises, sets, reps, and provides progress visualization with charts.",
+    category: "fitness",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
   {
-    id: 2,
-    title: "30-Minute HIIT Workout",
-    description: "Complete a high-intensity interval training workout focusing on full-body exercises.",
-    category: "fitness",
-    difficulty: "Hard",
-    timeEstimate: "30 minutes",
-  },
-  {
     id: 3,
-    title: "Daily Sketch Challenge",
-    description: "Draw an object from your surroundings using only basic shapes and lines.",
+    title: "Digital Art Portfolio System",
+    description: "Develop a portfolio system to showcase artwork with categories, tags, and a responsive gallery layout.",
     category: "creativity",
-    difficulty: "Easy",
-    timeEstimate: "15-30 minutes",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
   {
     id: 4,
-    title: "Logic Puzzle Master",
-    description: "Solve a complex logic puzzle involving pattern recognition and deductive reasoning.",
+    title: "Algorithm Visualization System",
+    description: "Build an interactive system that visualizes sorting algorithms and data structures in real-time with step-by-step explanations.",
     category: "problem-solving",
-    difficulty: "Medium",
-    timeEstimate: "45 minutes",
-  },
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  }
 ];
 
 const Index = () => {
