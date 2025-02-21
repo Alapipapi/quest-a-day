@@ -124,13 +124,20 @@ const ChallengeCard = ({
                         </ul>
                       </div>
 
-                      {step.resources && (
+                      {step.resources && step.resources.length > 0 && (
                         <div>
                           <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
                           <ul className="list-disc pl-5 space-y-2">
                             {step.resources.map((resource, i) => (
-                              <li key={i} className="text-blue-600 hover:underline cursor-pointer">
-                                {resource}
+                              <li key={i}>
+                                <a 
+                                  href={resource.url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="text-blue-600 hover:underline cursor-pointer"
+                                >
+                                  {resource.title}
+                                </a>
                               </li>
                             ))}
                           </ul>

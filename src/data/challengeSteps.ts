@@ -1,8 +1,10 @@
-
 export interface StepDetails {
   title: string;
   instructions: string[];
-  resources?: string[];
+  resources?: Array<{
+    title: string;
+    url: string;
+  }>;
   verification?: string[];
 }
 
@@ -19,8 +21,18 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Open the folder in VS Code"
           ],
           resources: [
-            "VS Code documentation",
-            "Git basic commands cheatsheet"
+            {
+              title: "Download Visual Studio Code",
+              url: "https://code.visualstudio.com/download"
+            },
+            {
+              title: "Download Git",
+              url: "https://git-scm.com/downloads"
+            },
+            {
+              title: "Git Basic Commands Cheatsheet",
+              url: "https://education.github.com/git-cheat-sheet-education.pdf"
+            }
           ],
           verification: [
             "VS Code is installed and running",
@@ -38,8 +50,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Run 'npm install'"
           ],
           resources: [
-            "Vite documentation",
-            "npm basics guide"
+            {
+              title: "Vite Documentation",
+              url: "https://vitejs.dev/guide/"
+            },
+            {
+              title: "npm Basics Guide",
+              url: "https://docs.npmjs.com/getting-started"
+            }
           ],
           verification: [
             "package.json exists in your project",
