@@ -4,7 +4,7 @@ import CategoryBadge from "./CategoryBadge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Check, ChevronRight, ArrowRight } from "lucide-react";
+import { Check, ChevronRight, ArrowRight, ExternalLink } from "lucide-react";
 import { StepDetails, getStepsForChallenge } from "../data/challengeSteps";
 
 interface ChallengeCardProps {
@@ -37,6 +37,11 @@ const ChallengeCard = ({
 
   const handleStepClick = (index: number) => {
     setSelectedStep(selectedStep === index ? null : index);
+  };
+
+  const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.stopPropagation(); // Prevent the step from collapsing when clicking the link
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -129,14 +134,13 @@ const ChallengeCard = ({
                           <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
                           <ul className="list-disc pl-5 space-y-2">
                             {step.resources.map((resource, i) => (
-                              <li key={i}>
+                              <li key={i} className="flex items-center gap-2">
                                 <a 
-                                  href={resource.url} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer" 
-                                  className="text-blue-600 hover:underline cursor-pointer"
+                                  onClick={(e) => handleResourceClick(e, resource.url)}
+                                  className="text-primary hover:text-primary/80 hover:underline cursor-pointer flex items-center gap-1"
                                 >
                                   {resource.title}
+                                  <ExternalLink className="h-3 w-3" />
                                 </a>
                               </li>
                             ))}
