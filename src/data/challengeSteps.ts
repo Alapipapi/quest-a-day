@@ -1,3 +1,4 @@
+
 export interface StepDetails {
   title: string;
   instructions: string[];
@@ -78,8 +79,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Do 10 leg swings each side"
           ],
           resources: [
-            "Video: Proper warm-up technique",
-            "Stretching guide PDF"
+            {
+              title: "Proper Warm-up Technique Video",
+              url: "https://www.youtube.com/results?search_query=proper+warm+up+routine"
+            },
+            {
+              title: "Stretching Guide",
+              url: "https://www.healthline.com/health/fitness-exercise/essential-stretching-routine"
+            }
           ],
           verification: [
             "No muscle strain felt",
@@ -98,8 +105,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "20 mountain climbers"
           ],
           resources: [
-            "Proper form guides",
-            "Exercise modifications"
+            {
+              title: "Proper Exercise Form Guide",
+              url: "https://www.youtube.com/results?search_query=proper+form+basic+exercises"
+            },
+            {
+              title: "Exercise Modifications for Beginners",
+              url: "https://www.healthline.com/health/fitness-exercise/exercise-modifications"
+            }
           ],
           verification: [
             "Completed all exercises",
@@ -120,8 +133,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Set up your tools"
           ],
           resources: [
-            "Workspace setup guide",
-            "Material checklist"
+            {
+              title: "Workspace Setup Guide",
+              url: "https://www.architecturaldigest.com/story/how-to-set-up-art-studio-at-home"
+            },
+            {
+              title: "Essential Art Materials Checklist",
+              url: "https://www.artistsnetwork.com/art-mediums/beginner-art-supplies/"
+            }
           ],
           verification: [
             "Workspace is clean",
@@ -140,8 +159,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Complete final touches"
           ],
           resources: [
-            "Basic techniques guide",
-            "Common patterns reference"
+            {
+              title: "Basic Drawing Techniques",
+              url: "https://www.artistsnetwork.com/art-techniques/beginner-drawing-tips/"
+            },
+            {
+              title: "Art Composition Guide",
+              url: "https://www.artistsnetwork.com/art-techniques/composition-techniques/"
+            }
           ],
           verification: [
             "Basic structure complete",
@@ -163,8 +188,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Note special cases"
           ],
           resources: [
-            "Problem analysis template",
-            "Common problem patterns"
+            {
+              title: "Problem Analysis Framework",
+              url: "https://www.mindtools.com/pages/article/newTMC_00.htm"
+            },
+            {
+              title: "Problem-Solving Techniques",
+              url: "https://asq.org/quality-resources/problem-solving"
+            }
           ],
           verification: [
             "Problem understood",
@@ -183,8 +214,14 @@ export const getStepsForChallenge = (category: string): StepDetails[] => {
             "Review approach"
           ],
           resources: [
-            "Solution planning guide",
-            "Strategy templates"
+            {
+              title: "Solution Planning Guide",
+              url: "https://www.mindtools.com/pages/article/newTMC_03.htm"
+            },
+            {
+              title: "Decision-Making Strategies",
+              url: "https://www.mindtools.com/pages/article/newTED_00.htm"
+            }
           ],
           verification: [
             "Steps broken down",
