@@ -3,31 +3,32 @@ import { StepDetails } from "../types";
 
 export const creativitySteps: StepDetails[] = [
   {
-    title: "Daily Sketch Challenge",
+    title: "Prepare your workspace",
     instructions: [
-      "Choose a simple object from your surroundings",
-      "Observe its basic shapes and proportions",
-      "Sketch the basic outline",
-      "Add details and shading",
-      "Refine your drawing"
+      "Clear your desk/workspace",
+      "Gather required materials",
+      "Ensure good lighting",
+      "Have reference materials ready",
+      "Set up your tools"
     ],
     resources: [
       {
-        title: "Basic Drawing Techniques",
-        url: "https://www.artistsnetwork.com/art-mediums/drawing/drawing-basics/"
+        title: "Workspace Setup Guide",
+        url: "https://www.architecturaldigest.com/story/how-to-set-up-art-studio-at-home"
       },
       {
-        title: "Shading Techniques Guide",
-        url: "https://www.art-is-fun.com/shading-techniques"
+        title: "Essential Art Materials Checklist",
+        url: "https://www.artistsnetwork.com/art-mediums/beginner-art-supplies/"
       }
     ],
     verification: [
-      "Basic shapes are accurate",
-      "Proportions are correct",
-      "Shading adds depth",
-      "Drawing is complete"
+      "Workspace is clean",
+      "All materials ready",
+      "Good lighting",
+      "Comfortable setup"
     ]
   },
+  // New creativity challenges
   {
     title: "Digital Art Creation",
     instructions: [
@@ -50,8 +51,7 @@ export const creativitySteps: StepDetails[] = [
     verification: [
       "Software installed correctly",
       "Basic shapes and composition done",
-      "Colors and shading applied",
-      "Details add depth"
+      "Colors and shading applied"
     ]
   },
   {
@@ -76,8 +76,7 @@ export const creativitySteps: StepDetails[] = [
     verification: [
       "Paper properly prepared",
       "Colors mixed correctly",
-      "Basic techniques applied",
-      "Composition is balanced"
+      "Basic techniques applied"
     ]
   }
 ];

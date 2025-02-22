@@ -28,8 +28,9 @@ export const fitnessSteps: StepDetails[] = [
       "Feeling warmed up and ready"
     ]
   },
+  // New fitness challenges
   {
-    title: "Yoga Flow Session",
+    title: "Yoga Flow Session - Basics",
     instructions: [
       "Find a quiet space and lay out your mat",
       "Start with 5 minutes of deep breathing",
@@ -50,8 +51,7 @@ export const fitnessSteps: StepDetails[] = [
     verification: [
       "Breathing is steady",
       "Basic poses are aligned correctly",
-      "Feel more flexible and calm",
-      "Completed full session"
+      "Feel more flexible and calm"
     ]
   },
   {
@@ -76,8 +76,7 @@ export const fitnessSteps: StepDetails[] = [
     verification: [
       "Core muscles engaged throughout",
       "Maintains proper form",
-      "Completes all repetitions",
-      "No lower back strain"
+      "Completes all repetitions"
     ]
   },
   {
@@ -102,8 +101,7 @@ export const fitnessSteps: StepDetails[] = [
     verification: [
       "Maintains consistent pace",
       "Completes all intervals",
-      "Proper breathing technique",
-      "Cool-down completed"
+      "Proper breathing technique"
     ]
   }
 ];
