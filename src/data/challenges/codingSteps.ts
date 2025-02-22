@@ -3,66 +3,39 @@ import { StepDetails } from "../types";
 
 export const codingSteps: StepDetails[] = [
   {
-    title: "Set up your development environment",
+    title: "Build a Weather App",
     instructions: [
-      "Install Visual Studio Code from https://code.visualstudio.com",
-      "Install Git from https://git-scm.com",
-      "Create a new folder for your project",
-      "Open the folder in VS Code"
+      "Set up a new React project",
+      "Create components for weather display",
+      "Integrate with a weather API",
+      "Handle API responses and errors",
+      "Style the weather interface"
     ],
     resources: [
       {
-        title: "Download Visual Studio Code",
-        url: "https://code.visualstudio.com/download"
+        title: "OpenWeather API Documentation",
+        url: "https://openweathermap.org/api"
       },
       {
-        title: "Download Git",
-        url: "https://git-scm.com/downloads"
-      },
-      {
-        title: "Git Basic Commands Cheatsheet",
-        url: "https://education.github.com/git-cheat-sheet-education.pdf"
+        title: "React API Integration Guide",
+        url: "https://react.dev/learn/synchronizing-with-effects"
       }
     ],
     verification: [
-      "VS Code is installed and running",
-      "Git is installed (run 'git --version' in terminal)",
-      "Project folder is created and open in VS Code"
+      "API integration works",
+      "Weather data displays correctly",
+      "Error handling implemented",
+      "Responsive design works"
     ]
   },
   {
-    title: "Create a new project and initialize dependencies",
-    instructions: [
-      "Open terminal in VS Code (Ctrl+`)",
-      "Run 'npm create vite@latest'",
-      "Choose React + TypeScript template",
-      "Navigate to project directory",
-      "Run 'npm install'"
-    ],
-    resources: [
-      {
-        title: "Vite Documentation",
-        url: "https://vitejs.dev/guide/"
-      },
-      {
-        title: "npm Basics Guide",
-        url: "https://docs.npmjs.com/getting-started"
-      }
-    ],
-    verification: [
-      "package.json exists in your project",
-      "node_modules folder is created",
-      "Project runs with 'npm run dev'"
-    ]
-  },
-  // New coding challenges
-  {
-    title: "Build a Todo List App - Setup",
+    title: "Build a Todo List App",
     instructions: [
       "Create a new React component for the Todo List",
       "Set up state management using useState",
       "Create an input field for new todos",
-      "Implement basic add todo functionality"
+      "Implement basic add todo functionality",
+      "Add delete and complete functionality"
     ],
     resources: [
       {
@@ -77,16 +50,18 @@ export const codingSteps: StepDetails[] = [
     verification: [
       "Component renders without errors",
       "Input field works correctly",
-      "Can add new todos to the list"
+      "Can add new todos to the list",
+      "Can mark todos as complete"
     ]
   },
   {
-    title: "Chat Interface - Layout Design",
+    title: "Chat Interface",
     instructions: [
       "Create the basic chat interface layout",
       "Implement CSS Grid/Flexbox for message layout",
       "Style message bubbles for sender and receiver",
-      "Add input field for new messages"
+      "Add input field for new messages",
+      "Implement message sending functionality"
     ],
     resources: [
       {
@@ -101,16 +76,18 @@ export const codingSteps: StepDetails[] = [
     verification: [
       "Layout is responsive",
       "Messages are properly aligned",
-      "Input field is positioned correctly"
+      "Input field is positioned correctly",
+      "Messages can be sent"
     ]
   },
   {
-    title: "API Client - Data Fetching",
+    title: "API Client",
     instructions: [
       "Choose a public API to work with",
       "Set up axios or fetch for API calls",
       "Create data interfaces for API response",
-      "Implement error handling and loading states"
+      "Implement error handling and loading states",
+      "Add data caching"
     ],
     resources: [
       {
@@ -125,7 +102,8 @@ export const codingSteps: StepDetails[] = [
     verification: [
       "Successfully fetches data from API",
       "Handles errors gracefully",
-      "Shows loading state while fetching"
+      "Shows loading state while fetching",
+      "Implements data caching"
     ]
   }
 ];
