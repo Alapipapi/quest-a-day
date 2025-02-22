@@ -1,11 +1,11 @@
 
-import { StepDetails } from "./types";
+import type { StepDetails } from "./types";
 import { codingSteps } from "./challenges/codingSteps";
 import { fitnessSteps } from "./challenges/fitnessSteps";
 import { creativitySteps } from "./challenges/creativitySteps";
 import { problemSolvingSteps } from "./challenges/problemSolvingSteps";
 
-export { StepDetails };
+export type { StepDetails };
 
 export const getStepsForChallenge = (category: string): StepDetails[] => {
   switch (category) {
