@@ -28,7 +28,6 @@ export const problemSolvingSteps: StepDetails[] = [
       "Output defined"
     ]
   },
-  // New problem-solving challenges
   {
     title: "Solve Sudoku Puzzle",
     instructions: [
@@ -51,7 +50,8 @@ export const problemSolvingSteps: StepDetails[] = [
     verification: [
       "Rules understood",
       "Basic techniques applied",
-      "Solution is valid"
+      "Solution is valid",
+      "No duplicate numbers"
     ]
   },
   {
@@ -76,7 +76,8 @@ export const problemSolvingSteps: StepDetails[] = [
     verification: [
       "Solution works correctly",
       "Handles edge cases",
-      "Optimized for performance"
+      "Optimized for performance",
+      "All test cases pass"
     ]
   }
 ];
