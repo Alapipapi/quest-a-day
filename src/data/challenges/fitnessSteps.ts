@@ -3,55 +3,55 @@ import { StepDetails } from "../types";
 
 export const fitnessSteps: StepDetails[] = [
   {
-    title: "Warm-up routine",
+    title: "Dynamic Warm-up Routine",
     instructions: [
       "Find an open space (at least 6x6 feet)",
-      "Perform arm circles (10 forward, 10 backward)",
-      "Do 20 jumping jacks",
-      "March in place for 1 minute",
-      "Do 10 leg swings each side"
+      "Start with light jogging in place (2 minutes)",
+      "Perform dynamic stretches (arm circles, leg swings)",
+      "Do mobility exercises (hip rotations, ankle circles)",
+      "Complete jumping jacks (2 sets of 20)"
     ],
     resources: [
       {
-        title: "Proper Warm-up Technique Video",
-        url: "https://www.youtube.com/results?search_query=proper+warm+up+routine"
+        title: "Dynamic Warm-up Guide",
+        url: "https://www.youtube.com/results?search_query=dynamic+warmup+routine"
       },
       {
-        title: "Stretching Guide",
-        url: "https://www.healthline.com/health/fitness-exercise/essential-stretching-routine"
+        title: "Mobility Exercise Guide",
+        url: "https://www.healthline.com/health/fitness-exercise/mobility-exercises"
       }
     ],
     verification: [
-      "No muscle strain felt",
-      "Light sweat",
-      "Increased heart rate",
-      "Feeling warmed up and ready"
+      "Body temperature increased",
+      "Joints feel mobile",
+      "No muscle stiffness",
+      "Ready for main workout"
     ]
   },
   {
-    title: "Yoga Flow Session",
+    title: "HIIT Circuit Training",
     instructions: [
-      "Find a quiet space and lay out your mat",
-      "Start with 5 minutes of deep breathing",
-      "Practice 5 sun salutations",
-      "Hold basic poses for 30 seconds each",
-      "End with 5 minutes of meditation"
+      "Set up 5 exercise stations",
+      "Perform each exercise for 45 seconds",
+      "Rest for 15 seconds between stations",
+      "Complete 3 full circuits",
+      "Cool down with light stretching"
     ],
     resources: [
       {
-        title: "Beginner Yoga Flow Tutorial",
-        url: "https://www.youtube.com/results?search_query=beginner+yoga+flow"
+        title: "HIIT Training Guide",
+        url: "https://www.youtube.com/results?search_query=hiit+workout+guide"
       },
       {
-        title: "Sun Salutation Guide",
-        url: "https://www.yogajournal.com/practice/beginners/how-to/sun-salutation-surya-namaskar/"
+        title: "Circuit Training Basics",
+        url: "https://www.healthline.com/health/fitness/circuit-training"
       }
     ],
     verification: [
-      "Breathing is steady",
-      "Basic poses are aligned correctly",
-      "Feel more flexible and calm",
-      "Completed full session"
+      "Completed all circuits",
+      "Maintained proper form",
+      "Heart rate elevated",
+      "Exercises performed correctly"
     ]
   },
   {
