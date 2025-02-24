@@ -1,5 +1,5 @@
 
-import { StepDetails } from "../types/challenges";
+import { StepDetails } from "../types";
 import { weatherAppChallenge } from "./coding/weatherApp";
 import { todoAppChallenge } from "./coding/todoApp";
 import { chatInterfaceChallenge } from "./coding/chatInterface";

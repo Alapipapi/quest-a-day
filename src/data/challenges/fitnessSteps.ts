@@ -1,5 +1,5 @@
 
-import { StepDetails } from "../types/challenges";
+import { StepDetails } from "../types";
 import { warmUpChallenge } from "./fitness/warmUp";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
 import { coreStrengthChallenge } from "./fitness/coreStrength";

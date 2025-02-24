@@ -1,5 +1,5 @@
 
-import { StepDetails } from "../types/challenges";
+import { StepDetails } from "../types";
 import { problemAnalysisChallenge } from "./problemSolving/analysis";
 import { sudokuChallenge } from "./problemSolving/sudoku";
 import { algorithmChallenge } from "./problemSolving/algorithm";
