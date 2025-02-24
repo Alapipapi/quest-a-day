@@ -4,7 +4,7 @@ import CategoryBadge from "./CategoryBadge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Check, ChevronRight, ArrowRight, ExternalLink } from "lucide-react";
+import { Check, ChevronRight, ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { StepDetails, getStepsForChallenge } from "../data/challengeSteps";
 
 interface ChallengeCardProps {
@@ -24,7 +24,7 @@ const ChallengeCard = ({
 }: ChallengeCardProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
-  const [selectedStep, setSelectedStep] = useState<number | null>(null);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const steps = getStepsForChallenge(category);
 
   const toggleStep = (stepIndex: number) => {
@@ -35,13 +35,21 @@ const ChallengeCard = ({
     );
   };
 
-  const handleStepClick = (index: number) => {
-    setSelectedStep(selectedStep === index ? null : index);
+  const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.stopPropagation();
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
-    e.stopPropagation(); // Prevent the step from collapsing when clicking the link
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const handleNextStep = () => {
+    if (currentStepIndex < steps.length - 1) {
+      setCurrentStepIndex(currentStepIndex + 1);
+    }
+  };
+
+  const handlePreviousStep = () => {
+    if (currentStepIndex > 0) {
+      setCurrentStepIndex(currentStepIndex - 1);
+    }
   };
 
   return (
@@ -79,93 +87,103 @@ const ChallengeCard = ({
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
             <DialogDescription className="text-base mt-2">
-              Complete each step to finish the challenge:
+              Complete each step to finish the challenge
             </DialogDescription>
           </DialogHeader>
           
-          <div className="mt-4 space-y-4">
-            {steps.map((step, index) => (
-              <div key={index} className="border rounded-lg overflow-hidden">
-                <div 
-                  className="flex items-center gap-3 p-4 bg-gray-50 cursor-pointer"
-                  onClick={() => handleStepClick(index)}
-                >
+          <div className="mt-4">
+            {steps.length > 0 && (
+              <div className="border rounded-lg bg-white">
+                <div className="flex items-center gap-3 p-4 bg-gray-50">
                   <div 
                     className={`h-6 w-6 rounded-full flex items-center justify-center border ${
-                      completedSteps.includes(index) 
+                      completedSteps.includes(currentStepIndex) 
                         ? 'bg-primary border-primary' 
                         : 'border-gray-300'
                     }`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleStep(index);
-                    }}
+                    onClick={() => toggleStep(currentStepIndex)}
                   >
-                    {completedSteps.includes(index) ? (
+                    {completedSteps.includes(currentStepIndex) ? (
                       <Check className="h-4 w-4 text-white" />
                     ) : (
                       <ChevronRight className="h-4 w-4 text-gray-400" />
                     )}
                   </div>
                   <span className={`flex-1 font-medium ${
-                    completedSteps.includes(index) ? 'text-gray-400' : 'text-gray-700'
+                    completedSteps.includes(currentStepIndex) ? 'text-gray-400' : 'text-gray-700'
                   }`}>
-                    {step.title}
+                    {steps[currentStepIndex].title}
                   </span>
-                  <ArrowRight className={`h-4 w-4 transition-transform ${
-                    selectedStep === index ? 'rotate-90' : ''
-                  }`} />
+                  <span className="text-sm text-gray-500">
+                    Step {currentStepIndex + 1} of {steps.length}
+                  </span>
                 </div>
                 
-                {selectedStep === index && (
-                  <div className="p-4 bg-white">
-                    <div className="space-y-4">
+                <div className="p-4">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-gray-700 mb-2">Instructions:</h4>
+                      <ul className="list-disc pl-5 space-y-2">
+                        {steps[currentStepIndex].instructions.map((instruction, i) => (
+                          <li key={i} className="text-gray-600">{instruction}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {steps[currentStepIndex].resources && steps[currentStepIndex].resources!.length > 0 && (
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Instructions:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
                         <ul className="list-disc pl-5 space-y-2">
-                          {step.instructions.map((instruction, i) => (
-                            <li key={i} className="text-gray-600">{instruction}</li>
+                          {steps[currentStepIndex].resources!.map((resource, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <a 
+                                onClick={(e) => handleResourceClick(e, resource.url)}
+                                className="text-primary hover:text-primary/80 hover:underline cursor-pointer flex items-center gap-1"
+                              >
+                                {resource.title}
+                                <ExternalLink className="h-3 w-3" />
+                              </a>
+                            </li>
                           ))}
                         </ul>
                       </div>
+                    )}
 
-                      {step.resources && step.resources.length > 0 && (
-                        <div>
-                          <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
-                          <ul className="list-disc pl-5 space-y-2">
-                            {step.resources.map((resource, i) => (
-                              <li key={i} className="flex items-center gap-2">
-                                <a 
-                                  onClick={(e) => handleResourceClick(e, resource.url)}
-                                  className="text-primary hover:text-primary/80 hover:underline cursor-pointer flex items-center gap-1"
-                                >
-                                  {resource.title}
-                                  <ExternalLink className="h-3 w-3" />
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {step.verification && (
-                        <div>
-                          <h4 className="font-medium text-gray-700 mb-2">Verification Checklist:</h4>
-                          <ul className="list-disc pl-5 space-y-2">
-                            {step.verification.map((item, i) => (
-                              <li key={i} className="text-gray-600">{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
+                    {steps[currentStepIndex].verification && (
+                      <div>
+                        <h4 className="font-medium text-gray-700 mb-2">Verification Checklist:</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                          {steps[currentStepIndex].verification!.map((item, i) => (
+                            <li key={i} className="text-gray-600">{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
-            ))}
+            )}
           </div>
 
-          <div className="mt-6 flex justify-between">
+          <div className="mt-6 flex justify-between items-center">
+            <div className="flex gap-2">
+              <Button 
+                variant="outline"
+                onClick={handlePreviousStep}
+                disabled={currentStepIndex === 0}
+              >
+                <ArrowLeft className="h-4 w-4 mr-1" />
+                Previous
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={handleNextStep}
+                disabled={currentStepIndex === steps.length - 1}
+              >
+                Next
+                <ArrowRight className="h-4 w-4 ml-1" />
+              </Button>
+            </div>
             <span className="text-sm text-gray-500">
               {completedSteps.length} of {steps.length} steps completed
             </span>
