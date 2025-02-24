@@ -1,5 +1,5 @@
 
-import type { StepDetails } from "./types";
+import { StepDetails } from "./types/common";
 import { codingSteps } from "./challenges/codingSteps";
 import { fitnessSteps } from "./challenges/fitnessSteps";
 import { creativitySteps } from "./challenges/creativitySteps";
