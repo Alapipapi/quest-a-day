@@ -5,11 +5,7 @@ export const weatherAppChallenge: CodingChallenge = {
   category: "coding",
   title: "Build a Weather App",
   instructions: [
-    "Set up a new React project",
-    "Create components for weather display",
-    "Integrate with a weather API",
-    "Handle API responses and errors",
-    "Style the weather interface"
+    "Create a weather app that fetches and displays current weather data from an API"
   ],
   resources: [
     {
@@ -22,9 +18,8 @@ export const weatherAppChallenge: CodingChallenge = {
     }
   ],
   verification: [
-    "API integration works",
-    "Weather data displays correctly",
-    "Error handling implemented",
-    "Responsive design works"
+    "App successfully fetches and displays weather data",
+    "Handles loading and error states",
+    "Shows relevant weather information"
   ]
 };

@@ -1,14 +1,11 @@
+
 import { CreativityChallenge } from "../../types";
 
 export const watercolorChallenge: CreativityChallenge = {
   category: "creativity",
   title: "Watercolor Painting",
   instructions: [
-    "Prepare watercolor paper",
-    "Sketch basic landscape elements",
-    "Mix basic colors",
-    "Apply light washes",
-    "Add details and texture"
+    "Create a simple watercolor landscape using basic techniques"
   ],
   resources: [
     {
@@ -21,9 +18,8 @@ export const watercolorChallenge: CreativityChallenge = {
     }
   ],
   verification: [
-    "Paper properly prepared",
-    "Colors mixed correctly",
     "Basic techniques applied",
-    "Composition is balanced"
+    "Colors mixed correctly",
+    "Composition balanced"
   ]
 };

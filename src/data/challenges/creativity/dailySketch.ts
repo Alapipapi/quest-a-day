@@ -1,14 +1,11 @@
+
 import { CreativityChallenge } from "../../types";
 
 export const dailySketchChallenge: CreativityChallenge = {
   category: "creativity",
   title: "Daily Sketch Challenge",
   instructions: [
-    "Choose a simple object from your surroundings",
-    "Observe its basic shapes and proportions",
-    "Sketch the basic outline",
-    "Add details and shading",
-    "Refine your drawing"
+    "Create a detailed sketch of an object from your surroundings"
   ],
   resources: [
     {
@@ -21,9 +18,8 @@ export const dailySketchChallenge: CreativityChallenge = {
     }
   ],
   verification: [
-    "Basic shapes are accurate",
-    "Proportions are correct",
-    "Shading adds depth",
-    "Drawing is complete"
+    "Basic shapes accurate",
+    "Proportions correct",
+    "Shading adds depth"
   ]
 };

@@ -1,14 +1,11 @@
+
 import { CreativityChallenge } from "../../types";
 
 export const digitalArtChallenge: CreativityChallenge = {
   category: "creativity",
   title: "Digital Art Creation",
   instructions: [
-    "Choose a digital art tool (e.g., Krita, GIMP)",
-    "Set up a new canvas (2000x2000px)",
-    "Create basic shapes for composition",
-    "Add colors and shading",
-    "Refine details and textures"
+    "Create a digital artwork using your preferred digital art tool"
   ],
   resources: [
     {
@@ -21,9 +18,8 @@ export const digitalArtChallenge: CreativityChallenge = {
     }
   ],
   verification: [
-    "Software installed correctly",
-    "Basic shapes and composition done",
-    "Colors and shading applied",
+    "Basic composition complete",
+    "Colors effectively used",
     "Details add depth"
   ]
 };

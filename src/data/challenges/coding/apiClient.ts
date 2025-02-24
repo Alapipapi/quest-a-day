@@ -5,11 +5,7 @@ export const apiClientChallenge: CodingChallenge = {
   category: "coding",
   title: "API Client",
   instructions: [
-    "Choose a public API to work with",
-    "Set up axios or fetch for API calls",
-    "Create data interfaces for API response",
-    "Implement error handling and loading states",
-    "Add data caching"
+    "Create a reusable API client with error handling and data caching"
   ],
   resources: [
     {
@@ -22,9 +18,8 @@ export const apiClientChallenge: CodingChallenge = {
     }
   ],
   verification: [
-    "Successfully fetches data from API",
+    "Successfully fetches data",
     "Handles errors gracefully",
-    "Shows loading state while fetching",
-    "Implements data caching"
+    "Implements caching"
   ]
 };

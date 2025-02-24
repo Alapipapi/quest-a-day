@@ -5,11 +5,7 @@ export const chatInterfaceChallenge: CodingChallenge = {
   category: "coding",
   title: "Chat Interface",
   instructions: [
-    "Create the basic chat interface layout",
-    "Implement CSS Grid/Flexbox for message layout",
-    "Style message bubbles for sender and receiver",
-    "Add input field for new messages",
-    "Implement message sending functionality"
+    "Build a responsive chat interface with message bubbles and input field"
   ],
   resources: [
     {
@@ -22,9 +18,8 @@ export const chatInterfaceChallenge: CodingChallenge = {
     }
   ],
   verification: [
-    "Layout is responsive",
+    "Interface is responsive",
     "Messages are properly aligned",
-    "Input field is positioned correctly",
-    "Messages can be sent"
+    "Input field works correctly"
   ]
 };

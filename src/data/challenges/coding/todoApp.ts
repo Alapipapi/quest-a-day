@@ -5,11 +5,7 @@ export const todoAppChallenge: CodingChallenge = {
   category: "coding",
   title: "Build a Todo List App",
   instructions: [
-    "Create a new React component for the Todo List",
-    "Set up state management using useState",
-    "Create an input field for new todos",
-    "Implement basic add todo functionality",
-    "Add delete and complete functionality"
+    "Create a todo list app with add, complete, and delete functionality"
   ],
   resources: [
     {
@@ -22,9 +18,8 @@ export const todoAppChallenge: CodingChallenge = {
     }
   ],
   verification: [
-    "Component renders without errors",
-    "Input field works correctly",
-    "Can add new todos to the list",
-    "Can mark todos as complete"
+    "Can add new todos",
+    "Can mark todos as complete",
+    "Can delete todos"
   ]
 };

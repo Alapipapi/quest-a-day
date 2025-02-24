@@ -1,14 +1,11 @@
+
 import { ProblemSolvingChallenge } from "../../types";
 
 export const algorithmChallenge: ProblemSolvingChallenge = {
   category: "problem-solving",
   title: "Algorithm Challenge",
   instructions: [
-    "Read problem requirements",
-    "Plan solution approach",
-    "Write pseudocode",
-    "Implement solution",
-    "Test with sample cases"
+    "Design and implement an efficient solution to a coding problem"
   ],
   resources: [
     {
@@ -23,7 +20,6 @@ export const algorithmChallenge: ProblemSolvingChallenge = {
   verification: [
     "Solution works correctly",
     "Handles edge cases",
-    "Optimized for performance",
-    "All test cases pass"
+    "Optimized for performance"
   ]
 };
