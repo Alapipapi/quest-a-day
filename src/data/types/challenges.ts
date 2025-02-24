@@ -8,3 +8,8 @@ export interface StepDetails {
   }>;
   verification?: string[];
 }
+
+export interface Resource {
+  title: string;
+  url: string;
+}

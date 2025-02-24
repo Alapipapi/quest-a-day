@@ -1,5 +1,5 @@
 
-import { StepDetails } from "../types";
+import { StepDetails } from "../types/challenges";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { digitalArtChallenge } from "./creativity/digitalArt";
 import { watercolorChallenge } from "./creativity/watercolor";
