@@ -1,11 +1,14 @@
-
 import { FitnessChallenge } from "../../types";
 
 export const coreStrengthChallenge: FitnessChallenge = {
   category: "fitness",
   title: "Core Strength Workout",
   instructions: [
-    "Complete a core workout routine focusing on proper form and engagement"
+    "30 seconds plank hold",
+    "20 bicycle crunches",
+    "15 russian twists each side",
+    "20 mountain climbers",
+    "15 leg raises"
   ],
   resources: [
     {
@@ -18,8 +21,9 @@ export const coreStrengthChallenge: FitnessChallenge = {
     }
   ],
   verification: [
-    "Core muscles engaged",
-    "Proper form maintained",
-    "No back strain"
+    "Core muscles engaged throughout",
+    "Maintains proper form",
+    "Completes all repetitions",
+    "No lower back strain"
   ]
 };

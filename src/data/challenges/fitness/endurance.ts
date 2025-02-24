@@ -1,11 +1,14 @@
-
 import { FitnessChallenge } from "../../types";
 
 export const enduranceRunningChallenge: FitnessChallenge = {
   category: "fitness",
   title: "Endurance Running",
   instructions: [
-    "Complete a 20-minute endurance run with proper pacing and form"
+    "5-minute walking warm-up",
+    "20 minutes of steady-state running",
+    "Interval: 1 minute fast, 2 minutes moderate",
+    "Repeat intervals 5 times",
+    "5-minute cool-down walk"
   ],
   resources: [
     {
@@ -18,8 +21,9 @@ export const enduranceRunningChallenge: FitnessChallenge = {
     }
   ],
   verification: [
-    "Maintained consistent pace",
-    "Used proper breathing technique",
-    "Completed full duration"
+    "Maintains consistent pace",
+    "Completes all intervals",
+    "Proper breathing technique",
+    "Cool-down completed"
   ]
 };

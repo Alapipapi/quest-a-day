@@ -1,11 +1,14 @@
-
 import { FitnessChallenge } from "../../types";
 
 export const warmUpChallenge: FitnessChallenge = {
   category: "fitness",
   title: "Warm-up Routine",
   instructions: [
-    "Complete a 5-minute warm-up routine with dynamic stretches"
+    "Find an open space (at least 6x6 feet)",
+    "Perform arm circles (10 forward, 10 backward)",
+    "Do 20 jumping jacks",
+    "March in place for 1 minute",
+    "Do 10 leg swings each side"
   ],
   resources: [
     {
@@ -18,8 +21,9 @@ export const warmUpChallenge: FitnessChallenge = {
     }
   ],
   verification: [
-    "No muscle strain",
+    "No muscle strain felt",
+    "Light sweat",
     "Increased heart rate",
-    "Feel warmed up and ready"
+    "Feeling warmed up and ready"
   ]
 };

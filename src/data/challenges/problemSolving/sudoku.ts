@@ -1,11 +1,14 @@
-
 import { ProblemSolvingChallenge } from "../../types";
 
 export const sudokuChallenge: ProblemSolvingChallenge = {
   category: "problem-solving",
   title: "Solve Sudoku Puzzle",
   instructions: [
-    "Complete a medium-difficulty Sudoku puzzle using logical strategies"
+    "Understand Sudoku rules",
+    "Scan for obvious numbers",
+    "Use elimination technique",
+    "Look for number patterns",
+    "Verify solution validity"
   ],
   resources: [
     {
@@ -18,8 +21,9 @@ export const sudokuChallenge: ProblemSolvingChallenge = {
     }
   ],
   verification: [
+    "Rules understood",
     "Basic techniques applied",
-    "No duplicate numbers",
-    "Solution is valid"
+    "Solution is valid",
+    "No duplicate numbers"
   ]
 };

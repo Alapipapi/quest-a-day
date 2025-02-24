@@ -1,11 +1,14 @@
-
 import { FitnessChallenge } from "../../types";
 
 export const yogaFlowChallenge: FitnessChallenge = {
   category: "fitness",
   title: "Yoga Flow Session",
   instructions: [
-    "Complete a basic yoga flow sequence with focus on breath and alignment"
+    "Find a quiet space and lay out your mat",
+    "Start with 5 minutes of deep breathing",
+    "Practice 5 sun salutations",
+    "Hold basic poses for 30 seconds each",
+    "End with 5 minutes of meditation"
   ],
   resources: [
     {
@@ -19,7 +22,8 @@ export const yogaFlowChallenge: FitnessChallenge = {
   ],
   verification: [
     "Breathing is steady",
-    "Basic poses aligned correctly",
-    "Feel more flexible and calm"
+    "Basic poses are aligned correctly",
+    "Feel more flexible and calm",
+    "Completed full session"
   ]
 };

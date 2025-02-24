@@ -1,11 +1,14 @@
-
 import { ProblemSolvingChallenge } from "../../types";
 
 export const problemAnalysisChallenge: ProblemSolvingChallenge = {
   category: "problem-solving",
   title: "Analyze the Problem",
   instructions: [
-    "Break down a complex problem into smaller, manageable components"
+    "Read problem statement carefully",
+    "Identify key information",
+    "List constraints",
+    "Define expected output",
+    "Note special cases"
   ],
   resources: [
     {
@@ -18,8 +21,9 @@ export const problemAnalysisChallenge: ProblemSolvingChallenge = {
     }
   ],
   verification: [
-    "Problem components identified",
-    "Key constraints listed",
-    "Solution approach defined"
+    "Problem understood",
+    "Key info identified",
+    "Constraints listed",
+    "Output defined"
   ]
 };
