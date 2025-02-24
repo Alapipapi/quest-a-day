@@ -1,7 +1,7 @@
+import { ProblemSolvingChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const problemAnalysisChallenge: StepDetails = {
+export const problemAnalysisChallenge: ProblemSolvingChallenge = {
+  category: "problem-solving",
   title: "Analyze the Problem",
   instructions: [
     "Read problem statement carefully",

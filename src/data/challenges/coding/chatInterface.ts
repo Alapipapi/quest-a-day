@@ -1,7 +1,8 @@
 
-import { StepDetails } from "../../types";
+import { CodingChallenge } from "../../types";
 
-export const chatInterfaceChallenge: StepDetails = {
+export const chatInterfaceChallenge: CodingChallenge = {
+  category: "coding",
   title: "Chat Interface",
   instructions: [
     "Create the basic chat interface layout",

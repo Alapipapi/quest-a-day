@@ -1,7 +1,7 @@
+import { FitnessChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const warmUpChallenge: StepDetails = {
+export const warmUpChallenge: FitnessChallenge = {
+  category: "fitness",
   title: "Warm-up Routine",
   instructions: [
     "Find an open space (at least 6x6 feet)",

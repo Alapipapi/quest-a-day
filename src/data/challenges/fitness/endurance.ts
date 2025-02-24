@@ -1,7 +1,7 @@
+import { FitnessChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const enduranceRunningChallenge: StepDetails = {
+export const enduranceRunningChallenge: FitnessChallenge = {
+  category: "fitness",
   title: "Endurance Running",
   instructions: [
     "5-minute walking warm-up",

@@ -1,7 +1,7 @@
+import { CreativityChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const watercolorChallenge: StepDetails = {
+export const watercolorChallenge: CreativityChallenge = {
+  category: "creativity",
   title: "Watercolor Painting",
   instructions: [
     "Prepare watercolor paper",

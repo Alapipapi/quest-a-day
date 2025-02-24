@@ -1,7 +1,8 @@
 
-import { StepDetails } from "../../types";
+import { CodingChallenge } from "../../types";
 
-export const weatherAppChallenge: StepDetails = {
+export const weatherAppChallenge: CodingChallenge = {
+  category: "coding",
   title: "Build a Weather App",
   instructions: [
     "Set up a new React project",

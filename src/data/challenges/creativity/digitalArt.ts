@@ -1,7 +1,7 @@
+import { CreativityChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const digitalArtChallenge: StepDetails = {
+export const digitalArtChallenge: CreativityChallenge = {
+  category: "creativity",
   title: "Digital Art Creation",
   instructions: [
     "Choose a digital art tool (e.g., Krita, GIMP)",

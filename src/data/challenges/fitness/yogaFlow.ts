@@ -1,7 +1,7 @@
+import { FitnessChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const yogaFlowChallenge: StepDetails = {
+export const yogaFlowChallenge: FitnessChallenge = {
+  category: "fitness",
   title: "Yoga Flow Session",
   instructions: [
     "Find a quiet space and lay out your mat",

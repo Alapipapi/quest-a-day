@@ -1,7 +1,7 @@
+import { FitnessChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const coreStrengthChallenge: StepDetails = {
+export const coreStrengthChallenge: FitnessChallenge = {
+  category: "fitness",
   title: "Core Strength Workout",
   instructions: [
     "30 seconds plank hold",

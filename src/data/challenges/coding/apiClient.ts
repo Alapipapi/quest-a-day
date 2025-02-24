@@ -1,7 +1,8 @@
 
-import { StepDetails } from "../../types";
+import { CodingChallenge } from "../../types";
 
-export const apiClientChallenge: StepDetails = {
+export const apiClientChallenge: CodingChallenge = {
+  category: "coding",
   title: "API Client",
   instructions: [
     "Choose a public API to work with",

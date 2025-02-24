@@ -1,7 +1,7 @@
+import { ProblemSolvingChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const sudokuChallenge: StepDetails = {
+export const sudokuChallenge: ProblemSolvingChallenge = {
+  category: "problem-solving",
   title: "Solve Sudoku Puzzle",
   instructions: [
     "Understand Sudoku rules",

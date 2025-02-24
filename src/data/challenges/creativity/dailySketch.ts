@@ -1,7 +1,7 @@
+import { CreativityChallenge } from "../../types";
 
-import { StepDetails } from "../../types";
-
-export const dailySketchChallenge: StepDetails = {
+export const dailySketchChallenge: CreativityChallenge = {
+  category: "creativity",
   title: "Daily Sketch Challenge",
   instructions: [
     "Choose a simple object from your surroundings",

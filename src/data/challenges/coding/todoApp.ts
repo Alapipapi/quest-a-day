@@ -1,7 +1,8 @@
 
-import { StepDetails } from "../../types";
+import { CodingChallenge } from "../../types";
 
-export const todoAppChallenge: StepDetails = {
+export const todoAppChallenge: CodingChallenge = {
+  category: "coding",
   title: "Build a Todo List App",
   instructions: [
     "Create a new React component for the Todo List",
