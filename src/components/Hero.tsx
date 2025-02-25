@@ -17,9 +17,14 @@ const Hero = () => {
         transition={{ delay: 0.2 }}
         className="relative z-10"
       >
-        <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-          Daily Challenge Hub
-        </span>
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            Daily Challenge Hub
+          </span>
+          <span className="inline-block rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary-foreground">
+            v1.1
+          </span>
+        </div>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
           Challenge Yourself
           <span className="block text-primary">Every Single Day</span>
