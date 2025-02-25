@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import ChallengeCard from "@/components/ChallengeCard";
@@ -46,7 +45,6 @@ const CHALLENGES: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "45 minutes",
   },
-  // New challenges
   {
     id: 5,
     title: "Build a Todo List App",
@@ -126,6 +124,86 @@ const CHALLENGES: Challenge[] = [
     category: "fitness",
     difficulty: "Hard",
     timeEstimate: "45 minutes",
+  },
+  {
+    id: 15,
+    title: "Build a Portfolio Website",
+    description: "Create a personal portfolio website using React and modern design principles.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "4-6 hours",
+  },
+  {
+    id: 16,
+    title: "Morning Yoga Flow",
+    description: "Start your day with an energizing morning yoga routine focusing on stretching and breathing.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "15 minutes",
+  },
+  {
+    id: 17,
+    title: "Abstract Art Creation",
+    description: "Create an abstract artwork using any medium, focusing on shapes, colors, and composition.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 18,
+    title: "Chess Puzzle Challenge",
+    description: "Solve a series of chess puzzles to improve tactical thinking and pattern recognition.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 19,
+    title: "Mobile App UI Design",
+    description: "Design a mobile app interface using Figma or similar design tools.",
+    category: "creativity",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 20,
+    title: "Database Design Challenge",
+    description: "Design a normalized database schema for a social media application.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 21,
+    title: "Interval Sprint Training",
+    description: "Complete a high-intensity sprint workout with proper warm-up and cool-down.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "40 minutes",
+  },
+  {
+    id: 22,
+    title: "Logic Grid Puzzle",
+    description: "Solve a complex logic grid puzzle requiring deductive reasoning and systematic thinking.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 23,
+    title: "Nature Photography",
+    description: "Capture and edit three nature photographs focusing on composition and lighting.",
+    category: "creativity",
+    difficulty: "Easy",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 24,
+    title: "API Documentation",
+    description: "Write comprehensive documentation for a RESTful API using OpenAPI/Swagger.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   }
 ];
 
@@ -138,17 +216,14 @@ const Index = () => {
   useEffect(() => {
     let filtered = CHALLENGES;
     
-    // Apply category filter
     if (selectedCategory !== "all") {
       filtered = filtered.filter((challenge) => challenge.category === selectedCategory);
     }
     
-    // Apply difficulty filter
     if (difficultyFilter !== "all") {
       filtered = filtered.filter((challenge) => challenge.difficulty === difficultyFilter);
     }
     
-    // Apply search filter
     if (searchQuery) {
       filtered = filtered.filter((challenge) => 
         challenge.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -185,7 +260,6 @@ const Index = () => {
           transition={{ delay: 0.4 }}
           className="mb-12 space-y-6"
         >
-          {/* Search Bar */}
           <div className="relative max-w-md mx-auto">
             <input
               type="text"
@@ -196,9 +270,7 @@ const Index = () => {
             />
           </div>
 
-          {/* Filters */}
           <div className="space-y-4">
-            {/* Categories */}
             <div className="flex flex-wrap justify-center gap-4">
               {categories.map((category) => (
                 <button
@@ -215,7 +287,6 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Difficulty Filter */}
             <div className="flex flex-wrap justify-center gap-4">
               {difficulties.map((difficulty) => (
                 <button
@@ -253,7 +324,6 @@ const Index = () => {
           )}
         </motion.div>
 
-        {/* Results count */}
         <div className="mt-6 text-center text-sm text-gray-500">
           Showing {filteredChallenges.length} {filteredChallenges.length === 1 ? 'challenge' : 'challenges'}
         </div>
