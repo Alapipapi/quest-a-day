@@ -131,15 +131,33 @@ const CHALLENGES: Challenge[] = [
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(CHALLENGES);
+  const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
 
   useEffect(() => {
-    setFilteredChallenges(
-      selectedCategory === "all"
-        ? CHALLENGES
-        : CHALLENGES.filter((challenge) => challenge.category === selectedCategory)
-    );
-  }, [selectedCategory]);
+    let filtered = CHALLENGES;
+    
+    // Apply category filter
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter((challenge) => challenge.category === selectedCategory);
+    }
+    
+    // Apply difficulty filter
+    if (difficultyFilter !== "all") {
+      filtered = filtered.filter((challenge) => challenge.difficulty === difficultyFilter);
+    }
+    
+    // Apply search filter
+    if (searchQuery) {
+      filtered = filtered.filter((challenge) => 
+        challenge.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        challenge.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    
+    setFilteredChallenges(filtered);
+  }, [selectedCategory, searchQuery, difficultyFilter]);
 
   const categories = [
     { id: "all", label: "All Challenges" },
@@ -147,6 +165,13 @@ const Index = () => {
     { id: "fitness", label: "Fitness" },
     { id: "creativity", label: "Creativity" },
     { id: "problem-solving", label: "Problem Solving" },
+  ];
+
+  const difficulties = [
+    { id: "all", label: "All Difficulties" },
+    { id: "Easy", label: "Easy" },
+    { id: "Medium", label: "Medium" },
+    { id: "Hard", label: "Hard" },
   ];
 
   return (
@@ -158,22 +183,54 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 space-y-6"
         >
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category.id
-                    ? "bg-primary text-white shadow-lg"
-                    : "bg-white/80 text-gray-600 hover:bg-white hover:shadow-md"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
+          {/* Search Bar */}
+          <div className="relative max-w-md mx-auto">
+            <input
+              type="text"
+              placeholder="Search challenges..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
+          </div>
+
+          {/* Filters */}
+          <div className="space-y-4">
+            {/* Categories */}
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? "bg-primary text-white shadow-lg"
+                      : "bg-white/80 text-gray-600 hover:bg-white hover:shadow-md"
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Difficulty Filter */}
+            <div className="flex flex-wrap justify-center gap-4">
+              {difficulties.map((difficulty) => (
+                <button
+                  key={difficulty.id}
+                  onClick={() => setDifficultyFilter(difficulty.id)}
+                  className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
+                    difficultyFilter === difficulty.id
+                      ? "bg-secondary text-secondary-foreground shadow-lg"
+                      : "bg-white/80 text-gray-600 hover:bg-white hover:shadow-md"
+                  }`}
+                >
+                  {difficulty.label}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -183,10 +240,23 @@ const Index = () => {
           transition={{ delay: 0.6 }}
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {filteredChallenges.map((challenge) => (
-            <ChallengeCard key={challenge.id} {...challenge} />
-          ))}
+          {filteredChallenges.length > 0 ? (
+            filteredChallenges.map((challenge) => (
+              <ChallengeCard key={challenge.id} {...challenge} />
+            ))
+          ) : (
+            <div className="col-span-full text-center py-12">
+              <p className="text-gray-500 text-lg">
+                No challenges found matching your criteria. Try adjusting your filters.
+              </p>
+            </div>
+          )}
         </motion.div>
+
+        {/* Results count */}
+        <div className="mt-6 text-center text-sm text-gray-500">
+          Showing {filteredChallenges.length} {filteredChallenges.length === 1 ? 'challenge' : 'challenges'}
+        </div>
       </div>
     </div>
   );
