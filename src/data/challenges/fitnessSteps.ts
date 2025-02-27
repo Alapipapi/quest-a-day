@@ -1,13 +1,17 @@
 
 import { FitnessChallenge } from "../types/fitness";
-import { warmUpChallenge } from "./fitness/warmUp";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
+import { warmUpChallenge } from "./fitness/warmUp";
 import { coreStrengthChallenge } from "./fitness/coreStrength";
-import { enduranceRunningChallenge } from "./fitness/endurance";
+import { enduranceChallenge } from "./fitness/endurance";
+import { intervalSprintChallenge } from "./fitness/intervalSprint";
+import { morningYogaChallenge } from "./fitness/morningYoga";
 
 export const fitnessSteps: FitnessChallenge[] = [
-  warmUpChallenge,
   yogaFlowChallenge,
+  warmUpChallenge,
   coreStrengthChallenge,
-  enduranceRunningChallenge
+  enduranceChallenge,
+  intervalSprintChallenge,
+  morningYogaChallenge
 ];
