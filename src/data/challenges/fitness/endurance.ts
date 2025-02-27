@@ -1,6 +1,7 @@
+
 import { FitnessChallenge } from "../../types";
 
-export const enduranceRunningChallenge: FitnessChallenge = {
+export const enduranceChallenge: FitnessChallenge = {
   category: "fitness",
   title: "Endurance Running",
   instructions: [
