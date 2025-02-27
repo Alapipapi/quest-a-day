@@ -24,7 +24,7 @@ const ChallengeCard = ({
 }: ChallengeCardProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
-  const steps = getStepsForChallenge(category);
+  const steps = getStepsForChallenge(category, title);
 
   const toggleCompletion = () => {
     setIsCompleted(!isCompleted);
@@ -75,7 +75,7 @@ const ChallengeCard = ({
           </DialogHeader>
           
           <div className="mt-4">
-            {steps.length > 0 && (
+            {steps.length > 0 ? (
               <div className="border rounded-lg bg-white">
                 <div className="flex items-center gap-3 p-4 bg-gray-50">
                   <div 
@@ -110,11 +110,11 @@ const ChallengeCard = ({
                       </ul>
                     </div>
 
-                    {steps[0].resources && steps[0].resources!.length > 0 && (
+                    {steps[0].resources && steps[0].resources.length > 0 && (
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
                         <ul className="list-disc pl-5 space-y-2">
-                          {steps[0].resources!.map((resource, i) => (
+                          {steps[0].resources.map((resource, i) => (
                             <li key={i} className="flex items-center gap-2">
                               <a 
                                 onClick={(e) => handleResourceClick(e, resource.url)}
@@ -133,7 +133,7 @@ const ChallengeCard = ({
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Verification Checklist:</h4>
                         <ul className="list-disc pl-5 space-y-2">
-                          {steps[0].verification!.map((item, i) => (
+                          {steps[0].verification.map((item, i) => (
                             <li key={i} className="text-gray-600">{item}</li>
                           ))}
                         </ul>
@@ -141,6 +141,10 @@ const ChallengeCard = ({
                     )}
                   </div>
                 </div>
+              </div>
+            ) : (
+              <div className="text-center py-6">
+                <p className="text-gray-500">Instructions not available for this challenge yet.</p>
               </div>
             )}
           </div>

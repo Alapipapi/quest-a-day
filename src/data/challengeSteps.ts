@@ -7,17 +7,25 @@ import { problemSolvingSteps } from "./challenges/problemSolvingSteps";
 
 export type { StepDetails };
 
-export const getStepsForChallenge = (category: string): StepDetails[] => {
+export const getStepsForChallenge = (category: string, title: string): StepDetails[] => {
+  let categorySteps;
   switch (category) {
     case "coding":
-      return codingSteps;
+      categorySteps = codingSteps;
+      break;
     case "fitness":
-      return fitnessSteps;
+      categorySteps = fitnessSteps;
+      break;
     case "creativity":
-      return creativitySteps;
+      categorySteps = creativitySteps;
+      break;
     case "problem-solving":
-      return problemSolvingSteps;
+      categorySteps = problemSolvingSteps;
+      break;
     default:
       return [];
   }
+
+  const matchedStep = categorySteps.find(step => step.title === title);
+  return matchedStep ? [matchedStep] : [];
 };
