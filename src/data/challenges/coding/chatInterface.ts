@@ -3,7 +3,7 @@ import { CodingChallenge } from "../../types";
 
 export const chatInterfaceChallenge: CodingChallenge = {
   category: "coding",
-  title: "Chat Interface",
+  title: "Build a Chat Interface",
   instructions: [
     "Create the basic chat interface layout",
     "Implement CSS Grid/Flexbox for message layout",

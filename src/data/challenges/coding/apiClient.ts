@@ -3,7 +3,7 @@ import { CodingChallenge } from "../../types";
 
 export const apiClientChallenge: CodingChallenge = {
   category: "coding",
-  title: "API Client",
+  title: "Build an API Client",
   instructions: [
     "Choose a public API to work with",
     "Set up axios or fetch for API calls",
