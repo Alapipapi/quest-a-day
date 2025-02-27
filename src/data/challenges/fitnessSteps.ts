@@ -6,6 +6,7 @@ import { coreStrengthChallenge } from "./fitness/coreStrength";
 import { enduranceChallenge } from "./fitness/endurance";
 import { intervalSprintChallenge } from "./fitness/intervalSprint";
 import { morningYogaChallenge } from "./fitness/morningYoga";
+import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 
 export const fitnessSteps: FitnessChallenge[] = [
   yogaFlowChallenge,
@@ -13,5 +14,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   coreStrengthChallenge,
   enduranceChallenge,
   intervalSprintChallenge,
-  morningYogaChallenge
+  morningYogaChallenge,
+  hiitWorkoutChallenge
 ];
