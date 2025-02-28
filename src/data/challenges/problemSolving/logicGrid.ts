@@ -15,7 +15,7 @@ export const logicGridChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Logic Grid Tutorial",
-      url: "https://www.brainzilla.com/logic/logic-grid/tutorial/"
+      url: "https://blog.doublehelix.csiro.au/how-to-solve-a-grid-based-logic-problem/"
     }
   ],
   verification: [
