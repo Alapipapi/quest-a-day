@@ -15,7 +15,7 @@ export const mobileAppUIChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Mobile UI Design Principles",
-      url: "https://material.io/design/guidelines-overview"
+      url: "https://hackernoon.com/10-essential-mobile-app-ui-design-principles-for-building-outstanding-apps"
     },
     {
       title: "Figma Tutorial",
