@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import ChallengeCard from "@/components/ChallengeCard";
 import { motion } from "framer-motion";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 interface Challenge {
   id: number;
@@ -261,6 +262,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(CHALLENGES);
   const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
+  const [completedChallengesCount, setCompletedChallengesCount] = useState(0);
 
   useEffect(() => {
     let filtered = CHALLENGES;
@@ -281,6 +283,12 @@ const Index = () => {
     }
     
     setFilteredChallenges(filtered);
+
+    // Get completed challenges
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    setCompletedChallengesCount(
+      Object.keys(completedChallenges).filter(key => !key.includes("-progress")).length
+    );
   }, [selectedCategory, searchQuery, difficultyFilter]);
 
   const categories = [
@@ -299,9 +307,24 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <ThemeSwitcher />
+      
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Hero />
+
+        {completedChallengesCount > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-md p-4 text-center"
+          >
+            <p className="text-gray-700 dark:text-gray-200">
+              You've completed <span className="font-bold text-primary">{completedChallengesCount}</span> {completedChallengesCount === 1 ? 'challenge' : 'challenges'} so far! 
+              <span className="ml-2">🎉</span>
+            </p>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -315,7 +338,7 @@ const Index = () => {
               placeholder="Search challenges..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="w-full px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/80 dark:bg-gray-800/80 dark:text-white backdrop-blur-sm"
             />
           </div>
 
@@ -328,7 +351,7 @@ const Index = () => {
                   className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category.id
                       ? "bg-primary text-white shadow-lg"
-                      : "bg-white/80 text-gray-600 hover:bg-white hover:shadow-md"
+                      : "bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:shadow-md"
                   }`}
                 >
                   {category.label}
@@ -344,7 +367,7 @@ const Index = () => {
                   className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
                     difficultyFilter === difficulty.id
                       ? "bg-secondary text-secondary-foreground shadow-lg"
-                      : "bg-white/80 text-gray-600 hover:bg-white hover:shadow-md"
+                      : "bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:shadow-md"
                   }`}
                 >
                   {difficulty.label}
@@ -358,7 +381,7 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {filteredChallenges.length > 0 ? (
             filteredChallenges.map((challenge) => (
@@ -366,14 +389,14 @@ const Index = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 dark:text-gray-400 text-lg">
                 No challenges found matching your criteria. Try adjusting your filters.
               </p>
             </div>
           )}
         </motion.div>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
+        <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
           Showing {filteredChallenges.length} {filteredChallenges.length === 1 ? 'challenge' : 'challenges'}
         </div>
       </div>

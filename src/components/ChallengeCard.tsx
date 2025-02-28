@@ -2,12 +2,14 @@
 import { motion } from "framer-motion";
 import CategoryBadge from "./CategoryBadge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { Check, ChevronRight, ExternalLink } from "lucide-react";
+import { Check, ChevronRight, ExternalLink, Trophy } from "lucide-react";
 import { StepDetails, getStepsForChallenge } from "../data/challengeSteps";
+import { useNavigate } from "react-router-dom";
 
 interface ChallengeCardProps {
+  id: number;
   title: string;
   description: string;
   category: "coding" | "fitness" | "creativity" | "problem-solving";
@@ -16,6 +18,7 @@ interface ChallengeCardProps {
 }
 
 const ChallengeCard = ({
+  id,
   title,
   description,
   category,
@@ -25,9 +28,17 @@ const ChallengeCard = ({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const steps = getStepsForChallenge(category, title);
+  const navigate = useNavigate();
 
-  const toggleCompletion = () => {
-    setIsCompleted(!isCompleted);
+  useEffect(() => {
+    // Check localStorage for completion status
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    const key = `${category}-${title}`;
+    setIsCompleted(!!completedChallenges[key]);
+  }, [category, title]);
+
+  const handleViewDetails = () => {
+    navigate(`/challenge/${category}/${encodeURIComponent(title)}`);
   };
 
   const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
@@ -40,18 +51,26 @@ const ChallengeCard = ({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="group relative overflow-hidden rounded-2xl bg-white/40 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1 cursor-pointer"
+        className="group relative overflow-hidden rounded-2xl bg-white/40 dark:bg-gray-800/40 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1 cursor-pointer"
         onClick={() => setIsDialogOpen(true)}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-white/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-white/30 dark:from-gray-700/50 dark:to-gray-700/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         
         <div className="relative z-10">
-          <CategoryBadge category={category} className="mb-4" />
+          <div className="flex justify-between">
+            <CategoryBadge category={category} className="mb-4" />
+            {isCompleted && (
+              <div className="flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full">
+                <Trophy className="h-3 w-3 mr-1" />
+                <span className="text-xs font-medium">Completed</span>
+              </div>
+            )}
+          </div>
           
-          <h3 className="mb-2 text-xl font-semibold text-gray-800">{title}</h3>
-          <p className="mb-4 text-gray-600">{description}</p>
+          <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-100">{title}</h3>
+          <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>
           
-          <div className="flex items-center gap-4 text-sm text-gray-500">
+          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
             <span className="flex items-center gap-1">
               <span className="h-2 w-2 rounded-full" style={{
                 backgroundColor: 
@@ -76,15 +95,14 @@ const ChallengeCard = ({
           
           <div className="mt-4">
             {steps.length > 0 ? (
-              <div className="border rounded-lg bg-white">
-                <div className="flex items-center gap-3 p-4 bg-gray-50">
+              <div className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700">
+                <div className="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-800">
                   <div 
-                    className={`h-6 w-6 rounded-full flex items-center justify-center border cursor-pointer ${
+                    className={`h-6 w-6 rounded-full flex items-center justify-center border ${
                       isCompleted 
                         ? 'bg-primary border-primary' 
-                        : 'border-gray-300'
+                        : 'border-gray-300 dark:border-gray-600'
                     }`}
-                    onClick={toggleCompletion}
                   >
                     {isCompleted ? (
                       <Check className="h-4 w-4 text-white" />
@@ -93,7 +111,7 @@ const ChallengeCard = ({
                     )}
                   </div>
                   <span className={`flex-1 font-medium ${
-                    isCompleted ? 'text-gray-400' : 'text-gray-700'
+                    isCompleted ? 'text-gray-400 dark:text-gray-500' : 'text-gray-700 dark:text-gray-200'
                   }`}>
                     {title}
                   </span>
@@ -102,17 +120,17 @@ const ChallengeCard = ({
                 <div className="p-4">
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Instructions:</h4>
+                      <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Instructions:</h4>
                       <ul className="list-disc pl-5 space-y-2">
                         {steps[0].instructions.map((instruction, i) => (
-                          <li key={i} className="text-gray-600">{instruction}</li>
+                          <li key={i} className="text-gray-600 dark:text-gray-300">{instruction}</li>
                         ))}
                       </ul>
                     </div>
 
                     {steps[0].resources && steps[0].resources.length > 0 && (
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Helpful Resources:</h4>
+                        <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Helpful Resources:</h4>
                         <ul className="list-disc pl-5 space-y-2">
                           {steps[0].resources.map((resource, i) => (
                             <li key={i} className="flex items-center gap-2">
@@ -131,10 +149,10 @@ const ChallengeCard = ({
 
                     {steps[0].verification && (
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Verification Checklist:</h4>
+                        <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Verification Checklist:</h4>
                         <ul className="list-disc pl-5 space-y-2">
                           {steps[0].verification.map((item, i) => (
-                            <li key={i} className="text-gray-600">{item}</li>
+                            <li key={i} className="text-gray-600 dark:text-gray-300">{item}</li>
                           ))}
                         </ul>
                       </div>
@@ -144,21 +162,28 @@ const ChallengeCard = ({
               </div>
             ) : (
               <div className="text-center py-6">
-                <p className="text-gray-500">Instructions not available for this challenge yet.</p>
+                <p className="text-gray-500 dark:text-gray-400">Instructions not available for this challenge yet.</p>
               </div>
             )}
           </div>
 
           <div className="mt-6 flex justify-between items-center">
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-gray-500 dark:text-gray-400">
               {isCompleted ? "Challenge completed" : "Challenge in progress"}
             </span>
-            <Button 
-              variant="outline"
-              onClick={() => setIsDialogOpen(false)}
-            >
-              Close
-            </Button>
+            <div className="flex gap-2">
+              <Button 
+                variant="outline"
+                onClick={() => setIsDialogOpen(false)}
+              >
+                Close
+              </Button>
+              <Button 
+                onClick={handleViewDetails}
+              >
+                View Details
+              </Button>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
