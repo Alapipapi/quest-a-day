@@ -18,11 +18,11 @@ export const analysisChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Data Visualization Guide",
-      url: "https://www.tableau.com/learn/articles/data-visualization-basics"
+      url: "https://www.smashingmagazine.com/2023/01/guide-getting-data-visualization-right/"
     },
     {
       title: "Data Cleaning Tutorial",
-      url: "https://towardsdatascience.com/data-cleaning-with-python-and-pandas-detecting-missing-values-3e9c6ebcf78b"
+      url: " https://www.datacamp.com/tutorial/tutorial-data-cleaning-tutorial"
     }
   ],
   verification: [
