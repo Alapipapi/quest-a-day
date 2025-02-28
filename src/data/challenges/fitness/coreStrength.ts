@@ -17,7 +17,7 @@ export const coreStrengthChallenge: FitnessChallenge = {
     },
     {
       title: "Core Workout Guide",
-      url: "https://www.healthline.com/health/fitness-exercise/core-workout"
+      url: "https://www.rei.com/learn/expert-advice/best-core-workouts.html"
     }
   ],
   verification: [
