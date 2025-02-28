@@ -13,7 +13,7 @@ export const watercolorChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Watercolor Techniques for Beginners",
-      url: "https://www.artistsnetwork.com/art-mediums/watercolor/watercolor-painting-for-beginners/"
+      url: "https://andielafdesigns.com/blogs/learn/beginners-guide-to-basic-watercolour-techniques"
     },
     {
       title: "Landscape Painting Tutorial",
