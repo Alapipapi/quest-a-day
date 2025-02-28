@@ -245,6 +245,14 @@ const CHALLENGES: Challenge[] = [
     category: "problem-solving",
     difficulty: "Hard",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 30,
+    title: "Data Analysis Challenge",
+    description: "Analyze a dataset to clean data, create visualizations, and derive meaningful insights.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   }
 ];
 
