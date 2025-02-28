@@ -18,7 +18,7 @@ export const enduranceChallenge: FitnessChallenge = {
     },
     {
       title: "Interval Training Basics",
-      url: "https://www.healthline.com/health/interval-running-for-beginners"
+      url: "https://www.runnersworld.com/uk/training/a773582/interval-training-how-it-works/"
     }
   ],
   verification: [
