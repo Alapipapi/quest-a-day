@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import ChallengeDetails from "./pages/ChallengeDetails";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +24,6 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <ThemeSwitcher />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

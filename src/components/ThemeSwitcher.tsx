@@ -16,7 +16,7 @@ export function ThemeSwitcher() {
       <Button
         variant="outline"
         size="icon"
-        className="rounded-full h-12 w-12 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 shadow-lg border border-gray-200 dark:border-gray-700"
+        className="rounded-full h-10 w-10 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 shadow-lg"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
         {theme === "dark" ? (
