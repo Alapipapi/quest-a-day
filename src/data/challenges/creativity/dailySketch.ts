@@ -17,7 +17,7 @@ export const dailySketchChallenge: CreativityChallenge = {
     },
     {
       title: "Shading Techniques Guide",
-      url: "https://www.art-is-fun.com/shading-techniques"
+      url: "https://www.gathered.how/arts-crafts/art/shading-techniques"
     }
   ],
   verification: [
