@@ -15,11 +15,11 @@ export const hiitWorkoutChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Beginner HIIT Guide",
-      url: "https://www.self.com/story/a-beginners-guide-to-hiit"
+      url: "https://www.thebodycoach.com/blog/a-beginners-guide-to-hiit/"
     },
     {
       title: "HIIT Workout Examples",
-      url: "https://www.healthline.com/health/fitness-exercise/hiit-workouts"
+      url: "https://www.healthline.com/health/best-hiit-exercises"
     }
   ],
   verification: [
