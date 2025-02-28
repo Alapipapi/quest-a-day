@@ -14,7 +14,7 @@ export const databaseDesignChallenge: CodingChallenge = {
   resources: [
     {
       title: "Database Design Fundamentals",
-      url: "https://www.postgresql.org/docs/current/tutorial-design.html"
+      url: "https://www.geeksforgeeks.org/database-design-fundamentals/"
     },
     {
       title: "Normalization Guide",
