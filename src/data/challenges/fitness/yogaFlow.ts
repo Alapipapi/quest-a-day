@@ -17,7 +17,7 @@ export const yogaFlowChallenge: FitnessChallenge = {
     },
     {
       title: "Sun Salutation Guide",
-      url: "https://www.yogajournal.com/practice/beginners/how-to/sun-salutation-surya-namaskar/"
+      url: "https://www.verywellfit.com/illustrated-stepbystep-sun-salutation-3567187"
     }
   ],
   verification: [
