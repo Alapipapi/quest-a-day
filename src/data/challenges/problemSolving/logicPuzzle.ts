@@ -15,7 +15,7 @@ export const logicPuzzleChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Logic Puzzle Strategies",
-      url: "https://logic.puzzlebaron.com/how-to-solve-a-logic-puzzle.php"
+      url: "https://www.wikihow.com/Solve-Logic-Puzzles"
     },
     {
       title: "Interactive Logic Puzzles",
