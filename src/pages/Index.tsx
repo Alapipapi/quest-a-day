@@ -140,7 +140,7 @@ const CHALLENGES: Challenge[] = [
     description: "Start your day with an energizing morning yoga routine focusing on stretching and breathing.",
     category: "fitness",
     difficulty: "Easy",
-    timeEstimate: "15 minutes",
+    timeEstimate: "20 minutes",
   },
   {
     id: 17,
