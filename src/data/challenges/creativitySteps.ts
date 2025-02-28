@@ -6,6 +6,7 @@ import { watercolorChallenge } from "./creativity/watercolor";
 import { abstractArtChallenge } from "./creativity/abstractArt";
 import { mobileAppUIChallenge } from "./creativity/mobileAppUI";
 import { naturePhotographyChallenge } from "./creativity/naturePhotography";
+import { musicCreationChallenge } from "./creativity/musicCreation";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -13,5 +14,6 @@ export const creativitySteps: CreativityChallenge[] = [
   watercolorChallenge,
   abstractArtChallenge,
   mobileAppUIChallenge,
-  naturePhotographyChallenge
+  naturePhotographyChallenge,
+  musicCreationChallenge
 ];

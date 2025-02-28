@@ -6,6 +6,7 @@ import { analysisChallenge } from "./problemSolving/analysis";
 import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
+import { dataStructuresChallenge } from "./problemSolving/dataStructures";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   sudokuChallenge,
@@ -13,5 +14,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   analysisChallenge,
   chessPuzzleChallenge,
   logicGridChallenge,
-  logicPuzzleChallenge
+  logicPuzzleChallenge,
+  dataStructuresChallenge
 ];

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import ChallengeCard from "@/components/ChallengeCard";
@@ -204,6 +205,46 @@ const CHALLENGES: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 25,
+    title: "Master React Hooks",
+    description: "Build a small application that demonstrates proficiency with various React hooks.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 26,
+    title: "Global State Management",
+    description: "Implement a global state management solution in a React application.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  },
+  {
+    id: 27,
+    title: "Full Body Strength Training",
+    description: "Complete a comprehensive strength training workout targeting all major muscle groups.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 28,
+    title: "Digital Music Production",
+    description: "Create a short musical piece using digital audio workstation software.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 29,
+    title: "Data Structures Mastery",
+    description: "Implement and use various data structures to solve algorithmic problems.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
   }
 ];
 
