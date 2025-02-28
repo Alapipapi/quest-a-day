@@ -15,7 +15,7 @@ export const morningYogaChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Morning Yoga Sequence",
-      url: "https://www.yogajournal.com/practice/energizing-morning-sequence/"
+      url: "https://www.tummee.com/yoga-sequences/morning-yoga-sequence"
     }
   ],
   verification: [
