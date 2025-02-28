@@ -18,7 +18,7 @@ export const weatherAppChallenge: CodingChallenge = {
     },
     {
       title: "React API Integration Guide",
-      url: "https://react.dev/learn/synchronizing-with-effects"
+      url: "https://react.dev/reference/react/apis"
     }
   ],
   verification: [
