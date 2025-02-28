@@ -15,7 +15,7 @@ export const intervalSprintChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Sprint Training Guide",
-      url: "https://www.runnersworld.com/training/a20865308/sprint-training/"
+      url: "https://www.artofmanliness.com/health-fitness/fitness/the-grown-ups-guide-to-sprinting/"
     }
   ],
   verification: [
