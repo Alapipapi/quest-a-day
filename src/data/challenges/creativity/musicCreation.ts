@@ -19,7 +19,7 @@ export const musicCreationChallenge: CreativityChallenge = {
     },
     {
       title: "Music Theory Basics",
-      url: "https://www.musictheory.net/"
+      url: "https://www.musictheory.net/lessons"
     }
   ],
   verification: [
