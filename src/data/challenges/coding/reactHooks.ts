@@ -18,7 +18,7 @@ export const reactHooksChallenge: CodingChallenge = {
     },
     {
       title: "Custom Hooks Guide",
-      url: "https://usehooks.com/"
+      url: "https://dev.to/rasaf_ibrahim/a-guide-to-react-custom-hooks-2b4h"
     }
   ],
   verification: [
