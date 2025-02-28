@@ -15,7 +15,7 @@ export const abstractArtChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Abstract Art Techniques",
-      url: "https://www.artsy.net/article/artsy-editorial-guide-abstract-art"
+      url: "https://www.montmarte.com/blogs/tips-techniques/abstract-painting-techniques"
     }
   ],
   verification: [
