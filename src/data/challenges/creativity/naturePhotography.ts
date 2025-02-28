@@ -15,7 +15,7 @@ export const naturePhotographyChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Nature Photography Tips",
-      url: "https://www.naturephotographysimplified.com/tips-and-tutorials/"
+      url: "https://www.dereknielsen.com/news/the-best-guide-to-nature-photography-tips-2025/"
     }
   ],
   verification: [
