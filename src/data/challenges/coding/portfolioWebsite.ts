@@ -14,7 +14,7 @@ export const portfolioWebsiteChallenge: CodingChallenge = {
   resources: [
     {
       title: "React Portfolio Examples",
-      url: "https://www.codewithfaraz.com/article/107/15-inspiring-react-portfolio-templates-for-2023#react-portfolio"
+      url: "https://www.codewithfaraz.com/article/107/15-inspiring-react-portfolio-templates-for-2024-2025"
     },
     {
       title: "Modern CSS Techniques",
