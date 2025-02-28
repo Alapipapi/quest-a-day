@@ -14,7 +14,7 @@ export const chessPuzzleChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Chess Tactics Guide",
-      url: "https://www.chess.com/lessons/solving-chess-puzzles"
+      url: "https://www.chess.com/article/view/chess-tactics"
     }
   ],
   verification: [
