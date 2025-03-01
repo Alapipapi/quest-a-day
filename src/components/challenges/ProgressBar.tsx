@@ -17,14 +17,7 @@ const ProgressBar = ({ progress, updateProgress }: ProgressBarProps) => {
         ></div>
       </div>
       <div className="flex justify-between mt-2">
-        <input 
-          type="range" 
-          min="0" 
-          max="100" 
-          value={progress} 
-          onChange={(e) => updateProgress(parseInt(e.target.value))}
-          className="w-full h-2 accent-primary"
-        />
+        <span className="text-sm text-muted-foreground">{progress}% complete</span>
       </div>
     </div>
   );

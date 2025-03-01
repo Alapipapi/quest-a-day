@@ -68,6 +68,7 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
   };
 
+  // This function is now only used internally by toggleVerificationItem
   const updateProgress = (value: number) => {
     if (!category || !title) return;
     
@@ -105,26 +106,12 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     
     // Update progress based on verification items
     const newProgress = Math.round((completedItems / totalItems) * 100);
-    setProgress(newProgress);
+    updateProgress(newProgress);
     
     // Save to localStorage
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
     const key = `${category}-${decodeURIComponent(title)}`;
     completedChallenges[`${key}-verification`] = newVerificationStatus;
-    completedChallenges[`${key}-progress`] = newProgress;
-    
-    if (newProgress === 100 && !isCompleted) {
-      setIsCompleted(true);
-      completedChallenges[key] = true;
-      toast({
-        title: "Challenge Completed!",
-        description: "Great job on completing this challenge!",
-        duration: 3000,
-      });
-    } else if (newProgress < 100 && isCompleted) {
-      setIsCompleted(false);
-      delete completedChallenges[key];
-    }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
   };
@@ -134,7 +121,7 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     progress,
     verificationStatus,
     toggleCompletion,
-    updateProgress,
+    updateProgress, // We still export this to maintain API compatibility
     toggleVerificationItem
   };
 };
