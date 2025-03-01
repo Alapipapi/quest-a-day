@@ -14,6 +14,7 @@ const ChallengeDetails = () => {
   const [steps, setSteps] = useState<any[]>([]);
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [verificationStatus, setVerificationStatus] = useState<boolean[]>([]);
 
   useEffect(() => {
     if (category && title) {
@@ -26,6 +27,13 @@ const ChallengeDetails = () => {
       const key = `${category}-${decodedTitle}`;
       setIsCompleted(!!completedChallenges[key]);
       setProgress(completedChallenges[`${key}-progress`] || 0);
+      
+      // Initialize verification status array if available, otherwise create a new one
+      if (challengeSteps.length > 0 && challengeSteps[0].verification) {
+        const savedStatus = completedChallenges[`${key}-verification`] || 
+          Array(challengeSteps[0].verification.length).fill(false);
+        setVerificationStatus(savedStatus);
+      }
     }
   }, [category, title]);
 
@@ -58,6 +66,12 @@ const ChallengeDetails = () => {
       delete completedChallenges[key];
       completedChallenges[`${key}-progress`] = 0;
       setProgress(0);
+      // Also reset verification status
+      if (steps.length > 0 && steps[0].verification) {
+        const newVerificationStatus = Array(steps[0].verification.length).fill(false);
+        setVerificationStatus(newVerificationStatus);
+        completedChallenges[`${key}-verification`] = newVerificationStatus;
+      }
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
@@ -78,6 +92,43 @@ const ChallengeDetails = () => {
         duration: 3000,
       });
     } else if (value < 100 && isCompleted) {
+      setIsCompleted(false);
+      delete completedChallenges[key];
+    }
+    
+    localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+  };
+
+  const toggleVerificationItem = (index: number) => {
+    if (!steps.length || !steps[0].verification) return;
+    
+    const newVerificationStatus = [...verificationStatus];
+    newVerificationStatus[index] = !newVerificationStatus[index];
+    setVerificationStatus(newVerificationStatus);
+    
+    // Count completed verification items
+    const completedItems = newVerificationStatus.filter(item => item).length;
+    const totalItems = steps[0].verification.length;
+    
+    // Update progress based on verification items
+    const newProgress = Math.round((completedItems / totalItems) * 100);
+    setProgress(newProgress);
+    
+    // Save to localStorage
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    const key = `${category}-${decodeURIComponent(title || "")}`;
+    completedChallenges[`${key}-verification`] = newVerificationStatus;
+    completedChallenges[`${key}-progress`] = newProgress;
+    
+    if (newProgress === 100 && !isCompleted) {
+      setIsCompleted(true);
+      completedChallenges[key] = true;
+      toast({
+        title: "Challenge Completed!",
+        description: "Great job on completing this challenge!",
+        duration: 3000,
+      });
+    } else if (newProgress < 100 && isCompleted) {
       setIsCompleted(false);
       delete completedChallenges[key];
     }
@@ -201,16 +252,17 @@ const ChallengeDetails = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-3 p-3 rounded-lg bg-muted/50"
+                    className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 cursor-pointer hover:bg-muted/70 transition-colors"
+                    onClick={() => toggleVerificationItem(index)}
                   >
                     <div 
                       className={`mt-0.5 min-w-5 h-5 rounded-full flex items-center justify-center ${
-                        progress >= (index + 1) * (100 / challenge.verification.length)
+                        verificationStatus[index]
                           ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
                           : "bg-muted text-muted-foreground"
                       }`}
                     >
-                      {progress >= (index + 1) * (100 / challenge.verification.length) ? (
+                      {verificationStatus[index] ? (
                         <Check className="h-3 w-3" />
                       ) : (
                         <span className="text-xs">{index + 1}</span>
