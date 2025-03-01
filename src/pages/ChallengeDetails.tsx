@@ -92,7 +92,7 @@ const ChallengeDetails = () => {
           <ChevronLeft className="h-4 w-4 mr-2" /> Back to Challenges
         </Button>
         <div className="text-center py-16">
-          <p className="text-gray-500">Challenge details not found.</p>
+          <p className="text-muted-foreground">Challenge details not found.</p>
         </div>
       </div>
     );
@@ -110,24 +110,24 @@ const ChallengeDetails = () => {
         <ChevronLeft className="h-4 w-4 mr-2" /> Back to Challenges
       </Button>
 
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-6 sm:p-8">
+      <div className="bg-card/80 backdrop-blur-sm dark:bg-card/60 rounded-2xl shadow-xl overflow-hidden border border-border">
+        <div className="bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/5 dark:to-primary/0 p-6 sm:p-8">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">{challenge.title}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">{challenge.title}</h1>
             {isCompleted && (
-              <div className="flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full">
+              <div className="flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full">
                 <Trophy className="h-4 w-4 mr-1" />
                 <span className="text-sm font-medium">Completed</span>
               </div>
             )}
           </div>
-          <p className="mt-2 text-gray-600 capitalize">{category} Challenge</p>
+          <p className="mt-2 text-muted-foreground capitalize">{category} Challenge</p>
         </div>
 
         <div className="p-6 sm:p-8 space-y-8">
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Your Progress</h2>
-            <div className="w-full bg-gray-200 rounded-full h-4">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Your Progress</h2>
+            <div className="w-full bg-muted rounded-full h-4">
               <div 
                 className="bg-primary h-4 rounded-full transition-all duration-500" 
                 style={{ width: `${progress}%` }}
@@ -146,7 +146,7 @@ const ChallengeDetails = () => {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Instructions</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-4">Instructions</h2>
             <div className="space-y-2">
               {challenge.instructions.map((instruction: string, index: number) => (
                 <motion.div 
@@ -154,12 +154,12 @@ const ChallengeDetails = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-gray-50"
+                  className="flex items-start gap-3 p-3 rounded-lg bg-muted/50"
                 >
                   <div className="mt-0.5 min-w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-medium text-sm">
                     {index + 1}
                   </div>
-                  <span className="text-gray-700">{instruction}</span>
+                  <span className="text-foreground">{instruction}</span>
                 </motion.div>
               ))}
             </div>
@@ -167,7 +167,7 @@ const ChallengeDetails = () => {
 
           {challenge.resources && challenge.resources.length > 0 && (
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Helpful Resources</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Helpful Resources</h2>
               <div className="space-y-3">
                 {challenge.resources.map((resource: { title: string, url: string }, index: number) => (
                   <motion.div 
@@ -193,7 +193,7 @@ const ChallengeDetails = () => {
 
           {challenge.verification && challenge.verification.length > 0 && (
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Verification Checklist</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Verification Checklist</h2>
               <div className="space-y-2">
                 {challenge.verification.map((item: string, index: number) => (
                   <motion.div 
@@ -201,13 +201,13 @@ const ChallengeDetails = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-3 p-3 rounded-lg bg-gray-50"
+                    className="flex items-start gap-3 p-3 rounded-lg bg-muted/50"
                   >
                     <div 
                       className={`mt-0.5 min-w-5 h-5 rounded-full flex items-center justify-center ${
                         progress >= (index + 1) * (100 / challenge.verification.length)
-                          ? "bg-green-100 text-green-700"
-                          : "bg-gray-200 text-gray-500"
+                          ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
+                          : "bg-muted text-muted-foreground"
                       }`}
                     >
                       {progress >= (index + 1) * (100 / challenge.verification.length) ? (
@@ -216,7 +216,7 @@ const ChallengeDetails = () => {
                         <span className="text-xs">{index + 1}</span>
                       )}
                     </div>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-foreground">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -229,7 +229,7 @@ const ChallengeDetails = () => {
             </Button>
             <Button
               onClick={toggleCompletion}
-              className={isCompleted ? "bg-green-600 hover:bg-green-700" : ""}
+              className={isCompleted ? "bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800" : ""}
             >
               {isCompleted ? "Mark as Incomplete" : "Mark as Complete"}
             </Button>
