@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import ChallengeCard from "@/components/ChallengeCard";
@@ -350,7 +349,7 @@ const Index = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? "bg-primary text-white shadow-lg"
+                      ? "bg-primary text-primary-foreground shadow-lg"
                       : "bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:shadow-md"
                   }`}
                 >

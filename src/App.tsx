@@ -8,15 +8,17 @@ import Index from "./pages/Index";
 import ChallengeDetails from "./pages/ChallengeDetails";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="system" storageKey="challenge-hub-theme">
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <ThemeSwitcher />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

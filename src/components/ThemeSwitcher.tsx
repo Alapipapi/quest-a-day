@@ -16,8 +16,9 @@ export function ThemeSwitcher() {
       <Button
         variant="outline"
         size="icon"
-        className="rounded-full h-10 w-10 bg-white/80 backdrop-blur-sm dark:bg-gray-800/80 shadow-lg"
+        className="rounded-full h-10 w-10 bg-white/80 backdrop-blur-sm border-gray-200 dark:bg-gray-800/80 dark:border-gray-700 shadow-lg"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        aria-label="Toggle theme"
       >
         {theme === "dark" ? (
           <Sun className="h-5 w-5 text-yellow-500" />
