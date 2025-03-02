@@ -101,10 +101,7 @@ const ChallengeDetails = () => {
             />
           )}
 
-          <div className="pt-4 flex justify-between">
-            <Button variant="outline" onClick={handleBack}>
-              <ChevronLeft className="h-4 w-4 mr-2" /> Back
-            </Button>
+          <div className="pt-4 flex justify-end">
             <Button
               onClick={toggleCompletion}
               className={isCompleted ? "bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800" : ""}
