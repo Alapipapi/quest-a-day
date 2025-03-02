@@ -48,6 +48,14 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
       completedChallenges[key] = true;
       completedChallenges[`${key}-progress`] = 100;
       setProgress(100);
+      
+      // Update all verification items to checked when marking as complete
+      if (steps.length > 0 && steps[0].verification) {
+        const newVerificationStatus = Array(steps[0].verification.length).fill(true);
+        setVerificationStatus(newVerificationStatus);
+        completedChallenges[`${key}-verification`] = newVerificationStatus;
+      }
+      
       toast({
         title: "Challenge Completed!",
         description: "Great job on completing this challenge!",
