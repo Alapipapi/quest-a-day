@@ -37,8 +37,7 @@ const ChallengeDetails = () => {
   } = useChallengeState({ category, title, steps });
 
   const handleBack = () => {
-    // Use browser history to navigate back instead of directing to a specific route
-    navigate(-1);
+    navigate("/");
   };
 
   const handleResourceClick = (url: string) => {
@@ -49,7 +48,7 @@ const ChallengeDetails = () => {
     return (
       <div className="container mx-auto px-4 py-8">
         <Button variant="outline" onClick={handleBack} className="mb-6">
-          <ChevronLeft className="h-4 w-4 mr-2" /> Back
+          <ChevronLeft className="h-4 w-4 mr-2" /> Back to Challenges
         </Button>
         <div className="text-center py-16">
           <p className="text-muted-foreground">Challenge details not found.</p>
@@ -67,7 +66,7 @@ const ChallengeDetails = () => {
       className="container mx-auto px-4 py-8"
     >
       <Button variant="outline" onClick={handleBack} className="mb-6">
-        <ChevronLeft className="h-4 w-4 mr-2" /> Back
+        <ChevronLeft className="h-4 w-4 mr-2" /> Back to Challenges
       </Button>
 
       <div className="bg-card/80 backdrop-blur-sm dark:bg-card/60 rounded-2xl shadow-xl overflow-hidden border border-border">
