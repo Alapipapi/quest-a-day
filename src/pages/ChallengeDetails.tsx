@@ -37,7 +37,8 @@ const ChallengeDetails = () => {
   } = useChallengeState({ category, title, steps });
 
   const handleBack = () => {
-    navigate("/");
+    // Use browser history to go back instead of navigating to a specific route
+    navigate(-1);
   };
 
   const handleResourceClick = (url: string) => {
