@@ -94,14 +94,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Additional utility classes for better dark mode support */
-@layer utilities {
-  .dark-mode-text {
-    @apply text-black dark:text-white;
-  }
-  
-  .dark-mode-bg {
-    @apply bg-white dark:bg-slate-900;
-  }
-}
