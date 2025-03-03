@@ -9,6 +9,8 @@ import { databaseDesignChallenge } from "./coding/databaseDesign";
 import { apiDocChallenge } from "./coding/apiDoc";
 import { reactHooksChallenge } from "./coding/reactHooks";
 import { stateManagementChallenge } from "./coding/stateManagement";
+import { responsiveDesignChallenge } from "./coding/responsiveDesign";
+import { accessibilityAuditChallenge } from "./coding/accessibilityAudit";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -19,5 +21,7 @@ export const codingSteps: CodingChallenge[] = [
   databaseDesignChallenge,
   apiDocChallenge,
   reactHooksChallenge,
-  stateManagementChallenge
+  stateManagementChallenge,
+  responsiveDesignChallenge,
+  accessibilityAuditChallenge
 ];

@@ -7,6 +7,9 @@ import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
 import { dataStructuresChallenge } from "./problemSolving/dataStructures";
+import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
+import { cryptographyChallenge } from "./problemSolving/cryptography";
+import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   sudokuChallenge,
@@ -15,5 +18,8 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   chessPuzzleChallenge,
   logicGridChallenge,
   logicPuzzleChallenge,
-  dataStructuresChallenge
+  dataStructuresChallenge,
+  blockPuzzleChallenge,
+  cryptographyChallenge,
+  memoryTechniquesChallenge
 ];
