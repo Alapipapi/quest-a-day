@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getStepsForChallenge } from "@/data/challengeSteps";
@@ -6,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Import the new components
 import ChallengeHeader from "@/components/challenges/ChallengeHeader";
 import ProgressBar from "@/components/challenges/ProgressBar";
 import ChallengeInstructions from "@/components/challenges/ChallengeInstructions";

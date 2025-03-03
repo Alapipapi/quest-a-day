@@ -22,7 +22,7 @@ const VerificationItem = ({ index, item, isChecked, onClick, delay }: Verificati
       <div 
         className={`mt-0.5 min-w-5 h-5 rounded-full flex items-center justify-center ${
           isChecked
-            ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
+            ? "bg-[hsl(var(--completed-bg))] text-[hsl(var(--completed-text))]"
             : "bg-muted text-muted-foreground"
         }`}
       >

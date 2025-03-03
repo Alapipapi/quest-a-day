@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,7 +102,7 @@
   }
 }
 
-/* Add utility classes for completed challenge indicators */
+/* Add utility classes for completed challenge indicators with improved text handling */
 @layer utilities {
   .completed-badge {
     @apply bg-[hsl(var(--completed-bg))] text-[hsl(var(--completed-text))];
