@@ -60,7 +60,7 @@ const ChallengeCard = ({
           <div className="flex justify-between">
             <CategoryBadge category={category} className="mb-4" />
             {isCompleted && (
-              <div className="flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full">
+              <div className="flex items-center completed-badge px-2 py-1 rounded-full">
                 <Trophy className="h-3 w-3 mr-1" />
                 <span className="text-xs font-medium">Completed</span>
               </div>
@@ -105,7 +105,7 @@ const ChallengeCard = ({
                     }`}
                   >
                     {isCompleted ? (
-                      <Check className="h-4 w-4 text-white" />
+                      <Check className="h-4 w-4 text-white dark:text-gray-900" />
                     ) : (
                       <ChevronRight className="h-4 w-4 text-gray-400" />
                     )}

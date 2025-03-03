@@ -13,7 +13,7 @@ const ChallengeHeader = ({ title, category, isCompleted }: ChallengeHeaderProps)
       <div className="flex justify-between items-center">
         <h1 className="text-2xl sm:text-3xl font-bold text-foreground">{title}</h1>
         {isCompleted && (
-          <div className="flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full">
+          <div className="flex items-center completed-badge px-3 py-1 rounded-full">
             <Trophy className="h-4 w-4 mr-1" />
             <span className="text-sm font-medium">Completed</span>
           </div>

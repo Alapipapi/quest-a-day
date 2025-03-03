@@ -43,6 +43,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Adding completed challenge badge colors for light mode */
+    --completed-bg: 142 76% 36% / 0.1;
+    --completed-text: 142 76% 36%;
   }
 
   .dark {
@@ -82,6 +86,10 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Adding completed challenge badge colors for dark mode */
+    --completed-bg: 142 76% 36% / 0.2;
+    --completed-text: 142 70% 60%;
   }
 }
 
@@ -92,5 +100,12 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Add utility classes for completed challenge indicators */
+@layer utilities {
+  .completed-badge {
+    @apply bg-[hsl(var(--completed-bg))] text-[hsl(var(--completed-text))];
   }
 }
