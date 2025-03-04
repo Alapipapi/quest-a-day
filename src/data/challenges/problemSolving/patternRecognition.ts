@@ -22,7 +22,7 @@ export const patternRecognitionChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Visual Pattern Recognition Tutorial",
-      url: "https://www.lumosity.com/en/brain-games/logical-reasoning-games/"
+      url: "https://www.analyticsvidhya.com/blog/2023/02/a-complete-manual-to-pattern-recognition-in-machine-learning/"
     }
   ],
   verification: [
