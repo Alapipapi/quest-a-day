@@ -9,4 +9,5 @@ export interface StepDetails {
   instructions: string[];
   resources?: Array<Resource>;
   verification?: string[];
+  examples?: string[];
 }
