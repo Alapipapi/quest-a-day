@@ -1,9 +1,11 @@
+
 import { ExternalLink, Check, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { StepDetails, getStepsForChallenge } from "@/data/challengeSteps";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
 import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { toast } from "../ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 interface ChallengeDialogContentProps {
   id: number;
@@ -32,6 +34,7 @@ const ChallengeDialogContent = ({
   onViewDetails,
   handleResourceClick: propHandleResourceClick
 }: ChallengeDialogContentProps) => {
+  const navigate = useNavigate();
   const [steps, setSteps] = useState<StepDetails[]>(propSteps || []);
   const [isCompleted, setIsCompletedLocal] = useState(propIsCompleted || false);
 
@@ -68,7 +71,9 @@ const ChallengeDialogContent = ({
       onViewDetails();
     } else {
       // Navigate to challenge details page
-      window.location.href = `/challenge/${category}/${title.toLowerCase().replace(/\s+/g, '-')}`;
+      const formattedTitle = encodeURIComponent(title);
+      navigate(`/challenge/${category}/${formattedTitle}`);
+      setIsOpen(false);
     }
   };
 

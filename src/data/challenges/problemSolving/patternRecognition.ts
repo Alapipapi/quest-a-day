@@ -19,6 +19,10 @@ export const patternRecognitionChallenge: ProblemSolvingChallenge = {
     {
       title: "IQ Test Pattern Exercises",
       url: "https://intelligencetest.com/questions/pattern-recognition/index.html"
+    },
+    {
+      title: "Visual Pattern Recognition Tutorial",
+      url: "https://www.lumosity.com/en/brain-games/logical-reasoning-games/"
     }
   ],
   verification: [
@@ -27,5 +31,10 @@ export const patternRecognitionChallenge: ProblemSolvingChallenge = {
     "Created valid pattern sequence",
     "Applied concepts to practical examples",
     "Showed improvement in recognition speed"
+  ],
+  examples: [
+    "Find the next number: 2, 4, 8, 16, ...",
+    "Identify the pattern: Circle, Triangle, Square, Circle, Triangle, ...",
+    "Complete the sequence: A1, B3, C6, D10, ..."
   ]
 };

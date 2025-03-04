@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getStepsForChallenge } from "@/data/challengeSteps";
@@ -22,6 +23,10 @@ const ChallengeDetails = () => {
       const decodedTitle = decodeURIComponent(title);
       const challengeSteps = getStepsForChallenge(category, decodedTitle);
       setSteps(challengeSteps);
+      
+      if (challengeSteps.length === 0) {
+        console.error(`No steps found for challenge: ${category}/${decodedTitle}`);
+      }
     }
   }, [category, title]);
 
@@ -49,7 +54,7 @@ const ChallengeDetails = () => {
           <ChevronLeft className="h-4 w-4 mr-2" /> Back
         </Button>
         <div className="text-center py-16">
-          <p className="text-muted-foreground">Challenge details not found.</p>
+          <p className="text-muted-foreground">Challenge details not found. Please try another challenge.</p>
         </div>
       </div>
     );
@@ -83,6 +88,25 @@ const ChallengeDetails = () => {
           <ChallengeInstructions 
             instructions={challenge.instructions} 
           />
+
+          {challenge.examples && challenge.examples.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold text-foreground mb-4">Example Exercises</h2>
+              <ul className="space-y-2 pl-5 list-disc">
+                {challenge.examples.map((example, index) => (
+                  <motion.li 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    className="text-muted-foreground"
+                  >
+                    {example}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {challenge.resources && challenge.resources.length > 0 && (
             <ChallengeResources 
