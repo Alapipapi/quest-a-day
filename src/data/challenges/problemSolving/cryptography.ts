@@ -18,7 +18,7 @@ export const cryptographyChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Caesar Cipher Tutorial",
-      url: "https://www.dcode.fr/caesar-cipher"
+      url: "https://www.splunk.com/en_us/blog/learn/caesar-cipher.html"
     }
   ],
   verification: [
