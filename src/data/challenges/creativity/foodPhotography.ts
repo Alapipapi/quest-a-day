@@ -15,11 +15,11 @@ export const foodPhotographyChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Food Photography Tips for Beginners",
-      url: "https://www.foodbloggerpro.com/blog/food-photography-tips-for-beginners/"
+      url: "https://www.meghantelpner.com/guide-to-food-photography/"
     },
     {
       title: "Editing Food Photos Guide",
-      url: "https://pinchofyum.com/food-photography-editing-tips"
+      url: "https://www.befunky.com/learn/food-photography/"
     }
   ],
   verification: [
