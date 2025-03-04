@@ -50,22 +50,6 @@ const ChallengeDialogContent = ({
     }
   }, [id, category, title, propSteps]);
 
-  const handleCompleteChallenge = () => {
-    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    completedChallenges[id] = true;
-    completedChallenges[`${id}-progress`] = 100;
-    localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
-    
-    setIsCompletedLocal(true);
-    setIsCompleted(true);
-    setProgress(100);
-    
-    toast({
-      title: "Challenge Completed!",
-      description: `You've successfully completed the ${title} challenge.`,
-    });
-  };
-
   const handleViewDetails = () => {
     if (onViewDetails) {
       onViewDetails();
@@ -188,15 +172,6 @@ const ChallengeDialogContent = ({
           >
             Close
           </Button>
-          {!isCompleted && (
-            <Button
-              variant="default"
-              onClick={handleCompleteChallenge}
-              className="bg-primary"
-            >
-              Complete Challenge
-            </Button>
-          )}
           <Button 
             onClick={handleViewDetails}
           >
