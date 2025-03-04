@@ -19,7 +19,7 @@ export const pilatesCoreChallenge: FitnessChallenge = {
     },
     {
       title: "Pilates Breathing Techniques",
-      url: "https://www.verywellfit.com/pilates-breathing-techniques-4178930"
+      url: "https://www.pilatesanytime.com/blog/more/how-to-breathe-the-pilates-way"
     }
   ],
   verification: [
