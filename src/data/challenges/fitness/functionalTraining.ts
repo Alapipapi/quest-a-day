@@ -15,11 +15,11 @@ export const functionalTrainingChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Functional Training Guide",
-      url: "https://www.acefitness.org/education-and-resources/professional/expert-articles/5811/functional-training-for-what-purpose/"
+      url: "https://www.muscleandstrength.com/workouts/tactical-physique-strength-conditioning-workout"
     },
     {
       title: "Bodyweight Circuit Exercises",
-      url: "https://www.self.com/gallery/essential-bodyweight-exercises"
+      url: "https://justinthomasmiller.com/bodyweight-circuit-workout/"
     }
   ],
   verification: [
