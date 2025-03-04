@@ -15,11 +15,11 @@ export const storyWritingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Flash Fiction Writing Guide",
-      url: "https://www.masterclass.com/articles/how-to-write-flash-fiction"
+      url: "https://writers.com/how-to-write-flash-fiction"
     },
     {
       title: "Story Structure Basics",
-      url: "https://www.nownovel.com/blog/story-structure/"
+      url: "https://www.blurb.com/blog/what-is-story-structure/"
     }
   ],
   verification: [
