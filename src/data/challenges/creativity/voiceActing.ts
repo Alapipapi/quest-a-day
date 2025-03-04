@@ -15,11 +15,11 @@ export const voiceActingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Voice Acting Warm-ups",
-      url: "https://www.backstage.com/magazine/article/vocal-warm-ups-voice-actors-9126/"
+      url: "https://www.voicecrafters.com/blog/5-vocal-warm-up-routines-for-voice-actors/"
     },
     {
       title: "Character Voice Development",
-      url: "https://www.voices.com/blog/developing-character-voices/"
+      url: "https://www.writersdigest.com/write-better-fiction/how-do-i-develop-a-characters-voice"
     }
   ],
   verification: [
