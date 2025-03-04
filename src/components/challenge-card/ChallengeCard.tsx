@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Dialog } from "@/components/ui/dialog";
-import { motion } from "framer-motion";
 import ChallengeCardContainer from "./ChallengeCardContainer";
 import ChallengeCardBadges from "./ChallengeCardBadges";
 import ChallengeCardInfo from "./ChallengeCardInfo";
@@ -54,6 +53,7 @@ const ChallengeCard = ({
           setIsOpen={setIsOpen}
           setIsCompleted={setIsCompleted}
           setProgress={setProgress}
+          isCompleted={isCompleted}
         />
       </Dialog>
     </>

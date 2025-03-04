@@ -3,24 +3,94 @@ import { ExternalLink, Check, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { StepDetails } from "@/data/challengeSteps";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
+import { Dispatch, SetStateAction, useState, useEffect } from "react";
+import { toast } from "../ui/use-toast";
+import { getChallengeSteps } from "@/data/challengeSteps";
 
 interface ChallengeDialogContentProps {
+  id: number;
   title: string;
-  isCompleted: boolean;
-  steps: StepDetails[];
-  onClose: () => void;
-  onViewDetails: () => void;
-  handleResourceClick: (e: React.MouseEvent<HTMLAnchorElement>, url: string) => void;
+  category: "coding" | "fitness" | "creativity" | "problem-solving";
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  setIsCompleted: Dispatch<SetStateAction<boolean>>;
+  setProgress: Dispatch<SetStateAction<number>>;
+  isCompleted?: boolean;
+  steps?: StepDetails[];
+  onClose?: () => void;
+  onViewDetails?: () => void;
+  handleResourceClick?: (e: React.MouseEvent<HTMLAnchorElement>, url: string) => void;
 }
 
 const ChallengeDialogContent = ({
+  id,
   title,
-  isCompleted,
-  steps,
+  category,
+  setIsOpen,
+  setIsCompleted,
+  setProgress,
+  isCompleted: propIsCompleted,
+  steps: propSteps,
   onClose,
   onViewDetails,
-  handleResourceClick
+  handleResourceClick: propHandleResourceClick
 }: ChallengeDialogContentProps) => {
+  const [steps, setSteps] = useState<StepDetails[]>(propSteps || []);
+  const [isCompleted, setIsCompletedLocal] = useState(propIsCompleted || false);
+
+  useEffect(() => {
+    // Check if this challenge is completed
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    setIsCompletedLocal(!!completedChallenges[id]);
+
+    // Load steps if not provided as props
+    if (!propSteps) {
+      const loadedSteps = getChallengeSteps(category, id);
+      setSteps(loadedSteps || []);
+    }
+  }, [id, category, propSteps]);
+
+  const handleCompleteChallenge = () => {
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    completedChallenges[id] = true;
+    completedChallenges[`${id}-progress`] = 100;
+    localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+    
+    setIsCompletedLocal(true);
+    setIsCompleted(true);
+    setProgress(100);
+    
+    toast({
+      title: "Challenge Completed!",
+      description: `You've successfully completed the ${title} challenge.`,
+    });
+  };
+
+  const handleViewDetails = () => {
+    if (onViewDetails) {
+      onViewDetails();
+    } else {
+      // Navigate to challenge details page
+      window.location.href = `/challenge/${category}/${title.toLowerCase().replace(/\s+/g, '-')}`;
+    }
+  };
+
+  const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    if (propHandleResourceClick) {
+      propHandleResourceClick(e, url);
+    } else {
+      e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleClose = () => {
+    if (onClose) {
+      onClose();
+    } else {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
       <DialogHeader>
@@ -59,13 +129,13 @@ const ChallengeDialogContent = ({
                 <div>
                   <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Instructions:</h4>
                   <ul className="list-disc pl-5 space-y-2">
-                    {steps[0].instructions.map((instruction, i) => (
+                    {steps[0]?.instructions?.map((instruction, i) => (
                       <li key={i} className="text-gray-600 dark:text-gray-300">{instruction}</li>
                     ))}
                   </ul>
                 </div>
 
-                {steps[0].resources && steps[0].resources.length > 0 && (
+                {steps[0]?.resources && steps[0].resources.length > 0 && (
                   <div>
                     <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Helpful Resources:</h4>
                     <ul className="list-disc pl-5 space-y-2">
@@ -84,7 +154,7 @@ const ChallengeDialogContent = ({
                   </div>
                 )}
 
-                {steps[0].verification && (
+                {steps[0]?.verification && (
                   <div>
                     <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Verification Checklist:</h4>
                     <ul className="list-disc pl-5 space-y-2">
@@ -111,12 +181,21 @@ const ChallengeDialogContent = ({
         <div className="flex gap-2">
           <Button 
             variant="outline"
-            onClick={onClose}
+            onClick={handleClose}
           >
             Close
           </Button>
+          {!isCompleted && (
+            <Button
+              variant="default"
+              onClick={handleCompleteChallenge}
+              className="bg-primary"
+            >
+              Complete Challenge
+            </Button>
+          )}
           <Button 
-            onClick={onViewDetails}
+            onClick={handleViewDetails}
           >
             View Details
           </Button>
