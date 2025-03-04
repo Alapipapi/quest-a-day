@@ -14,11 +14,11 @@ export const microanimationsChallenge: CodingChallenge = {
   resources: [
     {
       title: "Microanimation Principles",
-      url: "https://uxdesign.cc/micro-interactions-why-when-and-how-9cd6e2f1e93c"
+      url: "https://hike.one/insights/why-use-micro-animations-in-your-design"
     },
     {
       title: "Framer Motion Documentation",
-      url: "https://www.framer.com/motion/"
+      url: "https://framermotion.framer.website/"
     }
   ],
   verification: [
