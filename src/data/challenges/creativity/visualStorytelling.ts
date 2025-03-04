@@ -15,11 +15,11 @@ export const visualStorytellingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Visual Storytelling Principles",
-      url: "https://www.canva.com/learn/visual-storytelling/"
+      url: "https://www.indeed.com/career-advice/career-development/visual-storytelling"
     },
     {
       title: "Sequential Art Techniques",
-      url: "https://www.makingcomics.com/2014/02/01/three-panel-principles-good-storytelling/"
+      url: "https://www.vaia.com/en-us/explanations/art-and-design/illustration-in-art/sequential-art/"
     }
   ],
   verification: [
