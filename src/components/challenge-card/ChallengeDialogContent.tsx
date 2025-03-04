@@ -1,11 +1,9 @@
-
 import { ExternalLink, Check, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
-import { StepDetails } from "@/data/challengeSteps";
+import { StepDetails, getStepsForChallenge } from "@/data/challengeSteps";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
 import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { toast } from "../ui/use-toast";
-import { getChallengeSteps } from "@/data/challengeSteps";
 
 interface ChallengeDialogContentProps {
   id: number;
@@ -44,10 +42,10 @@ const ChallengeDialogContent = ({
 
     // Load steps if not provided as props
     if (!propSteps) {
-      const loadedSteps = getChallengeSteps(category, id);
+      const loadedSteps = getStepsForChallenge(category, title);
       setSteps(loadedSteps || []);
     }
-  }, [id, category, propSteps]);
+  }, [id, category, title, propSteps]);
 
   const handleCompleteChallenge = () => {
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
