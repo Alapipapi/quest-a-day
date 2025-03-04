@@ -10,6 +10,7 @@ import { dataStructuresChallenge } from "./problemSolving/dataStructures";
 import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
 import { cryptographyChallenge } from "./problemSolving/cryptography";
 import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
+import { patternRecognitionChallenge } from "./problemSolving/patternRecognition";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   sudokuChallenge,
@@ -21,5 +22,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   dataStructuresChallenge,
   blockPuzzleChallenge,
   cryptographyChallenge,
-  memoryTechniquesChallenge
+  memoryTechniquesChallenge,
+  patternRecognitionChallenge
 ];

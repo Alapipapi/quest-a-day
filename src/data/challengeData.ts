@@ -1,4 +1,3 @@
-
 export interface Challenge {
   id: number;
   title: string;
@@ -103,6 +102,14 @@ const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 42,
+    title: "UI Microanimations",
+    description: "Create engaging microanimations to enhance user experience in a web application.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   }
 ];
 
@@ -187,6 +194,14 @@ const fitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Medium",
     timeEstimate: "25 minutes",
+  },
+  {
+    id: 43,
+    title: "Functional Fitness Circuit",
+    description: "Complete a functional fitness circuit that improves everyday movement patterns and strength.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "40 minutes",
   }
 ];
 
@@ -271,6 +286,14 @@ const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "1-2 hours",
+  },
+  {
+    id: 44,
+    title: "Visual Storytelling",
+    description: "Create a visual narrative that tells a complete story without using any words.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   }
 ];
 
@@ -354,6 +377,14 @@ const problemSolvingChallenges: Challenge[] = [
     description: "Learn and practice memory techniques to improve retention and recall ability.",
     category: "problem-solving",
     difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 45,
+    title: "Pattern Recognition Master",
+    description: "Improve your pattern recognition skills through a series of increasingly complex exercises.",
+    category: "problem-solving",
+    difficulty: "Hard",
     timeEstimate: "1-2 hours",
   }
 ];

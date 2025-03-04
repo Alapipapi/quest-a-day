@@ -11,6 +11,7 @@ import { reactHooksChallenge } from "./coding/reactHooks";
 import { stateManagementChallenge } from "./coding/stateManagement";
 import { responsiveDesignChallenge } from "./coding/responsiveDesign";
 import { accessibilityAuditChallenge } from "./coding/accessibilityAudit";
+import { microanimationsChallenge } from "./coding/microanimations";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -23,5 +24,6 @@ export const codingSteps: CodingChallenge[] = [
   reactHooksChallenge,
   stateManagementChallenge,
   responsiveDesignChallenge,
-  accessibilityAuditChallenge
+  accessibilityAuditChallenge,
+  microanimationsChallenge
 ];
