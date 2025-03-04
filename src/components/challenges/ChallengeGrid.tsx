@@ -1,15 +1,6 @@
-
 import { motion } from "framer-motion";
 import ChallengeCard from "@/components/ChallengeCard";
-
-interface Challenge {
-  id: number;
-  title: string;
-  description: string;
-  category: "coding" | "fitness" | "creativity" | "problem-solving";
-  difficulty: "Easy" | "Medium" | "Hard";
-  timeEstimate: string;
-}
+import { Challenge } from "@/data/types/challenge";
 
 interface ChallengeGridProps {
   filteredChallenges: Challenge[];

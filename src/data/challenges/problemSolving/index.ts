@@ -1,0 +1,93 @@
+
+import { Challenge } from "../../types/challenge";
+
+export const problemSolvingChallenges: Challenge[] = [
+  {
+    id: 4,
+    title: "Logic Puzzle Master",
+    description: "Solve a complex logic puzzle involving pattern recognition and deductive reasoning.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 10,
+    title: "Solve Sudoku Puzzle",
+    description: "Complete a medium-difficulty Sudoku puzzle while practicing logical thinking.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "30 minutes",
+  },
+  {
+    id: 13,
+    title: "Algorithm Challenge",
+    description: "Solve three algorithmic problems focusing on arrays and string manipulation.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 18,
+    title: "Chess Puzzle Challenge",
+    description: "Solve a series of chess puzzles to improve tactical thinking and pattern recognition.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 22,
+    title: "Logic Grid Puzzle",
+    description: "Solve a complex logic grid puzzle requiring deductive reasoning and systematic thinking.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 29,
+    title: "Data Structures Mastery",
+    description: "Implement and use various data structures to solve algorithmic problems.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 30,
+    title: "Data Analysis Challenge",
+    description: "Analyze a dataset to clean data, create visualizations, and derive meaningful insights.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 39,
+    title: "Block Puzzle Challenge",
+    description: "Solve 3D spatial reasoning puzzles to improve visualization and problem-solving skills.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 40,
+    title: "Basic Cryptography",
+    description: "Learn and apply basic cryptography techniques to encode and decode messages.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 41,
+    title: "Memory Enhancement Techniques",
+    description: "Learn and practice memory techniques to improve retention and recall ability.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 45,
+    title: "Pattern Recognition Master",
+    description: "Improve your pattern recognition skills through a series of increasingly complex exercises.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "1-2 hours",
+  }
+];

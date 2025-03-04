@@ -1,0 +1,93 @@
+
+import { Challenge } from "../../types/challenge";
+
+export const fitnessChallenges: Challenge[] = [
+  {
+    id: 2,
+    title: "30-Minute HIIT Workout",
+    description: "Complete a high-intensity interval training workout focusing on full-body exercises.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "30 minutes",
+  },
+  {
+    id: 6,
+    title: "Yoga Flow Session",
+    description: "Complete a beginner-friendly yoga flow session focusing on flexibility and mindfulness.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "20 minutes",
+  },
+  {
+    id: 9,
+    title: "Core Strength Workout",
+    description: "Complete a core-focused workout routine to build strength and stability.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "25 minutes",
+  },
+  {
+    id: 14,
+    title: "Endurance Running",
+    description: "Complete a progressive running session with proper warm-up and cool-down.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 16,
+    title: "Morning Yoga Flow",
+    description: "Start your day with an energizing morning yoga routine focusing on stretching and breathing.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "20 minutes",
+  },
+  {
+    id: 21,
+    title: "Interval Sprint Training",
+    description: "Complete a high-intensity sprint workout with proper warm-up and cool-down.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "40 minutes",
+  },
+  {
+    id: 27,
+    title: "Full Body Strength Training",
+    description: "Complete a comprehensive strength training workout targeting all major muscle groups.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 33,
+    title: "Warm-up Routine",
+    description: "Learn and practice a proper warm-up routine to prepare for exercise and prevent injuries.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "15 minutes",
+  },
+  {
+    id: 34,
+    title: "Pilates Core Workout",
+    description: "Complete a pilates-based core workout focusing on control and proper breathing technique.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "30 minutes",
+  },
+  {
+    id: 35,
+    title: "Full-Body Mobility Routine",
+    description: "Improve joint mobility and flexibility with a comprehensive mobility routine.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "25 minutes",
+  },
+  {
+    id: 43,
+    title: "Functional Fitness Circuit",
+    description: "Complete a functional fitness circuit that improves everyday movement patterns and strength.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "40 minutes",
+  }
+];

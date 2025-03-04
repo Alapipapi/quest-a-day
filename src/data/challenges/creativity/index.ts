@@ -1,0 +1,93 @@
+
+import { Challenge } from "../../types/challenge";
+
+export const creativityChallenges: Challenge[] = [
+  {
+    id: 3,
+    title: "Daily Sketch Challenge",
+    description: "Draw an object from your surroundings using only basic shapes and lines.",
+    category: "creativity",
+    difficulty: "Easy",
+    timeEstimate: "15-30 minutes",
+  },
+  {
+    id: 7,
+    title: "Digital Art Creation",
+    description: "Create a digital artwork using basic tools in a drawing application of your choice.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 12,
+    title: "Watercolor Painting",
+    description: "Create a simple landscape painting using basic watercolor techniques.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 17,
+    title: "Abstract Art Creation",
+    description: "Create an abstract artwork using any medium, focusing on shapes, colors, and composition.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 19,
+    title: "Mobile App UI Design",
+    description: "Design a mobile app interface using Figma or similar design tools.",
+    category: "creativity",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 23,
+    title: "Nature Photography",
+    description: "Capture and edit three nature photographs focusing on composition and lighting.",
+    category: "creativity",
+    difficulty: "Easy",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 28,
+    title: "Digital Music Production",
+    description: "Create a short musical piece using digital audio workstation software.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 36,
+    title: "Food Photography Basics",
+    description: "Learn and practice food photography techniques with proper styling and lighting.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2 hours",
+  },
+  {
+    id: 37,
+    title: "Flash Fiction Challenge",
+    description: "Write a complete story in under 500 words with a clear beginning, middle, and end.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 38,
+    title: "Voice Acting Fundamentals",
+    description: "Learn and practice basic voice acting techniques to create character voices.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 44,
+    title: "Visual Storytelling",
+    description: "Create a visual narrative that tells a complete story without using any words.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  }
+];
