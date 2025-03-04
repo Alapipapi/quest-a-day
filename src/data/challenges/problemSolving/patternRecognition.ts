@@ -14,11 +14,11 @@ export const patternRecognitionChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Pattern Recognition Guide",
-      url: "https://www.verywellmind.com/what-is-pattern-recognition-2795946"
+      url: "https://codewave.com/insights/pattern-recognition-machine-learning/"
     },
     {
       title: "IQ Test Pattern Exercises",
-      url: "https://www.123test.com/pattern-recognition-test/"
+      url: "https://intelligencetest.com/questions/pattern-recognition/index.html"
     }
   ],
   verification: [
