@@ -14,11 +14,11 @@ export const blockPuzzleChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Spatial Reasoning Guide",
-      url: "https://www.cuemath.com/learn/spatial-reasoning/"
+      url: "https://www.matrix.edu.au/the-ultimate-guide-to-spatial-reasoning-thinking-skills/"
     },
     {
       title: "3D Puzzle Techniques",
-      url: "https://www.puzzlemaster.ca/puzzle-solving-techniques/"
+      url: "https://artist-3d.com/how-to-solve-a-3d-puzzle/"
     }
   ],
   verification: [
