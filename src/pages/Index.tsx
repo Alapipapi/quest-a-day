@@ -36,40 +36,12 @@ const Index = () => {
     
     setFilteredChallenges(filtered);
 
-    // Get completed challenges - check both formats
+    // Get completed challenges
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    // Count challenges marked as completed (exclude progress entries)
-    const completedCount = Object.keys(completedChallenges).filter(key => 
-      !key.includes("-progress") && 
-      !key.includes("-verification")
-    ).length;
-    
-    console.log(`Found ${completedCount} completed challenges`);
-    setCompletedChallengesCount(completedCount);
-    
-    // Force a re-check of the completion status
-    window.dispatchEvent(new Event('challengeStatusChanged'));
-    
+    setCompletedChallengesCount(
+      Object.keys(completedChallenges).filter(key => !key.includes("-progress")).length
+    );
   }, [selectedCategory, searchQuery, difficultyFilter]);
-
-  // Listen for the custom event to update completed challenges count
-  useEffect(() => {
-    const handleStatusChange = () => {
-      const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-      const completedCount = Object.keys(completedChallenges).filter(key => 
-        !key.includes("-progress") && 
-        !key.includes("-verification")
-      ).length;
-      
-      setCompletedChallengesCount(completedCount);
-    };
-    
-    window.addEventListener('challengeStatusChanged', handleStatusChange);
-    
-    return () => {
-      window.removeEventListener('challengeStatusChanged', handleStatusChange);
-    };
-  }, []);
 
   const categories = [
     { id: "all", label: "All Challenges" },

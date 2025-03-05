@@ -34,13 +34,6 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     }
   }, [category, title, steps]);
 
-  // Helper function to dispatch challenge status changed event
-  const notifyStatusChange = () => {
-    // Use a custom event to notify other components about the change
-    const event = new Event('challengeStatusChanged');
-    window.dispatchEvent(event);
-  };
-
   const toggleCompletion = () => {
     if (!category || !title) return;
     
@@ -81,7 +74,6 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
-    notifyStatusChange();
   };
 
   // This function is now only used internally by toggleVerificationItem
@@ -107,7 +99,6 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
-    notifyStatusChange();
   };
 
   const toggleVerificationItem = (index: number) => {
@@ -131,7 +122,6 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     completedChallenges[`${key}-verification`] = newVerificationStatus;
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
-    notifyStatusChange();
   };
 
   return {
