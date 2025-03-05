@@ -8,9 +8,6 @@ interface ChallengeHeaderProps {
 }
 
 const ChallengeHeader = ({ title, category, isCompleted }: ChallengeHeaderProps) => {
-  // Debug completion status
-  console.log(`ChallengeHeader: title=${title}, isCompleted=${isCompleted}`);
-  
   return (
     <div className="bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/5 dark:to-primary/0 p-6 sm:p-8">
       <div className="flex justify-between items-center">

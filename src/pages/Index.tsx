@@ -16,19 +16,6 @@ const Index = () => {
   const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
   const [completedChallengesCount, setCompletedChallengesCount] = useState(0);
 
-  // Count completed challenges in both formats
-  const countCompletedChallenges = () => {
-    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    // Count completed challenges - filter out progress and verification entries
-    const count = Object.keys(completedChallenges).filter(key => 
-      !key.includes("-progress") && 
-      !key.includes("-verification")
-    ).length;
-    
-    setCompletedChallengesCount(count);
-    console.log(`Found ${count} completed challenges`);
-  };
-
   useEffect(() => {
     let filtered = CHALLENGES;
     
@@ -50,20 +37,10 @@ const Index = () => {
     setFilteredChallenges(filtered);
 
     // Get completed challenges
-    countCompletedChallenges();
-    
-    // Listen for storage changes
-    const handleStorageChange = () => {
-      countCompletedChallenges();
-    };
-    
-    window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('challengeStatusChanged', handleStorageChange);
-    
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('challengeStatusChanged', handleStorageChange);
-    };
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    setCompletedChallengesCount(
+      Object.keys(completedChallenges).filter(key => !key.includes("-progress")).length
+    );
   }, [selectedCategory, searchQuery, difficultyFilter]);
 
   const categories = [
