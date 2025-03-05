@@ -88,6 +88,9 @@ const ChallengeDialogContent = ({
     }
   };
 
+  // Add console debug to help track completion status
+  console.log(`Dialog for ${title}: isCompleted=${isCompleted}, propIsCompleted=${propIsCompleted}`);
+
   return (
     <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
       <DialogHeader>
