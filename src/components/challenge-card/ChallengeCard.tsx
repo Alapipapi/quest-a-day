@@ -20,14 +20,35 @@ const ChallengeCard = ({
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Check if this challenge is completed
+    // Check both ways - via id (old format) and via category-title (new format)
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    setIsCompleted(!!completedChallenges[id]);
+    const keyByTitle = `${category}-${title}`;
     
-    // Get progress if any
-    const progressVal = completedChallenges[`${id}-progress`] || 0;
-    setProgress(progressVal);
-  }, [id]);
+    // Check if this challenge is completed (either by id or by title)
+    const completed = !!completedChallenges[id] || !!completedChallenges[keyByTitle];
+    setIsCompleted(completed);
+    
+    // Get progress from either format
+    const progressById = completedChallenges[`${id}-progress`] || 0;
+    const progressByTitle = completedChallenges[`${keyByTitle}-progress`] || 0;
+    setProgress(Math.max(progressById, progressByTitle));
+    
+    // Add event listener for challenge completion updates
+    const handleChallengeUpdate = () => {
+      const updatedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+      const isNowCompleted = !!updatedChallenges[id] || !!updatedChallenges[keyByTitle];
+      setIsCompleted(isNowCompleted);
+      
+      const updatedProgressById = updatedChallenges[`${id}-progress`] || 0;
+      const updatedProgressByTitle = updatedChallenges[`${keyByTitle}-progress`] || 0;
+      setProgress(Math.max(updatedProgressById, updatedProgressByTitle));
+    };
+
+    window.addEventListener("challengeUpdated", handleChallengeUpdate);
+    return () => {
+      window.removeEventListener("challengeUpdated", handleChallengeUpdate);
+    };
+  }, [id, category, title]);
 
   return (
     <>

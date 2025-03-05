@@ -16,6 +16,18 @@ const Index = () => {
   const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
   const [completedChallengesCount, setCompletedChallengesCount] = useState(0);
 
+  // Function to check for completed challenges and update count
+  const updateCompletedChallenges = () => {
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    
+    // Filter out progress tracking keys (those with -progress suffix)
+    const completedKeys = Object.keys(completedChallenges).filter(
+      key => !key.includes("-progress") && !key.includes("-verification")
+    );
+    
+    setCompletedChallengesCount(completedKeys.length);
+  };
+
   useEffect(() => {
     let filtered = CHALLENGES;
     
@@ -36,12 +48,37 @@ const Index = () => {
     
     setFilteredChallenges(filtered);
 
-    // Get completed challenges
-    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    setCompletedChallengesCount(
-      Object.keys(completedChallenges).filter(key => !key.includes("-progress")).length
-    );
+    // Update completed challenges count
+    updateCompletedChallenges();
+    
+    // Add event listener for challenge updates
+    const handleChallengeUpdate = () => {
+      updateCompletedChallenges();
+    };
+    
+    window.addEventListener("challengeUpdated", handleChallengeUpdate);
+    
+    return () => {
+      window.removeEventListener("challengeUpdated", handleChallengeUpdate);
+    };
   }, [selectedCategory, searchQuery, difficultyFilter]);
+
+  // Add a manual listener for storage events
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === "completedChallenges") {
+        updateCompletedChallenges();
+        // Dispatch a custom event for other components to update
+        window.dispatchEvent(new Event("challengeUpdated"));
+      }
+    };
+    
+    window.addEventListener("storage", handleStorageChange);
+    
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const categories = [
     { id: "all", label: "All Challenges" },

@@ -39,16 +39,25 @@ const ChallengeDialogContent = ({
   const [isCompleted, setIsCompletedLocal] = useState(propIsCompleted || false);
 
   useEffect(() => {
-    // Check if this challenge is completed
+    // Check if this challenge is completed in both formats
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-    setIsCompletedLocal(!!completedChallenges[id]);
+    const keyByTitle = `${category}-${title}`;
+    const completed = !!completedChallenges[id] || !!completedChallenges[keyByTitle];
+    
+    // Update local state
+    setIsCompletedLocal(completed);
+    
+    // Also update parent state if needed
+    if (completed !== propIsCompleted) {
+      setIsCompleted(completed);
+    }
 
     // Load steps if not provided as props
     if (!propSteps) {
       const loadedSteps = getStepsForChallenge(category, title);
       setSteps(loadedSteps || []);
     }
-  }, [id, category, title, propSteps]);
+  }, [id, category, title, propSteps, propIsCompleted, setIsCompleted]);
 
   const handleViewDetails = () => {
     if (onViewDetails) {
