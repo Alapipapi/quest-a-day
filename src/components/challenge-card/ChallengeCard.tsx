@@ -19,17 +19,20 @@ const ChallengeCard = ({
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // Fix: This function checks both formats of completion tracking
+  // This function checks both formats of completion tracking
   const checkCompletionStatus = () => {
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    
     // Check by ID (old format)
     const completedById = !!completedChallenges[id];
+    
     // Check by category-title (new format)
     const key = `${category}-${encodeURIComponent(title)}`;
     const completedByKey = !!completedChallenges[key];
     
     // Use either format
-    setIsCompleted(completedById || completedByKey);
+    const isCompleted = completedById || completedByKey;
+    setIsCompleted(isCompleted);
     
     // Get progress from either format
     const progressById = completedChallenges[`${id}-progress`] || 0;
