@@ -16,11 +16,11 @@ export const bodyweightStrengthChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Advanced Bodyweight Exercises",
-      url: "https://www.nerdfitness.com/blog/advanced-bodyweight-workout-circuit/"
+      url: "https://www.getsweatgo.com/workout/guides/best-advanced-bodyweight-exercises-workout-for-core-upper-legs-388"
     },
     {
       title: "Proper Form Guide",
-      url: "https://www.menshealth.com/fitness/a25438795/bodyweight-exercises/"
+      url: "https://www.kaylaitsines.com/blogs/exercises/bodyweight-exercise-mistakes"
     }
   ],
   verification: [
