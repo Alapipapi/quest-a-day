@@ -12,6 +12,9 @@ import { stateManagementChallenge } from "./coding/stateManagement";
 import { responsiveDesignChallenge } from "./coding/responsiveDesign";
 import { accessibilityAuditChallenge } from "./coding/accessibilityAudit";
 import { microanimationsChallenge } from "./coding/microanimations";
+import { authSystemChallenge } from "./coding/authSystem";
+import { progressiveWebAppChallenge } from "./coding/progressiveWebApp";
+import { graphqlIntegrationChallenge } from "./coding/graphqlIntegration";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -25,5 +28,8 @@ export const codingSteps: CodingChallenge[] = [
   stateManagementChallenge,
   responsiveDesignChallenge,
   accessibilityAuditChallenge,
-  microanimationsChallenge
+  microanimationsChallenge,
+  authSystemChallenge,
+  progressiveWebAppChallenge,
+  graphqlIntegrationChallenge
 ];

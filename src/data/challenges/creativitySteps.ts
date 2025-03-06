@@ -11,6 +11,9 @@ import { foodPhotographyChallenge } from "./creativity/foodPhotography";
 import { storyWritingChallenge } from "./creativity/storyWriting";
 import { voiceActingChallenge } from "./creativity/voiceActing";
 import { visualStorytellingChallenge } from "./creativity/visualStorytelling";
+import { characterDesignChallenge } from "./creativity/characterDesign";
+import { poetryWritingChallenge } from "./creativity/poetryWriting";
+import { diyCraftChallenge } from "./creativity/diyCraft";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -23,5 +26,8 @@ export const creativitySteps: CreativityChallenge[] = [
   foodPhotographyChallenge,
   storyWritingChallenge,
   voiceActingChallenge,
-  visualStorytellingChallenge
+  visualStorytellingChallenge,
+  characterDesignChallenge,
+  poetryWritingChallenge,
+  diyCraftChallenge
 ];

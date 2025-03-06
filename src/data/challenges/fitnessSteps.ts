@@ -11,6 +11,8 @@ import { strengthTrainingChallenge } from "./fitness/strengthTraining";
 import { pilatesCoreChallenge } from "./fitness/pilatesCore";
 import { mobilityRoutineChallenge } from "./fitness/mobilityRoutine";
 import { functionalTrainingChallenge } from "./fitness/functionalTraining";
+import { bodyweightStrengthChallenge } from "./fitness/bodyweightStrength";
+import { activeRecoveryChallenge } from "./fitness/activeRecovery";
 
 export const fitnessSteps: FitnessChallenge[] = [
   yogaFlowChallenge,
@@ -23,5 +25,7 @@ export const fitnessSteps: FitnessChallenge[] = [
   strengthTrainingChallenge,
   pilatesCoreChallenge,
   mobilityRoutineChallenge,
-  functionalTrainingChallenge
+  functionalTrainingChallenge,
+  bodyweightStrengthChallenge,
+  activeRecoveryChallenge
 ];

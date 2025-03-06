@@ -8,6 +8,7 @@ import { toast } from "../ui/use-toast";
 import ChallengeDialogHeader from "../challenge-dialog/ChallengeDialogHeader";
 import ChallengeContentCard from "../challenge-dialog/ChallengeContentCard";
 import ChallengeDialogFooter from "../challenge-dialog/ChallengeDialogFooter";
+import { CHALLENGES } from "@/data/challengeData";
 
 interface ChallengeDialogContentProps {
   id: number;
@@ -39,8 +40,15 @@ const ChallengeDialogContent = ({
   const navigate = useNavigate();
   const [steps, setSteps] = useState<StepDetails[]>(propSteps || []);
   const [isCompleted, setIsCompletedLocal] = useState(propIsCompleted || false);
+  const [difficulty, setDifficulty] = useState<string | undefined>(undefined);
 
   useEffect(() => {
+    // Find difficulty from challenges
+    const challenge = CHALLENGES.find(c => c.id === id || c.title === title);
+    if (challenge) {
+      setDifficulty(challenge.difficulty);
+    }
+
     // Check if this challenge is completed in both formats
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
     const keyByTitle = `${category}-${title}`;
@@ -91,7 +99,11 @@ const ChallengeDialogContent = ({
 
   return (
     <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
-      <ChallengeDialogHeader title={title} />
+      <ChallengeDialogHeader 
+        title={title} 
+        category={category} 
+        difficulty={difficulty}
+      />
       
       <div className="mt-4">
         <ChallengeContentCard
