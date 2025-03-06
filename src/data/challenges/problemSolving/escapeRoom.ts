@@ -16,11 +16,11 @@ export const escapeRoomChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Virtual Escape Rooms",
-      url: "https://escaperoomsupplier.com/free-virtual-escape-room"
+      url: "https://teambuilding.com/blog/virtual-escape-rooms"
     },
     {
       title: "Problem-Solving Strategies",
-      url: "https://www.indeed.com/career-advice/career-development/problem-solving-skills"
+      url: "https://excitingescapes.co.uk/blog/escape-room-strategies-our-7-tips-to-solve-any-puzzle/"
     }
   ],
   verification: [
