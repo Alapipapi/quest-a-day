@@ -14,11 +14,11 @@ export const activeRecoveryChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Active Recovery Benefits",
-      url: "https://www.healthline.com/health/exercise-fitness/active-recovery"
+      url: "https://www.healthline.com/health/active-recovery"
     },
     {
       title: "Foam Rolling Techniques",
-      url: "https://www.self.com/gallery/foam-rolling-moves"
+      url: "https://www.healthline.com/health/fitness-exercise/foam-rolling-how-to"
     }
   ],
   verification: [
