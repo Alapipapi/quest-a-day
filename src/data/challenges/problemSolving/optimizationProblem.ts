@@ -20,7 +20,7 @@ export const optimizationProblemChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Resource Allocation Methods",
-      url: "https://www.investopedia.com/terms/r/resource-allocation.asp"
+      url: "https://www.d-tools.com/resource-center/operations-management/resource-allocation-project-management"
     }
   ],
   verification: [
