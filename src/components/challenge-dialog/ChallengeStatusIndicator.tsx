@@ -8,7 +8,7 @@ interface ChallengeStatusIndicatorProps {
 
 const ChallengeStatusIndicator = ({ isCompleted, title }: ChallengeStatusIndicatorProps) => {
   return (
-    <div className="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-800">
+    <div className="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-800 first:rounded-t-md last:rounded-b-md">
       <div 
         className={`h-6 w-6 rounded-full flex items-center justify-center border ${
           isCompleted 
