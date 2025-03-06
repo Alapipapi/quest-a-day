@@ -9,7 +9,7 @@ interface ChallengeDialogHeaderProps {
 
 const ChallengeDialogHeader = ({ title, category, difficulty }: ChallengeDialogHeaderProps) => {
   return (
-    <DialogHeader>
+    <DialogHeader className="pb-4 border-b mb-2">
       <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
       <DialogDescription className="text-base mt-2">
         {category && difficulty 
