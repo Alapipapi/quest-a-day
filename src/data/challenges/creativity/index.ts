@@ -89,5 +89,30 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
-  }
+  },
+  // New challenges
+  {
+    id: 48,
+    title: "Character Design Workshop",
+    description: "Create original character designs with unique visual traits and backstories.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 53,
+    title: "Poetry Writing Session",
+    description: "Write three poems using different structures and themes to express your thoughts.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 54,
+    title: "DIY Craft Project",
+    description: "Create a handmade craft project using materials you already have at home.",
+    category: "creativity",
+    difficulty: "Easy",
+    timeEstimate: "2-3 hours",
+  },
 ];

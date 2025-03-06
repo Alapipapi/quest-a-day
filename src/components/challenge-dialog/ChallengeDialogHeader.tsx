@@ -3,14 +3,18 @@ import { DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
 
 interface ChallengeDialogHeaderProps {
   title: string;
+  category?: string;
+  difficulty?: string;
 }
 
-const ChallengeDialogHeader = ({ title }: ChallengeDialogHeaderProps) => {
+const ChallengeDialogHeader = ({ title, category, difficulty }: ChallengeDialogHeaderProps) => {
   return (
     <DialogHeader>
       <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
       <DialogDescription className="text-base mt-2">
-        Complete the challenge
+        {category && difficulty 
+          ? `Complete this ${difficulty.toLowerCase()} ${category} challenge`
+          : "Complete the challenge"}
       </DialogDescription>
     </DialogHeader>
   );

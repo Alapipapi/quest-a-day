@@ -89,5 +89,30 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Hard",
     timeEstimate: "1-2 hours",
-  }
+  },
+  // New challenges
+  {
+    id: 49,
+    title: "Optimization Problem",
+    description: "Solve a resource allocation problem to find the most efficient distribution of limited resources.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 50,
+    title: "Escape Room Challenge",
+    description: "Solve a virtual escape room with multiple puzzles requiring different thinking approaches.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1 hour",
+  },
+  {
+    id: 56,
+    title: "Systems Thinking Workshop",
+    description: "Analyze a complex system and identify key components, relationships, and leverage points.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "2-3 hours",
+  },
 ];

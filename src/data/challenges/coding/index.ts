@@ -97,5 +97,30 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
-  }
+  },
+  // New challenges
+  {
+    id: 46,
+    title: "Authentication System",
+    description: "Build a complete authentication system with registration, login, and password reset functionality.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "5-6 hours",
+  },
+  {
+    id: 51,
+    title: "Progressive Web App",
+    description: "Convert an existing web application into a Progressive Web App with offline capabilities.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 55,
+    title: "GraphQL API Integration",
+    description: "Integrate a GraphQL API into a React application and implement queries and mutations.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  },
 ];

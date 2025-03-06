@@ -89,5 +89,22 @@ export const fitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Medium",
     timeEstimate: "40 minutes",
-  }
+  },
+  // New challenges
+  {
+    id: 47,
+    title: "Bodyweight Strength Challenge",
+    description: "Master advanced bodyweight exercises to build strength without equipment.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
+  },
+  {
+    id: 52,
+    title: "Active Recovery Session",
+    description: "Complete a low-intensity active recovery session to promote blood flow and reduce soreness.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "30 minutes",
+  },
 ];
