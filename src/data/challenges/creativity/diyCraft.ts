@@ -16,11 +16,11 @@ export const diyCraftChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Upcycling Craft Ideas",
-      url: "https://www.thesprucecrafts.com/upcycling-crafts-4162520"
+      url: "https://www.goodhousekeeping.com/home/craft-ideas/how-to/g139/genius-upcycling-ideas/"
     },
     {
       title: "Beginner DIY Projects",
-      url: "https://www.goodhousekeeping.com/home/craft-ideas/g31348989/easy-crafts-for-adults/"
+      url: "https://huntersofhappiness.com/uncategorized/simple-diy-projects-for-beginners/"
     }
   ],
   verification: [
