@@ -15,11 +15,11 @@ export const poetryWritingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Poetry Forms Guide",
-      url: "https://www.poetryfoundation.org/learn/glossary-terms"
+      url: "https://poetry.harvard.edu/key-to-poetic-forms"
     },
     {
       title: "Poetry Writing Tips",
-      url: "https://www.writersdigest.com/write-better-poetry/10-ways-to-discover-poetic-inspiration"
+      url: "https://poetryschool.com/theblog/how-to-poetry-writing-tips-for-beginners/"
     }
   ],
   verification: [
