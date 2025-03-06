@@ -19,7 +19,7 @@ export const characterDesignChallenge: CreativityChallenge = {
     },
     {
       title: "Character Development Guide",
-      url: "https://www.writersdigest.com/online-editor/the-best-on-writing-characters"
+      url: "https://jerichowriters.com/character/"
     }
   ],
   verification: [
