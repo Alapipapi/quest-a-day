@@ -98,7 +98,7 @@ const ChallengeDialogContent = ({
   };
 
   return (
-    <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-background dark:bg-card/90 backdrop-blur-sm border border-border rounded-lg shadow-xl">
+    <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
       <ChallengeDialogHeader 
         title={title} 
         category={category} 
