@@ -21,7 +21,7 @@ const Hero = () => {
           <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary dark:bg-primary/20">
             Daily Challenge Hub
           </span>
-          <span className="inline-block rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary-foreground dark:bg-secondary/20">
+          <span className="inline-block px-3 py-1 text-xs font-medium text-secondary-foreground">
             v1.2
           </span>
         </div>
