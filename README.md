@@ -1,69 +1,82 @@
-# Welcome to your Lovable project
+# Quest-a-Day
 
-## Project info
+Explore new challenges daily across coding, fitness, creativity, and problem-solving. Push your boundaries and grow with every challenge you complete.
 
-**URL**: https://lovable.dev/projects/4227d4ea-ad4c-4e31-87bb-ef0a293fb7e8
+## Table of Contents
 
-## How can I edit this code?
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-There are several ways of editing your application.
+## Introduction
 
-**Use Lovable**
+Quest-a-Day is a platform that provides you with a variety of daily challenges to help you grow and push your boundaries. Whether it's coding, fitness, creativity, or problem-solving, there's something new to tackle every day.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4227d4ea-ad4c-4e31-87bb-ef0a293fb7e8) and start prompting.
+## Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Daily Challenges**: New challenges every day across different domains.
+- **Progress Tracking**: Keep track of your progress and achievements.
+- **Community Interaction**: Engage with a community of like-minded individuals.
+- **Customizable Goals**: Set and track your own goals.
 
-**Use your preferred IDE**
+## Technologies Used
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **TypeScript**: The primary language used for development.
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool that provides a fast development environment.
+- **shadcn-ui**: A component library used for building the UI.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+To get a local copy up and running, follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Ensure you have [Node.js](https://nodejs.org/) and npm installed. You can install Node.js and npm using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. **Clone the Repository**:
+    ```sh
+    git clone https://github.com/Alapipapi/quest-a-day.git
+    ```
 
-**Edit a file directly in GitHub**
+2. **Navigate to the Project Directory**:
+    ```sh
+    cd quest-a-day
+    ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Install Dependencies**:
+    ```sh
+    npm install
+    ```
 
-**Use GitHub Codespaces**
+4. **Start the Development Server**:
+    ```sh
+    npm run dev
+    ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contributing
 
-## What technologies are used for this project?
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This project is built with .
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Simply open [Lovable](https://lovable.dev/projects/4227d4ea-ad4c-4e31-87bb-ef0a293fb7e8) and click on Share -> Publish.
+## Contact
 
-## I want to use a custom domain - is that possible?
+Alapipapi - [GitHub Profile](https://github.com/Alapipapi)
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Project Link: [Daily Challenge Hub](https://quest-a-day.lovable.app/)
