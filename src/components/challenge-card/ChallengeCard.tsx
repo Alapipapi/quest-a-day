@@ -24,20 +24,28 @@ const ChallengeCard = ({
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const handleCardClick = () => {
+    // This can be empty as it's just for the DialogTrigger
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <div className="cursor-pointer">
-          <ChallengeCardContainer isCompleted={isCompleted}>
+          <ChallengeCardContainer 
+            isCompleted={isCompleted}
+            onClick={handleCardClick}
+            progress={progress}
+          >
+            <ChallengeCardBadges 
+              category={category} 
+              isCompleted={isCompleted} 
+            />
             <ChallengeCardInfo
               title={title}
               description={description}
               category={category}
               progress={progress}
-            />
-            <ChallengeCardBadges
-              difficulty={difficulty}
-              timeEstimate={timeEstimate}
             />
           </ChallengeCardContainer>
         </div>

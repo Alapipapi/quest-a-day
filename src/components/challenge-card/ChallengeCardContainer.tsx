@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface ChallengeCardContainerProps {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   isCompleted?: boolean;
   progress?: number;
 }

@@ -10,7 +10,7 @@ interface ChallengeCardBadgesProps {
 const ChallengeCardBadges = ({ category, isCompleted }: ChallengeCardBadgesProps) => {
   return (
     <div className="flex justify-between">
-      <CategoryBadge category={category} className="mb-4" />
+      {category && <CategoryBadge category={category} className="mb-4" />}
       {isCompleted && (
         <div className="flex items-center completed-badge px-2 py-1 rounded-full">
           <Trophy className="h-3 w-3 mr-1" />
