@@ -18,11 +18,11 @@ export const decisionFrameworkChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Decision Matrix Analysis Guide",
-      url: "https://www.mindtools.com/pages/article/newTED_03.htm"
+      url: "https://safetyculture.com/topics/decision-matrix/"
     },
     {
       title: "Effective Decision Making Processes",
-      url: "https://hbr.org/2017/01/a-7-step-method-for-making-difficult-decisions"
+      url: "https://www.umassd.edu/fycm/decision-making/process/"
     }
   ],
   verification: [
