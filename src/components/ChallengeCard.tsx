@@ -1,4 +1,4 @@
 
-import ChallengeCard from "./challenge-card";
+import ChallengeCard from "./challenge-card/ChallengeCard";
 
 export default ChallengeCard;

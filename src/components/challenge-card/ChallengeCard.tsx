@@ -45,6 +45,8 @@ const ChallengeCard = ({
               title={title}
               description={description}
               category={category}
+              difficulty={difficulty}
+              timeEstimate={timeEstimate}
               progress={progress}
             />
           </ChallengeCardContainer>
