@@ -27,12 +27,15 @@ const ChallengeContentCard = ({
   }
 
   return (
-    <div className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700">
+    <div className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
       <ChallengeStatusIndicator isCompleted={isCompleted} title={title} />
       
       <div className="p-4">
         <div className="space-y-4">
-          <ChallengeInstructionsList instructions={steps[0]?.instructions} />
+          <ChallengeInstructionsList 
+            instructions={steps[0]?.instructions} 
+            examples={steps[0]?.examples}
+          />
           <ChallengeResourcesList 
             resources={steps[0]?.resources} 
             handleResourceClick={handleResourceClick} 
