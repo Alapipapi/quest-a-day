@@ -18,11 +18,11 @@ export const urbanSketchingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Urban Sketching Techniques",
-      url: "https://www.artistsnetwork.com/art-techniques/urban-sketching-techniques/"
+      url: "https://urbansketchingworld.com/urban-sketching-beginners-guide/"
     },
     {
       title: "Urban Sketching Composition Tips",
-      url: "https://www.urbansketchers.org/resources"
+      url: "https://urbansketchers.org/2013/05/20/do-you-mind-some-shop-talk-some-tips-on/"
     }
   ],
   verification: [
