@@ -17,7 +17,7 @@ export const balanceTrainingChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Balance Training Fundamentals",
-      url: "https://www.healthline.com/health/fitness-exercise/balance-exercises"
+      url: "https://www.physio-pedia.com/Balance_Training"
     },
     {
       title: "Progression for Balance Exercises",
