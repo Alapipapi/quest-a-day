@@ -14,6 +14,7 @@ import { patternRecognitionChallenge } from "./problemSolving/patternRecognition
 import { optimizationProblemChallenge } from "./problemSolving/optimizationProblem";
 import { escapeRoomChallenge } from "./problemSolving/escapeRoom";
 import { systemsThinkingChallenge } from "./problemSolving/systemsThinking";
+import { decisionFrameworkChallenge } from "./problemSolving/decisionFramework";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -29,5 +30,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   patternRecognitionChallenge,
   optimizationProblemChallenge,
   escapeRoomChallenge,
-  systemsThinkingChallenge
+  systemsThinkingChallenge,
+  decisionFrameworkChallenge
 ];

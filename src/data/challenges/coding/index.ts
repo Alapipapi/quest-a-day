@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -98,7 +97,6 @@ export const codingChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
-  // New challenges
   {
     id: 46,
     title: "Authentication System",
@@ -122,5 +120,13 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Hard",
     timeEstimate: "4-5 hours",
+  },
+  {
+    id: 57,
+    title: "Create a Markdown Editor",
+    description: "Build a simple markdown editor with preview functionality that lets users write and see formatted output.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
 ];

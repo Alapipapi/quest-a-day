@@ -15,6 +15,7 @@ import { microanimationsChallenge } from "./coding/microanimations";
 import { authSystemChallenge } from "./coding/authSystem";
 import { progressiveWebAppChallenge } from "./coding/progressiveWebApp";
 import { graphqlIntegrationChallenge } from "./coding/graphqlIntegration";
+import { markdownEditorChallenge } from "./coding/markdownEditor";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -31,5 +32,6 @@ export const codingSteps: CodingChallenge[] = [
   microanimationsChallenge,
   authSystemChallenge,
   progressiveWebAppChallenge,
-  graphqlIntegrationChallenge
+  graphqlIntegrationChallenge,
+  markdownEditorChallenge
 ];

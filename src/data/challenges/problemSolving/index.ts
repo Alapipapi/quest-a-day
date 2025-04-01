@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const problemSolvingChallenges: Challenge[] = [
@@ -90,7 +89,6 @@ export const problemSolvingChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "1-2 hours",
   },
-  // New challenges
   {
     id: 49,
     title: "Optimization Problem",
@@ -114,5 +112,13 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Hard",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 60,
+    title: "Decision-Making Framework",
+    description: "Create a personal framework for making complex decisions by identifying key criteria and evaluating options.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
   },
 ];

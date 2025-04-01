@@ -1,31 +1,33 @@
 
 import { FitnessChallenge } from "../types/fitness";
+import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
-import { warmUpChallenge } from "./fitness/warmUp";
 import { coreStrengthChallenge } from "./fitness/coreStrength";
 import { enduranceChallenge } from "./fitness/endurance";
-import { intervalSprintChallenge } from "./fitness/intervalSprint";
 import { morningYogaChallenge } from "./fitness/morningYoga";
-import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
+import { intervalSprintChallenge } from "./fitness/intervalSprint";
 import { strengthTrainingChallenge } from "./fitness/strengthTraining";
+import { warmUpChallenge } from "./fitness/warmUp";
 import { pilatesCoreChallenge } from "./fitness/pilatesCore";
 import { mobilityRoutineChallenge } from "./fitness/mobilityRoutine";
 import { functionalTrainingChallenge } from "./fitness/functionalTraining";
 import { bodyweightStrengthChallenge } from "./fitness/bodyweightStrength";
 import { activeRecoveryChallenge } from "./fitness/activeRecovery";
+import { balanceTrainingChallenge } from "./fitness/balanceTraining";
 
 export const fitnessSteps: FitnessChallenge[] = [
+  hiitWorkoutChallenge,
   yogaFlowChallenge,
-  warmUpChallenge,
   coreStrengthChallenge,
   enduranceChallenge,
-  intervalSprintChallenge,
   morningYogaChallenge,
-  hiitWorkoutChallenge,
+  intervalSprintChallenge,
   strengthTrainingChallenge,
+  warmUpChallenge,
   pilatesCoreChallenge,
   mobilityRoutineChallenge,
   functionalTrainingChallenge,
   bodyweightStrengthChallenge,
-  activeRecoveryChallenge
+  activeRecoveryChallenge,
+  balanceTrainingChallenge
 ];

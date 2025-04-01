@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -90,7 +89,6 @@ export const creativityChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
-  // New challenges
   {
     id: 48,
     title: "Character Design Workshop",
@@ -113,6 +111,14 @@ export const creativityChallenges: Challenge[] = [
     description: "Create a handmade craft project using materials you already have at home.",
     category: "creativity",
     difficulty: "Easy",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 59,
+    title: "Urban Sketching Adventure",
+    description: "Visit a local urban environment and create sketches capturing its atmosphere, architecture, and people.",
+    category: "creativity",
+    difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
 ];

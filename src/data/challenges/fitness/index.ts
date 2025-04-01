@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const fitnessChallenges: Challenge[] = [
@@ -90,7 +89,6 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "40 minutes",
   },
-  // New challenges
   {
     id: 47,
     title: "Bodyweight Strength Challenge",
@@ -105,6 +103,14 @@ export const fitnessChallenges: Challenge[] = [
     description: "Complete a low-intensity active recovery session to promote blood flow and reduce soreness.",
     category: "fitness",
     difficulty: "Easy",
+    timeEstimate: "30 minutes",
+  },
+  {
+    id: 58,
+    title: "Balance and Coordination Training",
+    description: "Improve your balance and coordination with a series of progressive exercises suitable for all levels.",
+    category: "fitness",
+    difficulty: "Medium",
     timeEstimate: "30 minutes",
   },
 ];
