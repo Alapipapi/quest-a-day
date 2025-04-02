@@ -1,12 +1,17 @@
 
 import { useEffect, useState } from "react";
-import Hero from "@/components/Hero";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { LayoutGrid } from "lucide-react";
+import Hero from "@/components/Hero";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Button } from "@/components/ui/button";
 import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeFilters from "@/components/challenges/ChallengeFilters";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
+import StreakTracker from "@/components/challenges/StreakTracker";
+import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -103,6 +108,20 @@ const Index = () => {
         <Hero />
 
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
+        
+        <StreakTracker />
+        
+        <FeaturedChallenge />
+        
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-bold">All Challenges</h2>
+          <Link to="/categories">
+            <Button variant="outline" size="sm" className="flex items-center gap-1">
+              <LayoutGrid className="h-4 w-4" />
+              Browse by Category
+            </Button>
+          </Link>
+        </div>
 
         <ChallengeFilters
           searchQuery={searchQuery}

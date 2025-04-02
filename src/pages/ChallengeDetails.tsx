@@ -3,26 +3,39 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getStepsForChallenge } from "@/data/challengeSteps";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Share2, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
+import { CHALLENGES } from "@/data/challengeData";
 
 import ChallengeHeader from "@/components/challenges/ChallengeHeader";
 import ProgressBar from "@/components/challenges/ProgressBar";
 import ChallengeInstructions from "@/components/challenges/ChallengeInstructions";
 import ChallengeResources from "@/components/challenges/ChallengeResources";
 import VerificationChecklist from "@/components/challenges/VerificationChecklist";
+import ChallengeDifficulty from "@/components/challenges/ChallengeDifficulty";
+import ChallengeTimer from "@/components/challenges/ChallengeTimer";
 import { useChallengeState } from "@/hooks/useChallengeState";
+import { toast } from "@/components/ui/use-toast";
 
 const ChallengeDetails = () => {
   const { category, title } = useParams();
   const navigate = useNavigate();
   const [steps, setSteps] = useState<any[]>([]);
+  const [challengeInfo, setChallengeInfo] = useState<any>(null);
   
   useEffect(() => {
     if (category && title) {
       const decodedTitle = decodeURIComponent(title);
       const challengeSteps = getStepsForChallenge(category, decodedTitle);
       setSteps(challengeSteps);
+      
+      // Find the challenge info from CHALLENGES array
+      const challenge = CHALLENGES.find(c => 
+        c.category === category && c.title === decodedTitle);
+        
+      if (challenge) {
+        setChallengeInfo(challenge);
+      }
       
       if (challengeSteps.length === 0) {
         console.error(`No steps found for challenge: ${category}/${decodedTitle}`);
@@ -47,6 +60,32 @@ const ChallengeDetails = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const handleShare = () => {
+    if (navigator.share && title) {
+      navigator.share({
+        title: `Daily Challenge: ${title}`,
+        text: `Check out this challenge: ${title}`,
+        url: window.location.href,
+      }).catch((error) => console.log('Error sharing', error));
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: "Link Copied!",
+        description: "Challenge link copied to clipboard",
+        duration: 3000,
+      });
+    }
+  };
+
+  const handleSchedule = () => {
+    // Future feature - for now just show toast
+    toast({
+      title: "Coming Soon!",
+      description: "Challenge scheduling will be available in a future update",
+      duration: 3000,
+    });
+  };
+
   if (steps.length === 0) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -68,9 +107,22 @@ const ChallengeDetails = () => {
       animate={{ opacity: 1 }}
       className="container mx-auto px-4 py-8"
     >
-      <Button variant="outline" onClick={handleBack} className="mb-6">
-        <ChevronLeft className="h-4 w-4 mr-2" /> Back
-      </Button>
+      <div className="flex justify-between items-center mb-6">
+        <Button variant="outline" onClick={handleBack}>
+          <ChevronLeft className="h-4 w-4 mr-2" /> Back
+        </Button>
+
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" onClick={handleSchedule}>
+            <Calendar className="h-4 w-4 mr-1" />
+            Schedule
+          </Button>
+          <Button variant="outline" size="sm" onClick={handleShare}>
+            <Share2 className="h-4 w-4 mr-1" />
+            Share
+          </Button>
+        </div>
+      </div>
 
       <div className="bg-card/80 backdrop-blur-sm dark:bg-card/60 rounded-2xl shadow-xl overflow-hidden border border-border">
         <ChallengeHeader 
@@ -84,6 +136,17 @@ const ChallengeDetails = () => {
             progress={progress} 
             updateProgress={updateProgress} 
           />
+          
+          {challengeInfo && (
+            <ChallengeDifficulty 
+              difficulty={challengeInfo.difficulty}
+              timeEstimate={challengeInfo.timeEstimate}
+            />
+          )}
+          
+          {challengeInfo && (
+            <ChallengeTimer challengeId={challengeInfo.id} />
+          )}
 
           <ChallengeInstructions 
             instructions={challenge.instructions} 

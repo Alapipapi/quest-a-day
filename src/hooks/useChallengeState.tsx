@@ -61,6 +61,11 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
         description: "Great job on completing this challenge!",
         duration: 3000,
       });
+      
+      // Dispatch a custom event for streak tracking
+      window.dispatchEvent(new CustomEvent("challengeCompleted", { 
+        detail: { category, title: decodeURIComponent(title) }
+      }));
     } else {
       delete completedChallenges[key];
       completedChallenges[`${key}-progress`] = 0;
@@ -74,6 +79,9 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+    
+    // Dispatch a general update event
+    window.dispatchEvent(new Event("challengeUpdated"));
   };
 
   // This function is now only used internally by toggleVerificationItem
@@ -93,12 +101,20 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
         description: "Great job on completing this challenge!",
         duration: 3000,
       });
+      
+      // Dispatch a custom event for streak tracking
+      window.dispatchEvent(new CustomEvent("challengeCompleted", { 
+        detail: { category, title: decodeURIComponent(title) }
+      }));
     } else if (value < 100 && isCompleted) {
       setIsCompleted(false);
       delete completedChallenges[key];
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+    
+    // Dispatch a general update event
+    window.dispatchEvent(new Event("challengeUpdated"));
   };
 
   const toggleVerificationItem = (index: number) => {
