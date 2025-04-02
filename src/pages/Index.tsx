@@ -7,11 +7,11 @@ import Hero from "@/components/Hero";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Button } from "@/components/ui/button";
 import CompletionSummary from "@/components/challenges/CompletionSummary";
-import ChallengeFilters from "@/components/challenges/ChallengeFilters";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
 import StreakTracker from "@/components/challenges/StreakTracker";
-import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
+import ChallengeSearch from "@/components/challenges/ChallengeSearch";
+import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -85,14 +85,6 @@ const Index = () => {
     };
   }, []);
 
-  const categories = [
-    { id: "all", label: "All Challenges" },
-    { id: "coding", label: "Coding" },
-    { id: "fitness", label: "Fitness" },
-    { id: "creativity", label: "Creativity" },
-    { id: "problem-solving", label: "Problem Solving" },
-  ];
-
   const difficulties = [
     { id: "all", label: "All Difficulties" },
     { id: "Easy", label: "Easy" },
@@ -111,8 +103,6 @@ const Index = () => {
         
         <StreakTracker />
         
-        <FeaturedChallenge />
-        
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">All Challenges</h2>
           <Link to="/categories">
@@ -123,16 +113,22 @@ const Index = () => {
           </Link>
         </div>
 
-        <ChallengeFilters
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          difficultyFilter={difficultyFilter}
-          setDifficultyFilter={setDifficultyFilter}
-          categories={categories}
-          difficulties={difficulties}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-12 space-y-6"
+        >
+          <ChallengeSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
+          <div className="space-y-4">
+            <DifficultyFilters
+              difficultyFilter={difficultyFilter}
+              setDifficultyFilter={setDifficultyFilter}
+              difficulties={difficulties}
+            />
+          </div>
+        </motion.div>
 
         <ChallengeGrid filteredChallenges={filteredChallenges} />
 
