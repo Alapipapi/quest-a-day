@@ -13,6 +13,7 @@ import StreakTracker from "@/components/challenges/StreakTracker";
 import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
 import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
+import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -103,6 +104,8 @@ const Index = () => {
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
         
         <StreakTracker />
+        
+        <FeaturedChallenge />
         
         <ScheduledChallenges />
         
