@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
-import StreakTracker from "@/components/challenges/StreakTracker";
 import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
 import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
@@ -102,8 +101,6 @@ const Index = () => {
         <Hero />
 
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
-        
-        <StreakTracker />
         
         <FeaturedChallenge />
         
