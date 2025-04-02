@@ -18,7 +18,7 @@ const FeaturedChallenge = () => {
   useEffect(() => {
     // Select a semi-random featured challenge based on the day
     const date = new Date();
-    const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    const dayOfYear = Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
     const challengeIndex = dayOfYear % CHALLENGES.length;
     const challenge = CHALLENGES[challengeIndex];
     
