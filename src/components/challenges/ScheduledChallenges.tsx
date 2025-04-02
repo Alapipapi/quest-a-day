@@ -24,7 +24,7 @@ const ScheduledChallenges = () => {
   useEffect(() => {
     const storedSchedule = localStorage.getItem("scheduledChallenges");
     if (storedSchedule) {
-      const schedule = JSON.parse(storedSchedule);
+      const schedule = JSON.parse(storedSchedule) as Record<string, ScheduledChallenge[]>;
       setScheduledChallenges(schedule);
       
       // Get today's date
@@ -39,7 +39,8 @@ const ScheduledChallenges = () => {
         .sort(([dateA], [dateB]) => dateA.localeCompare(dateB))
         .slice(0, 3); // Limit to next 3 days with scheduled challenges
       
-      setUpcomingSchedule(upcoming);
+      // Explicitly cast the result to ensure it matches the expected type
+      setUpcomingSchedule(upcoming as [string, ScheduledChallenge[]][]);
     }
   }, []);
 
