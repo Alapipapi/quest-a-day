@@ -10,6 +10,7 @@ import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
 import StreakTracker from "@/components/challenges/StreakTracker";
+import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
 import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
@@ -102,6 +103,8 @@ const Index = () => {
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
         
         <StreakTracker />
+        
+        <ScheduledChallenges />
         
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">All Challenges</h2>

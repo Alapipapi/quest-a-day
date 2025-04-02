@@ -1,22 +1,34 @@
 
 import { useState, useEffect } from "react";
-import { CalendarDays, Flame } from "lucide-react";
+import { CalendarDays, Flame, ChevronRight, History } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import { Calendar } from "../ui/calendar";
 
 const StreakTracker = () => {
   const [streak, setStreak] = useState(0);
   const [lastCompletionDate, setLastCompletionDate] = useState<string | null>(null);
+  const [completionHistory, setCompletionHistory] = useState<Record<string, boolean>>({});
+  const [showHistory, setShowHistory] = useState(false);
   
   // Load streak data from localStorage on component mount
   useEffect(() => {
     const storedStreak = localStorage.getItem("challengeStreak");
     const storedLastCompletionDate = localStorage.getItem("lastChallengeCompletionDate");
+    const storedHistory = localStorage.getItem("challengeCompletionHistory");
     
     if (storedStreak) setStreak(parseInt(storedStreak));
     if (storedLastCompletionDate) setLastCompletionDate(storedLastCompletionDate);
+    if (storedHistory) setCompletionHistory(JSON.parse(storedHistory));
     
     // Check if streak should be reset (no activity for more than 1 day)
     if (storedLastCompletionDate) {
@@ -52,9 +64,28 @@ const StreakTracker = () => {
       setStreak(newStreak);
       setLastCompletionDate(currentDate);
       
+      // Update completion history
+      const newHistory = { ...completionHistory };
+      newHistory[currentDate] = true;
+      setCompletionHistory(newHistory);
+      
       localStorage.setItem("challengeStreak", newStreak.toString());
       localStorage.setItem("lastChallengeCompletionDate", currentDate);
+      localStorage.setItem("challengeCompletionHistory", JSON.stringify(newHistory));
     }
+  };
+
+  // Generate calendar dates with completion history
+  const getCalendarHighlightDates = () => {
+    const today = new Date();
+    const sixMonthsAgo = new Date();
+    sixMonthsAgo.setMonth(today.getMonth() - 6);
+    
+    const highlightedDates = Object.keys(completionHistory)
+      .map(dateStr => new Date(dateStr))
+      .filter(date => date >= sixMonthsAgo && date <= today);
+      
+    return highlightedDates;
   };
 
   return (
@@ -83,17 +114,36 @@ const StreakTracker = () => {
           </div>
         </div>
         
-        <Tooltip>
-          <TooltipTrigger asChild>
+        <Dialog open={showHistory} onOpenChange={setShowHistory}>
+          <DialogTrigger asChild>
             <Button variant="ghost" size="sm">
-              <CalendarDays className="h-4 w-4 mr-1" />
+              <History className="h-4 w-4 mr-1" />
               <span className="text-xs">History</span>
             </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Challenge history coming soon!</p>
-          </TooltipContent>
-        </Tooltip>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Challenge Completion History</DialogTitle>
+            </DialogHeader>
+            <div className="py-4">
+              <Calendar 
+                mode="multiple"
+                selected={getCalendarHighlightDates()}
+                disabled={{ after: new Date() }}
+                className="rounded-md border mx-auto"
+              />
+              <div className="mt-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-sm">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                  <span>Days with completed challenges</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  You've completed challenges on {Object.keys(completionHistory).length} days.
+                </p>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </Card>
     </motion.div>
   );

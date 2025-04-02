@@ -14,6 +14,7 @@ import ChallengeResources from "@/components/challenges/ChallengeResources";
 import VerificationChecklist from "@/components/challenges/VerificationChecklist";
 import ChallengeDifficulty from "@/components/challenges/ChallengeDifficulty";
 import ChallengeTimer from "@/components/challenges/ChallengeTimer";
+import ScheduleDialog from "@/components/challenges/ScheduleDialog";
 import { useChallengeState } from "@/hooks/useChallengeState";
 import { toast } from "@/components/ui/use-toast";
 
@@ -22,6 +23,7 @@ const ChallengeDetails = () => {
   const navigate = useNavigate();
   const [steps, setSteps] = useState<any[]>([]);
   const [challengeInfo, setChallengeInfo] = useState<any>(null);
+  const [scheduleDialogOpen, setScheduleDialogOpen] = useState(false);
   
   useEffect(() => {
     if (category && title) {
@@ -78,12 +80,7 @@ const ChallengeDetails = () => {
   };
 
   const handleSchedule = () => {
-    // Future feature - for now just show toast
-    toast({
-      title: "Coming Soon!",
-      description: "Challenge scheduling will be available in a future update",
-      duration: 3000,
-    });
+    setScheduleDialogOpen(true);
   };
 
   if (steps.length === 0) {
@@ -196,6 +193,15 @@ const ChallengeDetails = () => {
           </div>
         </div>
       </div>
+
+      {title && (
+        <ScheduleDialog 
+          challengeId={challengeInfo?.id}
+          challengeTitle={title}
+          isOpen={scheduleDialogOpen}
+          setIsOpen={setScheduleDialogOpen}
+        />
+      )}
     </motion.div>
   );
 };
