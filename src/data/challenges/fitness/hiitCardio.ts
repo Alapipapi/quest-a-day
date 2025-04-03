@@ -20,7 +20,7 @@ export const hiitCardioChallenge: FitnessChallenge = {
   resources: [
     {
       title: "HIIT Training Guide",
-      url: "https://www.acefitness.org/education-and-resources/lifestyle/blog/6752/high-intensity-interval-training/"
+      url: "https://prodiadigital.com/en/articles/learn-more-about-hiit-cardio-workouts-and-their-examples"
     },
     {
       title: "Proper Form for HIIT Exercises",
