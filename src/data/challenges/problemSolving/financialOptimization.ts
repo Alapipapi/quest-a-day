@@ -14,7 +14,7 @@ export const financialOptimizationChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Linear Programming Basics",
-      url: "https://www.solver.com/linear-programming"
+      url: " https://www.spiceworks.com/tech/it-strategy/articles/linear-programming/"
     },
     {
       title: "Financial Optimization Techniques",
