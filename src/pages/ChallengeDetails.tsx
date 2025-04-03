@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getStepsForChallenge } from "@/data/challengeSteps";
@@ -31,7 +30,6 @@ const ChallengeDetails = () => {
       const challengeSteps = getStepsForChallenge(category, decodedTitle);
       setSteps(challengeSteps);
       
-      // Find the challenge info from CHALLENGES array
       const challenge = CHALLENGES.find(c => 
         c.category === category && c.title === decodedTitle);
         
@@ -194,10 +192,11 @@ const ChallengeDetails = () => {
         </div>
       </div>
 
-      {title && (
+      {title && category && (
         <ScheduleDialog 
           challengeId={challengeInfo?.id}
           challengeTitle={title}
+          challengeCategory={category}
           isOpen={scheduleDialogOpen}
           setIsOpen={setScheduleDialogOpen}
         />

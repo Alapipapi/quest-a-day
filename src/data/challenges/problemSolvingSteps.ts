@@ -6,7 +6,7 @@ import { algorithmChallenge } from "./problemSolving/algorithm";
 import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { dataStructuresChallenge } from "./problemSolving/dataStructures";
-import { dataAnalysisChallenge } from "./problemSolving/analysis";
+import { analysisChallenge } from "./problemSolving/analysis";
 import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
 import { cryptographyChallenge } from "./problemSolving/cryptography";
 import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
@@ -26,7 +26,7 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   chessPuzzleChallenge,
   logicGridChallenge,
   dataStructuresChallenge,
-  dataAnalysisChallenge,
+  analysisChallenge,
   blockPuzzleChallenge,
   cryptographyChallenge,
   memoryTechniquesChallenge,
