@@ -14,7 +14,7 @@ export const lateralThinkingChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Introduction to Lateral Thinking",
-      url: "https://www.mindtools.com/pages/article/newCT_00.htm"
+      url: "https://www.interaction-design.org/literature/topics/lateral-thinking?srsltid=AfmBOoplsuidAp4-uN6UDGvl-Ejy7aYB-uptvdCcjo_27UI74hNZ7nB5"
     },
     {
       title: "Collection of Lateral Thinking Puzzles",
