@@ -18,11 +18,11 @@ export const flexibilityImprovementChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Proper Stretching Techniques",
-      url: "https://www.healthline.com/health/fitness-exercise/stretching-benefits"
+      url: "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/stretching/art-20546848"
     },
     {
       title: "Flexibility Training Guide",
-      url: "https://www.acefitness.org/education-and-resources/lifestyle/blog/5107/the-importance-of-flexibility-exercises/"
+      url: "https://www.bodyweightwarrior.co.uk/blog/get-started-with-flexibility"
     }
   ],
   verification: [
