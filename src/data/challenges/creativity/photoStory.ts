@@ -15,11 +15,11 @@ export const photoStoryChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Visual Storytelling Techniques",
-      url: "https://www.digitalcameraworld.com/tutorials/photography-tips-for-storytelling-with-pictures"
+      url: "https://fstoppers.com/originals/techniques-photographic-storytelling-422783"
     },
     {
       title: "Basic Photo Editing Apps",
-      url: "https://www.creativebloq.com/features/best-free-photo-editors"
+      url: "https://www.pcmag.com/picks/best-mobile-photo-editing-apps"
     }
   ],
   verification: [
