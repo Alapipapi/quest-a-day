@@ -49,12 +49,6 @@ const FeaturedChallenge = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
          <DialogTrigger asChild>
            <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow duration-300 border-2 border-primary/20">
-             <div className="absolute top-0 right-0">
-               <Badge variant="secondary" className="m-2 bg-primary/10">
-                 Featured
-               </Badge>
-             </div>
-            
             <div className="h-4 bg-gradient-to-r from-blue-500 to-purple-500" />
             
             <CardContent className="p-6">
