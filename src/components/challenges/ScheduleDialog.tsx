@@ -22,11 +22,18 @@ import { useToast } from "@/hooks/use-toast";
 interface ScheduleDialogProps {
   challengeId?: number;
   challengeTitle: string;
+  challengeCategory: string;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
 
-const ScheduleDialog = ({ challengeId, challengeTitle, isOpen, setIsOpen }: ScheduleDialogProps) => {
+const ScheduleDialog = ({ 
+  challengeId, 
+  challengeTitle, 
+  challengeCategory, 
+  isOpen, 
+  setIsOpen 
+}: ScheduleDialogProps) => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const { toast } = useToast();
 
@@ -62,6 +69,7 @@ const ScheduleDialog = ({ challengeId, challengeTitle, isOpen, setIsOpen }: Sche
       scheduledChallenges[dateKey].push({
         id: challengeId,
         title: challengeTitle,
+        category: challengeCategory,
         scheduled: new Date().toISOString(),
       });
       

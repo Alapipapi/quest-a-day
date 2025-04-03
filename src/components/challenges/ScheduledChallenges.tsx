@@ -8,10 +8,12 @@ import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { CHALLENGES } from "@/data/challengeData";
 
 interface ScheduledChallenge {
   id?: number;
   title: string;
+  category: string;
   scheduled: string;
 }
 
@@ -45,15 +47,8 @@ const ScheduledChallenges = () => {
   }, []);
 
   const handleViewChallenge = (challenge: ScheduledChallenge) => {
-    // Find the challenge category based on the title
-    // Here we're navigating to the challenge, assuming we can find it by title
-    // In a real app, you would likely store the category with the scheduled challenge
-    import("@/data/challengeData").then(({ CHALLENGES }) => {
-      const found = CHALLENGES.find(c => c.title === challenge.title);
-      if (found) {
-        navigate(`/challenge/${found.category}/${encodeURIComponent(challenge.title)}`);
-      }
-    });
+    // Now we can directly use the stored category
+    navigate(`/challenge/${challenge.category}/${encodeURIComponent(challenge.title)}`);
   };
 
   // If nothing is scheduled, don't show the component

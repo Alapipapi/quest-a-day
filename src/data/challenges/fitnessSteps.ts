@@ -3,7 +3,7 @@ import { FitnessChallenge } from "../types/fitness";
 import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
 import { coreStrengthChallenge } from "./fitness/coreStrength";
-import { enduranceRunningChallenge } from "./fitness/endurance";
+import { enduranceChallenge } from "./fitness/endurance";
 import { morningYogaChallenge } from "./fitness/morningYoga";
 import { intervalSprintChallenge } from "./fitness/intervalSprint";
 import { strengthTrainingChallenge } from "./fitness/strengthTraining";
@@ -21,7 +21,7 @@ export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
   yogaFlowChallenge,
   coreStrengthChallenge,
-  enduranceRunningChallenge,
+  enduranceChallenge,
   morningYogaChallenge,
   intervalSprintChallenge,
   strengthTrainingChallenge,
