@@ -22,7 +22,7 @@ export const analysisChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Data Cleaning Tutorial",
-      url: " https://www.datacamp.com/tutorial/tutorial-data-cleaning-tutorial"
+      url: "https://www.datacamp.com/tutorial/tutorial-data-cleaning-tutorial"
     }
   ],
   verification: [
