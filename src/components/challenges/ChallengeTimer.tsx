@@ -114,9 +114,9 @@ const ChallengeTimer = ({ challengeId, initialTimeInMinutes = 30 }: ChallengeTim
             size="sm" 
             variant="outline" 
             onClick={resetTimer}
-            className="text-gray-500"
+            className="text-foreground" // Changed from "text-gray-500" to "text-foreground"
           >
-            <RotateCcw className="h-4 w-4 mr-1" />
+            <RotateCcw className="h-4 w-4 mr-1 text-foreground" /> {/* Added text-foreground explicitly for the icon */}
             Reset
           </Button>
         </div>
