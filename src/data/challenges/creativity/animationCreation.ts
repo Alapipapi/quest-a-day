@@ -19,7 +19,7 @@ export const animationCreationChallenge: CreativityChallenge = {
     },
     {
       title: "Digital Animation Basics",
-      url: "https://www.animationmentor.com/free-animation-resources/"
+      url: "https://www.bloopanimation.com/animation-for-beginners/"
     }
   ],
   verification: [
