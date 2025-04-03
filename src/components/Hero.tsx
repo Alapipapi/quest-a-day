@@ -22,7 +22,7 @@ const Hero = () => {
             Daily Challenge Hub
           </span>
           <span className="inline-block px-3 py-1 text-xs font-medium text-secondary-foreground">
-            v1.3
+            v1.3.1
           </span>
         </div>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl">
@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
             <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Build new skills</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">70+ challenges and growing</span>
           </div>
         </motion.div>
       </motion.div>

@@ -129,4 +129,20 @@ export const codingChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
   },
+  {
+    id: 61,
+    title: "Build a Kanban Board",
+    description: "Create a drag-and-drop Kanban board for task management with React DnD.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  },
+  {
+    id: 62,
+    title: "Data Visualization Dashboard",
+    description: "Build an interactive dashboard with charts and graphs using Recharts.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
 ];

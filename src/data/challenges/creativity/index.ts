@@ -121,4 +121,28 @@ export const creativityChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
+  {
+    id: 65,
+    title: "Animation Creation",
+    description: "Create a short animated sequence using stop motion or digital animation tools.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 66,
+    title: "Podcast Episode Production",
+    description: "Plan, record, and edit a short podcast episode on a topic of your choice.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 67,
+    title: "Storytelling with Photography",
+    description: "Create a series of photographs that tell a cohesive story without text.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2 hours",
+  },
 ];

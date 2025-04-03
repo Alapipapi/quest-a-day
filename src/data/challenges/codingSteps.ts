@@ -16,6 +16,8 @@ import { authSystemChallenge } from "./coding/authSystem";
 import { progressiveWebAppChallenge } from "./coding/progressiveWebApp";
 import { graphqlIntegrationChallenge } from "./coding/graphqlIntegration";
 import { markdownEditorChallenge } from "./coding/markdownEditor";
+import { kanbanBoardChallenge } from "./coding/kanbanBoard";
+import { dataVisualizationChallenge } from "./coding/dataVisualization";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -33,5 +35,7 @@ export const codingSteps: CodingChallenge[] = [
   authSystemChallenge,
   progressiveWebAppChallenge,
   graphqlIntegrationChallenge,
-  markdownEditorChallenge
+  markdownEditorChallenge,
+  kanbanBoardChallenge,
+  dataVisualizationChallenge
 ];

@@ -6,7 +6,7 @@ import { algorithmChallenge } from "./problemSolving/algorithm";
 import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { dataStructuresChallenge } from "./problemSolving/dataStructures";
-import { analysisChallenge } from "./problemSolving/analysis";
+import { dataAnalysisChallenge } from "./problemSolving/analysis";
 import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
 import { cryptographyChallenge } from "./problemSolving/cryptography";
 import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
@@ -15,6 +15,9 @@ import { optimizationProblemChallenge } from "./problemSolving/optimizationProbl
 import { escapeRoomChallenge } from "./problemSolving/escapeRoom";
 import { systemsThinkingChallenge } from "./problemSolving/systemsThinking";
 import { decisionFrameworkChallenge } from "./problemSolving/decisionFramework";
+import { graphTheoryChallenge } from "./problemSolving/graphTheory";
+import { lateralThinkingChallenge } from "./problemSolving/lateralThinking";
+import { financialOptimizationChallenge } from "./problemSolving/financialOptimization";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -23,7 +26,7 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   chessPuzzleChallenge,
   logicGridChallenge,
   dataStructuresChallenge,
-  analysisChallenge,
+  dataAnalysisChallenge,
   blockPuzzleChallenge,
   cryptographyChallenge,
   memoryTechniquesChallenge,
@@ -31,5 +34,8 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   optimizationProblemChallenge,
   escapeRoomChallenge,
   systemsThinkingChallenge,
-  decisionFrameworkChallenge
+  decisionFrameworkChallenge,
+  graphTheoryChallenge,
+  lateralThinkingChallenge,
+  financialOptimizationChallenge
 ];

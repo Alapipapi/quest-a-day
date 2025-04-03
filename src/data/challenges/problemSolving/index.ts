@@ -121,4 +121,28 @@ export const problemSolvingChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "1-2 hours",
   },
+  {
+    id: 68,
+    title: "Graph Theory Problems",
+    description: "Solve a set of problems using graph theory concepts and algorithms.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "2 hours",
+  },
+  {
+    id: 69,
+    title: "Lateral Thinking Puzzles",
+    description: "Tackle a series of lateral thinking puzzles that require creative solutions.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 70,
+    title: "Financial Optimization Challenge",
+    description: "Create a budget optimization plan using mathematical modeling techniques.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
 ];

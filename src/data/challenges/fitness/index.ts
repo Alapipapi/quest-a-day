@@ -113,4 +113,20 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "30 minutes",
   },
+  {
+    id: 63,
+    title: "HIIT Cardio Challenge",
+    description: "Complete a high-intensity interval training cardio session to boost endurance.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "35 minutes",
+  },
+  {
+    id: 64,
+    title: "Flexibility Improvement Routine",
+    description: "Increase your range of motion with a comprehensive flexibility routine.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "25 minutes",
+  },
 ];
