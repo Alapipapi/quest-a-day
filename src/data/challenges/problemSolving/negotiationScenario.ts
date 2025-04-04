@@ -15,11 +15,11 @@ export const negotiationScenarioChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Negotiation Fundamentals",
-      url: "https://www.pon.harvard.edu/daily/negotiation-skills-daily/negotiation-skills-what-are-they/"
+      url: "https://www.un.org/en/model-united-nations/fundamentals-negotiation"
     },
     {
       title: "Win-Win Negotiation Strategies",
-      url: "https://www.mindtools.com/pages/article/win-win-negotiation.htm"
+      url: "https://www.indeed.com/career-advice/career-development/win-win-strategy"
     }
   ],
   verification: [
