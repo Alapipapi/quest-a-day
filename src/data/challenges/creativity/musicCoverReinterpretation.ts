@@ -15,11 +15,11 @@ export const musicCoverChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Music Arrangement Techniques",
-      url: "https://www.musicgateway.com/blog/how-to/arrangement-in-music"
+      url: "https://blog.native-instruments.com/music-arrangement/"
     },
     {
       title: "Digital Audio Recording Basics",
-      url: "https://www.sweetwater.com/sweetcare/articles/home-recording-basics/"
+      url: "https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html?srsltid=AfmBOopoNlXCqXg97UlUkH_HU3YqrF8lE4iJ7Aq3v9mmDD8gHHsxxoVs"
     }
   ],
   verification: [
