@@ -15,7 +15,7 @@ export const tabataWorkoutChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Tabata Training Explained",
-      url: "https://www.healthline.com/health/fitness-exercise/tabata-workout"
+      url: "https://www.trxtraining.com/blogs/news/what-is-tabata-training?srsltid=AfmBOopgeXB3-ER4tk8cHD0nExipQq66BtJXkPQtMzIEWWm3BE_BDzOd"
     },
     {
       title: "Effective Bodyweight Exercises",
