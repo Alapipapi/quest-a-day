@@ -1,7 +1,7 @@
 
 import { useState } from "react";
-import { CalendarIcon, Clock } from "lucide-react";
-import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+import { format, startOfDay } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Dialog,
@@ -12,11 +12,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
 
 interface ScheduleDialogProps {
@@ -50,8 +45,10 @@ const ScheduleDialog = ({
     // Get existing scheduled challenges from localStorage
     const scheduledChallenges = JSON.parse(localStorage.getItem("scheduledChallenges") || "{}");
     
-    // Format the date as ISO string for storage
-    const dateKey = date.toISOString().split('T')[0];
+    // Normalize the date to remove time component and use local date format YYYY-MM-DD
+    // This ensures consistent date comparison regardless of timezone
+    const normalizedDate = startOfDay(date);
+    const dateKey = normalizedDate.toISOString().split('T')[0];
     
     // Add the new scheduled challenge
     if (!scheduledChallenges[dateKey]) {
@@ -78,14 +75,14 @@ const ScheduleDialog = ({
       // Show success toast
       toast({
         title: "Challenge scheduled!",
-        description: `${challengeTitle} scheduled for ${format(date, "PPP")}`,
+        description: `${challengeTitle} scheduled for ${format(normalizedDate, "PPP")}`,
       });
       
       setIsOpen(false);
     } else {
       toast({
         title: "Already scheduled",
-        description: `This challenge is already scheduled for ${format(date, "PPP")}`,
+        description: `This challenge is already scheduled for ${format(normalizedDate, "PPP")}`,
         variant: "destructive",
       });
     }

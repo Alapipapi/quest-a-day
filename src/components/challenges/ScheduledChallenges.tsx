@@ -1,14 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { Calendar, ChevronRight } from "lucide-react";
-import { format, isSameDay } from "date-fns";
+import { format, isToday, parseISO, startOfDay } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { CHALLENGES } from "@/data/challengeData";
 
 interface ScheduledChallenge {
   id?: number;
@@ -29,15 +26,15 @@ const ScheduledChallenges = () => {
       const schedule = JSON.parse(storedSchedule) as Record<string, ScheduledChallenge[]>;
       setScheduledChallenges(schedule);
       
-      // Get today's date
-      const today = new Date().toISOString().split('T')[0];
+      // Get today's date in YYYY-MM-DD format for consistent comparison
+      const today = startOfDay(new Date()).toISOString().split('T')[0];
       
       // Set today's scheduled challenges
       setTodaysSchedule(schedule[today] || []);
       
       // Get upcoming scheduled challenges (sorted by date)
       const upcoming = Object.entries(schedule)
-        .filter(([date]) => date > today)
+        .filter(([date]) => date > today)  // This ensures future dates only
         .sort(([dateA], [dateB]) => dateA.localeCompare(dateB))
         .slice(0, 3); // Limit to next 3 days with scheduled challenges
       
@@ -91,7 +88,7 @@ const ScheduledChallenges = () => {
               {upcomingSchedule.map(([date, challenges]) => (
                 <div key={date} className="rounded-md border bg-background">
                   <div className="p-2 border-b bg-muted/50">
-                    <span className="text-xs font-medium">{format(new Date(date), "EEEE, MMMM d")}</span>
+                    <span className="text-xs font-medium">{format(parseISO(date), "EEEE, MMMM d")}</span>
                   </div>
                   {challenges.map((challenge, challengeIndex) => (
                     <div key={`${date}-${challengeIndex}`} className="flex items-center justify-between p-2">
