@@ -27,7 +27,7 @@ const ScheduledChallenges = () => {
       setScheduledChallenges(schedule);
       
       // Get today's date in YYYY-MM-DD format for consistent comparison
-      const today = startOfDay(new Date()).toISOString().split('T')[0];
+      const today = format(new Date(), "yyyy-MM-dd");
       
       // Set today's scheduled challenges
       setTodaysSchedule(schedule[today] || []);
@@ -88,7 +88,7 @@ const ScheduledChallenges = () => {
               {upcomingSchedule.map(([date, challenges]) => (
                 <div key={date} className="rounded-md border bg-background">
                   <div className="p-2 border-b bg-muted/50">
-                    <span className="text-xs font-medium">{format(parseISO(date), "EEEE, MMMM d")}</span>
+                    <span className="text-xs font-medium">{format(new Date(date), "EEEE, MMMM d")}</span>
                   </div>
                   {challenges.map((challenge, challengeIndex) => (
                     <div key={`${date}-${challengeIndex}`} className="flex items-center justify-between p-2">

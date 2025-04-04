@@ -45,10 +45,9 @@ const ScheduleDialog = ({
     // Get existing scheduled challenges from localStorage
     const scheduledChallenges = JSON.parse(localStorage.getItem("scheduledChallenges") || "{}");
     
-    // Normalize the date to remove time component and use local date format YYYY-MM-DD
-    // This ensures consistent date comparison regardless of timezone
-    const normalizedDate = startOfDay(date);
-    const dateKey = normalizedDate.toISOString().split('T')[0];
+    // Make sure to preserve the user's selected date exactly as chosen
+    // Only normalize for consistent key format (YYYY-MM-DD)
+    const dateKey = format(date, "yyyy-MM-dd");
     
     // Add the new scheduled challenge
     if (!scheduledChallenges[dateKey]) {
@@ -75,14 +74,14 @@ const ScheduleDialog = ({
       // Show success toast
       toast({
         title: "Challenge scheduled!",
-        description: `${challengeTitle} scheduled for ${format(normalizedDate, "PPP")}`,
+        description: `${challengeTitle} scheduled for ${format(date, "PPP")}`,
       });
       
       setIsOpen(false);
     } else {
       toast({
         title: "Already scheduled",
-        description: `This challenge is already scheduled for ${format(normalizedDate, "PPP")}`,
+        description: `This challenge is already scheduled for ${format(date, "PPP")}`,
         variant: "destructive",
       });
     }
