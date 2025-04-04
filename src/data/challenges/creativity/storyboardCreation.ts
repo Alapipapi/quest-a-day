@@ -15,7 +15,7 @@ export const storyboardCreationChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Storyboarding Fundamentals",
-      url: "https://www.studiobinder.com/blog/what-is-a-storyboard-definition-examples/"
+      url: "https://www.studiobinder.com/blog/what-is-a-storyboard/"
     },
     {
       title: "Free Storyboard Templates",
