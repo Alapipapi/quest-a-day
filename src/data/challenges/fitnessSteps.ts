@@ -16,6 +16,7 @@ import { activeRecoveryChallenge } from "./fitness/activeRecovery";
 import { balanceTrainingChallenge } from "./fitness/balanceTraining";
 import { hiitCardioChallenge } from "./fitness/hiitCardio";
 import { flexibilityImprovementChallenge } from "./fitness/flexibilityImprovement";
+import { tabataWorkoutChallenge } from "./fitness/tabataWorkout";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -33,5 +34,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   activeRecoveryChallenge,
   balanceTrainingChallenge,
   hiitCardioChallenge,
-  flexibilityImprovementChallenge
+  flexibilityImprovementChallenge,
+  tabataWorkoutChallenge
 ];

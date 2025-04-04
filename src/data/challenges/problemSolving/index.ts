@@ -145,4 +145,12 @@ export const problemSolvingChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
+  {
+    id: 75,
+    title: "Negotiation Scenario Challenge",
+    description: "Analyze and practice a complex negotiation scenario using proven strategies.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
 ];

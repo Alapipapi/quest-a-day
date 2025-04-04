@@ -18,6 +18,7 @@ import { graphqlIntegrationChallenge } from "./coding/graphqlIntegration";
 import { markdownEditorChallenge } from "./coding/markdownEditor";
 import { kanbanBoardChallenge } from "./coding/kanbanBoard";
 import { dataVisualizationChallenge } from "./coding/dataVisualization";
+import { mobileFirstWebsiteChallenge } from "./coding/mobileFirstWebsite";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -37,5 +38,6 @@ export const codingSteps: CodingChallenge[] = [
   graphqlIntegrationChallenge,
   markdownEditorChallenge,
   kanbanBoardChallenge,
-  dataVisualizationChallenge
+  dataVisualizationChallenge,
+  mobileFirstWebsiteChallenge
 ];

@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -141,6 +142,14 @@ export const codingChallenges: Challenge[] = [
     id: 62,
     title: "Data Visualization Dashboard",
     description: "Build an interactive dashboard with charts and graphs using Recharts.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 71,
+    title: "Build a Mobile-First Website",
+    description: "Create a responsive website using mobile-first design principles and progressive enhancement.",
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",

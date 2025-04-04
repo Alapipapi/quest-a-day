@@ -129,4 +129,12 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "25 minutes",
   },
+  {
+    id: 74,
+    title: "Tabata Workout Challenge",
+    description: "Complete a full Tabata workout routine with high-intensity intervals and timed rest periods.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "30-45 minutes",
+  },
 ];

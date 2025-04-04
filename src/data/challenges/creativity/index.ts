@@ -145,4 +145,20 @@ export const creativityChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2 hours",
   },
+  {
+    id: 72,
+    title: "Storyboard Creation",
+    description: "Create a visual storyboard for a short narrative or scene with 6-10 frames.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 73,
+    title: "Music Cover Reinterpretation",
+    description: "Reinterpret a familiar song in a completely different genre or style.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
 ];
