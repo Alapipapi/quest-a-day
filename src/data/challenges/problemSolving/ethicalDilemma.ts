@@ -15,7 +15,7 @@ export const ethicalDilemmaChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Introduction to Ethical Frameworks",
-      url: "https://ethicsunwrapped.utexas.edu/glossary/ethical-frameworks"
+      url: "https://www.studysmarter.co.uk/explanations/business-studies/accounting/ethical-frameworks/"
     },
     {
       title: "Case Studies in Ethics",
