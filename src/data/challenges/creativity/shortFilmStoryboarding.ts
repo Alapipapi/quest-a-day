@@ -15,7 +15,7 @@ export const shortFilmStoryboardingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Storyboarding Basics",
-      url: "https://www.masterclass.com/articles/how-to-create-a-storyboard"
+      url: "https://boords.com/how-to-storyboard/short-film"
     },
     {
       title: "Film Shot Types Guide",
