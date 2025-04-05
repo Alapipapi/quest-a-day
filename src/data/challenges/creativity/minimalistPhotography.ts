@@ -15,11 +15,11 @@ export const minimalistPhotographyChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Principles of Minimalist Photography",
-      url: "https://www.digitalcameraworld.com/tutorials/minimalist-photography"
+      url: "https://www.adobe.com/creativecloud/photography/discover/minimalist-photography.html"
     },
     {
       title: "Editing Tips for Minimalist Photos",
-      url: "https://www.adobe.com/creativecloud/photography/discover/minimalist-photography.html"
+      url: "https://amateurphotographer.com/technique/minimalist-photography-editing-tips/"
     }
   ],
   verification: [
