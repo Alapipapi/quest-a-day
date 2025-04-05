@@ -6,14 +6,15 @@ import { Button } from "@/components/ui/button";
 const Changelog = () => {
   return (
     <div className="container max-w-4xl mx-auto py-8 px-4">
-      <div className="mb-8 flex items-center">
-        <Button variant="ghost" size="sm" asChild className="mr-4">
+      <div className="mb-8 flex flex-col sm:flex-row items-center">
+        <Button variant="ghost" size="sm" asChild className="mr-auto sm:mr-0">
           <Link to="/">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
         </Button>
-        <h1 className="text-3xl font-bold">Changelog</h1>
+        <h1 className="text-3xl font-bold mt-4 sm:mt-0 sm:mx-auto">Changelog</h1>
+        <div className="hidden sm:block sm:mr-auto"></div>
       </div>
 
       <div className="space-y-12">
