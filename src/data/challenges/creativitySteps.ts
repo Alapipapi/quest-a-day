@@ -19,7 +19,7 @@ import { animationCreationChallenge } from "./creativity/animationCreation";
 import { podcastProductionChallenge } from "./creativity/podcastProduction";
 import { photoStoryChallenge } from "./creativity/photoStory";
 import { storyboardCreationChallenge } from "./creativity/storyboardCreation";
-import { musicCoverReinterpretationChallenge } from "./creativity/musicCoverReinterpretation";
+import { musicCoverChallenge } from "./creativity/musicCoverReinterpretation";
 import { minimalistPhotographyChallenge } from "./creativity/minimalistPhotography";
 import { comicStripCreationChallenge } from "./creativity/comicStripCreation";
 import { shortFilmStoryboardingChallenge } from "./creativity/shortFilmStoryboarding";
@@ -44,7 +44,7 @@ export const creativitySteps: CreativityChallenge[] = [
   podcastProductionChallenge,
   photoStoryChallenge,
   storyboardCreationChallenge,
-  musicCoverReinterpretationChallenge,
+  musicCoverChallenge,
   minimalistPhotographyChallenge,
   comicStripCreationChallenge,
   shortFilmStoryboardingChallenge
