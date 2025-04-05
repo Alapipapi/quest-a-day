@@ -1,6 +1,6 @@
 
 import { FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -10,6 +10,13 @@ import {
 } from "@/components/ui/tooltip";
 
 const ChangelogButton = () => {
+  const location = useLocation();
+  
+  // Don't render the button if we're already on the changelog page
+  if (location.pathname === "/changelog") {
+    return null;
+  }
+
   return (
     <TooltipProvider>
       <Tooltip>
