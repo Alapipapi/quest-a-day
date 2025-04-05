@@ -19,7 +19,7 @@ export const comicStripCreationChallenge: CreativityChallenge = {
     },
     {
       title: "Character Design for Comics",
-      url: "https://design.tutsplus.com/tutorials/how-to-create-a-comic-character--cms-32703"
+      url: "https://www.clipstudio.net/how-to-draw/archives/165800"
     }
   ],
   verification: [
