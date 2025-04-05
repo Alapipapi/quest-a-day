@@ -52,7 +52,14 @@ const FavoriteChallenges = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <ChallengeCard challenge={challenge} />
+            <ChallengeCard 
+              id={challenge.id}
+              title={challenge.title}
+              description={challenge.description}
+              category={challenge.category}
+              difficulty={challenge.difficulty}
+              timeEstimate={challenge.timeEstimate}
+            />
           </motion.div>
         ))}
       </div>
