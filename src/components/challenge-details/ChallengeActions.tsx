@@ -2,13 +2,15 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Share2 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import BookmarkButton from "./BookmarkButton";
 
 interface ChallengeActionsProps {
   onSchedule: () => void;
   title: string | undefined;
+  challengeId: number | undefined;
 }
 
-const ChallengeActions = ({ onSchedule, title }: ChallengeActionsProps) => {
+const ChallengeActions = ({ onSchedule, title, challengeId }: ChallengeActionsProps) => {
   const handleShare = () => {
     if (navigator.share && title) {
       navigator.share({
@@ -32,6 +34,7 @@ const ChallengeActions = ({ onSchedule, title }: ChallengeActionsProps) => {
         <Calendar className="h-4 w-4 mr-1" />
         Schedule
       </Button>
+      <BookmarkButton challengeId={challengeId} title={title} />
       <Button variant="outline" size="sm" onClick={handleShare}>
         <Share2 className="h-4 w-4 mr-1" />
         Share

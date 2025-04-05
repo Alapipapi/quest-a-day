@@ -83,6 +83,7 @@ const ChallengeDetails = () => {
         <ChallengeActions 
           onSchedule={handleSchedule}
           title={title}
+          challengeId={challengeInfo?.id}
         />
       </div>
 

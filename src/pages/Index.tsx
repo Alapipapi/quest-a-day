@@ -13,6 +13,7 @@ import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
 import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
+import FavoriteChallenges from "@/components/challenges/FavoriteChallenges";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -105,6 +106,8 @@ const Index = () => {
         <FeaturedChallenge />
         
         <ScheduledChallenges />
+        
+        <FavoriteChallenges />
         
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">All Challenges</h2>
