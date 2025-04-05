@@ -15,7 +15,7 @@ export const strategicPlanningChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Strategic Planning Guide",
-      url: "https://www.forbes.com/sites/allbusiness/2018/07/29/develop-strategic-plan-action-items-goals/"
+      url: "https://www.betterup.com/blog/strategic-planning"
     },
     {
       title: "SWOT Analysis Framework",
