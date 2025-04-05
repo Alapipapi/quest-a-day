@@ -18,11 +18,11 @@ export const lowImpactCardioChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Low-Impact Cardio Benefits",
-      url: "https://www.verywellfit.com/low-impact-cardio-exercises-1231272"
+      url: "https://www.gradyhealth.org/blog/5-benefits-of-low-impact-exercise/"
     },
     {
       title: "Modifying Exercises for Joint Health",
-      url: "https://www.arthritis.org/health-wellness/healthy-living/physical-activity/getting-started/your-exercise-solution"
+      url: "https://www.health.harvard.edu/exercise-and-fitness/exercises-to-relieve-joint-pain"
     }
   ],
   verification: [
