@@ -19,6 +19,8 @@ import { markdownEditorChallenge } from "./coding/markdownEditor";
 import { kanbanBoardChallenge } from "./coding/kanbanBoard";
 import { dataVisualizationChallenge } from "./coding/dataVisualization";
 import { mobileFirstWebsiteChallenge } from "./coding/mobileFirstWebsite";
+import { cicdPipelineChallenge } from "./coding/cicdPipeline";
+import { automatedTestingChallenge } from "./coding/automatedTesting";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -39,5 +41,7 @@ export const codingSteps: CodingChallenge[] = [
   markdownEditorChallenge,
   kanbanBoardChallenge,
   dataVisualizationChallenge,
-  mobileFirstWebsiteChallenge
+  mobileFirstWebsiteChallenge,
+  cicdPipelineChallenge,
+  automatedTestingChallenge
 ];

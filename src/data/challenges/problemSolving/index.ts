@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const problemSolvingChallenges: Challenge[] = [
@@ -149,6 +150,30 @@ export const problemSolvingChallenges: Challenge[] = [
     id: 75,
     title: "Negotiation Scenario Challenge",
     description: "Analyze and practice a complex negotiation scenario using proven strategies.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 82,
+    title: "Ethical Dilemma Analysis",
+    description: "Analyze a complex ethical dilemma using different ethical frameworks and develop a justified solution.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 83,
+    title: "Strategic Planning Exercise",
+    description: "Develop a strategic plan for an organization or project using structured planning methodologies.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 85,
+    title: "Time Management Workshop",
+    description: "Analyze your time usage patterns and develop a personalized system for improved productivity.",
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",

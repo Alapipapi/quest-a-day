@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const fitnessChallenges: Challenge[] = [
@@ -136,5 +137,21 @@ export const fitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Medium",
     timeEstimate: "30-45 minutes",
+  },
+  {
+    id: 78,
+    title: "Stretching Routine for Desk Workers",
+    description: "Relieve tension and improve flexibility with a stretching routine designed for people who sit for long periods.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "15-20 minutes",
+  },
+  {
+    id: 79,
+    title: "Low-Impact Cardio Workout",
+    description: "Get your heart rate up without stressing your joints through a series of low-impact cardio exercises.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "30 minutes",
   },
 ];

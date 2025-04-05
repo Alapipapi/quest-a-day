@@ -19,6 +19,9 @@ import { graphTheoryChallenge } from "./problemSolving/graphTheory";
 import { lateralThinkingChallenge } from "./problemSolving/lateralThinking";
 import { financialOptimizationChallenge } from "./problemSolving/financialOptimization";
 import { negotiationScenarioChallenge } from "./problemSolving/negotiationScenario";
+import { ethicalDilemmaChallenge } from "./problemSolving/ethicalDilemma";
+import { strategicPlanningChallenge } from "./problemSolving/strategicPlanning";
+import { timeManagementChallenge } from "./problemSolving/timeManagement";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -39,5 +42,8 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   graphTheoryChallenge,
   lateralThinkingChallenge,
   financialOptimizationChallenge,
-  negotiationScenarioChallenge
+  negotiationScenarioChallenge,
+  ethicalDilemmaChallenge,
+  strategicPlanningChallenge,
+  timeManagementChallenge
 ];

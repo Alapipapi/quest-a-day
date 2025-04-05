@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -160,5 +161,29 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 80,
+    title: "Minimalist Photography",
+    description: "Capture compelling images using minimalist composition principles and simple subjects.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
+  },
+  {
+    id: 81,
+    title: "Comic Strip Creation",
+    description: "Create a 3-5 panel comic strip with original characters and a simple narrative.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 84,
+    title: "Short Film Storyboarding",
+    description: "Create a visual storyboard for a 1-2 minute short film with camera directions and scene descriptions.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   },
 ];

@@ -30,6 +30,23 @@ const Changelog = () => {
                 <li>Added favorites functionality to save your favorite challenges</li>
                 <li>Added a dedicated section to display all favorite challenges</li>
                 <li>Added a changelog page to track all updates and changes</li>
+                <li>Added 10 new challenges across all categories</li>
+                <li>Introduced detailed instructions for all new challenges</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">New Challenges</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li><strong>Coding:</strong> CI/CD Pipeline Setup</li>
+                <li><strong>Coding:</strong> Automated Testing Implementation</li>
+                <li><strong>Fitness:</strong> Stretching Routine for Desk Workers</li>
+                <li><strong>Fitness:</strong> Low-Impact Cardio Workout</li>
+                <li><strong>Creativity:</strong> Minimalist Photography</li>
+                <li><strong>Creativity:</strong> Comic Strip Creation</li>
+                <li><strong>Problem-Solving:</strong> Ethical Dilemma Analysis</li>
+                <li><strong>Problem-Solving:</strong> Strategic Planning Exercise</li>
+                <li><strong>Problem-Solving:</strong> Time Management Workshop</li>
+                <li><strong>Creativity:</strong> Short Film Storyboarding</li>
               </ul>
             </div>
             <div>
