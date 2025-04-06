@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const problemSolvingChallenges: Challenge[] = [
@@ -177,5 +176,13 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 89,
+    title: "Design Thinking Process",
+    description: "Apply design thinking methodology to identify, prototype, and solve a real-world problem.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
 ];

@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -185,5 +184,21 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 87,
+    title: "Mixed Media Art Project",
+    description: "Create artwork combining multiple materials and techniques for a unique textural piece.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 88,
+    title: "Songwriting Workshop",
+    description: "Compose an original song with lyrics, melody, and chord progression expressing a specific theme.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
 ];

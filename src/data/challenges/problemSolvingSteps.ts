@@ -22,6 +22,7 @@ import { negotiationScenarioChallenge } from "./problemSolving/negotiationScenar
 import { ethicalDilemmaChallenge } from "./problemSolving/ethicalDilemma";
 import { strategicPlanningChallenge } from "./problemSolving/strategicPlanning";
 import { timeManagementChallenge } from "./problemSolving/timeManagement";
+import { designThinkingChallenge } from "./problemSolving/designThinkingChallenge";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -45,5 +46,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   negotiationScenarioChallenge,
   ethicalDilemmaChallenge,
   strategicPlanningChallenge,
-  timeManagementChallenge
+  timeManagementChallenge,
+  designThinkingChallenge
 ];

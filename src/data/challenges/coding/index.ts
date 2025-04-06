@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -169,5 +168,13 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 86,
+    title: "Mobile App Integration",
+    description: "Create a responsive web application with device-specific features for seamless mobile experience.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
   },
 ];

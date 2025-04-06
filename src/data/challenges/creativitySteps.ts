@@ -23,6 +23,8 @@ import { musicCoverReinterpretationChallenge } from "./creativity/musicCoverRein
 import { minimalistPhotographyChallenge } from "./creativity/minimalistPhotography";
 import { comicStripCreationChallenge } from "./creativity/comicStripCreation";
 import { shortFilmStoryboardingChallenge } from "./creativity/shortFilmStoryboarding";
+import { mixedMediaArtChallenge } from "./creativity/mixedMediaArt";
+import { songwritingChallenge } from "./creativity/songwritingChallenge";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -47,5 +49,7 @@ export const creativitySteps: CreativityChallenge[] = [
   musicCoverReinterpretationChallenge,
   minimalistPhotographyChallenge,
   comicStripCreationChallenge,
-  shortFilmStoryboardingChallenge
+  shortFilmStoryboardingChallenge,
+  mixedMediaArtChallenge,
+  songwritingChallenge
 ];
