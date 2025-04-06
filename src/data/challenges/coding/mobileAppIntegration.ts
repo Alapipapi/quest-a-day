@@ -19,7 +19,7 @@ export const mobileAppIntegrationChallenge: CodingChallenge = {
     },
     {
       title: "Mobile Web API References",
-      url: "https://developer.mozilla.org/en-US/docs/Web/API/Device_API"
+      url: "https://developer.android.com/reference"
     }
   ],
   verification: [
