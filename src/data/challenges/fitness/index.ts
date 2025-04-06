@@ -4,7 +4,7 @@ import { Challenge } from "../../types/challenge";
 export const fitnessChallenges: Challenge[] = [
   {
     id: 2,
-    title: "HIIT Workout",
+    title: "30-Minute HIIT Workout",
     description: "Complete a high-intensity interval training session with bodyweight exercises.",
     category: "fitness",
     difficulty: "Medium",
@@ -12,7 +12,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 6,
-    title: "Yoga Flow",
+    title: "Yoga Flow Session",
     description: "Follow a guided yoga flow focusing on flexibility and mindfulness.",
     category: "fitness",
     difficulty: "Easy",
@@ -28,7 +28,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 14,
-    title: "Endurance Challenge",
+    title: "Endurance Running",
     description: "Build cardiovascular endurance through sustained aerobic activity.",
     category: "fitness",
     difficulty: "Hard",
@@ -52,7 +52,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 27,
-    title: "Strength Training Basics",
+    title: "Full Body Strength Training",
     description: "Learn proper form for fundamental strength training exercises.",
     category: "fitness",
     difficulty: "Medium",
@@ -76,7 +76,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 35,
-    title: "Mobility Routine",
+    title: "Full-Body Mobility Routine",
     description: "Improve joint mobility and range of motion with dynamic movement patterns.",
     category: "fitness",
     difficulty: "Medium",
@@ -84,7 +84,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 43,
-    title: "Functional Training Circuit",
+    title: "Functional Fitness Circuit",
     description: "Perform exercises that mimic everyday movements to improve overall functionality.",
     category: "fitness",
     difficulty: "Medium",
@@ -92,7 +92,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 47,
-    title: "Bodyweight Strength Routine",
+    title: "Bodyweight Strength Challenge",
     description: "Build strength using only your bodyweight with progressive exercise variations.",
     category: "fitness",
     difficulty: "Medium",
@@ -108,7 +108,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 58,
-    title: "Balance Training",
+    title: "Balance and Coordination Training",
     description: "Improve stability and proprioception through targeted balance exercises.",
     category: "fitness",
     difficulty: "Medium",
@@ -124,7 +124,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 64,
-    title: "Flexibility Improvement",
+    title: "Flexibility Improvement Routine",
     description: "Increase your range of motion through targeted static stretching exercises.",
     category: "fitness",
     difficulty: "Easy",
@@ -132,7 +132,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 74,
-    title: "Tabata Workout",
+    title: "Tabata Workout Challenge",
     description: "Complete a time-efficient, high-intensity Tabata protocol (20s work/10s rest).",
     category: "fitness",
     difficulty: "Hard",
@@ -140,7 +140,7 @@ export const fitnessChallenges: Challenge[] = [
   },
   {
     id: 78,
-    title: "Full-Body Stretching Routine",
+    title: "Stretching Routine for Desk Workers",
     description: "Improve flexibility and reduce muscle tension with a comprehensive stretching routine.",
     category: "fitness",
     difficulty: "Easy",
