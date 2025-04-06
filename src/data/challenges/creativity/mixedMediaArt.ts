@@ -17,11 +17,11 @@ export const mixedMediaArtChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Mixed Media Techniques Guide",
-      url: "https://craftsy.com/post/mixed-media-art-techniques/"
+      url: "https://www.montmarte.com/blogs/tips-techniques/10-mixed-media-techniques"
     },
     {
       title: "Creative Texture Ideas",
-      url: "https://www.artistsnetwork.com/art-techniques/mixed-media/mixed-media-art-techniques/"
+      url: "https://www.pinterest.com/ugraphicslide/creative-textures-design/"
     }
   ],
   verification: [
