@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Calendar, ChevronRight } from "lucide-react";
-import { format, isToday, parseISO, startOfDay } from "date-fns";
+import { format, isToday, parseISO, startOfDay, isBefore } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
@@ -24,16 +23,30 @@ const ScheduledChallenges = () => {
     const storedSchedule = localStorage.getItem("scheduledChallenges");
     if (storedSchedule) {
       const schedule = JSON.parse(storedSchedule) as Record<string, ScheduledChallenge[]>;
-      setScheduledChallenges(schedule);
       
-      // Get today's date in YYYY-MM-DD format for consistent comparison
+      // Filter out past dates (excluding today)
       const today = format(new Date(), "yyyy-MM-dd");
+      const currentSchedule: Record<string, ScheduledChallenge[]> = {};
+      
+      // Only keep today and future dates
+      Object.entries(schedule).forEach(([date, challenges]) => {
+        if (date >= today) {
+          currentSchedule[date] = challenges;
+        }
+      });
+      
+      // Update local storage with filtered schedule
+      if (Object.keys(currentSchedule).length !== Object.keys(schedule).length) {
+        localStorage.setItem("scheduledChallenges", JSON.stringify(currentSchedule));
+      }
+      
+      setScheduledChallenges(currentSchedule);
       
       // Set today's scheduled challenges
-      setTodaysSchedule(schedule[today] || []);
+      setTodaysSchedule(currentSchedule[today] || []);
       
       // Get upcoming scheduled challenges (sorted by date)
-      const upcoming = Object.entries(schedule)
+      const upcoming = Object.entries(currentSchedule)
         .filter(([date]) => date > today)  // This ensures future dates only
         .sort(([dateA], [dateB]) => dateA.localeCompare(dateB))
         .slice(0, 3); // Limit to next 3 days with scheduled challenges
