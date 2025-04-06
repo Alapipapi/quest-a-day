@@ -22,7 +22,7 @@ export const strengthEnduranceWorkoutChallenge: FitnessChallenge = {
     },
     {
       title: "Circuit Training Benefits",
-      url: "https://www.healthline.com/health/fitness/circuit-training"
+      url: "https://train.fitness/personal-trainer-blogs/what-are-the-benefits-of-circuit-training"
     }
   ],
   verification: [
