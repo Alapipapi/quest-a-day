@@ -7,7 +7,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden py-20 text-center"
+      className="relative overflow-hidden py-20 text-center mt-8 sm:mt-0" // Added top margin on mobile
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent dark:from-gray-900/50 dark:to-transparent" />
       

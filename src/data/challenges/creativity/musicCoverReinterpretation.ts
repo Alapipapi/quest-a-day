@@ -1,32 +1,35 @@
 
 import { CreativityChallenge } from "../../types";
 
-export const musicCoverChallenge: CreativityChallenge = {
+export const musicCoverReinterpretationChallenge: CreativityChallenge = {
   category: "creativity",
   title: "Music Cover Reinterpretation",
   instructions: [
-    "Select a song you want to reinterpret",
-    "Analyze the original structure, chord progression, and melody",
-    "Choose a different genre or style for your cover",
-    "Plan your arrangement (instruments, tempo, key changes)",
-    "Record a simple version of your cover",
-    "Add your own creative elements to make it unique"
+    "Choose a song you enjoy or are familiar with",
+    "Plan your own unique interpretation of the song (change genre, tempo, instrumentation, etc.)",
+    "Record your cover version using available tools",
+    "Add personal artistic touches that make it your own",
+    "Edit and finalize your recording"
   ],
   resources: [
     {
-      title: "Music Arrangement Techniques",
-      url: "https://blog.native-instruments.com/music-arrangement/"
+      title: "Free Recording Software Options",
+      url: "https://blog.landr.com/best-free-daw-2019/"
     },
     {
-      title: "Digital Audio Recording Basics",
-      url: "https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html?srsltid=AfmBOopoNlXCqXg97UlUkH_HU3YqrF8lE4iJ7Aq3v9mmDD8gHHsxxoVs"
+      title: "Tips for Creative Cover Songs",
+      url: "https://www.musicgateway.com/blog/how-to/how-to-make-a-great-cover-song"
     }
   ],
   verification: [
-    "Cover is recognizable but distinct from original",
-    "New arrangement works musically",
-    "Technical execution is competent",
-    "Creative choices enhance the song",
-    "Recording quality is adequate"
+    "Cover maintains recognizable elements of the original song",
+    "Your interpretation adds a new artistic dimension",
+    "Recording quality is reasonable given your tools",
+    "Personal artistic choices are evident and intentional"
+  ],
+  examples: [
+    "Acoustic version of an electronic dance track",
+    "Rock interpretation of a pop song",
+    "Slowed-down, emotional version of an upbeat song"
   ]
 };

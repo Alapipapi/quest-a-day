@@ -22,10 +22,10 @@ const ChangelogButton = () => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
-            variant="ghost"
+            variant="outline"
             size="sm"
             asChild
-            className="fixed top-4 left-4 z-50"
+            className="fixed top-4 left-4 z-50 bg-background/80 backdrop-blur-sm shadow-sm"
           >
             <Link to="/changelog">
               <FileText className="h-5 w-5" />
