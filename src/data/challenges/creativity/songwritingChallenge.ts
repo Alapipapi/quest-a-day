@@ -17,7 +17,7 @@ export const songwritingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Songwriting Fundamentals",
-      url: "https://www.masterclass.com/articles/how-to-write-a-song"
+      url: "https://www.careersinmusic.com/how-to-write-a-song/"
     },
     {
       title: "Basic Chord Progressions",
