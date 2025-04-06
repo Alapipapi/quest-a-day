@@ -14,11 +14,11 @@ export const musicCoverReinterpretationChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Free Recording Software Options",
-      url: "https://blog.landr.com/best-free-daw-2019/"
+      url: "https://www.techradar.com/news/the-best-free-screen-recorder"
     },
     {
       title: "Tips for Creative Cover Songs",
-      url: "https://www.musicgateway.com/blog/how-to/how-to-make-a-great-cover-song"
+      url: "https://acousticguitar.com/7-tips-to-make-cover-songs-feel-like-your-own/"
     }
   ],
   verification: [
