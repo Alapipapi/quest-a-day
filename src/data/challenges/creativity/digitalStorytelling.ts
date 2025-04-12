@@ -17,11 +17,11 @@ export const digitalStorytellingChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Digital Storytelling Fundamentals",
-      url: "https://www.storycenter.org/resources"
+      url: "https://shorthand.com/the-craft/digital-storytelling/"
     },
     {
       title: "Free Digital Storytelling Tools",
-      url: "https://bookcreator.com/2020/05/digital-storytelling-tools-and-apps/"
+      url: "https://elearningindustry.com/18-free-digital-storytelling-tools-for-teachers-and-students"
     }
   ],
   verification: [
