@@ -31,7 +31,6 @@ const Changelog = () => {
                 <li>Added "Challenge of the Day" feature with daily recommendations</li>
                 <li>Implemented Difficulty Progression system to track skill growth</li>
                 <li>Added Challenge Groups for collaborative challenge completion</li>
-                <li>Added theme customization options</li>
               </ul>
             </div>
             <div>
