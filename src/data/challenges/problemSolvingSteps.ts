@@ -6,7 +6,7 @@ import { algorithmChallenge } from "./problemSolving/algorithm";
 import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { dataStructuresChallenge } from "./problemSolving/dataStructures";
-import { dataAnalysisChallenge } from "./problemSolving/analysis";
+import { analysisChallenge } from "./problemSolving/analysis";
 import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
 import { cryptographyChallenge } from "./problemSolving/cryptography";
 import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
@@ -22,7 +22,7 @@ import { negotiationScenarioChallenge } from "./problemSolving/negotiationScenar
 import { ethicalDilemmaChallenge } from "./problemSolving/ethicalDilemma";
 import { strategicPlanningChallenge } from "./problemSolving/strategicPlanning";
 import { timeManagementChallenge } from "./problemSolving/timeManagement";
-import { designThinkingChallenge } from "./problemSolving/designThinkingChallenge";
+import { designThinkingChallenge } from "./problemSolving/designThinking";
 import { resourceOptimizationChallenge } from "./problemSolving/resourceOptimization";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
@@ -32,7 +32,7 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   chessPuzzleChallenge,
   logicGridChallenge,
   dataStructuresChallenge,
-  dataAnalysisChallenge,
+  analysisChallenge,
   blockPuzzleChallenge,
   cryptographyChallenge,
   memoryTechniquesChallenge,
