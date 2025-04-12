@@ -17,11 +17,11 @@ export const metabolicConditioningChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Metabolic Conditioning Fundamentals",
-      url: "https://www.acefitness.org/continuing-education/certified/january-2018/6866/metabolic-conditioning-how-to-craft-effective-workouts/"
+      url: "https://www.healthline.com/health/exercise-fitness/metabolic-conditioning"
     },
     {
       title: "Exercise Form Guide",
-      url: "https://www.verywellfit.com/how-to-do-a-proper-burpee-2704451"
+      url: "https://www.masterclass.com/articles/metabolic-conditioning-workout-guide"
     }
   ],
   verification: [
