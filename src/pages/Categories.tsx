@@ -44,11 +44,11 @@ const Categories = () => {
       <ThemeSwitcher />
       
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex items-center mb-6">
+        <div className="flex items-center justify-center mb-6">
           <Button variant="outline" onClick={() => navigate('/')} className="mr-4">
             <ChevronLeft className="h-4 w-4 mr-2" /> Back
           </Button>
-          <h1 className="text-2xl font-bold">Browse by Category</h1>
+          <h1 className="text-2xl font-bold text-center">Browse by Category</h1>
         </div>
         
         <Tabs defaultValue="coding" value={activeTab} onValueChange={setActiveTab} className="mb-12">
