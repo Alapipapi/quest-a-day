@@ -1,40 +1,41 @@
 
-import { ProblemSolvingChallenge } from "../../types";
+import { ProblemSolvingChallenge } from "../../types/problemSolving";
 
 export const designThinkingChallenge: ProblemSolvingChallenge = {
   category: "problem-solving",
   title: "Design Thinking Process",
   instructions: [
-    "Choose a real-world problem to solve (personal or community)",
-    "Empathize: Research and interview people affected by the problem",
+    "Choose a real-world problem to solve (e.g., improving a daily task, addressing a community issue)",
+    "Follow the five stages of design thinking: Empathize, Define, Ideate, Prototype, and Test",
+    "Empathize: Research and gather information about the users affected by the problem",
     "Define: Create a clear problem statement based on user needs",
-    "Ideate: Brainstorm at least 10 possible solutions without judgment",
-    "Select: Choose the most promising 2-3 ideas to develop further",
-    "Prototype: Create simple sketches or mockups of your solutions",
-    "Test: Get feedback from potential users on your prototypes",
-    "Refine: Improve your solution based on feedback"
+    "Ideate: Generate at least 10 potential solutions using brainstorming techniques",
+    "Prototype: Create a simple representation of your 2-3 best ideas (drawings, mockups, etc.)",
+    "Test: Get feedback on your prototypes from at least 3 people",
+    "Refine your solution based on feedback",
+    "Document your process and findings"
   ],
   resources: [
     {
-      title: "Design Thinking Process Guide",
+      title: "Design Thinking Introduction",
       url: "https://www.interaction-design.org/literature/article/what-is-design-thinking-and-why-is-it-so-popular"
     },
     {
-      title: "Prototyping Methods",
-      url: "https://www.nngroup.com/articles/paper-prototyping/"
+      title: "Stanford d.school Design Thinking Process",
+      url: "https://dschool.stanford.edu/resources"
+    },
+    {
+      title: "Design Thinking Tools",
+      url: "https://designthinking.ideo.com/"
     }
   ],
   verification: [
-    "Clear documentation of the problem and affected users",
-    "Well-defined problem statement focused on user needs",
-    "Evidence of brainstorming multiple solutions",
-    "Created at least one simple prototype",
-    "Collected and incorporated user feedback",
-    "Final solution addresses the core problem"
-  ],
-  examples: [
-    "Improving a daily routine or workflow",
-    "Addressing a community transportation issue",
-    "Redesigning a confusing product or service experience"
+    "Completed all five stages of the design thinking process",
+    "Created a clear problem statement based on user needs",
+    "Generated at least 10 potential solutions",
+    "Developed 2-3 simple prototypes",
+    "Collected feedback from at least 3 people",
+    "Refined solution based on feedback",
+    "Documented the entire process from problem to solution"
   ]
 };
