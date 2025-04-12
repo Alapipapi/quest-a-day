@@ -22,7 +22,7 @@ import { negotiationScenarioChallenge } from "./problemSolving/negotiationScenar
 import { ethicalDilemmaChallenge } from "./problemSolving/ethicalDilemma";
 import { strategicPlanningChallenge } from "./problemSolving/strategicPlanning";
 import { timeManagementChallenge } from "./problemSolving/timeManagement";
-import { designThinkingChallenge } from "./problemSolving/designThinking";
+import { designThinkingChallenge } from "./problemSolving/designThinkingChallenge";
 import { resourceOptimizationChallenge } from "./problemSolving/resourceOptimization";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
