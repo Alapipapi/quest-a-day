@@ -20,6 +20,7 @@ import { tabataWorkoutChallenge } from "./fitness/tabataWorkout";
 import { stretchingRoutineChallenge } from "./fitness/stretchingRoutine";
 import { lowImpactCardioChallenge } from "./fitness/lowImpactCardio";
 import { strengthEnduranceWorkoutChallenge } from "./fitness/strengthEnduranceWorkout";
+import { metabolicConditioningChallenge } from "./fitness/metabolicConditioning";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -41,5 +42,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   tabataWorkoutChallenge,
   stretchingRoutineChallenge,
   lowImpactCardioChallenge,
-  strengthEnduranceWorkoutChallenge
+  strengthEnduranceWorkoutChallenge,
+  metabolicConditioningChallenge
 ];

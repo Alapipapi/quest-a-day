@@ -162,4 +162,12 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "40 minutes",
   },
+  {
+    id: 91,
+    title: "Metabolic Conditioning Circuit",
+    description: "Boost your metabolism with a high-intensity circuit targeting multiple energy systems.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "35 minutes",
+  },
 ];

@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -200,5 +201,21 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 93,
+    title: "Digital Storytelling Project",
+    description: "Create a multimedia digital story combining photos, video, audio, and text to share a personal narrative.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 94,
+    title: "Color Theory Art Exercise",
+    description: "Explore color theory principles by creating artwork focusing on specific color relationships and harmony.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   },
 ];

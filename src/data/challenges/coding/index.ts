@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -176,5 +177,13 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Hard",
     timeEstimate: "4-5 hours",
+  },
+  {
+    id: 92,
+    title: "Microservices Architecture Design",
+    description: "Design and document a microservices architecture for breaking down a monolithic application.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "5-6 hours",
   },
 ];

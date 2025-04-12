@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const problemSolvingChallenges: Challenge[] = [
@@ -184,5 +185,13 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 95,
+    title: "Resource Optimization Challenge",
+    description: "Apply optimization techniques to allocate limited resources efficiently across competing priorities.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "2-3 hours",
   },
 ];

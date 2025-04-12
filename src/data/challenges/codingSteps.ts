@@ -22,6 +22,7 @@ import { mobileFirstWebsiteChallenge } from "./coding/mobileFirstWebsite";
 import { cicdPipelineChallenge } from "./coding/cicdPipeline";
 import { automatedTestingChallenge } from "./coding/automatedTesting";
 import { mobileAppIntegrationChallenge } from "./coding/mobileAppIntegration";
+import { microservicesArchitectureChallenge } from "./coding/microservicesArchitecture";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -45,5 +46,6 @@ export const codingSteps: CodingChallenge[] = [
   mobileFirstWebsiteChallenge,
   cicdPipelineChallenge,
   automatedTestingChallenge,
-  mobileAppIntegrationChallenge
+  mobileAppIntegrationChallenge,
+  microservicesArchitectureChallenge
 ];
