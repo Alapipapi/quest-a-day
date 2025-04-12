@@ -54,10 +54,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         category: {
-          coding: "#DBE9FD",
-          fitness: "#DCFCE7",
-          creativity: "#F3E8FF",
-          "problem-solving": "#FEF3C7",
+          coding: "#4FD1C5",
+          fitness: "#FC8181",
+          creativity: "#F6AD55",
+          "problem-solving": "#9F7AEA",
         },
       },
       borderRadius: {
