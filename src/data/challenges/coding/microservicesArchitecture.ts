@@ -21,7 +21,7 @@ export const microservicesArchitectureChallenge: CodingChallenge = {
     },
     {
       title: "Designing Resilient Systems",
-      url: "https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/design-resiliency"
+      url: "https://cloud.google.com/compute/docs/tutorials/robustsystems"
     }
   ],
   verification: [
