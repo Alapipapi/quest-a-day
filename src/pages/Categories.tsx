@@ -48,8 +48,10 @@ const Categories = () => {
           <Button variant="outline" onClick={() => navigate('/')} className="mr-4">
             <ChevronLeft className="h-4 w-4 mr-2" /> Back
           </Button>
-          <h1 className="text-2xl font-bold text-center">Browse by Category</h1>
         </div>
+          <div className="flex justify-center mb-6">
+            <h1 className="text-2xl font-bold">Browse by Category</h1>
+          </div>
         
         <Tabs defaultValue="coding" value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid grid-cols-4 mb-8">
