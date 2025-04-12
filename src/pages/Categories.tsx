@@ -44,7 +44,7 @@ const Categories = () => {
       <ThemeSwitcher />
       
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center mb-6">
           <Button variant="outline" onClick={() => navigate('/')} className="mr-4">
             <ChevronLeft className="h-4 w-4 mr-2" /> Back
           </Button>
