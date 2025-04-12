@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LayoutGrid, BookText, Users, BookMarked } from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 import Hero from "@/components/Hero";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,6 @@ import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import FavoriteChallenges from "@/components/challenges/FavoriteChallenges";
-import ChallengeOfTheDay from "@/components/challenges/ChallengeOfTheDay";
-import DifficultyProgression from "@/components/challenges/DifficultyProgression";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -105,33 +103,6 @@ const Index = () => {
 
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
         
-        <div className="flex flex-wrap gap-4 mb-8">
-          <Button variant="outline" size="sm" asChild className="flex items-center gap-1">
-            <Link to="/categories">
-              <LayoutGrid className="h-4 w-4 mr-1" />
-              Browse by Category
-            </Link>
-          </Button>
-          
-          <Button variant="outline" size="sm" asChild className="flex items-center gap-1">
-            <Link to="/resource-hub">
-              <BookText className="h-4 w-4 mr-1" />
-              Resource Hub
-            </Link>
-          </Button>
-          
-          <Button variant="outline" size="sm" asChild className="flex items-center gap-1">
-            <Link to="/challenge-groups">
-              <Users className="h-4 w-4 mr-1" />
-              Challenge Groups
-            </Link>
-          </Button>
-        </div>
-        
-        <ChallengeOfTheDay />
-        
-        <DifficultyProgression />
-        
         <FeaturedChallenge />
         
         <ScheduledChallenges />
@@ -140,14 +111,12 @@ const Index = () => {
         
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">All Challenges</h2>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm" asChild className="flex items-center gap-1">
-              <Link to="/categories">
-                <LayoutGrid className="h-4 w-4" />
-                Browse by Category
-              </Link>
+          <Link to="/categories">
+            <Button variant="outline" size="sm" className="flex items-center gap-1">
+              <LayoutGrid className="h-4 w-4" />
+              Browse by Category
             </Button>
-          </div>
+          </Link>
         </div>
 
         <motion.div

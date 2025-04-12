@@ -20,40 +20,6 @@ const Changelog = () => {
       <div className="space-y-12">
         <div className="space-y-4">
           <div className="flex items-center">
-            <h2 className="text-2xl font-bold">v1.5.0</h2>
-            <span className="ml-3 text-sm text-muted-foreground">April 12, 2025</span>
-          </div>
-          <div className="border-l-2 border-primary pl-4 ml-2 space-y-4">
-            <div>
-              <h3 className="text-lg font-semibold">New Features</h3>
-              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                <li>Added Resource Hub with downloadable PDF guides for challenges</li>
-                <li>Added "Challenge of the Day" feature with daily recommendations</li>
-                <li>Implemented Difficulty Progression system to track skill growth</li>
-                <li>Added Challenge Groups for collaborative challenge completion</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Improvements</h3>
-              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                <li>Enhanced challenge search with filtering by completion status</li>
-                <li>Improved mobile experience with responsive layouts</li>
-                <li>Added detailed statistics for challenge completion</li>
-                <li>Optimized application performance</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Bug Fixes</h3>
-              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                <li>Fixed issue with progress tracking on some challenges</li>
-                <li>Resolved inconsistent dark mode styling</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex items-center">
             <h2 className="text-2xl font-bold">v1.4.0</h2>
             <span className="ml-3 text-sm text-muted-foreground">April 5, 2025</span>
           </div>
