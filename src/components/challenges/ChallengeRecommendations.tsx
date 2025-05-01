@@ -15,6 +15,11 @@ const ChallengeRecommendations = () => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  // Helper function to capitalize first letter only
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   useEffect(() => {
     // Get completed challenges
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
@@ -99,7 +104,7 @@ const ChallengeRecommendations = () => {
               <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{challenge.description}</p>
               <div className="flex items-center justify-between text-xs">
                 <span className="bg-primary/10 text-primary px-2 py-1 rounded-full">
-                  {challenge.category}
+                  {capitalizeFirstLetter(challenge.category)}
                 </span>
                 <span>{challenge.difficulty}</span>
               </div>

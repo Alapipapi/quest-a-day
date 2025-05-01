@@ -1,11 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 import { CHALLENGES } from "@/data/challengeData";
 import { Challenge } from "@/data/types/challenge";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
@@ -18,15 +18,16 @@ const ChallengeOfTheDay = () => {
   
   useEffect(() => {
     // Use the current date to generate a consistent "random" number for the day
+    // But use a different formula than Featured Challenge
     const now = new Date();
     const startOfYear = new Date(now.getFullYear(), 0, 0);
     const diff = now.getTime() - startOfYear.getTime();
     const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
     
-    const challengeIndex = dayOfYear % CHALLENGES.length;
+    // Add an offset to get a different challenge than featured challenge
+    const offset = 7; // Offset by a week
+    const challengeIndex = (dayOfYear + offset) % CHALLENGES.length;
     
-    // Use the same challenge as featured challenge to ensure consistency
-    // Featured challenge uses the same dayOfYear calculation
     const todaysChallenge = CHALLENGES[challengeIndex];
     setDailyChallenge(todaysChallenge);
     
@@ -79,7 +80,8 @@ const ChallengeOfTheDay = () => {
                 </div>
                 
                 <Button size="sm" className="flex items-center gap-1">
-                  {isCompleted ? "Completed" : "Start Challenge"}
+                  <span>View</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
             </CardContent>
