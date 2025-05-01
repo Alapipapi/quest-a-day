@@ -64,6 +64,22 @@ const ChallengeStatistics = () => {
     return null;
   }
 
+  // Define chart colors - match with category colors from tailwind config
+  const chartConfig = {
+    coding: {
+      color: "#4FD1C5" // teal
+    },
+    fitness: {
+      color: "#FC8181" // red
+    },
+    creativity: {
+      color: "#F6AD55" // orange
+    },
+    "problem-solving": {
+      color: "#9F7AEA" // purple
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -77,7 +93,10 @@ const ChallengeStatistics = () => {
         </CardHeader>
         <CardContent>
           <div className="h-72">
-            <ChartContainer className="h-full w-full">
+            <ChartContainer 
+              config={chartConfig}
+              className="h-full w-full"
+            >
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart 
                   data={statistics}
@@ -97,15 +116,13 @@ const ChallengeStatistics = () => {
                     tickLine={false}
                     tick={{ fill: "hsl(var(--muted-foreground))" }}
                   />
-                  {statistics.map((entry) => (
-                    <Bar 
-                      key={entry.categoryKey}
-                      dataKey="completed" 
-                      name={entry.name}
-                      radius={[4, 4, 0, 0]}
-                      className={`fill-category-${entry.categoryKey}`}
-                    />
-                  ))}
+                  <Bar 
+                    dataKey="completed" 
+                    radius={[4, 4, 0, 0]}
+                    className="fill-primary/80 hover:fill-primary"
+                    fill="var(--color-coding)"
+                    name="Completed"
+                  />
                   <ChartTooltip
                     cursor={{ fill: "hsl(var(--muted)/20)" }}
                     content={({ active, payload }) => {
