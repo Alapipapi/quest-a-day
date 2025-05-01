@@ -20,6 +20,58 @@ const Changelog = () => {
       <div className="space-y-12">
         <div className="space-y-4">
           <div className="flex items-center">
+            <h2 className="text-2xl font-bold">v1.5.0</h2>
+            <span className="ml-3 text-sm text-muted-foreground">May 1, 2025</span>
+          </div>
+          <div className="border-l-2 border-primary pl-4 ml-2 space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold">New Features</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Added challenge recommendation system based on user history</li>
+                <li>Implemented challenge sharing via social media</li>
+                <li>Added progress tracking with visual completion charts</li>
+                <li>Introduced challenge categories filter on the homepage</li>
+                <li>Implemented challenge difficulty progression system</li>
+                <li>Added custom notifications for scheduled challenges</li>
+                <li>Created detailed challenge statistics dashboard</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">New Challenges</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li><strong>Coding:</strong> Database Schema Optimization</li>
+                <li><strong>Coding:</strong> Security Audit Implementation</li>
+                <li><strong>Fitness:</strong> High-Intensity Interval Circuit</li>
+                <li><strong>Fitness:</strong> Mobility Improvement Routine</li>
+                <li><strong>Creativity:</strong> Digital Storytelling Project</li>
+                <li><strong>Creativity:</strong> Sound Design Workshop</li>
+                <li><strong>Problem-Solving:</strong> Root Cause Analysis</li>
+                <li><strong>Problem-Solving:</strong> Risk Assessment Framework</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Improvements</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Enhanced UI with smoother animations and transitions</li>
+                <li>Improved challenge completion tracking accuracy</li>
+                <li>Optimized mobile responsiveness across all views</li>
+                <li>Added more detailed challenge descriptions</li>
+                <li>Implemented better challenge categorization</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Bug Fixes</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Fixed issue with challenge timers not saving state</li>
+                <li>Resolved synchronization issues with scheduled challenges</li>
+                <li>Fixed responsive layout issues on smaller devices</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center">
             <h2 className="text-2xl font-bold">v1.4.0</h2>
             <span className="ml-3 text-sm text-muted-foreground">April 5, 2025</span>
           </div>

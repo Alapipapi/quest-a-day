@@ -14,6 +14,9 @@ import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import FavoriteChallenges from "@/components/challenges/FavoriteChallenges";
+import ChallengeOfTheDay from "@/components/challenges/ChallengeOfTheDay";
+import ChallengeStatistics from "@/components/challenges/ChallengeStatistics";
+import ChallengeRecommendations from "@/components/challenges/ChallengeRecommendations";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -103,11 +106,17 @@ const Index = () => {
 
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
         
+        <ChallengeOfTheDay />
+        
         <FeaturedChallenge />
         
         <ScheduledChallenges />
+
+        <ChallengeRecommendations />
         
         <FavoriteChallenges />
+
+        <ChallengeStatistics />
         
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">All Challenges</h2>
