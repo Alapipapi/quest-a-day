@@ -49,17 +49,11 @@ const BookmarkButton = ({ challengeId, title }: BookmarkButtonProps) => {
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={toggleFavorite}>
+    <Button variant="outline" size="icon" onClick={toggleFavorite}>
       {isFavorite ? (
-        <>
-          <StarOff className="h-4 w-4 mr-1" />
-          Unfavorite
-        </>
+        <StarOff className="h-4 w-4" />
       ) : (
-        <>
-          <Star className="h-4 w-4 mr-1" />
-          Favorite
-        </>
+        <Star className="h-4 w-4" />
       )}
     </Button>
   );

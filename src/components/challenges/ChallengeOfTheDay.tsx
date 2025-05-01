@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { CHALLENGES } from "@/data/challengeData";
 import { Challenge } from "@/data/types/challenge";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -25,6 +25,8 @@ const ChallengeOfTheDay = () => {
     
     const challengeIndex = dayOfYear % CHALLENGES.length;
     
+    // Use the same challenge as featured challenge to ensure consistency
+    // Featured challenge uses the same dayOfYear calculation
     const todaysChallenge = CHALLENGES[challengeIndex];
     setDailyChallenge(todaysChallenge);
     
@@ -52,14 +54,12 @@ const ChallengeOfTheDay = () => {
       transition={{ delay: 0.1 }}
       className="mb-8"
     >
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <CardHeader className="pb-2">
-          <CardTitle className="flex items-center text-xl">
-            <Star className="h-5 w-5 mr-2 text-yellow-500" />
-            Challenge of the Day
-          </CardTitle>
-        </CardHeader>
+      <h2 className="text-xl font-bold mb-4 flex items-center">
+        <Star className="h-5 w-5 mr-2 text-yellow-500" />
+        Challenge of the Day
+      </h2>
 
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Card className="cursor-pointer hover:shadow-md transition-shadow border-2 border-yellow-500/20">
             <CardContent className="p-6">
