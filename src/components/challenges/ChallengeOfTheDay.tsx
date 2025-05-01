@@ -19,7 +19,10 @@ const ChallengeOfTheDay = () => {
   useEffect(() => {
     // Use the current date to generate a consistent "random" number for the day
     const now = new Date();
-    const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+    const startOfYear = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - startOfYear.getTime();
+    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+    
     const challengeIndex = dayOfYear % CHALLENGES.length;
     
     const todaysChallenge = CHALLENGES[challengeIndex];
