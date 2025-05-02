@@ -7,7 +7,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "../ui/chart";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell } from "recharts";
 
 const ChallengeStatistics = () => {
   const [statistics, setStatistics] = useState<any[]>([]);
@@ -64,7 +64,7 @@ const ChallengeStatistics = () => {
     return null;
   }
 
-  // Define chart colors for each category
+  // Define chart colors for each category - ensure these are correctly mapped
   const categoryColors = {
     coding: "#9b87f5", // Purple
     fitness: "#F97316", // Orange
@@ -139,17 +139,14 @@ const ChallengeStatistics = () => {
                 />
                 <Bar 
                   dataKey="completed"
-                  fill="#9b87f5"
-                  radius={[4, 4, 0, 0]}
-                  className="hover:opacity-80"
                   isAnimationActive={true}
                   animationDuration={800}
                   background={{ fill: "transparent" }}
-                  name="Completions"
+                  radius={[4, 4, 0, 0]}
                 >
                   {statistics.map((entry, index) => (
-                    <rect
-                      key={`rect-${index}`}
+                    <Cell 
+                      key={`cell-${index}`}
                       fill={categoryColors[entry.categoryKey as keyof typeof categoryColors]}
                     />
                   ))}
