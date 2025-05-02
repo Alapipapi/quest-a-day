@@ -64,20 +64,12 @@ const ChallengeStatistics = () => {
     return null;
   }
 
-  // Define chart colors - match with category colors from tailwind config
-  const chartConfig = {
-    coding: {
-      color: "#4FD1C5" // teal
-    },
-    fitness: {
-      color: "#FC8181" // red
-    },
-    creativity: {
-      color: "#F6AD55" // orange
-    },
-    "problem-solving": {
-      color: "#9F7AEA" // purple
-    }
+  // Define chart colors for each category
+  const categoryColors = {
+    coding: "#9b87f5", // Purple
+    fitness: "#F97316", // Orange
+    creativity: "#D946EF", // Pink
+    "problem-solving": "#0EA5E9" // Blue
   };
 
   return (
@@ -93,76 +85,77 @@ const ChallengeStatistics = () => {
         </CardHeader>
         <CardContent>
           <div className="h-72">
-            <ChartContainer 
-              config={chartConfig}
-              className="h-full w-full"
-            >
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart 
-                  data={statistics}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-                  barGap={8}
-                >
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" />
-                  <XAxis 
-                    dataKey="name" 
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "hsl(var(--muted-foreground))" }}
-                  />
-                  <YAxis 
-                    allowDecimals={false}
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "hsl(var(--muted-foreground))" }}
-                  />
-                  <ChartTooltip
-                    content={({ active, payload }) => {
-                      if (!active || !payload || payload.length === 0) return null;
-                      
-                      const data = payload[0].payload;
-                      const category = data.name;
-                      const value = data.completed;
-                      const categoryKey = data.categoryKey;
-                      
-                      return (
-                        <div className="rounded-lg border border-border bg-background p-2 shadow-md">
-                          <div className="grid grid-cols-2 gap-2">
-                            <div className="flex items-center gap-1">
-                              <div 
-                                className="h-2 w-2 rounded-full" 
-                                style={{ 
-                                  backgroundColor: chartConfig[categoryKey as keyof typeof chartConfig]?.color 
-                                }}
-                              />
-                              <span className="font-medium">{category}</span>
-                            </div>
-                            <div className="text-right font-medium">
-                              <span className="text-muted-foreground">
-                                {capitalizeFirstLetter("completed")}: {value}
-                              </span>
-                            </div>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart 
+                data={statistics}
+                margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                barGap={8}
+              >
+                <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" />
+                <XAxis 
+                  dataKey="name" 
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "hsl(var(--muted-foreground))" }}
+                />
+                <YAxis 
+                  allowDecimals={false}
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "hsl(var(--muted-foreground))" }}
+                />
+                <ChartTooltip
+                  content={(props) => {
+                    const { active, payload } = props;
+                    
+                    if (!active || !payload || payload.length === 0) return null;
+                    
+                    const data = payload[0].payload;
+                    const category = data.name;
+                    const value = data.completed;
+                    const categoryKey = data.categoryKey;
+                    
+                    return (
+                      <div className="rounded-lg border border-border bg-background p-2 shadow-md">
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="flex items-center gap-1">
+                            <div 
+                              className="h-2 w-2 rounded-full" 
+                              style={{ 
+                                backgroundColor: categoryColors[categoryKey as keyof typeof categoryColors] 
+                              }}
+                            />
+                            <span className="font-medium">{category}</span>
+                          </div>
+                          <div className="text-right font-medium">
+                            <span className="text-muted-foreground">
+                              {capitalizeFirstLetter("completed")}: {value}
+                            </span>
                           </div>
                         </div>
-                      );
-                    }}
-                  />
-                  {statistics.map((entry) => (
-                    <Bar 
-                      key={entry.categoryKey}
-                      dataKey="completed"
-                      name={entry.name}
-                      fill={chartConfig[entry.categoryKey as keyof typeof chartConfig]?.color}
-                      radius={[4, 4, 0, 0]}
-                      className="hover:opacity-80"
-                      isAnimationActive={true}
-                      animationDuration={800}
-                      background={{ fill: "transparent" }}
+                      </div>
+                    );
+                  }}
+                />
+                <Bar 
+                  dataKey="completed"
+                  fill="#9b87f5"
+                  radius={[4, 4, 0, 0]}
+                  className="hover:opacity-80"
+                  isAnimationActive={true}
+                  animationDuration={800}
+                  background={{ fill: "transparent" }}
+                  name="Completions"
+                >
+                  {statistics.map((entry, index) => (
+                    <rect
+                      key={`rect-${index}`}
+                      fill={categoryColors[entry.categoryKey as keyof typeof categoryColors]}
                     />
                   ))}
-                </BarChart>
-              </ResponsiveContainer>
-            </ChartContainer>
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </CardContent>
       </Card>
