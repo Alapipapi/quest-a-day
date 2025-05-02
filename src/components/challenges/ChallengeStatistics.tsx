@@ -157,11 +157,7 @@ const ChallengeStatistics = () => {
                       className="hover:opacity-80"
                       isAnimationActive={true}
                       animationDuration={800}
-                      stackId={entry.categoryKey}
-                      minPointSize={2}
-                      maxBarSize={40}
                       background={{ fill: "transparent" }}
-                      data={[entry]}
                     />
                   ))}
                 </BarChart>
