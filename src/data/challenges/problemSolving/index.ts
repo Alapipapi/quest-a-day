@@ -194,4 +194,20 @@ export const problemSolvingChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "2-3 hours",
   },
+  {
+    id: 101,
+    title: "Root Cause Analysis",
+    description: "Apply systematic techniques to identify the underlying causes of a complex problem scenario.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
+  },
+  {
+    id: 102,
+    title: "Risk Assessment Framework",
+    description: "Develop a comprehensive risk assessment framework to analyze and prioritize potential threats.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
 ];

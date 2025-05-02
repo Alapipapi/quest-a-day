@@ -25,8 +25,9 @@ import { comicStripCreationChallenge } from "./creativity/comicStripCreation";
 import { shortFilmStoryboardingChallenge } from "./creativity/shortFilmStoryboarding";
 import { mixedMediaArtChallenge } from "./creativity/mixedMediaArt";
 import { songwritingChallenge } from "./creativity/songwritingChallenge";
-import { digitalStorytellingChallenge } from "./creativity/digitalStorytelling";
+import { digitalStorytellingProjectChallenge } from "./creativity/digitalStorytellingProject";
 import { colorTheoryArtChallenge } from "./creativity/colorTheoryArt";
+import { soundDesignWorkshopChallenge } from "./creativity/soundDesignWorkshop";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -54,6 +55,7 @@ export const creativitySteps: CreativityChallenge[] = [
   shortFilmStoryboardingChallenge,
   mixedMediaArtChallenge,
   songwritingChallenge,
-  digitalStorytellingChallenge,
-  colorTheoryArtChallenge
+  digitalStorytellingProjectChallenge,
+  colorTheoryArtChallenge,
+  soundDesignWorkshopChallenge
 ];

@@ -24,6 +24,8 @@ import { strategicPlanningChallenge } from "./problemSolving/strategicPlanning";
 import { timeManagementChallenge } from "./problemSolving/timeManagement";
 import { designThinkingChallenge } from "./problemSolving/designThinkingChallenge";
 import { resourceOptimizationChallenge } from "./problemSolving/resourceOptimization";
+import { rootCauseAnalysisChallenge } from "./problemSolving/rootCauseAnalysis";
+import { riskAssessmentFrameworkChallenge } from "./problemSolving/riskAssessmentFramework";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -49,5 +51,7 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   strategicPlanningChallenge,
   timeManagementChallenge,
   designThinkingChallenge,
-  resourceOptimizationChallenge
+  resourceOptimizationChallenge,
+  rootCauseAnalysisChallenge,
+  riskAssessmentFrameworkChallenge
 ];

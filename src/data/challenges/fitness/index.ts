@@ -170,4 +170,20 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "35 minutes",
   },
+  {
+    id: 98,
+    title: "High-Intensity Interval Circuit",
+    description: "Push your limits with a challenging circuit that combines strength and cardio in short, intense bursts.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "40 minutes",
+  },
+  {
+    id: 99,
+    title: "Mobility Improvement Routine",
+    description: "Enhance your range of motion and joint health with a comprehensive mobility routine.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "25 minutes",
+  },
 ];

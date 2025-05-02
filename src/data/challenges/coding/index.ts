@@ -186,4 +186,20 @@ export const codingChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "5-6 hours",
   },
+  {
+    id: 96,
+    title: "Database Schema Optimization",
+    description: "Analyze and optimize a database schema to improve performance and data integrity.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "4-5 hours",
+  },
+  {
+    id: 97,
+    title: "Security Audit Implementation",
+    description: "Conduct a security audit and implement fixes for common web application vulnerabilities.",
+    category: "coding",
+    difficulty: "Hard",
+    timeEstimate: "5-6 hours",
+  },
 ];

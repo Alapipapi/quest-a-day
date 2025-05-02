@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -217,5 +216,13 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 100,
+    title: "Sound Design Workshop",
+    description: "Learn and apply basic sound design principles to create audio elements for multimedia projects.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
 ];
