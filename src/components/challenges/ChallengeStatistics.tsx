@@ -66,10 +66,10 @@ const ChallengeStatistics = () => {
 
   // Define chart colors for each category - ensure these are correctly mapped
   const categoryColors = {
-    coding: "#9b87f5", // Purple
-    fitness: "#F97316", // Orange
-    creativity: "#D946EF", // Pink
-    "problem-solving": "#0EA5E9" // Blue
+    coding: "#4FD1C5", // Teal
+    fitness: "#FC8181", // Red
+    creativity: "#F6AD55", // Orange
+    "problem-solving": "#9F7AEA" // Purple
   };
 
   return (
