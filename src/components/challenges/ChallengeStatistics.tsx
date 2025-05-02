@@ -116,15 +116,7 @@ const ChallengeStatistics = () => {
                     tickLine={false}
                     tick={{ fill: "hsl(var(--muted-foreground))" }}
                   />
-                  <Bar 
-                    dataKey="completed" 
-                    radius={[4, 4, 0, 0]}
-                    className="fill-primary/80 hover:fill-primary"
-                    fill="var(--color-coding)"
-                    name="Completed"
-                  />
                   <ChartTooltip
-                    cursor={{ fill: "hsl(var(--muted)/20)" }}
                     content={({ active, payload }) => {
                       if (!active || !payload || payload.length === 0) return null;
                       
@@ -137,7 +129,12 @@ const ChallengeStatistics = () => {
                         <div className="rounded-lg border border-border bg-background p-2 shadow-md">
                           <div className="grid grid-cols-2 gap-2">
                             <div className="flex items-center gap-1">
-                              <div className={`h-2 w-2 rounded-full bg-category-${categoryKey}`} />
+                              <div 
+                                className="h-2 w-2 rounded-full" 
+                                style={{ 
+                                  backgroundColor: chartConfig[categoryKey as keyof typeof chartConfig]?.color 
+                                }}
+                              />
                               <span className="font-medium">{category}</span>
                             </div>
                             <div className="text-right font-medium">
@@ -150,6 +147,23 @@ const ChallengeStatistics = () => {
                       );
                     }}
                   />
+                  {statistics.map((entry) => (
+                    <Bar 
+                      key={entry.categoryKey}
+                      dataKey="completed"
+                      name={entry.name}
+                      fill={chartConfig[entry.categoryKey as keyof typeof chartConfig]?.color}
+                      radius={[4, 4, 0, 0]}
+                      className="hover:opacity-80"
+                      isAnimationActive={true}
+                      animationDuration={800}
+                      stackId={entry.categoryKey}
+                      minPointSize={2}
+                      maxBarSize={40}
+                      background={{ fill: "transparent" }}
+                      data={[entry]}
+                    />
+                  ))}
                 </BarChart>
               </ResponsiveContainer>
             </ChartContainer>
