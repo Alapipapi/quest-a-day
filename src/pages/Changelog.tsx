@@ -43,7 +43,6 @@ const Changelog = () => {
                 <li><strong>Coding:</strong> Security Audit Implementation</li>
                 <li><strong>Fitness:</strong> High-Intensity Interval Circuit</li>
                 <li><strong>Fitness:</strong> Mobility Improvement Routine</li>
-                <li><strong>Creativity:</strong> Digital Storytelling Project</li>
                 <li><strong>Creativity:</strong> Sound Design Workshop</li>
                 <li><strong>Problem-Solving:</strong> Root Cause Analysis</li>
                 <li><strong>Problem-Solving:</strong> Risk Assessment Framework</li>
