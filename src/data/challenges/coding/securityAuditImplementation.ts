@@ -22,7 +22,7 @@ export const securityAuditImplementationChallenge: CodingChallenge = {
     },
     {
       title: "Modern JavaScript Security Best Practices",
-      url: "https://snyk.io/blog/10-react-security-best-practices/"
+      url: "https://www.aptori.com/blog/javascript-security-a-secure-coding-checklist-for-developers"
     }
   ],
   verification: [
