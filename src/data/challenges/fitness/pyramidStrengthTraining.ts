@@ -17,11 +17,11 @@ export const pyramidStrengthTrainingChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Pyramid Training Principles",
-      url: "https://www.verywellfit.com/pyramid-training-build-muscle-and-strength-3498547"
+      url: "https://managementconsulted.com/pyramid-principle/"
     },
     {
-      title: "Proper Form for Compound Exercises",
-      url: "https://www.acefitness.org/education-and-resources/lifestyle/exercise-library/"
+      title: "Proper Form for Strength Training",
+      url: "https://www.stylist.co.uk/fitness-health/workouts/best-pyramid-set-exercises/537199"
     }
   ],
   verification: [
