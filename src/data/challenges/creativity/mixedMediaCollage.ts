@@ -18,11 +18,11 @@ export const mixedMediaCollageChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Mixed Media Collage Techniques",
-      url: "https://www.artistsnetwork.com/art-techniques/mixed-media/mixed-media-collage/"
+      url: "https://hopalongstudio.com/mixed-media-collage-techniques-you-need-to-try/"
     },
     {
-      title: "Composition Principles for Visual Art",
-      url: "https://www.creativebloq.com/digital-art/tips-composition-31514496"
+      title: "Composition Principles for Art",
+      url: "https://paintinglessonswithmarla.com/122-8-principles-of-composition-in-art/"
     }
   ],
   verification: [
