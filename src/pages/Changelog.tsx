@@ -30,8 +30,7 @@ const Changelog = () => {
                 <li>Added challenge recommendation system based on user history</li>
                 <li>Implemented challenge sharing via social media</li>
                 <li>Added progress tracking with visual completion charts</li>
-                <li>Introduced challenge categories filter on the homepage</li>
-                <li>Implemented challenge difficulty progression system</li>
+                <li>Added challenge of the day that updates every day</li>
                 <li>Added custom notifications for scheduled challenges</li>
                 <li>Created detailed challenge statistics dashboard</li>
               </ul>
