@@ -16,15 +16,15 @@ export const soundDesignWorkshopChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Introduction to Sound Design Principles",
-      url: "https://www.masterclass.com/articles/sound-design-guide"
+      url: "https://mixelite.com/blog/the-must-know-fundamentals-of-sound-design/"
     },
     {
       title: "Audacity Tutorial for Beginners",
-      url: "https://manual.audacityteam.org/man/tutorials.html"
+      url: "https://manual.audacityteam.org/man/tutorials_for_audacity.html"
     },
     {
       title: "Field Recording Techniques",
-      url: "https://www.soundonsound.com/techniques/introduction-field-recording"
+      url: "https://larslentzaudio.wordpress.com/2025/01/24/post-processing-field-recordings/"
     }
   ],
   verification: [
