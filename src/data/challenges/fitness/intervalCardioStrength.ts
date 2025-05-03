@@ -19,11 +19,11 @@ export const intervalCardioStrengthChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Proper High-Intensity Interval Training Techniques",
-      url: "https://www.acefitness.org/education-and-resources/professional/expert-articles/5008/8-things-to-know-about-aerobic-capacity-and-vo2-max/"
+      url: "https://www.webmd.com/fitness-exercise/high-intensity-interval-training-hiit"
     },
     {
       title: "Bodyweight Exercise Form Guide",
-      url: "https://www.nerdfitness.com/blog/the-42-best-bodyweight-exercises-work-out-anywhere/"
+      url: "https://www.menshealth.com/uk/building-muscle/a756325/10-best-bodyweight-exercises-for-men/"
     }
   ],
   verification: [
