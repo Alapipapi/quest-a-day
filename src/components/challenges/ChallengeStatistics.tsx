@@ -87,67 +87,56 @@ const ChallengeStatistics = () => {
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart 
-              data={statistics}
-              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-              barGap={8}
-            >
-              <CartesianGrid
-                strokeDasharray="3 3"
-                vertical={false}
-                className="stroke-muted/30"
-                // Use a fixed stroke for now; adjust if category hover is implemented
-                stroke="hsl(var(--muted-foreground))"
-              />
-              <XAxis 
-              dataKey="name" 
-              axisLine={false}
-              tickLine={false}
-              tick={{
-                fill: (data) => {
-                const category = statistics.find((stat) => stat.name === data)?.categoryKey;
-                return category ? categoryColors[category as keyof typeof categoryColors] : "hsl(var(--muted-foreground))";
-              },
-            }}
-          />
-            <YAxis 
-            allowDecimals={false}
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: "hsl(var(--muted-foreground))" }}
-          />
-            <ChartTooltip
-              content={(props) => {
-                const { active, payload } = props;
-                
-                if (!active || !payload || payload.length === 0) return null;
-                
-                const data = payload[0].payload;
-                const category = data.name;
-                const value = data.completed;
-                const categoryKey = data.categoryKey;
-      
-                  return (
-                    <div className="rounded-lg border border-border bg-background p-2 shadow-md">
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="flex items-center gap-1">
-                          <div 
-                            className="h-2 w-2 rounded-full" 
-                            style={{ 
-                              backgroundColor: categoryColors[categoryKey as keyof typeof categoryColors] 
-                            }}
-                          />
-                          <span className="font-medium">{category}</span>
-                        </div>
-                        <div className="text-right font-medium">
-                          <span className="text-muted-foreground">
-                            {capitalizeFirstLetter("completed")}: {value}
-                          </span>
+                data={statistics}
+                margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                barGap={8}
+              >
+                <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" />
+                <XAxis 
+                  dataKey="name" 
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "hsl(var(--muted-foreground))" }}
+                />
+                <YAxis 
+                  allowDecimals={false}
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "hsl(var(--muted-foreground))" }}
+                />
+                <ChartTooltip
+                  content={(props) => {
+                    const { active, payload } = props;
+                    
+                    if (!active || !payload || payload.length === 0) return null;
+                    
+                    const data = payload[0].payload;
+                    const category = data.name;
+                    const value = data.completed;
+                    const categoryKey = data.categoryKey;
+                    
+                    return (
+                      <div className="rounded-lg border border-border bg-background p-2 shadow-md">
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="flex items-center gap-1">
+                            <div 
+                              className="h-2 w-2 rounded-full" 
+                              style={{ 
+                                backgroundColor: categoryColors[categoryKey as keyof typeof categoryColors] 
+                              }}
+                            />
+                            <span className="font-medium">{category}</span>
+                          </div>
+                          <div className="text-right font-medium">
+                            <span className="text-muted-foreground">
+                              {capitalizeFirstLetter("completed")}: {value}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                }}
-              />
+                    );
+                  }}
+                />
                 <Bar 
                   dataKey="completed"
                   isAnimationActive={true}
