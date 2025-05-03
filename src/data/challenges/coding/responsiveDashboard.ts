@@ -25,7 +25,7 @@ export const responsiveDashboardChallenge: CodingChallenge = {
     },
     {
       title: "Data Visualization Best Practices",
-      url: "https://www.tableau.com/learn/articles/data-visualization-best-practices"
+      url: "https://www.tableau.com/visualization/data-visualization-best-practices"
     }
   ],
   verification: [
