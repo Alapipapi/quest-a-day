@@ -16,11 +16,11 @@ export const functionalMobilityWorkoutChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Understanding Functional Mobility",
-      url: "https://www.acefitness.org/education-and-resources/professional/expert-articles/5598/functional-training-for-what-purpose/"
+      url: "https://www.trainerize.me/articles/functional-mobility/"
     },
     {
       title: "Movement Patterns Guide",
-      url: "https://breakingmuscle.com/fitness/the-7-movement-patterns-of-a-functional-mobility-workout/"
+      url: "https://inspirehealthpt.co/functional-movement-patterns/"
     }
   ],
   verification: [
