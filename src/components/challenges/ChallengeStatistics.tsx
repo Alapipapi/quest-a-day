@@ -91,7 +91,7 @@ const ChallengeStatistics = () => {
                 margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
                 barGap={8}
               >
-                <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" stroke="hsl(var(--muted-foreground))" />
                 <XAxis 
                   dataKey="name" 
                   axisLine={false}
