@@ -225,4 +225,12 @@ export const creativityChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
   },
+  {
+    id: 105,
+    title: "Mixed Media Collage Project",
+    description: "Create a mixed media collage combining different materials and techniques.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
 ];

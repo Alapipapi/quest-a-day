@@ -25,6 +25,7 @@ import { mobileAppIntegrationChallenge } from "./coding/mobileAppIntegration";
 import { microservicesArchitectureChallenge } from "./coding/microservicesArchitecture";
 import { databaseSchemaOptimizationChallenge } from "./coding/databaseSchemaOptimization";
 import { securityAuditImplementationChallenge } from "./coding/securityAuditImplementation";
+import { responsiveDashboardChallenge } from "./coding/responsiveDashboard";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -51,5 +52,6 @@ export const codingSteps: CodingChallenge[] = [
   mobileAppIntegrationChallenge,
   microservicesArchitectureChallenge,
   databaseSchemaOptimizationChallenge,
-  securityAuditImplementationChallenge
+  securityAuditImplementationChallenge,
+  responsiveDashboardChallenge
 ];

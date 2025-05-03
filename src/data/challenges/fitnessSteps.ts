@@ -23,6 +23,7 @@ import { strengthEnduranceWorkoutChallenge } from "./fitness/strengthEnduranceWo
 import { metabolicConditioningChallenge } from "./fitness/metabolicConditioning";
 import { functionalMobilityWorkoutChallenge } from "./fitness/functionalMobilityWorkout";
 import { pyramidStrengthTrainingChallenge } from "./fitness/pyramidStrengthTraining";
+import { intervalCardioStrengthChallenge } from "./fitness/intervalCardioStrength";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -47,5 +48,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   strengthEnduranceWorkoutChallenge,
   metabolicConditioningChallenge,
   functionalMobilityWorkoutChallenge,
-  pyramidStrengthTrainingChallenge
+  pyramidStrengthTrainingChallenge,
+  intervalCardioStrengthChallenge
 ];

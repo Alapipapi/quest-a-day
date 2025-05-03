@@ -1,4 +1,3 @@
-
 import { CreativityChallenge } from "../types/creativity";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { digitalArtChallenge } from "./creativity/digitalArt";
@@ -28,6 +27,7 @@ import { songwritingChallenge } from "./creativity/songwritingChallenge";
 import { digitalStorytellingProjectChallenge } from "./creativity/digitalStorytellingProject";
 import { colorTheoryArtChallenge } from "./creativity/colorTheoryArt";
 import { soundDesignWorkshopChallenge } from "./creativity/soundDesignWorkshop";
+import { mixedMediaCollageChallenge } from "./creativity/mixedMediaCollage";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -57,5 +57,6 @@ export const creativitySteps: CreativityChallenge[] = [
   songwritingChallenge,
   digitalStorytellingProjectChallenge,
   colorTheoryArtChallenge,
-  soundDesignWorkshopChallenge
+  soundDesignWorkshopChallenge,
+  mixedMediaCollageChallenge
 ];

@@ -186,4 +186,12 @@ export const fitnessChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "40 minutes",
   },
+  {
+    id: 104,
+    title: "Interval Cardio-Strength Circuit",
+    description: "Combine cardio and strength exercises in a high-intensity circuit format.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
+  },
 ];

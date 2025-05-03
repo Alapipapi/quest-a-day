@@ -202,4 +202,12 @@ export const codingChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "5-6 hours",
   },
+  {
+    id: 103,
+    title: "Responsive Dashboard Design",
+    description: "Create a responsive dashboard with multiple data visualizations that adapts to all screen sizes.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "4-5 hours",
+  },
 ];
