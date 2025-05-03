@@ -25,7 +25,7 @@ const ChangelogButton = () => {
             variant="outline"
             size="sm"
             asChild
-            className="fixed top-4 right-4 z-50 bg-background/80 backdrop-blur-sm shadow-sm"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-background/80 backdrop-blur-sm shadow-sm"
           >
             <Link to="/changelog">
               <FileText className="h-5 w-5" />
