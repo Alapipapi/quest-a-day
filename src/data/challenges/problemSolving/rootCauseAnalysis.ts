@@ -16,11 +16,11 @@ export const rootCauseAnalysisChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "5 Whys Method Guide",
-      url: "https://www.mindtools.com/pages/article/newTMC_5W.htm"
+      url: "https://businessmap.io/lean-management/improvement/5-whys-analysis-tool"
     },
     {
       title: "Fishbone Diagram Tutorial",
-      url: "https://asq.org/quality-resources/fishbone"
+      url: "https://www.visual-paradigm.com/tutorials/how-to-create-fishbone-diagram/"
     },
     {
       title: "Comprehensive Root Cause Analysis Guide",
