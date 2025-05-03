@@ -21,8 +21,8 @@ import { stretchingRoutineChallenge } from "./fitness/stretchingRoutine";
 import { lowImpactCardioChallenge } from "./fitness/lowImpactCardio";
 import { strengthEnduranceWorkoutChallenge } from "./fitness/strengthEnduranceWorkout";
 import { metabolicConditioningChallenge } from "./fitness/metabolicConditioning";
-import { highIntensityIntervalCircuitChallenge } from "./fitness/highIntensityIntervalCircuit";
-import { mobilityImprovementRoutineChallenge } from "./fitness/mobilityImprovementRoutine";
+import { functionalMobilityWorkoutChallenge } from "./fitness/functionalMobilityWorkout";
+import { pyramidStrengthTrainingChallenge } from "./fitness/pyramidStrengthTraining";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -46,6 +46,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   lowImpactCardioChallenge,
   strengthEnduranceWorkoutChallenge,
   metabolicConditioningChallenge,
-  highIntensityIntervalCircuitChallenge,
-  mobilityImprovementRoutineChallenge
+  functionalMobilityWorkoutChallenge,
+  pyramidStrengthTrainingChallenge
 ];

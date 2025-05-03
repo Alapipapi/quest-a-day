@@ -41,8 +41,8 @@ const Changelog = () => {
               <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                 <li><strong>Coding:</strong> Database Schema Optimization</li>
                 <li><strong>Coding:</strong> Security Audit Implementation</li>
-                <li><strong>Fitness:</strong> High-Intensity Interval Circuit</li>
-                <li><strong>Fitness:</strong> Mobility Improvement Routine</li>
+                <li><strong>Fitness:</strong> Functional Mobility Workout</li>
+                <li><strong>Fitness:</strong> Pyramid Strength Training</li>
                 <li><strong>Creativity:</strong> Sound Design Workshop</li>
                 <li><strong>Problem-Solving:</strong> Root Cause Analysis</li>
                 <li><strong>Problem-Solving:</strong> Risk Assessment Framework</li>
