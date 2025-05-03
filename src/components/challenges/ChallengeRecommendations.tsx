@@ -7,6 +7,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
+import CategoryBadge from "../CategoryBadge";
 
 const ChallengeRecommendations = () => {
   const [recommendedChallenges, setRecommendedChallenges] = useState<Challenge[]>([]);
@@ -103,9 +104,9 @@ const ChallengeRecommendations = () => {
               <h3 className="font-semibold">{challenge.title}</h3>
               <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{challenge.description}</p>
               <div className="flex items-center justify-between text-xs">
-                <span className="bg-primary/10 text-primary px-2 py-1 rounded-full">
-                  {capitalizeFirstLetter(challenge.category)}
-                </span>
+                <CategoryBadge 
+                  category={challenge.category as "coding" | "fitness" | "creativity" | "problem-solving"} 
+                />
                 <span>{challenge.difficulty}</span>
               </div>
             </CardContent>
