@@ -14,7 +14,7 @@ export const databaseSchemaOptimizationChallenge: CodingChallenge = {
   resources: [
     {
       title: "Database Normalization Guide",
-      url: "https://www.postgresql.org/docs/current/tutorial-normalization.html"
+      url: "https://guides.visual-paradigm.com/a-comprehensive-guide-to-database-normalization-with-examples/"
     },
     {
       title: "Indexing Best Practices",
