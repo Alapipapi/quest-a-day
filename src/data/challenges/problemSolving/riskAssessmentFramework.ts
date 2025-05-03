@@ -17,7 +17,7 @@ export const riskAssessmentFrameworkChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Risk Matrix Development Guide",
-      url: "https://www.projectmanager.com/blog/risk-matrix"
+      url: "https://auditboard.com/blog/what-is-a-risk-assessment-matrix"
     },
     {
       title: "Comprehensive Risk Assessment Methodology",
@@ -25,7 +25,7 @@ export const riskAssessmentFrameworkChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Risk Mitigation Strategies",
-      url: "https://www.smartsheet.com/content/risk-mitigation-strategies"
+      url: "https://www.atlassian.com/work-management/project-management/risk-mitigation"
     }
   ],
   verification: [
