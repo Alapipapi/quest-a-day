@@ -3,6 +3,7 @@ import { CodingChallenge } from "../../types/coding";
 
 export const securityAuditImplementationChallenge: CodingChallenge = {
   title: "Security Audit Implementation",
+  category: "coding",
   instructions: [
     "Complete a security audit of a web application, identifying common vulnerabilities",
     "Document all security issues found, categorized by risk level and potential impact",

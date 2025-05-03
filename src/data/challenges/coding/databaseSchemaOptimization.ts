@@ -3,6 +3,7 @@ import { CodingChallenge } from "../../types/coding";
 
 export const databaseSchemaOptimizationChallenge: CodingChallenge = {
   title: "Database Schema Optimization",
+  category: "coding",
   instructions: [
     "Analyze the provided database schema, identifying potential issues with normalization, indexing, and relationships",
     "Create an optimized version of the schema that addresses the identified issues",

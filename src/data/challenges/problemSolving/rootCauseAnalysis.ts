@@ -3,6 +3,7 @@ import { ProblemSolvingChallenge } from "../../types/problemSolving";
 
 export const rootCauseAnalysisChallenge: ProblemSolvingChallenge = {
   title: "Root Cause Analysis",
+  category: "problem-solving",
   instructions: [
     "Select a complex problem scenario from your work or personal experience",
     "Use the 5 Whys technique to dig beyond symptoms to underlying causes",

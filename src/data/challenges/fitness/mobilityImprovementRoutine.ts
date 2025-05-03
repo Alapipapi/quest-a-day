@@ -3,6 +3,7 @@ import { FitnessChallenge } from "../../types/fitness";
 
 export const mobilityImprovementRoutineChallenge: FitnessChallenge = {
   title: "Mobility Improvement Routine",
+  category: "fitness",
   instructions: [
     "Begin with 3-5 minutes of light movement to increase blood flow",
     "Perform controlled ankle rotations (10 per foot) and hip circles (10 per direction)",

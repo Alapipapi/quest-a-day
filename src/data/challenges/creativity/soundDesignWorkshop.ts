@@ -3,6 +3,7 @@ import { CreativityChallenge } from "../../types/creativity";
 
 export const soundDesignWorkshopChallenge: CreativityChallenge = {
   title: "Sound Design Workshop",
+  category: "creativity",
   instructions: [
     "Download a free digital audio workstation (DAW) like Audacity or GarageBand",
     "Record at least 5 different everyday sounds from your environment",

@@ -3,6 +3,7 @@ import { FitnessChallenge } from "../../types/fitness";
 
 export const highIntensityIntervalCircuitChallenge: FitnessChallenge = {
   title: "High-Intensity Interval Circuit",
+  category: "fitness",
   instructions: [
     "Warm up for 5 minutes with dynamic stretching and light cardio",
     "Complete 4 rounds of the circuit with minimal rest between exercises",

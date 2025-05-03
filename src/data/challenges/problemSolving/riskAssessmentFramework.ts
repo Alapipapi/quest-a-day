@@ -3,6 +3,7 @@ import { ProblemSolvingChallenge } from "../../types/problemSolving";
 
 export const riskAssessmentFrameworkChallenge: ProblemSolvingChallenge = {
   title: "Risk Assessment Framework",
+  category: "problem-solving",
   instructions: [
     "Select a project, business venture, or significant decision to analyze",
     "Identify at least 10-15 potential risks across different categories",

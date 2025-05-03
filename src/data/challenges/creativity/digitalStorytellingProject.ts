@@ -3,6 +3,7 @@ import { CreativityChallenge } from "../../types/creativity";
 
 export const digitalStorytellingProjectChallenge: CreativityChallenge = {
   title: "Digital Storytelling Project",
+  category: "creativity",
   instructions: [
     "Choose a personal experience or narrative you want to share digitally",
     "Create a storyboard outlining the key moments you want to capture",
