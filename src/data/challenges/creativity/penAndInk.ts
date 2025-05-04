@@ -16,11 +16,11 @@ export const penAndInkChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Hatching and Cross-Hatching Techniques",
-      url: "https://www.artistsnetwork.com/art-techniques/pen-and-ink-techniques-for-beginners/"
+      url: "https://thevirtualinstructor.com/penandink.html"
     },
     {
       title: "Pen and Ink Drawing Fundamentals",
-      url: "https://www.skillshare.com/classes/Mastering-Pen-and-Ink-Drawing"
+      url: "https://www.haydnsymons.com/blog/pen-and-ink-drawing-review/"
     }
   ],
   inspiration: [
