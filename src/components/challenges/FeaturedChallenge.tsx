@@ -8,6 +8,7 @@ import { Badge } from "../ui/badge";
 import { CHALLENGES } from "@/data/challengeData";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
+import CategoryBadge from "../CategoryBadge";
 
 const FeaturedChallenge = () => {
   const [featuredChallenge, setFeaturedChallenge] = useState<any>(null);
@@ -51,7 +52,7 @@ const FeaturedChallenge = () => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
          <DialogTrigger asChild>
-           <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow duration-300 border-2 border-primary/20">
+           <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow duration-300 border-2 border-primary/20 relative">
             <div className="h-4 bg-gradient-to-r from-blue-500 to-purple-500" />
             
             <CardContent className="p-6">
@@ -76,6 +77,11 @@ const FeaturedChallenge = () => {
                 </Button>
               </div>
             </CardContent>
+
+            {/* Category frame in bottom right */}
+            <div className="absolute bottom-2 right-2">
+              <CategoryBadge category={featuredChallenge.category} />
+            </div>
           </Card>
         </DialogTrigger>
         

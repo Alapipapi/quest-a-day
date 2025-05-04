@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
+import CategoryBadge from "../CategoryBadge";
 
 const ChallengeOfTheDay = () => {
   const [dailyChallenge, setDailyChallenge] = useState<Challenge | null>(null);
@@ -62,7 +63,7 @@ const ChallengeOfTheDay = () => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Card className="cursor-pointer hover:shadow-md transition-shadow border-2 border-yellow-500/20">
+          <Card className="cursor-pointer hover:shadow-md transition-shadow border-2 border-yellow-500/20 relative">
             <CardContent className="p-6">
               <div className="flex justify-between items-start">
                 <div>
@@ -85,6 +86,11 @@ const ChallengeOfTheDay = () => {
                 </Button>
               </div>
             </CardContent>
+            
+            {/* Category frame in bottom right */}
+            <div className="absolute bottom-2 right-2">
+              <CategoryBadge category={dailyChallenge.category} />
+            </div>
           </Card>
         </DialogTrigger>
         
