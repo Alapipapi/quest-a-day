@@ -21,7 +21,7 @@ export const jumpRopeChallenge: FitnessChallenge = {
     },
     {
       title: "Benefits of Jump Rope Training",
-      url: "https://www.healthline.com/health/fitness-exercise/jumping-rope"
+      url: "https://www.crossrope.com/blogs/blog/jump-rope-benefits/"
     }
   ],
   verification: [
