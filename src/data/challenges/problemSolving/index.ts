@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const problemSolvingChallenges: Challenge[] = [
@@ -209,5 +208,13 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
+  },
+  {
+    id: 110,
+    title: "Prioritization Framework",
+    description: "Create a personal framework for prioritizing tasks when everything seems urgent.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "1-2 hours",
   },
 ];

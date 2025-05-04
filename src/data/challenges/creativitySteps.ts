@@ -28,6 +28,8 @@ import { digitalStorytellingProjectChallenge } from "./creativity/digitalStoryte
 import { colorTheoryArtChallenge } from "./creativity/colorTheoryArt";
 import { soundDesignWorkshopChallenge } from "./creativity/soundDesignWorkshop";
 import { mixedMediaCollageChallenge } from "./creativity/mixedMediaCollage";
+import { penAndInkChallenge } from "./creativity/penAndInk";
+import { creativeWritingPromptChallenge } from "./creativity/creativeWritingPrompt";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -58,5 +60,7 @@ export const creativitySteps: CreativityChallenge[] = [
   digitalStorytellingProjectChallenge,
   colorTheoryArtChallenge,
   soundDesignWorkshopChallenge,
-  mixedMediaCollageChallenge
+  mixedMediaCollageChallenge,
+  penAndInkChallenge,
+  creativeWritingPromptChallenge
 ];

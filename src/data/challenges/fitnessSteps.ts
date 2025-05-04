@@ -1,4 +1,3 @@
-
 import { FitnessChallenge } from "../types/fitness";
 import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
@@ -24,6 +23,7 @@ import { metabolicConditioningChallenge } from "./fitness/metabolicConditioning"
 import { functionalMobilityWorkoutChallenge } from "./fitness/functionalMobilityWorkout";
 import { pyramidStrengthTrainingChallenge } from "./fitness/pyramidStrengthTraining";
 import { intervalCardioStrengthChallenge } from "./fitness/intervalCardioStrength";
+import { jumpRopeChallenge } from "./fitness/jumpRope";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -49,5 +49,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   metabolicConditioningChallenge,
   functionalMobilityWorkoutChallenge,
   pyramidStrengthTrainingChallenge,
-  intervalCardioStrengthChallenge
+  intervalCardioStrengthChallenge,
+  jumpRopeChallenge
 ];

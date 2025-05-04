@@ -233,4 +233,20 @@ export const creativityChallenges: Challenge[] = [
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
+  {
+    id: 108,
+    title: "Pen and Ink Drawing",
+    description: "Create a detailed pen and ink drawing using hatching and cross-hatching techniques.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2 hours",
+  },
+  {
+    id: 109,
+    title: "Creative Writing Prompt",
+    description: "Write a short story based on a random first line generator to spark your creativity.",
+    category: "creativity",
+    difficulty: "Easy",
+    timeEstimate: "1 hour",
+  },
 ];

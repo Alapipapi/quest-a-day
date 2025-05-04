@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -209,5 +208,13 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "4-5 hours",
+  },
+  {
+    id: 106,
+    title: "Build a Dark Mode Toggle",
+    description: "Create a website with a smooth dark mode toggle that remembers user preference using local storage.",
+    category: "coding",
+    difficulty: "Easy",
+    timeEstimate: "1-2 hours",
   },
 ];

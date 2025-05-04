@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const fitnessChallenges: Challenge[] = [
@@ -193,5 +192,13 @@ export const fitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Hard",
     timeEstimate: "45 minutes",
+  },
+  {
+    id: 107,
+    title: "Jump Rope Challenge",
+    description: "Complete a progressive jump rope workout to improve cardio fitness and coordination.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "20 minutes",
   },
 ];

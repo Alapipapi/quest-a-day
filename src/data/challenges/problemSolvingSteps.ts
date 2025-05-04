@@ -1,4 +1,3 @@
-
 import { ProblemSolvingChallenge } from "../types/problemSolving";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
 import { sudokuChallenge } from "./problemSolving/sudoku";
@@ -26,6 +25,7 @@ import { designThinkingChallenge } from "./problemSolving/designThinkingChalleng
 import { resourceOptimizationChallenge } from "./problemSolving/resourceOptimization";
 import { rootCauseAnalysisChallenge } from "./problemSolving/rootCauseAnalysis";
 import { riskAssessmentFrameworkChallenge } from "./problemSolving/riskAssessmentFramework";
+import { prioritizationFrameworkChallenge } from "./problemSolving/prioritizationFramework";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -53,5 +53,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   designThinkingChallenge,
   resourceOptimizationChallenge,
   rootCauseAnalysisChallenge,
-  riskAssessmentFrameworkChallenge
+  riskAssessmentFrameworkChallenge,
+  prioritizationFrameworkChallenge
 ];
