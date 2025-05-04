@@ -4,6 +4,8 @@ import ChallengeStatusIndicator from "./ChallengeStatusIndicator";
 import ChallengeInstructionsList from "./ChallengeInstructionsList";
 import ChallengeResourcesList from "./ChallengeResourcesList";
 import ChallengeVerificationList from "./ChallengeVerificationList";
+import { CreativityChallenge } from "@/data/types/creativity";
+import { FitnessChallenge } from "@/data/types/fitness";
 
 interface ChallengeContentCardProps {
   title: string;
@@ -26,6 +28,10 @@ const ChallengeContentCard = ({
     );
   }
 
+  const step = steps[0];
+  const isCreativityChallenge = 'materials' in step || 'inspiration' in step;
+  const isFitnessChallenge = 'equipment' in step || 'warmUp' in step || 'coolDown' in step;
+
   return (
     <div className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
       <ChallengeStatusIndicator isCompleted={isCompleted} title={title} />
@@ -33,14 +39,73 @@ const ChallengeContentCard = ({
       <div className="p-4">
         <div className="space-y-4">
           <ChallengeInstructionsList 
-            instructions={steps[0]?.instructions} 
-            examples={steps[0]?.examples}
+            instructions={step?.instructions} 
+            examples={step?.examples}
           />
+          
+          {/* Creativity Challenge Specific Details */}
+          {isCreativityChallenge && (
+            <>
+              {(step as CreativityChallenge).materials && (
+                <div>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Materials Needed:</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {(step as CreativityChallenge).materials?.map((material, i) => (
+                      <li key={i} className="text-gray-600 dark:text-gray-300">{material}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {(step as CreativityChallenge).inspiration && (
+                <div>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Inspiration Ideas:</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {(step as CreativityChallenge).inspiration?.map((idea, i) => (
+                      <li key={i} className="text-gray-600 dark:text-gray-300">{idea}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </>
+          )}
+          
+          {/* Fitness Challenge Specific Details */}
+          {isFitnessChallenge && (
+            <>
+              {(step as FitnessChallenge).equipment && (
+                <div>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Equipment Needed:</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {(step as FitnessChallenge).equipment?.map((item, i) => (
+                      <li key={i} className="text-gray-600 dark:text-gray-300">{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {(step as FitnessChallenge).warmUp && (
+                <div>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Warm-Up:</h4>
+                  <p className="text-gray-600 dark:text-gray-300">{(step as FitnessChallenge).warmUp}</p>
+                </div>
+              )}
+              
+              {(step as FitnessChallenge).coolDown && (
+                <div>
+                  <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Cool-Down:</h4>
+                  <p className="text-gray-600 dark:text-gray-300">{(step as FitnessChallenge).coolDown}</p>
+                </div>
+              )}
+            </>
+          )}
+          
           <ChallengeResourcesList 
-            resources={steps[0]?.resources} 
+            resources={step?.resources} 
             handleResourceClick={handleResourceClick} 
           />
-          <ChallengeVerificationList verification={steps[0]?.verification} />
+          
+          <ChallengeVerificationList verification={step?.verification} />
         </div>
       </div>
     </div>
