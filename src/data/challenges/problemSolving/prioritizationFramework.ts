@@ -19,7 +19,7 @@ export const prioritizationFrameworkChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Task Prioritization Techniques",
-      url: "https://asana.com/resources/task-prioritization"
+      url: "https://zapier.com/blog/how-to-prioritize/"
     }
   ],
   verification: [
