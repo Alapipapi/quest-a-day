@@ -11,6 +11,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell }
 
 const ChallengeStatistics = () => {
   const [statistics, setStatistics] = useState<any[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   
   // Helper function to capitalize first letter only
   const capitalizeFirstLetter = (string: string) => {
@@ -58,6 +59,24 @@ const ChallengeStatistics = () => {
     });
     
     setStatistics(chartData);
+
+    // Check for dark mode
+    const isDark = document.documentElement.classList.contains('dark');
+    setIsDarkMode(isDark);
+
+    // Add listener for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class' && mutation.target === document.documentElement) {
+          const updatedIsDark = document.documentElement.classList.contains('dark');
+          setIsDarkMode(updatedIsDark);
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
+    
+    return () => observer.disconnect();
   }, []);
 
   if (statistics.length === 0) {
@@ -91,7 +110,11 @@ const ChallengeStatistics = () => {
                 margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
                 barGap={8}
               >
-                <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-muted/30" />
+                <CartesianGrid 
+                  strokeDasharray="3 3" 
+                  vertical={false} 
+                  stroke={isDarkMode ? "#ffffff40" : "#00000040"}
+                />
                 <XAxis 
                   dataKey="name" 
                   axisLine={false}
