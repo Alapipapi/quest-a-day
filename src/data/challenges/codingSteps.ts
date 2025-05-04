@@ -1,5 +1,5 @@
 
-import { CodingChallenge } from "../types/coding";
+import { CodingChallenge } from "../types";
 import { weatherAppChallenge } from "./coding/weatherApp";
 import { todoAppChallenge } from "./coding/todoApp";
 import { chatInterfaceChallenge } from "./coding/chatInterface";
@@ -26,6 +26,7 @@ import { microservicesArchitectureChallenge } from "./coding/microservicesArchit
 import { databaseSchemaOptimizationChallenge } from "./coding/databaseSchemaOptimization";
 import { securityAuditImplementationChallenge } from "./coding/securityAuditImplementation";
 import { responsiveDashboardChallenge } from "./coding/responsiveDashboard";
+import { darkModeToggleChallenge } from "./coding/darkModeToggle";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -53,5 +54,6 @@ export const codingSteps: CodingChallenge[] = [
   microservicesArchitectureChallenge,
   databaseSchemaOptimizationChallenge,
   securityAuditImplementationChallenge,
-  responsiveDashboardChallenge
+  responsiveDashboardChallenge,
+  darkModeToggleChallenge
 ];
