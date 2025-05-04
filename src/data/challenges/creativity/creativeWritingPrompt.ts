@@ -20,7 +20,7 @@ export const creativeWritingPromptChallenge: CreativityChallenge = {
     },
     {
       title: "Elements of Short Story Writing",
-      url: "https://www.masterclass.com/articles/how-to-write-a-short-story"
+      url: "https://quillbot.com/courses/research-based-writing-b/chapter/reading-a-short-story/"
     }
   ],
   inspiration: [
