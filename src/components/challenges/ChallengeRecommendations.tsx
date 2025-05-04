@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CHALLENGES } from "@/data/challengeData";
@@ -8,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
 import CategoryBadge from "../CategoryBadge";
+import { Circle } from "lucide-react";
 
 const ChallengeRecommendations = () => {
   const [recommendedChallenges, setRecommendedChallenges] = useState<Challenge[]>([]);
@@ -19,6 +19,20 @@ const ChallengeRecommendations = () => {
   // Helper function to capitalize first letter only
   const capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  
+  // Helper function to get the difficulty dot color
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case "Easy":
+        return "text-green-500";
+      case "Medium":
+        return "text-yellow-500";
+      case "Hard":
+        return "text-red-500";
+      default:
+        return "text-blue-500";
+    }
   };
 
   useEffect(() => {
@@ -107,7 +121,10 @@ const ChallengeRecommendations = () => {
                 <CategoryBadge 
                   category={challenge.category as "coding" | "fitness" | "creativity" | "problem-solving"} 
                 />
-                <span>{challenge.difficulty}</span>
+                <span className="flex items-center gap-1">
+                  <Circle className={`h-2 w-2 fill-current ${getDifficultyColor(challenge.difficulty)}`} />
+                  {challenge.difficulty}
+                </span>
               </div>
             </CardContent>
           </Card>

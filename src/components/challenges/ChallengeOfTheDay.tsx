@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Star, ArrowRight } from "lucide-react";
+import { Star, ArrowRight, Circle } from "lucide-react";
 import { CHALLENGES } from "@/data/challengeData";
 import { Challenge } from "@/data/types/challenge";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -45,6 +45,20 @@ const ChallengeOfTheDay = () => {
     }
   }, []);
 
+  // Helper function to get the difficulty dot color
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case "Easy":
+        return "text-green-500";
+      case "Medium":
+        return "text-yellow-500";
+      case "Hard":
+        return "text-red-500";
+      default:
+        return "text-blue-500";
+    }
+  };
+
   if (!dailyChallenge) {
     return null;
   }
@@ -71,7 +85,8 @@ const ChallengeOfTheDay = () => {
                   <p className="text-muted-foreground mt-1 mb-3">{dailyChallenge.description}</p>
                   
                   <div className="flex items-center gap-2 mt-4">
-                    <Badge variant={isCompleted ? "default" : "outline"}>
+                    <Badge variant={isCompleted ? "default" : "outline"} className="flex items-center gap-1">
+                      <Circle className={`h-2 w-2 fill-current ${getDifficultyColor(dailyChallenge.difficulty)}`} />
                       {dailyChallenge.difficulty}
                     </Badge>
                     <span className="text-xs text-muted-foreground">

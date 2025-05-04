@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight, Circle } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
@@ -39,6 +39,20 @@ const FeaturedChallenge = () => {
   
   if (!featuredChallenge) return null;
 
+  // Helper function to get the difficulty dot color
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case "Easy":
+        return "text-green-500";
+      case "Medium":
+        return "text-yellow-500";
+      case "Hard":
+        return "text-red-500";
+      default:
+        return "text-blue-500";
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -62,7 +76,8 @@ const FeaturedChallenge = () => {
                   <p className="text-muted-foreground mt-1 mb-3">{featuredChallenge.description}</p>
                   
                   <div className="flex items-center gap-2 mt-4">
-                    <Badge variant={isCompleted ? "default" : "outline"}>
+                    <Badge variant={isCompleted ? "default" : "outline"} className="flex items-center gap-1">
+                      <Circle className={`h-2 w-2 fill-current ${getDifficultyColor(featuredChallenge.difficulty)}`} />
                       {featuredChallenge.difficulty}
                     </Badge>
                     <span className="text-xs text-muted-foreground">
