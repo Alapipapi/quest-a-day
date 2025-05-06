@@ -92,6 +92,11 @@ const ChallengeOfTheDay = () => {
                     <span className="text-xs text-muted-foreground">
                       {dailyChallenge.timeEstimate}
                     </span>
+                    
+                    {/* Category badge moved to be in line with difficulty and time estimate */}
+                    <div className="ml-auto">
+                      <CategoryBadge category={dailyChallenge.category} />
+                    </div>
                   </div>
                 </div>
                 
@@ -101,11 +106,6 @@ const ChallengeOfTheDay = () => {
                 </Button>
               </div>
             </CardContent>
-            
-            {/* Category frame in bottom right */}
-            <div className="absolute bottom-2 right-2">
-              <CategoryBadge category={dailyChallenge.category} />
-            </div>
           </Card>
         </DialogTrigger>
         

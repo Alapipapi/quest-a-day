@@ -66,7 +66,7 @@ const FeaturedChallenge = () => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
          <DialogTrigger asChild>
-           <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow duration-300 border-2 border-primary/20 relative">
+           <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow border-2 border-primary/20 relative">
             <div className="h-4 bg-gradient-to-r from-blue-500 to-purple-500" />
             
             <CardContent className="p-6">
@@ -83,6 +83,11 @@ const FeaturedChallenge = () => {
                     <span className="text-xs text-muted-foreground">
                       {featuredChallenge.timeEstimate}
                     </span>
+                    
+                    {/* Category badge moved to be in line with difficulty and time estimate */}
+                    <div className="ml-auto">
+                      <CategoryBadge category={featuredChallenge.category} />
+                    </div>
                   </div>
                 </div>
                 
@@ -92,11 +97,6 @@ const FeaturedChallenge = () => {
                 </Button>
               </div>
             </CardContent>
-
-            {/* Category frame in bottom right */}
-            <div className="absolute bottom-2 right-2">
-              <CategoryBadge category={featuredChallenge.category} />
-            </div>
           </Card>
         </DialogTrigger>
         
