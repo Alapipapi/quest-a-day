@@ -84,6 +84,9 @@ const ChallengeOfTheDay = () => {
                   <h3 className="text-lg font-semibold">{dailyChallenge.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-3">{dailyChallenge.description}</p>
                   
+                  {/* Add horizontal divider line */}
+                  <div className="h-px w-full bg-gray-200 dark:bg-gray-700 my-3"></div>
+                  
                   <div className="flex items-center gap-2 mt-4">
                     <Badge variant={isCompleted ? "default" : "outline"} className="flex items-center gap-1">
                       <Circle className={`h-2 w-2 fill-current ${getDifficultyColor(dailyChallenge.difficulty)}`} />

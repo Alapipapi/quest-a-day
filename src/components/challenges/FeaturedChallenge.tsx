@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, Circle } from "lucide-react";
@@ -37,8 +36,6 @@ const FeaturedChallenge = () => {
     }
   }, []);
   
-  if (!featuredChallenge) return null;
-
   // Helper function to get the difficulty dot color
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -52,6 +49,8 @@ const FeaturedChallenge = () => {
         return "text-blue-500";
     }
   };
+
+  if (!featuredChallenge) return null;
 
   return (
     <motion.div
@@ -74,6 +73,9 @@ const FeaturedChallenge = () => {
                 <div>
                   <h3 className="text-lg font-semibold">{featuredChallenge.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-3">{featuredChallenge.description}</p>
+                  
+                  {/* Add horizontal divider line */}
+                  <div className="h-px w-full bg-gray-200 dark:bg-gray-700 my-3"></div>
                   
                   <div className="flex items-center gap-2 mt-4">
                     <Badge variant={isCompleted ? "default" : "outline"} className="flex items-center gap-1">
