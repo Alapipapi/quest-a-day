@@ -22,7 +22,7 @@ export const responsiveEmailTemplateChallenge: CodingChallenge = {
     },
     {
       title: "Email Testing Tools",
-      url: "https://www.litmus.com/"
+      url: "https://sendgrid.com/en-us/solutions/email-marketing/email-testing"
     }
   ],
   verification: [
