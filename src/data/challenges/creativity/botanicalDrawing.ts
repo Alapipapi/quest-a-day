@@ -15,12 +15,12 @@ export const botanicalDrawingChallenge: CreativityChallenge = {
   ],
   resources: [
     {
-      title: "Botanical Drawing Techniques",
-      url: "https://www.artistsnetwork.com/art-techniques/botanical-drawing/"
+      title: "Botanical Art Techniques",
+      url: "https://www.botanicalartandartists.com/tips-and-techniques.html"
     },
     {
       title: "Historical Botanical Illustrations",
-      url: "https://www.biodiversitylibrary.org/browse/collection/botanicalillustration"
+      url: "https://www.kew.org/read-and-watch/botanical-illustrations-history"
     }
   ],
   verification: [
