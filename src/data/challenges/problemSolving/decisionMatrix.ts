@@ -16,11 +16,11 @@ export const decisionMatrixChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Decision Matrix Analysis Explained",
-      url: "https://www.mindtools.com/pages/article/newTED_03.htm"
+      url: "https://asq.org/quality-resources/decision-matrix"
     },
     {
       title: "Weighted Decision Matrix Template",
-      url: "https://www.smartsheet.com/content/decision-matrix-templates"
+      url: "https://www.smartsheet.com/file/ic-decision-matrix-weighted-9318xlsx?srsltid=AfmBOorJaNE5C0mPcWYxQZM0yglGowuBEUmJPnzIHQTVKRWrksImICB8"
     }
   ],
   verification: [
