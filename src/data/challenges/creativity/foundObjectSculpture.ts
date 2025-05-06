@@ -16,11 +16,11 @@ export const foundObjectSculptureChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Found Object Art History",
-      url: "https://www.tate.org.uk/art/art-terms/f/found-object"
+      url: "https://www.artspace.com/magazine/art_101/art_market/the-history-of-the-found-object-in-art-52224"
     },
     {
-      title: "Assemblage Sculpture Techniques",
-      url: "https://www.sculptureartacademy.com/assemblage-art/"
+      title: "Assemblage Art Techniques",
+      url: "https://momaa.org/assemblage-art-technique/"
     }
   ],
   verification: [
