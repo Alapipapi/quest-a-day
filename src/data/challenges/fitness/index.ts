@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const fitnessChallenges: Challenge[] = [
@@ -200,5 +201,13 @@ export const fitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Medium",
     timeEstimate: "20 minutes",
+  },
+  {
+    id: 112,
+    title: "Mindful Movement Practice",
+    description: "Combine mindfulness and gentle movement for improved body awareness and stress reduction.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "30 minutes",
   },
 ];

@@ -1,3 +1,4 @@
+
 import { ProblemSolvingChallenge } from "../types/problemSolving";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
 import { sudokuChallenge } from "./problemSolving/sudoku";
@@ -5,7 +6,7 @@ import { algorithmChallenge } from "./problemSolving/algorithm";
 import { chessPuzzleChallenge } from "./problemSolving/chessPuzzle";
 import { logicGridChallenge } from "./problemSolving/logicGrid";
 import { dataStructuresChallenge } from "./problemSolving/dataStructures";
-import { analysisChallenge } from "./problemSolving/analysis";
+import { dataAnalysisChallenge } from "./problemSolving/analysis";
 import { blockPuzzleChallenge } from "./problemSolving/blockPuzzle";
 import { cryptographyChallenge } from "./problemSolving/cryptography";
 import { memoryTechniquesChallenge } from "./problemSolving/memoryTechniques";
@@ -26,6 +27,7 @@ import { resourceOptimizationChallenge } from "./problemSolving/resourceOptimiza
 import { rootCauseAnalysisChallenge } from "./problemSolving/rootCauseAnalysis";
 import { riskAssessmentFrameworkChallenge } from "./problemSolving/riskAssessmentFramework";
 import { prioritizationFrameworkChallenge } from "./problemSolving/prioritizationFramework";
+import { decisionMatrixChallenge } from "./problemSolving/decisionMatrix";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -34,7 +36,7 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   chessPuzzleChallenge,
   logicGridChallenge,
   dataStructuresChallenge,
-  analysisChallenge,
+  dataAnalysisChallenge,
   blockPuzzleChallenge,
   cryptographyChallenge,
   memoryTechniquesChallenge,
@@ -54,5 +56,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   resourceOptimizationChallenge,
   rootCauseAnalysisChallenge,
   riskAssessmentFrameworkChallenge,
-  prioritizationFrameworkChallenge
+  prioritizationFrameworkChallenge,
+  decisionMatrixChallenge
 ];

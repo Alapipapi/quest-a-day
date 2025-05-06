@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const codingChallenges: Challenge[] = [
@@ -216,5 +217,13 @@ export const codingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Easy",
     timeEstimate: "1-2 hours",
+  },
+  {
+    id: 111,
+    title: "Responsive Email Template",
+    description: "Design a responsive HTML email template that works across major email clients with proper fallbacks.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "3-4 hours",
   },
 ];

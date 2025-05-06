@@ -1,3 +1,4 @@
+
 import { CreativityChallenge } from "../types/creativity";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { digitalArtChallenge } from "./creativity/digitalArt";
@@ -30,6 +31,8 @@ import { soundDesignWorkshopChallenge } from "./creativity/soundDesignWorkshop";
 import { mixedMediaCollageChallenge } from "./creativity/mixedMediaCollage";
 import { penAndInkChallenge } from "./creativity/penAndInk";
 import { creativeWritingPromptChallenge } from "./creativity/creativeWritingPrompt";
+import { foundObjectSculptureChallenge } from "./creativity/foundObjectSculpture";
+import { botanicalDrawingChallenge } from "./creativity/botanicalDrawing";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -62,5 +65,7 @@ export const creativitySteps: CreativityChallenge[] = [
   soundDesignWorkshopChallenge,
   mixedMediaCollageChallenge,
   penAndInkChallenge,
-  creativeWritingPromptChallenge
+  creativeWritingPromptChallenge,
+  foundObjectSculptureChallenge,
+  botanicalDrawingChallenge
 ];

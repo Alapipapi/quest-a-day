@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -248,5 +249,21 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Easy",
     timeEstimate: "1 hour",
+  },
+  {
+    id: 114,
+    title: "Found Object Sculpture",
+    description: "Create a three-dimensional sculpture using discarded or unused items from around your home.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 115,
+    title: "Botanical Drawing Study",
+    description: "Develop observational skills through detailed drawings of plants, flowers, or botanical elements.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2 hours",
   },
 ];

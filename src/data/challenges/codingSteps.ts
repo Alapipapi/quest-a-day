@@ -27,6 +27,7 @@ import { databaseSchemaOptimizationChallenge } from "./coding/databaseSchemaOpti
 import { securityAuditImplementationChallenge } from "./coding/securityAuditImplementation";
 import { responsiveDashboardChallenge } from "./coding/responsiveDashboard";
 import { darkModeToggleChallenge } from "./coding/darkModeToggle";
+import { responsiveEmailTemplateChallenge } from "./coding/responsiveEmailTemplate";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -55,5 +56,6 @@ export const codingSteps: CodingChallenge[] = [
   databaseSchemaOptimizationChallenge,
   securityAuditImplementationChallenge,
   responsiveDashboardChallenge,
-  darkModeToggleChallenge
+  darkModeToggleChallenge,
+  responsiveEmailTemplateChallenge
 ];
