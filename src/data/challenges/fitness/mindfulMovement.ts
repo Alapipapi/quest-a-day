@@ -15,11 +15,11 @@ export const mindfulMovementChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Introduction to Mindful Movement",
-      url: "https://www.mindful.org/mindful-movement-practice/"
+      url: "https://www.mindful.org/getting-started-with-mindful-movement/"
     },
     {
       title: "Guided Mindful Movement Session",
-      url: "https://www.youtube.com/watch?v=TSBZbPLvjjA"
+      url: "https://www.mayoclinic.org/healthy-lifestyle/consumer-health/in-depth/mindfulness-exercises/art-20046356"
     }
   ],
   verification: [
