@@ -16,11 +16,11 @@ export const systemOptimizationChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Process Optimization Techniques",
-      url: "https://www.lucidchart.com/blog/process-optimization-techniques"
+      url: "https://www.indeed.com/career-advice/career-development/process-optimization-methods"
     },
     {
       title: "Systems Thinking Applied",
-      url: "https://thesystemsthinker.com/applying-systems-thinking-in-practice/"
+      url: "https://health-policy-systems.biomedcentral.com/articles/10.1186/s12961-020-00570-4"
     }
   ],
   verification: [

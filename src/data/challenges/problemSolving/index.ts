@@ -9,10 +9,6 @@ import { decisionMakingChallenges } from "./categories/decisionMakingChallenges"
 import { analysisAndAssessmentChallenges } from "./categories/analysisAndAssessmentChallenges";
 import { productivityAndManagementChallenges } from "./categories/productivityAndManagementChallenges";
 
-// Import individual challenge details
-import { dataAnalysisChallenge } from "./dataAnalysis";
-import { systemOptimizationChallenge } from "./systemOptimization";
-
 // Combine all problem-solving challenges into one array
 export const problemSolvingChallenges: Challenge[] = [
   ...logicAndPuzzleChallenges,

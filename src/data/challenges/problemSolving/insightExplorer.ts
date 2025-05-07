@@ -15,7 +15,7 @@ export const insightExplorerChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Data Cleaning Guide",
-      url: "https://towardsdatascience.com/the-ultimate-guide-to-data-cleaning-3969843991d4"
+      url: "https://www.tableau.com/learn/articles/what-is-data-cleaning"
     },
     {
       title: "Data Visualization Best Practices",
