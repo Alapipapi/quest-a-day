@@ -28,7 +28,7 @@ import { rootCauseAnalysisChallenge } from "./problemSolving/rootCauseAnalysis";
 import { riskAssessmentFrameworkChallenge } from "./problemSolving/riskAssessmentFramework";
 import { prioritizationFrameworkChallenge } from "./problemSolving/prioritizationFramework";
 import { decisionMatrixChallenge } from "./problemSolving/decisionMatrix";
-import { dataAnalysisChallenge } from "./problemSolving/dataAnalysis";
+import { insightExplorerChallenge } from "./problemSolving/dataAnalysis";
 import { systemOptimizationChallenge } from "./problemSolving/systemOptimization";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
