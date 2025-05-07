@@ -28,6 +28,7 @@ import { securityAuditImplementationChallenge } from "./coding/securityAuditImpl
 import { responsiveDashboardChallenge } from "./coding/responsiveDashboard";
 import { darkModeToggleChallenge } from "./coding/darkModeToggle";
 import { responsiveEmailTemplateChallenge } from "./coding/responsiveEmailTemplate";
+import { responsivePortfolioChallenge } from "./coding/responsivePortfolio";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -57,5 +58,6 @@ export const codingSteps: CodingChallenge[] = [
   securityAuditImplementationChallenge,
   responsiveDashboardChallenge,
   darkModeToggleChallenge,
-  responsiveEmailTemplateChallenge
+  responsiveEmailTemplateChallenge,
+  responsivePortfolioChallenge
 ];

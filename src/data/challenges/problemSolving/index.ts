@@ -1,5 +1,7 @@
 
 import { Challenge } from "../../types/challenge";
+import { dataAnalysisChallenge } from "./dataAnalysis";
+import { systemOptimizationChallenge } from "./systemOptimization";
 
 export const problemSolvingChallenges: Challenge[] = [
   {
@@ -225,5 +227,21 @@ export const problemSolvingChallenges: Challenge[] = [
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "1-2 hours",
+  },
+  {
+    id: 116,
+    title: "Data Analysis Challenge",
+    description: "Analyze datasets to clean data, create visualizations, and derive meaningful insights.",
+    category: "problem-solving",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 117,
+    title: "System Optimization Challenge",
+    description: "Identify and optimize inefficient systems or processes using structured improvement strategies.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "3-4 hours",
   },
 ];

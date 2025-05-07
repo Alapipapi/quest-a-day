@@ -1,5 +1,5 @@
-
 import { Challenge } from "../../types/challenge";
+import { responsivePortfolioChallenge } from "./responsivePortfolio";
 
 export const appDevelopmentChallenges: Challenge[] = [
   {
@@ -73,5 +73,13 @@ export const appDevelopmentChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Medium",
     timeEstimate: "3-4 hours",
+  },
+  {
+    id: 119,
+    title: "Responsive Portfolio Website",
+    description: "Build a responsive personal portfolio website showcasing your skills and projects.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "4-6 hours",
   },
 ];

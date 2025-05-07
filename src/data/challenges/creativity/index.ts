@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const creativityChallenges: Challenge[] = [
@@ -265,5 +264,13 @@ export const creativityChallenges: Challenge[] = [
     category: "creativity",
     difficulty: "Medium",
     timeEstimate: "2 hours",
+  },
+  {
+    id: 118,
+    title: "Storyboard Animation",
+    description: "Create a visual storyboard for an animated sequence with key frames and transitions.",
+    category: "creativity",
+    difficulty: "Medium",
+    timeEstimate: "2-3 hours",
   },
 ];
