@@ -1,16 +1,16 @@
 
 import { ProblemSolvingChallenge } from "../../types/problemSolving";
 
-export const dataAnalysisChallenge: ProblemSolvingChallenge = {
+export const insightExplorerChallenge: ProblemSolvingChallenge = {
   category: "problem-solving",
-  title: "Data Analysis Challenge",
+  title: "Insight Explorer",
   instructions: [
-    "Obtain a small dataset (CSV, Excel, or online source)",
-    "Clean the data by handling missing values and outliers",
-    "Create at least 3 different visualizations (charts, graphs)",
-    "Identify 3-5 key insights from the data",
-    "Prepare a short summary of your findings",
-    "Optional: Make recommendations based on your analysis"
+    "Choose a publicly available dataset (CSV, Excel, or from an API)",
+    "Perform initial exploration to understand data structure and quality",
+    "Clean the dataset by addressing missing data, duplicates, or anomalies",
+    "Generate at least three insightful visualizations that highlight patterns or trends",
+    "Write a brief analysis explaining 3–5 meaningful insights you discovered",
+    "Optionally, suggest decisions or actions based on your findings"
   ],
   resources: [
     {
@@ -23,16 +23,16 @@ export const dataAnalysisChallenge: ProblemSolvingChallenge = {
     }
   ],
   verification: [
-    "Dataset is properly cleaned and processed",
-    "Visualizations effectively represent the data",
-    "Insights are clearly articulated and data-driven",
-    "Analysis demonstrates critical thinking",
-    "Summary effectively communicates findings"
+    "Dataset is clearly understood and appropriately cleaned",
+    "Visualizations are relevant, accurate, and enhance interpretation",
+    "Insights are logical, data-supported, and non-obvious",
+    "Analysis shows thoughtful reasoning and understanding",
+    "Summary effectively communicates the value of the findings"
   ],
   examples: [
-    "Analyze public health data to identify trends",
-    "Explore customer purchasing patterns from sales data",
-    "Investigate financial performance metrics",
-    "Examine social media engagement statistics"
+    "Investigate climate data to spot regional anomalies",
+    "Analyze customer churn in a subscription-based business",
+    "Explore traffic patterns using city transportation data",
+    "Break down user activity trends in an online platform"
   ]
 };
