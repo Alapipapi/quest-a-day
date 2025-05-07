@@ -60,6 +60,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   riskAssessmentFrameworkChallenge,
   prioritizationFrameworkChallenge,
   decisionMatrixChallenge,
-  dataAnalysisChallenge,
+  insightExplorerChallenge,
   systemOptimizationChallenge
 ];
