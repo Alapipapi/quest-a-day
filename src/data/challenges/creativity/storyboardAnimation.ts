@@ -15,7 +15,7 @@ export const storyboardAnimationChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Storyboarding Basics",
-      url: "https://www.videomaker.com/article/c17/19146-storyboarding-basics"
+      url: "https://www.adobe.com/uk/creativecloud/animation/discover/animation-storyboarding.html"
     },
     {
       title: "Free Storyboard Templates",
