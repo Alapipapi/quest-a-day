@@ -1,4 +1,3 @@
-
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
@@ -11,13 +10,16 @@ export function ThemeSwitcher() {
 
   // Ensure the theme is resolved before rendering
   useEffect(() => {
-    if (theme) {
+    const storedTheme = localStorage.getItem("vite-ui-theme");
+    if (storedTheme) {
+      setResolvedTheme(storedTheme);
+    } else if (theme) {
       setResolvedTheme(theme);
     }
   }, [theme]);
 
   if (!resolvedTheme) {
-    return null; // Prevent rendering until theme is resolved
+    return null; // Prevent rendering until the theme is resolved
   }
 
   return (
