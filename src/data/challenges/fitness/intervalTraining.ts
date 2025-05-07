@@ -17,11 +17,11 @@ export const intervalTrainingChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Interval Training Science",
-      url: "https://www.acefitness.org/education-and-resources/professional/expert-articles/5008/the-science-behind-high-intensity-interval-training/"
+      url: "https://cw-x.com/blogs/news/the-science-of-interval-training-boost-endurance-and-speed?srsltid=AfmBOoqCWC_KeinmTE5cmxjWZl-MkFu8JE84yHTD4qbX7uW40n8pTcnQ"
     },
     {
-      title: "Bodyweight Exercise Library",
-      url: "https://www.self.com/gallery/essential-bodyweight-exercises"
+      title: "Bodyweight Exercise Chart",
+      url: "https://darebee.com/fitness/muscle-map.html"
     }
   ],
   verification: [
