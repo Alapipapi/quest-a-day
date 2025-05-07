@@ -67,7 +67,7 @@ const ChallengeContent = ({
           updateProgress={updateProgress}
         />
 
-        {challengeInfo && challengeInfo.difficulty && challengeInfo.timeEstimate && (
+        {challengeInfo && (
           <ChallengeDifficulty
             difficulty={challengeInfo.difficulty}
             timeEstimate={challengeInfo.timeEstimate}
