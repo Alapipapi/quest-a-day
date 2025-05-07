@@ -6,6 +6,7 @@ import ChallengeResourcesList from "./ChallengeResourcesList";
 import ChallengeVerificationList from "./ChallengeVerificationList";
 import { CreativityChallenge } from "@/data/types/creativity";
 import { FitnessChallenge } from "@/data/types/fitness";
+import { CodingChallenge } from "@/data/types/coding";
 
 interface ChallengeContentCardProps {
   title: string;
@@ -31,6 +32,7 @@ const ChallengeContentCard = ({
   const step = steps[0];
   const isCreativityChallenge = 'materials' in step || 'inspiration' in step;
   const isFitnessChallenge = 'equipment' in step || 'warmUp' in step || 'coolDown' in step;
+  const isCodingChallenge = 'tools' in step;
 
   return (
     <div className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
@@ -42,6 +44,18 @@ const ChallengeContentCard = ({
             instructions={step?.instructions} 
             examples={step?.examples}
           />
+          
+          {/* Coding Challenge Specific Details */}
+          {isCodingChallenge && (step as CodingChallenge).tools && (
+            <div>
+              <h4 className="font-medium text-gray-700 dark:text-gray-200 mb-2">Recommended Tools:</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                {(step as CodingChallenge).tools?.map((tool, i) => (
+                  <li key={i} className="text-gray-600 dark:text-gray-300">{tool}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           
           {/* Creativity Challenge Specific Details */}
           {isCreativityChallenge && (

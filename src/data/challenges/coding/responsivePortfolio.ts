@@ -5,40 +5,48 @@ export const responsivePortfolioChallenge: CodingChallenge = {
   category: "coding",
   title: "Responsive Portfolio Website",
   instructions: [
-    "Set up a new web project with HTML, CSS, and optional JavaScript",
-    "Design a responsive navigation menu that works on mobile and desktop",
-    "Create sections for: About, Skills, Projects, and Contact",
-    "Implement responsive layouts using flexbox or grid",
-    "Ensure all images are responsive and optimized",
-    "Add interactive elements (hover effects, smooth scrolling)",
-    "Test across multiple screen sizes and browsers",
-    "Deploy to a free hosting service (GitHub Pages, Netlify, etc.)"
+    "Design and build a responsive portfolio website",
+    "Include a hero section with your name and brief introduction",
+    "Create an about section with your skills and background",
+    "Build a projects section showcasing your work with descriptions",
+    "Add a contact section with a form or contact information",
+    "Implement responsive design that works on mobile, tablet, and desktop",
+    "Ensure proper accessibility features are implemented",
+    "Test the site on multiple devices and browsers"
   ],
   resources: [
     {
-      title: "Responsive Design Fundamentals",
+      title: "Responsive Web Design Fundamentals",
       url: "https://web.dev/responsive-web-design-basics/"
     },
     {
-      title: "Modern CSS Techniques",
-      url: "https://css-tricks.com/modern-css-techniques-to-know-in-2022/"
+      title: "Portfolio Website Examples",
+      url: "https://www.sitebuilderreport.com/inspiration/portfolio-websites"
+    },
+    {
+      title: "CSS Media Queries",
+      url: "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"
     }
   ],
   verification: [
-    "Website displays correctly on mobile, tablet, and desktop",
-    "Navigation menu adapts appropriately to screen size",
-    "Content is legible and well-organized at all breakpoints",
-    "Interactive elements work as expected",
-    "Site is accessible (proper alt text, keyboard navigation)",
-    "Deployed version matches local development"
+    "Website is fully responsive across different screen sizes",
+    "All sections (hero, about, projects, contact) are present",
+    "Site passes basic accessibility tests",
+    "Design is visually appealing and professional",
+    "Navigation is intuitive and functional"
+  ],
+  examples: [
+    "Personal developer portfolio with project gallery",
+    "Design portfolio with case studies",
+    "Photography portfolio with image galleries",
+    "Writing portfolio with article samples"
   ],
   tools: [
-    "HTML5, CSS3, JavaScript",
-    "Visual Studio Code or preferred code editor",
-    "Browser developer tools",
+    "HTML5 and CSS3",
+    "JavaScript (optional)",
+    "Responsive framework like Bootstrap or Tailwind CSS",
     "Git for version control",
-    "Image optimization tools"
-  ],
-  difficulty: "Medium",
-  estimatedTime: "4-6 hours"
+    "Browser developer tools for testing",
+    "Accessibility evaluation tools"
+  ]
 };

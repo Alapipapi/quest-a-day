@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Dumbbell, Pencil, Brush } from "lucide-react";
+import { Dumbbell, Pencil, Brush, Code } from "lucide-react";
 import { Challenge } from "@/data/types/challenge";
 import { StepDetails } from "@/data/challengeSteps";
 import ProgressBar from "@/components/challenges/ProgressBar";
@@ -13,6 +13,7 @@ import ChallengeHeader from "@/components/challenges/ChallengeHeader";
 import { Button } from "@/components/ui/button";
 import { CreativityChallenge } from "@/data/types/creativity";
 import { FitnessChallenge } from "@/data/types/fitness";
+import { CodingChallenge } from "@/data/types/coding";
 
 interface ChallengeContentProps {
   challenge: StepDetails;
@@ -41,10 +42,12 @@ const ChallengeContent = ({
 }: ChallengeContentProps) => {
   const isCreativityChallenge = category === "creativity";
   const isFitnessChallenge = category === "fitness";
+  const isCodingChallenge = category === "coding";
   
   // Type assertion based on category
   const creativityChallenge = isCreativityChallenge ? challenge as CreativityChallenge : null;
   const fitnessChallenge = isFitnessChallenge ? challenge as FitnessChallenge : null;
+  const codingChallenge = isCodingChallenge ? challenge as CodingChallenge : null;
 
   return (
     <motion.div
@@ -64,7 +67,7 @@ const ChallengeContent = ({
           updateProgress={updateProgress}
         />
 
-        {challengeInfo && (
+        {challengeInfo && challengeInfo.difficulty && challengeInfo.timeEstimate && (
           <ChallengeDifficulty
             difficulty={challengeInfo.difficulty}
             timeEstimate={challengeInfo.timeEstimate}
@@ -78,6 +81,29 @@ const ChallengeContent = ({
         <ChallengeInstructions
           instructions={challenge.instructions}
         />
+
+        {/* Coding Challenge specific content */}
+        {isCodingChallenge && codingChallenge?.tools && codingChallenge.tools.length > 0 && (
+          <div>
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
+              <Code className="mr-2 h-5 w-5" />
+              Recommended Tools
+            </h2>
+            <ul className="space-y-2 pl-5 list-disc">
+              {codingChallenge.tools.map((tool, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="text-muted-foreground"
+                >
+                  {tool}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Creativity Challenge specific content */}
         {isCreativityChallenge && creativityChallenge?.materials && (
