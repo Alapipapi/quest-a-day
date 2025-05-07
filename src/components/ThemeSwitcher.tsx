@@ -25,7 +25,9 @@ export function ThemeSwitcher() {
         ) : (
           <Moon className="h-5 w-5 text-gray-700" />
         )}
-        <span className="sr-only">Toggle theme</span>
+        <span className="sr-only">
+          {theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        </span>
       </Button>
     </motion.div>
   );
