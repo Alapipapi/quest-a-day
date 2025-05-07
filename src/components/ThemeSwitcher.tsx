@@ -7,6 +7,11 @@ import { motion } from "framer-motion";
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 
+  // Return null or a loading state if the theme is not yet resolved
+  if (!theme) {
+    return null;
+  }
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
