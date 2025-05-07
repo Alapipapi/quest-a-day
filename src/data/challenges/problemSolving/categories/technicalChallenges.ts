@@ -44,10 +44,10 @@ export const technicalChallenges: Challenge[] = [
   },
   {
     id: 116,
-    title: "Data Analysis Challenge",
-    description: "Analyze datasets to clean data, create visualizations, and derive meaningful insights.",
+    title: "Insight Explorer",
+    description: "Dive into raw datasets to uncover patterns, visualize key trends, and generate actionable insights through data transformation and analysis.",
     category: "problem-solving",
     difficulty: "Medium",
-    timeEstimate: "2-3 hours",
+    timeEstimate: "2-3 hours"
   }
 ];
