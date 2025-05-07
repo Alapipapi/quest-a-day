@@ -1,5 +1,6 @@
 
 import { Challenge } from "../../../types/challenge";
+import { dataAnalysisChallenge } from "./dataAnalysis";
 
 export const technicalChallenges: Challenge[] = [
   {
