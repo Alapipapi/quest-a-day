@@ -35,6 +35,11 @@ const ChallengeContent = ({
   toggleVerificationItem,
   handleResourceClick,
 }: ChallengeContentProps) => {
+  // Convert Record<string, boolean> to boolean[] for VerificationChecklist
+  const verificationArray = challenge.verification 
+    ? challenge.verification.map((_: any, index: number) => verificationStatus[index.toString()] || false)
+    : [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -102,7 +107,7 @@ const ChallengeContent = ({
         <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
           <ChallengeResources 
             resources={challenge.resources} 
-            onResourceClick={handleResourceClick} 
+            handleResourceClick={handleResourceClick} 
           />
         </div>
       )}
@@ -112,7 +117,7 @@ const ChallengeContent = ({
         <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
           <VerificationChecklist
             verificationItems={challenge.verification}
-            verificationStatus={verificationStatus}
+            verificationStatus={verificationArray}
             onToggle={toggleVerificationItem}
             onProgressUpdate={updateProgress}
           />

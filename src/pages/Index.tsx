@@ -105,7 +105,8 @@ const Index = () => {
   ];
 
   const handleSearchFocus = () => {
-    document.querySelector('input[type="text"]')?.focus();
+    const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement;
+    searchInput?.focus();
   };
 
   const handleFilterOpen = () => {
