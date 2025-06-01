@@ -10,18 +10,21 @@ import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
 import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
-import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import FavoriteChallenges from "@/components/challenges/FavoriteChallenges";
 import ChallengeOfTheDay from "@/components/challenges/ChallengeOfTheDay";
 import ChallengeStatistics from "@/components/challenges/ChallengeStatistics";
 import ChallengeRecommendations from "@/components/challenges/ChallengeRecommendations";
+import AchievementBadges from "@/components/challenges/AchievementBadges";
+import EnhancedSearch from "@/components/challenges/EnhancedSearch";
+import QuickActions from "@/components/challenges/QuickActions";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(CHALLENGES);
   const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
   const [completedChallengesCount, setCompletedChallengesCount] = useState(0);
@@ -43,6 +46,10 @@ const Index = () => {
     
     if (selectedCategory !== "all") {
       filtered = filtered.filter((challenge) => challenge.category === selectedCategory);
+    }
+    
+    if (selectedCategories.length > 0) {
+      filtered = filtered.filter((challenge) => selectedCategories.includes(challenge.category));
     }
     
     if (difficultyFilter !== "all") {
@@ -71,7 +78,7 @@ const Index = () => {
     return () => {
       window.removeEventListener("challengeUpdated", handleChallengeUpdate);
     };
-  }, [selectedCategory, searchQuery, difficultyFilter]);
+  }, [selectedCategory, selectedCategories, searchQuery, difficultyFilter]);
 
   // Add a manual listener for storage events
   useEffect(() => {
@@ -97,6 +104,20 @@ const Index = () => {
     { id: "Hard", label: "Hard" },
   ];
 
+  const handleSearchFocus = () => {
+    document.querySelector('input[type="text"]')?.focus();
+  };
+
+  const handleFilterOpen = () => {
+    // This would open an advanced filter modal
+    console.log("Open advanced filters");
+  };
+
+  const handleScheduleOpen = () => {
+    // This would open a schedule modal
+    console.log("Open schedule dialog");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <ThemeSwitcher />
@@ -105,6 +126,8 @@ const Index = () => {
         <Hero />
 
         <CompletionSummary completedChallengesCount={completedChallengesCount} />
+        
+        <AchievementBadges />
         
         <ChallengeOfTheDay />
         
@@ -134,7 +157,13 @@ const Index = () => {
           transition={{ delay: 0.4 }}
           className="mb-12 space-y-6"
         >
-          <ChallengeSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          <EnhancedSearch
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
+            onFocus={handleSearchFocus}
+          />
 
           <div className="space-y-4">
             <DifficultyFilters
@@ -149,6 +178,12 @@ const Index = () => {
 
         <ResultsCount count={filteredChallenges.length} />
       </div>
+
+      <QuickActions
+        onSearchFocus={handleSearchFocus}
+        onFilterOpen={handleFilterOpen}
+        onScheduleOpen={handleScheduleOpen}
+      />
     </div>
   );
 };
