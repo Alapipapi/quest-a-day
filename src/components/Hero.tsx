@@ -22,7 +22,7 @@ const Hero = () => {
             Daily Challenge Hub
           </span>
           <span className="inline-block px-3 py-1 text-xs font-medium text-secondary-foreground">
-            v1.5.0
+            v1.6.0
           </span>
         </div>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl">
