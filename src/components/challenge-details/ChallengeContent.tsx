@@ -56,7 +56,7 @@ const ChallengeContent = ({
             <div className="flex items-center gap-3 flex-wrap">
               <Badge 
                 variant="secondary" 
-                className={`category-${category} text-white font-medium`}
+                className={`category-${category} text-black dark:text-white font-medium`}
               >
                 {category?.replace('-', ' ').toUpperCase()}
               </Badge>
