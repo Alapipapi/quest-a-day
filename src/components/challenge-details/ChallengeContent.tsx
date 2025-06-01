@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Clock, Target, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -118,8 +117,7 @@ const ChallengeContent = ({
           <VerificationChecklist
             verificationItems={challenge.verification}
             verificationStatus={verificationArray}
-            onToggle={toggleVerificationItem}
-            onProgressUpdate={updateProgress}
+            toggleVerificationItem={toggleVerificationItem}
           />
         </div>
       )}
