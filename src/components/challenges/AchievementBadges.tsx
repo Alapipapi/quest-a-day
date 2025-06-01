@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Trophy, Target, Zap, Star, Award, Crown } from "lucide-react";
+import { Trophy, Target, Zap, Star, Award, Crown, Lock, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 interface Achievement {
   id: string;
@@ -12,6 +13,10 @@ interface Achievement {
   icon: any;
   condition: (stats: any) => boolean;
   earned: boolean;
+  points: number;
+  rarity: "common" | "rare" | "epic" | "legendary";
+  progress?: number;
+  maxProgress?: number;
 }
 
 const AchievementBadges = () => {
@@ -22,6 +27,7 @@ const AchievementBadges = () => {
     categoriesCompleted: 0,
     hardChallengesCompleted: 0,
   });
+  const [totalPoints, setTotalPoints] = useState(0);
 
   const achievementDefinitions: Achievement[] = [
     {
@@ -31,6 +37,10 @@ const AchievementBadges = () => {
       icon: Target,
       condition: (s) => s.totalCompleted >= 1,
       earned: false,
+      points: 50,
+      rarity: "common",
+      progress: 0,
+      maxProgress: 1,
     },
     {
       id: "milestone-5",
@@ -39,6 +49,10 @@ const AchievementBadges = () => {
       icon: Star,
       condition: (s) => s.totalCompleted >= 5,
       earned: false,
+      points: 100,
+      rarity: "common",
+      progress: 0,
+      maxProgress: 5,
     },
     {
       id: "milestone-10",
@@ -47,6 +61,10 @@ const AchievementBadges = () => {
       icon: Award,
       condition: (s) => s.totalCompleted >= 10,
       earned: false,
+      points: 200,
+      rarity: "rare",
+      progress: 0,
+      maxProgress: 10,
     },
     {
       id: "streak-3",
@@ -55,6 +73,10 @@ const AchievementBadges = () => {
       icon: Zap,
       condition: (s) => s.streak >= 3,
       earned: false,
+      points: 150,
+      rarity: "rare",
+      progress: 0,
+      maxProgress: 3,
     },
     {
       id: "hard-mode",
@@ -63,6 +85,10 @@ const AchievementBadges = () => {
       icon: Trophy,
       condition: (s) => s.hardChallengesCompleted >= 3,
       earned: false,
+      points: 300,
+      rarity: "epic",
+      progress: 0,
+      maxProgress: 3,
     },
     {
       id: "category-master",
@@ -71,8 +97,32 @@ const AchievementBadges = () => {
       icon: Crown,
       condition: (s) => s.categoriesCompleted >= 4,
       earned: false,
+      points: 500,
+      rarity: "legendary",
+      progress: 0,
+      maxProgress: 4,
     },
   ];
+
+  const getRarityColor = (rarity: string) => {
+    switch (rarity) {
+      case "common": return "text-gray-600 dark:text-gray-400";
+      case "rare": return "text-blue-600 dark:text-blue-400";
+      case "epic": return "text-purple-600 dark:text-purple-400";
+      case "legendary": return "text-yellow-600 dark:text-yellow-400";
+      default: return "text-gray-600 dark:text-gray-400";
+    }
+  };
+
+  const getRarityBg = (rarity: string) => {
+    switch (rarity) {
+      case "common": return "bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600";
+      case "rare": return "bg-blue-50 dark:bg-blue-900/20 border-blue-300 dark:border-blue-600";
+      case "epic": return "bg-purple-50 dark:bg-purple-900/20 border-purple-300 dark:border-purple-600";
+      case "legendary": return "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-300 dark:border-yellow-600";
+      default: return "bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600";
+    }
+  };
 
   useEffect(() => {
     updateStats();
@@ -84,65 +134,189 @@ const AchievementBadges = () => {
       key => !key.includes("-progress") && !key.includes("-verification")
     );
 
-    const categories = new Set();
-    let hardCount = 0;
-
-    // This would need access to CHALLENGES data to properly count categories and difficulty
-    // For now, we'll use a simplified version
-
     const newStats = {
       totalCompleted: completedKeys.length,
       streak: calculateStreak(),
-      categoriesCompleted: categories.size,
-      hardChallengesCompleted: hardCount,
+      categoriesCompleted: calculateCategoriesCompleted(completedKeys),
+      hardChallengesCompleted: 0, // Would need challenge data to calculate properly
     };
 
     setStats(newStats);
 
-    // Check achievements
-    const updatedAchievements = achievementDefinitions.map(achievement => ({
-      ...achievement,
-      earned: achievement.condition(newStats)
-    }));
+    // Update achievements with progress
+    const updatedAchievements = achievementDefinitions.map(achievement => {
+      let progress = 0;
+      
+      switch (achievement.id) {
+        case "first-step":
+          progress = Math.min(newStats.totalCompleted, 1);
+          break;
+        case "milestone-5":
+          progress = Math.min(newStats.totalCompleted, 5);
+          break;
+        case "milestone-10":
+          progress = Math.min(newStats.totalCompleted, 10);
+          break;
+        case "streak-3":
+          progress = Math.min(newStats.streak, 3);
+          break;
+        case "hard-mode":
+          progress = Math.min(newStats.hardChallengesCompleted, 3);
+          break;
+        case "category-master":
+          progress = Math.min(newStats.categoriesCompleted, 4);
+          break;
+      }
+
+      return {
+        ...achievement,
+        earned: achievement.condition(newStats),
+        progress
+      };
+    });
 
     setAchievements(updatedAchievements);
+    
+    // Calculate total points
+    const points = updatedAchievements
+      .filter(a => a.earned)
+      .reduce((sum, a) => sum + a.points, 0);
+    setTotalPoints(points);
   };
 
   const calculateStreak = () => {
     // Simplified streak calculation
-    return 0; // Would need more complex logic with dates
+    return 0;
   };
 
-  const earnedAchievements = achievements.filter(a => a.earned);
-  const totalAchievements = achievements.length;
+  const calculateCategoriesCompleted = (completedKeys: string[]) => {
+    const categories = new Set();
+    completedKeys.forEach(key => {
+      const category = key.split('-')[0];
+      if (category) categories.add(category);
+    });
+    return categories.size;
+  };
 
-  if (earnedAchievements.length === 0) {
+  const earnedCount = achievements.filter(a => a.earned).length;
+  const totalCount = achievements.length;
+
+  if (achievements.length === 0) {
     return null;
   }
 
   return (
     <Card className="mb-6">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Trophy className="h-5 w-5 text-yellow-500" />
-          Achievements ({earnedAchievements.length}/{totalAchievements})
-        </CardTitle>
+        <div className="flex items-center justify-between">
+          <CardTitle className="flex items-center gap-2">
+            <Trophy className="h-5 w-5 text-yellow-500" />
+            Achievements
+          </CardTitle>
+          <div className="flex items-center gap-4">
+            <Badge variant="secondary" className="text-sm">
+              {earnedCount}/{totalCount} Unlocked
+            </Badge>
+            <Badge variant="outline" className="text-sm">
+              {totalPoints} Points
+            </Badge>
+          </div>
+        </div>
+        <Progress value={(earnedCount / totalCount) * 100} className="mt-2" />
       </CardHeader>
       <CardContent>
-        <div className="flex flex-wrap gap-2">
-          {earnedAchievements.map((achievement) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {achievements.map((achievement) => {
             const IconComponent = achievement.icon;
+            const isLocked = !achievement.earned;
+            const progressPercentage = achievement.maxProgress 
+              ? (achievement.progress! / achievement.maxProgress) * 100 
+              : 0;
+
             return (
               <motion.div
                 key={achievement.id}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
+                className={`relative p-4 rounded-lg border-2 transition-all duration-300 ${
+                  isLocked 
+                    ? "bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 opacity-60" 
+                    : getRarityBg(achievement.rarity)
+                } ${!isLocked ? "hover:shadow-lg hover:scale-105" : ""}`}
               >
-                <Badge variant="secondary" className="p-2 flex items-center gap-1">
-                  <IconComponent className="h-4 w-4" />
-                  {achievement.title}
-                </Badge>
+                {/* Achievement Icon */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`p-2 rounded-full ${
+                    isLocked 
+                      ? "bg-gray-200 dark:bg-gray-700" 
+                      : "bg-white dark:bg-gray-800 shadow-md"
+                  }`}>
+                    {isLocked ? (
+                      <Lock className="h-6 w-6 text-gray-400" />
+                    ) : (
+                      <IconComponent className={`h-6 w-6 ${getRarityColor(achievement.rarity)}`} />
+                    )}
+                  </div>
+                  {!isLocked && (
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                  )}
+                </div>
+
+                {/* Achievement Info */}
+                <div className="mb-3">
+                  <h3 className={`font-semibold mb-1 ${
+                    isLocked ? "text-gray-500 dark:text-gray-400" : "text-foreground"
+                  }`}>
+                    {achievement.title}
+                  </h3>
+                  <p className={`text-sm ${
+                    isLocked ? "text-gray-400 dark:text-gray-500" : "text-muted-foreground"
+                  }`}>
+                    {achievement.description}
+                  </p>
+                </div>
+
+                {/* Progress Bar */}
+                {achievement.maxProgress && (
+                  <div className="mb-3">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-xs text-muted-foreground">
+                        Progress
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {achievement.progress}/{achievement.maxProgress}
+                      </span>
+                    </div>
+                    <Progress value={progressPercentage} className="h-2" />
+                  </div>
+                )}
+
+                {/* Points and Rarity */}
+                <div className="flex justify-between items-center">
+                  <Badge 
+                    variant={isLocked ? "secondary" : "default"} 
+                    className={`text-xs ${
+                      !isLocked ? getRarityColor(achievement.rarity) : ""
+                    }`}
+                  >
+                    {achievement.rarity.toUpperCase()}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    {achievement.points} pts
+                  </Badge>
+                </div>
+
+                {/* Earned Effect */}
+                {!isLocked && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1"
+                  >
+                    <CheckCircle className="h-4 w-4" />
+                  </motion.div>
+                )}
               </motion.div>
             );
           })}
