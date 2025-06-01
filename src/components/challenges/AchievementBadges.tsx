@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Trophy, Target, Zap, Star, Award, Crown, Lock, CheckCircle } from "lucide-react";
@@ -104,23 +103,46 @@ const AchievementBadges = () => {
     },
   ];
 
-  const getRarityColor = (rarity: string) => {
-    switch (rarity) {
-      case "common": return "text-gray-600 dark:text-gray-400";
-      case "rare": return "text-blue-600 dark:text-blue-400";
-      case "epic": return "text-purple-600 dark:text-purple-400";
-      case "legendary": return "text-yellow-600 dark:text-yellow-400";
-      default: return "text-gray-600 dark:text-gray-400";
+  const getRarityStyles = (rarity: string, isLocked: boolean) => {
+    if (isLocked) {
+      return {
+        cardClass: "bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700",
+        badgeClass: "bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-400",
+        iconClass: "text-gray-400"
+      };
     }
-  };
 
-  const getRarityBg = (rarity: string) => {
     switch (rarity) {
-      case "common": return "bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600";
-      case "rare": return "bg-blue-50 dark:bg-blue-900/20 border-blue-300 dark:border-blue-600";
-      case "epic": return "bg-purple-50 dark:bg-purple-900/20 border-purple-300 dark:border-purple-600";
-      case "legendary": return "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-300 dark:border-yellow-600";
-      default: return "bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600";
+      case "common":
+        return {
+          cardClass: "bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600",
+          badgeClass: "bg-gray-600 text-white dark:bg-gray-500 dark:text-white",
+          iconClass: "text-gray-600 dark:text-gray-400"
+        };
+      case "rare":
+        return {
+          cardClass: "bg-blue-50 dark:bg-blue-900/20 border-blue-300 dark:border-blue-600",
+          badgeClass: "bg-blue-600 text-white dark:bg-blue-500 dark:text-white",
+          iconClass: "text-blue-600 dark:text-blue-400"
+        };
+      case "epic":
+        return {
+          cardClass: "bg-purple-50 dark:bg-purple-900/20 border-purple-300 dark:border-purple-600",
+          badgeClass: "bg-purple-600 text-white dark:bg-purple-500 dark:text-white",
+          iconClass: "text-purple-600 dark:text-purple-400"
+        };
+      case "legendary":
+        return {
+          cardClass: "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-300 dark:border-yellow-600",
+          badgeClass: "bg-yellow-600 text-white dark:bg-yellow-500 dark:text-white",
+          iconClass: "text-yellow-600 dark:text-yellow-400"
+        };
+      default:
+        return {
+          cardClass: "bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600",
+          badgeClass: "bg-gray-600 text-white dark:bg-gray-500 dark:text-white",
+          iconClass: "text-gray-600 dark:text-gray-400"
+        };
     }
   };
 
@@ -232,6 +254,7 @@ const AchievementBadges = () => {
             const progressPercentage = achievement.maxProgress 
               ? (achievement.progress! / achievement.maxProgress) * 100 
               : 0;
+            const styles = getRarityStyles(achievement.rarity, isLocked);
 
             return (
               <motion.div
@@ -239,11 +262,9 @@ const AchievementBadges = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className={`relative p-4 rounded-lg border-2 transition-all duration-300 ${
-                  isLocked 
-                    ? "bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 opacity-60" 
-                    : getRarityBg(achievement.rarity)
-                } ${!isLocked ? "hover:shadow-lg hover:scale-105" : ""}`}
+                className={`relative p-4 rounded-lg border-2 transition-all duration-300 ${styles.cardClass} ${
+                  isLocked ? "opacity-60" : "hover:shadow-lg hover:scale-105"
+                }`}
               >
                 {/* Achievement Icon */}
                 <div className="flex items-center gap-3 mb-3">
@@ -255,7 +276,7 @@ const AchievementBadges = () => {
                     {isLocked ? (
                       <Lock className="h-6 w-6 text-gray-400" />
                     ) : (
-                      <IconComponent className={`h-6 w-6 ${getRarityColor(achievement.rarity)}`} />
+                      <IconComponent className={`h-6 w-6 ${styles.iconClass}`} />
                     )}
                   </div>
                   {!isLocked && (
@@ -294,14 +315,9 @@ const AchievementBadges = () => {
 
                 {/* Points and Rarity */}
                 <div className="flex justify-between items-center">
-                  <Badge 
-                    variant={isLocked ? "secondary" : "default"} 
-                    className={`text-xs ${
-                      !isLocked ? getRarityColor(achievement.rarity) : ""
-                    }`}
-                  >
+                  <div className={`px-2 py-1 rounded-full text-xs font-semibold ${styles.badgeClass}`}>
                     {achievement.rarity.toUpperCase()}
-                  </Badge>
+                  </div>
                   <Badge variant="outline" className="text-xs">
                     {achievement.points} pts
                   </Badge>
