@@ -42,12 +42,16 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     
     // Save to localStorage
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    const streakData = JSON.parse(localStorage.getItem("challengeStreaks") || "{}");
     const key = `${category}-${decodeURIComponent(title)}`;
     
     if (newStatus) {
       completedChallenges[key] = true;
       completedChallenges[`${key}-progress`] = 100;
       setProgress(100);
+      
+      // Track completion date for streaks
+      streakData[key] = new Date().toISOString();
       
       // Update all verification items to checked when marking as complete
       if (steps.length > 0 && steps[0].verification) {
@@ -70,6 +74,8 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
       delete completedChallenges[key];
       completedChallenges[`${key}-progress`] = 0;
       setProgress(0);
+      // Remove completion date
+      delete streakData[key];
       // Also reset verification status
       if (steps.length > 0 && steps[0].verification) {
         const newVerificationStatus = Array(steps[0].verification.length).fill(false);
@@ -79,6 +85,7 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+    localStorage.setItem("challengeStreaks", JSON.stringify(streakData));
     
     // Dispatch a general update event
     window.dispatchEvent(new Event("challengeUpdated"));
@@ -90,12 +97,15 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     
     setProgress(value);
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    const streakData = JSON.parse(localStorage.getItem("challengeStreaks") || "{}");
     const key = `${category}-${decodeURIComponent(title)}`;
     completedChallenges[`${key}-progress`] = value;
     
     if (value === 100 && !isCompleted) {
       setIsCompleted(true);
       completedChallenges[key] = true;
+      // Track completion date for streaks
+      streakData[key] = new Date().toISOString();
       toast({
         title: "Challenge Completed!",
         description: "Great job on completing this challenge!",
@@ -109,9 +119,11 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     } else if (value < 100 && isCompleted) {
       setIsCompleted(false);
       delete completedChallenges[key];
+      delete streakData[key];
     }
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+    localStorage.setItem("challengeStreaks", JSON.stringify(streakData));
     
     // Dispatch a general update event
     window.dispatchEvent(new Event("challengeUpdated"));

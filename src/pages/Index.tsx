@@ -10,13 +10,16 @@ import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
 import ScheduledChallenges from "@/components/challenges/ScheduledChallenges";
-import ChallengeSearch from "@/components/challenges/ChallengeSearch";
 import DifficultyFilters from "@/components/challenges/DifficultyFilters";
 import FeaturedChallenge from "@/components/challenges/FeaturedChallenge";
 import FavoriteChallenges from "@/components/challenges/FavoriteChallenges";
 import ChallengeOfTheDay from "@/components/challenges/ChallengeOfTheDay";
 import ChallengeStatistics from "@/components/challenges/ChallengeStatistics";
 import ChallengeRecommendations from "@/components/challenges/ChallengeRecommendations";
+import EnhancedChallengeFilters from "@/components/challenges/EnhancedChallengeFilters";
+import StreakCounter from "@/components/challenges/StreakCounter";
+import QuickActionsPanel from "@/components/challenges/QuickActionsPanel";
+import ProgressAnalytics from "@/components/challenges/ProgressAnalytics";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -24,6 +27,8 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(CHALLENGES);
   const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<string>("newest");
+  const [showCompleted, setShowCompleted] = useState<boolean>(true);
   const [completedChallengesCount, setCompletedChallengesCount] = useState(0);
 
   // Function to check for completed challenges and update count
@@ -32,7 +37,7 @@ const Index = () => {
     
     // Filter out progress tracking keys (those with -progress suffix)
     const completedKeys = Object.keys(completedChallenges).filter(
-      key => !key.includes("-progress") && !key.includes("-verification")
+      key => !key.includes("-progress") && !key.includes("-verification") && completedChallenges[key] === true
     );
     
     setCompletedChallengesCount(completedKeys.length);
@@ -49,11 +54,41 @@ const Index = () => {
       filtered = filtered.filter((challenge) => challenge.difficulty === difficultyFilter);
     }
     
+    if (!showCompleted) {
+      const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+      filtered = filtered.filter((challenge) => {
+        const key = `${challenge.category}-${challenge.title}`;
+        return !completedChallenges[key];
+      });
+    }
+    
     if (searchQuery) {
       filtered = filtered.filter((challenge) => 
         challenge.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         challenge.description.toLowerCase().includes(searchQuery.toLowerCase())
       );
+    }
+
+    // Apply sorting
+    switch (sortBy) {
+      case "difficulty":
+        const difficultyOrder = { "Easy": 1, "Medium": 2, "Hard": 3 };
+        filtered.sort((a, b) => difficultyOrder[a.difficulty as keyof typeof difficultyOrder] - difficultyOrder[b.difficulty as keyof typeof difficultyOrder]);
+        break;
+      case "title":
+        filtered.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case "timeEstimate":
+        filtered.sort((a, b) => {
+          const getMinutes = (time: string) => {
+            const match = time.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 0;
+          };
+          return getMinutes(a.timeEstimate) - getMinutes(b.timeEstimate);
+        });
+        break;
+      default: // newest
+        break;
     }
     
     setFilteredChallenges(filtered);
@@ -71,7 +106,7 @@ const Index = () => {
     return () => {
       window.removeEventListener("challengeUpdated", handleChallengeUpdate);
     };
-  }, [selectedCategory, searchQuery, difficultyFilter]);
+  }, [selectedCategory, searchQuery, difficultyFilter, sortBy, showCompleted]);
 
   // Add a manual listener for storage events
   useEffect(() => {
@@ -104,21 +139,29 @@ const Index = () => {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Hero />
 
-        <CompletionSummary completedChallengesCount={completedChallengesCount} />
-        
-        <ChallengeOfTheDay />
-        
-        <FeaturedChallenge />
-        
-        <ScheduledChallenges />
+        <div className="space-y-8">
+          <CompletionSummary completedChallengesCount={completedChallengesCount} />
+          
+          <StreakCounter />
+          
+          <QuickActionsPanel />
+          
+          <ChallengeOfTheDay />
+          
+          <FeaturedChallenge />
+          
+          <ScheduledChallenges />
 
-        <ChallengeRecommendations />
-        
-        <FavoriteChallenges />
+          <ChallengeRecommendations />
+          
+          <FavoriteChallenges />
 
-        <ChallengeStatistics />
+          <ProgressAnalytics />
+
+          <ChallengeStatistics />
+        </div>
         
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 mt-12">
           <h2 className="text-xl font-bold">All Challenges</h2>
           <Link to="/categories">
             <Button variant="outline" size="sm" className="flex items-center gap-1">
@@ -128,22 +171,19 @@ const Index = () => {
           </Link>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-12 space-y-6"
-        >
-          <ChallengeSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-
-          <div className="space-y-4">
-            <DifficultyFilters
-              difficultyFilter={difficultyFilter}
-              setDifficultyFilter={setDifficultyFilter}
-              difficulties={difficulties}
-            />
-          </div>
-        </motion.div>
+        <EnhancedChallengeFilters
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          difficultyFilter={difficultyFilter}
+          setDifficultyFilter={setDifficultyFilter}
+          difficulties={difficulties}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          showCompleted={showCompleted}
+          setShowCompleted={setShowCompleted}
+        />
 
         <ChallengeGrid filteredChallenges={filteredChallenges} />
 

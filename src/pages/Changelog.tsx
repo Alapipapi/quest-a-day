@@ -20,6 +20,57 @@ const Changelog = () => {
       <div className="space-y-12">
         <div className="space-y-4">
           <div className="flex items-center">
+            <h2 className="text-2xl font-bold">v1.6.0</h2>
+            <span className="ml-3 text-sm text-muted-foreground">June 2, 2025</span>
+          </div>
+          <div className="border-l-2 border-primary pl-4 ml-2 space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold">Major New Features</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Advanced challenge filtering system with category selection and sorting options</li>
+                <li>Comprehensive streak tracking with current, best, and weekly progress</li>
+                <li>Quick Actions panel for instant challenge discovery</li>
+                <li>Progress Analytics dashboard with category breakdown and activity charts</li>
+                <li>Enhanced search and filtering capabilities</li>
+                <li>Smart completion tracking with visual progress indicators</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">User Experience Improvements</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Redesigned interface with better visual hierarchy</li>
+                <li>Improved mobile responsiveness across all components</li>
+                <li>Enhanced animations and micro-interactions</li>
+                <li>Better color coding and visual feedback</li>
+                <li>Streamlined navigation and quick access features</li>
+                <li>Advanced filtering with show/hide completed challenges option</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Performance & Technical</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Optimized challenge loading and filtering performance</li>
+                <li>Improved local storage management for better data persistence</li>
+                <li>Enhanced component architecture for better maintainability</li>
+                <li>Better error handling and edge case management</li>
+                <li>Reduced bundle size through code optimization</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Analytics & Insights</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li>Weekly activity visualization with bar charts</li>
+                <li>Category-wise completion breakdown</li>
+                <li>Overall progress tracking with percentage completion</li>
+                <li>Streak visualization with motivational badges</li>
+                <li>Personal achievement tracking system</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center">
             <h2 className="text-2xl font-bold">v1.5.0</h2>
             <span className="ml-3 text-sm text-muted-foreground">May 1, 2025</span>
           </div>
