@@ -22,7 +22,7 @@ const AchievementBadges = () => {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [stats, setStats] = useState({
     totalCompleted: 0,
-    streak: 0,
+    dailyCompleted: 0,
     categoriesCompleted: 0,
     hardChallengesCompleted: 0,
   });
@@ -66,11 +66,11 @@ const AchievementBadges = () => {
       maxProgress: 10,
     },
     {
-      id: "streak-3",
-      title: "On Fire",
-      description: "Complete challenges 3 days in a row",
+      id: "daily-champion",
+      title: "Daily Champion",
+      description: "Complete 3 challenges in one day",
       icon: Zap,
-      condition: (s) => s.streak >= 3,
+      condition: (s) => s.dailyCompleted >= 3,
       earned: false,
       points: 150,
       rarity: "rare",
@@ -173,11 +173,11 @@ const AchievementBadges = () => {
       key => !key.includes("-progress") && !key.includes("-verification")
     );
 
-    const currentStreak = calculateStreak();
+    const dailyCompleted = calculateDailyCompleted();
 
     const newStats = {
       totalCompleted: completedKeys.length,
-      streak: currentStreak,
+      dailyCompleted: dailyCompleted,
       categoriesCompleted: calculateCategoriesCompleted(completedKeys),
       hardChallengesCompleted: 0, // Would need challenge data to calculate properly
     };
@@ -199,8 +199,8 @@ const AchievementBadges = () => {
         case "milestone-10":
           progress = Math.min(newStats.totalCompleted, 10);
           break;
-        case "streak-3":
-          progress = Math.min(newStats.streak, 3);
+        case "daily-champion":
+          progress = Math.min(newStats.dailyCompleted, 3);
           break;
         case "hard-mode":
           progress = Math.min(newStats.hardChallengesCompleted, 3);
@@ -226,47 +226,21 @@ const AchievementBadges = () => {
     setTotalPoints(points);
   };
 
-  const calculateStreak = () => {
+  const calculateDailyCompleted = () => {
     const storedHistory = localStorage.getItem("challengeCompletionHistory");
-    const storedLastCompletionDate = localStorage.getItem("lastChallengeCompletionDate");
     
-    if (!storedHistory || !storedLastCompletionDate) {
+    if (!storedHistory) {
       return 0;
     }
 
     const completionHistory = JSON.parse(storedHistory);
-    const lastCompletionDate = new Date(storedLastCompletionDate);
-    const currentDate = new Date();
+    const today = new Date().toISOString().split('T')[0];
     
-    // Reset streak if last completion was more than 1 day ago
-    const daysDifference = Math.floor((currentDate.getTime() - lastCompletionDate.getTime()) / (24 * 60 * 60 * 1000));
-    if (daysDifference > 1) {
-      return 0;
-    }
-
-    // Calculate consecutive days by going backwards from the most recent completion
-    let streak = 0;
-    const today = new Date();
+    // Count completions for today
+    const todayCompletions = completionHistory[today] || 0;
     
-    // Start from today and work backwards
-    for (let i = 0; i < 365; i++) {
-      const checkDate = new Date(today);
-      checkDate.setDate(today.getDate() - i);
-      const dateString = checkDate.toISOString().split('T')[0];
-      
-      if (completionHistory[dateString]) {
-        streak++;
-      } else {
-        // If we haven't found any completions yet, continue looking
-        // If we have found completions and hit a gap, break
-        if (streak > 0) {
-          break;
-        }
-      }
-    }
-    
-    console.log("Calculated streak:", streak, "History:", completionHistory);
-    return streak;
+    console.log("Daily completions for", today, ":", todayCompletions);
+    return todayCompletions;
   };
 
   const calculateCategoriesCompleted = (completedKeys: string[]) => {
