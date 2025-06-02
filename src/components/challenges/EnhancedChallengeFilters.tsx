@@ -46,7 +46,6 @@ const EnhancedChallengeFilters = ({
   ];
 
   const sortOptions = [
-    { id: "newest", label: "Newest First" },
     { id: "difficulty", label: "By Difficulty" },
     { id: "title", label: "Alphabetical" },
     { id: "timeEstimate", label: "By Duration" }
