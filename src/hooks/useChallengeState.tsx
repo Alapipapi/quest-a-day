@@ -13,7 +13,7 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
   const { toast } = useToast();
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [verificationStatus, setVerificationStatus] = useState<Record<string, boolean>>({});
+  const [verificationStatus, setVerificationStatus] = useState<boolean[]>([]);
   
   useEffect(() => {
     if (category && title && steps.length > 0) {
@@ -25,24 +25,11 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
       setIsCompleted(!!completedChallenges[key]);
       setProgress(completedChallenges[`${key}-progress`] || 0);
       
-      // Initialize verification status object if available, otherwise create a new one
+      // Initialize verification status array if available, otherwise create a new one
       if (steps.length > 0 && steps[0].verification) {
-        const savedStatus = completedChallenges[`${key}-verification`];
-        if (savedStatus && Array.isArray(savedStatus)) {
-          // Convert array to Record<string, boolean>
-          const statusObject: Record<string, boolean> = {};
-          savedStatus.forEach((status, index) => {
-            statusObject[index.toString()] = status;
-          });
-          setVerificationStatus(statusObject);
-        } else {
-          // Create new status object
-          const statusObject: Record<string, boolean> = {};
-          steps[0].verification.forEach((_, index) => {
-            statusObject[index.toString()] = false;
-          });
-          setVerificationStatus(statusObject);
-        }
+        const savedStatus = completedChallenges[`${key}-verification`] || 
+          Array(steps[0].verification.length).fill(false);
+        setVerificationStatus(savedStatus);
       }
     }
   }, [category, title, steps]);
@@ -64,14 +51,9 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
       
       // Update all verification items to checked when marking as complete
       if (steps.length > 0 && steps[0].verification) {
-        const newVerificationStatus: Record<string, boolean> = {};
-        steps[0].verification.forEach((_, index) => {
-          newVerificationStatus[index.toString()] = true;
-        });
+        const newVerificationStatus = Array(steps[0].verification.length).fill(true);
         setVerificationStatus(newVerificationStatus);
-        // Convert to array for localStorage
-        const statusArray = steps[0].verification.map((_, index) => newVerificationStatus[index.toString()]);
-        completedChallenges[`${key}-verification`] = statusArray;
+        completedChallenges[`${key}-verification`] = newVerificationStatus;
       }
       
       toast({
@@ -90,14 +72,9 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
       setProgress(0);
       // Also reset verification status
       if (steps.length > 0 && steps[0].verification) {
-        const newVerificationStatus: Record<string, boolean> = {};
-        steps[0].verification.forEach((_, index) => {
-          newVerificationStatus[index.toString()] = false;
-        });
+        const newVerificationStatus = Array(steps[0].verification.length).fill(false);
         setVerificationStatus(newVerificationStatus);
-        // Convert to array for localStorage
-        const statusArray = steps[0].verification.map((_, index) => newVerificationStatus[index.toString()]);
-        completedChallenges[`${key}-verification`] = statusArray;
+        completedChallenges[`${key}-verification`] = newVerificationStatus;
       }
     }
     
@@ -143,12 +120,12 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
   const toggleVerificationItem = (index: number) => {
     if (!category || !title || !steps.length || !steps[0].verification) return;
     
-    const newVerificationStatus = { ...verificationStatus };
-    newVerificationStatus[index.toString()] = !newVerificationStatus[index.toString()];
+    const newVerificationStatus = [...verificationStatus];
+    newVerificationStatus[index] = !newVerificationStatus[index];
     setVerificationStatus(newVerificationStatus);
     
     // Count completed verification items
-    const completedItems = Object.values(newVerificationStatus).filter(item => item).length;
+    const completedItems = newVerificationStatus.filter(item => item).length;
     const totalItems = steps[0].verification.length;
     
     // Update progress based on verification items
@@ -158,9 +135,7 @@ export const useChallengeState = ({ category, title, steps }: UseChallengeStateP
     // Save to localStorage
     const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
     const key = `${category}-${decodeURIComponent(title)}`;
-    // Convert to array for localStorage
-    const statusArray = steps[0].verification.map((_, i) => newVerificationStatus[i.toString()] || false);
-    completedChallenges[`${key}-verification`] = statusArray;
+    completedChallenges[`${key}-verification`] = newVerificationStatus;
     
     localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
   };
