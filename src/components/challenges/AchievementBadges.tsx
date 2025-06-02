@@ -207,8 +207,40 @@ const AchievementBadges = () => {
   };
 
   const calculateStreak = () => {
-    // Simplified streak calculation
-    return 0;
+    // Get streak data from localStorage (same as StreakTracker)
+    const storedHistory = localStorage.getItem("challengeCompletionHistory");
+    const storedLastCompletionDate = localStorage.getItem("lastChallengeCompletionDate");
+    
+    if (!storedHistory || !storedLastCompletionDate) {
+      return 0;
+    }
+
+    const completionHistory = JSON.parse(storedHistory);
+    const lastCompletionDate = new Date(storedLastCompletionDate);
+    const currentDate = new Date();
+    
+    // Reset streak if last completion was more than 1 day ago
+    if ((currentDate.getTime() - lastCompletionDate.getTime()) > 2 * 24 * 60 * 60 * 1000) {
+      return 0;
+    }
+
+    // Calculate consecutive days of completion
+    let streak = 0;
+    const today = new Date();
+    
+    for (let i = 0; i < 365; i++) { // Check up to a year back
+      const checkDate = new Date(today);
+      checkDate.setDate(today.getDate() - i);
+      const dateString = checkDate.toISOString().split('T')[0];
+      
+      if (completionHistory[dateString]) {
+        streak++;
+      } else {
+        break; // Break the streak if a day is missing
+      }
+    }
+    
+    return streak;
   };
 
   const calculateCategoriesCompleted = (completedKeys: string[]) => {
