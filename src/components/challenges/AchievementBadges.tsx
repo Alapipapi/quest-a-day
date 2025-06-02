@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Trophy, Target, Zap, Star, Award, Crown, Lock, CheckCircle } from "lucide-react";
@@ -148,6 +149,23 @@ const AchievementBadges = () => {
 
   useEffect(() => {
     updateStats();
+    
+    // Listen for challenge completion events to update achievements
+    const handleChallengeCompleted = () => {
+      updateStats();
+    };
+    
+    const handleChallengeUpdate = () => {
+      updateStats();
+    };
+    
+    window.addEventListener("challengeCompleted", handleChallengeCompleted);
+    window.addEventListener("challengeUpdated", handleChallengeUpdate);
+    
+    return () => {
+      window.removeEventListener("challengeCompleted", handleChallengeCompleted);
+      window.removeEventListener("challengeUpdated", handleChallengeUpdate);
+    };
   }, []);
 
   const updateStats = () => {
@@ -163,6 +181,7 @@ const AchievementBadges = () => {
       hardChallengesCompleted: 0, // Would need challenge data to calculate properly
     };
 
+    console.log("Achievement stats updated:", newStats);
     setStats(newStats);
 
     // Update achievements with progress
