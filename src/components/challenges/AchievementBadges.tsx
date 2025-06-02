@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Trophy, Target, Zap, Star, Award, Crown, Lock, CheckCircle } from "lucide-react";
@@ -174,9 +173,11 @@ const AchievementBadges = () => {
       key => !key.includes("-progress") && !key.includes("-verification")
     );
 
+    const currentStreak = calculateStreak();
+
     const newStats = {
       totalCompleted: completedKeys.length,
-      streak: calculateStreak(),
+      streak: currentStreak,
       categoriesCompleted: calculateCategoriesCompleted(completedKeys),
       hardChallengesCompleted: 0, // Would need challenge data to calculate properly
     };
@@ -226,7 +227,6 @@ const AchievementBadges = () => {
   };
 
   const calculateStreak = () => {
-    // Get streak data from localStorage (same as StreakTracker)
     const storedHistory = localStorage.getItem("challengeCompletionHistory");
     const storedLastCompletionDate = localStorage.getItem("lastChallengeCompletionDate");
     
@@ -239,15 +239,17 @@ const AchievementBadges = () => {
     const currentDate = new Date();
     
     // Reset streak if last completion was more than 1 day ago
-    if ((currentDate.getTime() - lastCompletionDate.getTime()) > 2 * 24 * 60 * 60 * 1000) {
+    const daysDifference = Math.floor((currentDate.getTime() - lastCompletionDate.getTime()) / (24 * 60 * 60 * 1000));
+    if (daysDifference > 1) {
       return 0;
     }
 
-    // Calculate consecutive days of completion
+    // Calculate consecutive days by going backwards from the most recent completion
     let streak = 0;
     const today = new Date();
     
-    for (let i = 0; i < 365; i++) { // Check up to a year back
+    // Start from today and work backwards
+    for (let i = 0; i < 365; i++) {
       const checkDate = new Date(today);
       checkDate.setDate(today.getDate() - i);
       const dateString = checkDate.toISOString().split('T')[0];
@@ -255,10 +257,15 @@ const AchievementBadges = () => {
       if (completionHistory[dateString]) {
         streak++;
       } else {
-        break; // Break the streak if a day is missing
+        // If we haven't found any completions yet, continue looking
+        // If we have found completions and hit a gap, break
+        if (streak > 0) {
+          break;
+        }
       }
     }
     
+    console.log("Calculated streak:", streak, "History:", completionHistory);
     return streak;
   };
 
