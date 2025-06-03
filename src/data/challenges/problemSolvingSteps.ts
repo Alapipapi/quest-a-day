@@ -1,4 +1,3 @@
-
 import { ProblemSolvingChallenge } from "../types";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
 import { sudokuChallenge } from "./problemSolving/sudoku";
@@ -31,7 +30,34 @@ import { decisionMatrixChallenge } from "./problemSolving/decisionMatrix";
 import { insightExplorerChallenge } from "./problemSolving/insightExplorer";
 import { systemOptimizationChallenge } from "./problemSolving/systemOptimization";
 
-export const problemSolvingSteps: ProblemSolvingChallenge[] = [
+// Add new quick problem-solving challenge steps
+const brainTeaserSprintSteps: StepDetails = {
+  title: "Brain Teaser Sprint",
+  instructions: [
+    "Find 5 different types of brain teasers or riddles online",
+    "Set a timer for 2-3 minutes per puzzle maximum",
+    "Start with a logic puzzle that requires deductive reasoning",
+    "Solve a mathematical brain teaser or number sequence",
+    "Work on a word puzzle or lateral thinking riddle",
+    "Attempt a visual/spatial reasoning challenge",
+    "Finish with a classic riddle that requires creative thinking"
+  ],
+  verification: [
+    "Attempted all 5 different types of puzzles",
+    "Stayed within the time limit for each puzzle",
+    "Solved at least 3 out of 5 puzzles correctly",
+    "Used logical reasoning for problem-solving",
+    "Feel mentally stimulated and alert",
+    "Identified which types of puzzles you excel at"
+  ],
+  resources: [
+    { title: "Brain Teasers Collection", url: "https://www.braingle.com/" },
+    { title: "Logic Puzzles", url: "https://www.puzzle-riddles.com/" }
+  ]
+};
+
+// Update the main steps array to include new challenges
+export const problemSolvingSteps: StepDetails[] = [
   logicPuzzleChallenge,
   sudokuChallenge,
   algorithmChallenge,
@@ -61,5 +87,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   prioritizationFrameworkChallenge,
   decisionMatrixChallenge,
   insightExplorerChallenge,
-  systemOptimizationChallenge
+  systemOptimizationChallenge,
+  brainTeaserSprintSteps
 ];
