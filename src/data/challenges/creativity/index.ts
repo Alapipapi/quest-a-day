@@ -8,6 +8,7 @@ import { photographyChallenges } from "./categories/photographyChallenges";
 import { writingChallenges } from "./categories/writingChallenges";
 import { musicChallenges } from "./categories/musicChallenges";
 import { mediaChallenges } from "./categories/mediaChallenges";
+import { quickCreativityChallenges } from "./quickCreativityChallenges";
 
 // Combine all creativity challenges into one array
 export const creativityChallenges: Challenge[] = [
@@ -16,5 +17,6 @@ export const creativityChallenges: Challenge[] = [
   ...photographyChallenges,
   ...writingChallenges,
   ...musicChallenges,
-  ...mediaChallenges
+  ...mediaChallenges,
+  ...quickCreativityChallenges
 ];

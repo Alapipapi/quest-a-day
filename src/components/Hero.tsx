@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
             <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">70+ challenges and growing</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">80+ challenges and growing</span>
           </div>
         </motion.div>
       </motion.div>

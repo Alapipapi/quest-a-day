@@ -8,6 +8,7 @@ import { optimizationChallenges } from "./categories/optimizationChallenges";
 import { decisionMakingChallenges } from "./categories/decisionMakingChallenges";
 import { analysisAndAssessmentChallenges } from "./categories/analysisAndAssessmentChallenges";
 import { productivityAndManagementChallenges } from "./categories/productivityAndManagementChallenges";
+import { quickProblemSolvingChallenges } from "./quickProblemSolvingChallenges";
 
 // Combine all problem-solving challenges into one array
 export const problemSolvingChallenges: Challenge[] = [
@@ -16,5 +17,6 @@ export const problemSolvingChallenges: Challenge[] = [
   ...optimizationChallenges,
   ...decisionMakingChallenges,
   ...analysisAndAssessmentChallenges,
-  ...productivityAndManagementChallenges
+  ...productivityAndManagementChallenges,
+  ...quickProblemSolvingChallenges
 ];

@@ -5,6 +5,7 @@ import { strengthFitnessChallenges } from "./strength-challenges";
 import { flexibilityFitnessChallenges } from "./flexibility-challenges";
 import { conditioningFitnessChallenges } from "./conditioning-challenges";
 import { recoveryFitnessChallenges } from "./recovery-challenges";
+import { quickFitnessChallenges } from "./quickFitnessChallenges";
 
 // Combine all challenge categories into one array
 export const fitnessChallenges: Challenge[] = [
@@ -12,5 +13,6 @@ export const fitnessChallenges: Challenge[] = [
   ...strengthFitnessChallenges,
   ...flexibilityFitnessChallenges,
   ...conditioningFitnessChallenges,
-  ...recoveryFitnessChallenges
+  ...recoveryFitnessChallenges,
+  ...quickFitnessChallenges
 ];

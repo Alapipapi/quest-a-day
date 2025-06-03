@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Shuffle, Star, Clock, Target, BookOpen, Zap } from "lucide-react";
@@ -30,7 +29,10 @@ const QuickActionsPanel = () => {
 
   const getQuickChallenge = () => {
     const quickChallenges = CHALLENGES.filter(c => 
-      c.timeEstimate.includes("5-10") || c.timeEstimate.includes("10-15")
+      c.timeEstimate.includes("5-10") || 
+      c.timeEstimate.includes("10-15") ||
+      c.timeEstimate.includes("5 minutes") ||
+      c.timeEstimate.includes("10 minutes")
     );
     if (quickChallenges.length > 0) {
       const challenge = quickChallenges[Math.floor(Math.random() * quickChallenges.length)];
