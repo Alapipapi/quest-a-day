@@ -1,4 +1,6 @@
+
 import { ProblemSolvingChallenge } from "../types";
+import { StepDetails } from "../types/common";
 import { logicPuzzleChallenge } from "./problemSolving/logicPuzzle";
 import { sudokuChallenge } from "./problemSolving/sudoku";
 import { algorithmChallenge } from "./problemSolving/algorithm";

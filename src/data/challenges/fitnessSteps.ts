@@ -1,4 +1,6 @@
+
 import { FitnessChallenge } from "../types/fitness";
+import { StepDetails } from "../types/common";
 import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
 import { coreStrengthChallenge } from "./fitness/coreStrength";

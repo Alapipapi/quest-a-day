@@ -1,4 +1,6 @@
+
 import { CreativityChallenge } from "../types";
+import { StepDetails } from "../types/common";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { digitalArtChallenge } from "./creativity/digitalArt";
 import { watercolorChallenge } from "./creativity/watercolor";
