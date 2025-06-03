@@ -1,3 +1,4 @@
+
 import { StepDetails } from "../types/common";
 
 const reactComponentStylingSteps: StepDetails = {
@@ -319,7 +320,177 @@ const quickCalculatorWidgetSteps: StepDetails = {
   ]
 };
 
-// Update the main steps array to include new challenges
+const responsiveDesignChallengeSteps: StepDetails = {
+  title: "Responsive Design Challenge",
+  instructions: [
+    "Create a responsive webpage that looks good on all devices",
+    "Implement mobile-first design principles",
+    "Use CSS media queries for breakpoints",
+    "Ensure proper image scaling and text readability",
+    "Test on at least three different viewport sizes"
+  ],
+  verification: [
+    "Layout adapts to different screen sizes",
+    "No horizontal scrolling on mobile",
+    "Text remains readable at all sizes",
+    "Images scale appropriately",
+    "Navigation is usable on all devices"
+  ],
+  resources: [
+    { title: "Responsive Web Design Fundamentals", url: "https://web.dev/responsive-web-design-basics/" },
+    { title: "CSS Media Queries Guide", url: "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" }
+  ]
+};
+
+const buildChatInterfaceSteps: StepDetails = {
+  title: "Build a Chat Interface",
+  instructions: [
+    "Create a chat container with message display area",
+    "Build message components for sent and received messages",
+    "Implement an input field with send button",
+    "Add message timestamps and user avatars",
+    "Create responsive layout using CSS Grid or Flexbox",
+    "Implement auto-scroll to latest message",
+    "Add typing indicators and message status"
+  ],
+  verification: [
+    "Messages display correctly for different users",
+    "Input field works with enter key and send button",
+    "Chat scrolls to show latest messages",
+    "Interface is responsive on mobile devices",
+    "Timestamps display properly",
+    "User avatars appear correctly"
+  ],
+  resources: [
+    { title: "Chat UI Design Patterns", url: "https://www.smashingmagazine.com/2018/12/designing-chat-experiences/" },
+    { title: "CSS Flexbox Guide", url: "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" }
+  ]
+};
+
+const uiMicroanimationsSteps: StepDetails = {
+  title: "UI Microanimations",
+  instructions: [
+    "Create subtle hover effects for buttons and links",
+    "Implement loading animations for buttons and content",
+    "Add transition effects for modal and dropdown appearances",
+    "Create smooth page transition animations",
+    "Implement form field focus animations",
+    "Add success and error state animations",
+    "Optimize animations for performance"
+  ],
+  verification: [
+    "Hover effects are smooth and responsive",
+    "Loading animations provide clear feedback",
+    "Modal transitions feel natural",
+    "Page transitions don't cause layout shifts",
+    "Form animations enhance user experience",
+    "All animations perform well on slower devices"
+  ],
+  resources: [
+    { title: "Microinteractions in UI Design", url: "https://uxplanet.org/microinteractions-the-secret-to-great-app-design-4cfe70fbaccf" },
+    { title: "CSS Animation Performance", url: "https://web.dev/animations/" }
+  ]
+};
+
+const buildMobileFirstWebsiteSteps: StepDetails = {
+  title: "Build a Mobile-First Website",
+  instructions: [
+    "Plan your website structure with mobile users as priority",
+    "Create a responsive layout using CSS Grid and Flexbox",
+    "Implement mobile navigation (hamburger menu)",
+    "Optimize images and assets for mobile devices",
+    "Test on multiple viewport sizes",
+    "Add progressive enhancement for larger screens"
+  ],
+  verification: [
+    "Website works well on mobile devices",
+    "Navigation is accessible on small screens",
+    "Content is properly prioritized",
+    "Layout adapts smoothly to larger screens",
+    "Performance is optimized for mobile"
+  ],
+  resources: [
+    { title: "Mobile-First Design Guide", url: "https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/" },
+    { title: "Responsive Design Patterns", url: "https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns" }
+  ]
+};
+
+const responsiveDashboardDesignSteps: StepDetails = {
+  title: "Responsive Dashboard Design",
+  instructions: [
+    "Create a responsive dashboard layout that adapts to different screen sizes",
+    "Implement at least 3 different data visualization components (charts, graphs, etc.)",
+    "Add a sidebar navigation menu that collapses on mobile devices",
+    "Use CSS Grid and Flexbox for responsive layouts",
+    "Implement dark mode toggle functionality",
+    "Ensure all dashboard components are fully accessible",
+    "Create a responsive data table with sorting and filtering capabilities",
+    "Add skeleton loading states for components that fetch data"
+  ],
+  verification: [
+    "Does the dashboard layout adapt properly to mobile, tablet, and desktop screen sizes?",
+    "Are all data visualization components displaying correctly?",
+    "Is the sidebar navigation functional and does it collapse properly on mobile?",
+    "Does the dark mode toggle work smoothly between light and dark themes?",
+    "Are all interactive elements accessible via keyboard navigation?",
+    "Do the data tables have proper sorting and filtering functionality?"
+  ],
+  resources: [
+    { title: "Dashboard UI Design Principles", url: "https://uxplanet.org/10-rules-for-better-dashboard-design-ef68189d734c" },
+    { title: "CSS Grid Layout Guide", url: "https://css-tricks.com/snippets/css/complete-guide-grid/" },
+    { title: "Data Visualization Best Practices", url: "https://www.tableau.com/visualization/data-visualization-best-practices" }
+  ]
+};
+
+const buildDarkModeToggleSteps: StepDetails = {
+  title: "Build a Dark Mode Toggle",
+  instructions: [
+    "Create a toggle button component for switching themes",
+    "Implement CSS custom properties for light and dark color schemes",
+    "Store user theme preference in localStorage",
+    "Apply theme changes across all components",
+    "Add smooth transitions between theme changes",
+    "Ensure proper contrast ratios for accessibility",
+    "Test theme switching on different components"
+  ],
+  verification: [
+    "Toggle button works smoothly",
+    "Theme preference persists after page reload",
+    "All components respect the selected theme",
+    "Transitions between themes are smooth",
+    "Text contrast meets accessibility standards",
+    "Theme changes apply immediately"
+  ],
+  resources: [
+    { title: "Dark Mode Design Guide", url: "https://material.io/design/color/dark-theme.html" },
+    { title: "CSS Custom Properties", url: "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" }
+  ]
+};
+
+const responsiveEmailTemplateSteps: StepDetails = {
+  title: "Responsive Email Template",
+  instructions: [
+    "Design a responsive HTML email template that works across major email clients",
+    "Include header, body content section, and footer components",
+    "Implement responsive layout that adapts to desktop and mobile screens",
+    "Use inline CSS for styling (as external stylesheets won't work in most email clients)",
+    "Test your template in different email clients and viewport sizes"
+  ],
+  verification: [
+    "Template displays correctly in Gmail, Outlook, Apple Mail, and on mobile devices",
+    "Layout adjusts appropriately for different screen sizes",
+    "Images include appropriate alt tags for accessibility",
+    "Color contrast meets accessibility standards",
+    "Structure uses proper HTML email best practices"
+  ],
+  resources: [
+    { title: "HTML Email Development Guide", url: "https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/" },
+    { title: "Email Client CSS Support Reference", url: "https://www.campaignmonitor.com/css/" },
+    { title: "Email Testing Tools", url: "https://sendgrid.com/en-us/solutions/email-marketing/email-testing" }
+  ]
+};
+
+// Update the main steps array to include all challenges
 export const codingSteps: StepDetails[] = [
   reactComponentStylingSteps,
   apiIntegrationSteps,
@@ -334,5 +505,12 @@ export const codingSteps: StepDetails[] = [
   automatedTestingImplementationSteps,
   cssAnimationShowcaseSteps,
   formValidationHelperSteps,
-  quickCalculatorWidgetSteps
+  quickCalculatorWidgetSteps,
+  responsiveDesignChallengeSteps,
+  buildChatInterfaceSteps,
+  uiMicroanimationsSteps,
+  buildMobileFirstWebsiteSteps,
+  responsiveDashboardDesignSteps,
+  buildDarkModeToggleSteps,
+  responsiveEmailTemplateSteps
 ];
