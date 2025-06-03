@@ -42,6 +42,32 @@ const ChallengeRecommendations = () => {
     return completedChallenges.has(challenge.id);
   };
 
+  // Deterministic shuffle based on date seed
+  const deterministicShuffle = (array: Challenge[], seed: number) => {
+    const shuffled = [...array];
+    let currentIndex = shuffled.length;
+    let temporaryValue, randomIndex;
+
+    // Use a simple linear congruential generator for deterministic randomness
+    const random = (s: number) => {
+      s = (s * 9301 + 49297) % 233280;
+      return s / 233280;
+    };
+
+    let currentSeed = seed;
+    while (currentIndex !== 0) {
+      currentSeed = (currentSeed * 9301 + 49297) % 233280;
+      randomIndex = Math.floor(random(currentSeed) * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = shuffled[currentIndex];
+      shuffled[currentIndex] = shuffled[randomIndex];
+      shuffled[randomIndex] = temporaryValue;
+    }
+
+    return shuffled;
+  };
+
   useEffect(() => {
     // Get completed challenges
     const completedData = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
@@ -67,6 +93,15 @@ const ChallengeRecommendations = () => {
     
     setCompletedChallenges(completedIds);
     
+    // Create a daily seed based on the current date
+    const now = new Date();
+    const startOfYear = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - startOfYear.getTime();
+    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+    
+    // Use a different offset than other daily challenges to ensure variety
+    const recommendationSeed = dayOfYear + 123; // Add offset for uniqueness
+    
     // Recommendation strategy:
     // 1. Prioritize categories user has already completed challenges in
     // 2. Recommend challenges of similar or slightly higher difficulty
@@ -76,21 +111,23 @@ const ChallengeRecommendations = () => {
     // From each completed category, find a challenge that isn't completed
     Array.from(completedCategories).forEach(category => {
       const categoryChallenges = CHALLENGES
-        .filter(c => c.category === category && !completedIds.has(c.id))
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 1);
+        .filter(c => c.category === category && !completedIds.has(c.id));
       
-      recommendations = [...recommendations, ...categoryChallenges];
+      // Use deterministic shuffle with daily seed
+      const shuffledCategoryChallenges = deterministicShuffle(categoryChallenges, recommendationSeed + category.charCodeAt(0));
+      recommendations = [...recommendations, ...shuffledCategoryChallenges.slice(0, 1)];
     });
     
-    // If we don't have 3 recommendations yet, add random challenges from other categories
+    // If we don't have 3 recommendations yet, add challenges from other categories
     if (recommendations.length < 3) {
       const otherChallenges = CHALLENGES
-        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id))
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3 - recommendations.length);
+        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id));
       
-      recommendations = [...recommendations, ...otherChallenges];
+      // Use deterministic shuffle with daily seed
+      const shuffledOtherChallenges = deterministicShuffle(otherChallenges, recommendationSeed + 456);
+      const additionalRecommendations = shuffledOtherChallenges.slice(0, 3 - recommendations.length);
+      
+      recommendations = [...recommendations, ...additionalRecommendations];
     }
     
     setRecommendedChallenges(recommendations.slice(0, 3));
