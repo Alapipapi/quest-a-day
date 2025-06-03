@@ -38,7 +38,7 @@ const FavoriteChallenges = () => {
   }
 
   return (
-    <div className="mb-12">
+    <div className="mb-12" data-section="favorites">
       <div className="flex items-center gap-2 mb-4">
         <Star className="text-yellow-500 h-5 w-5" />
         <h2 className="text-xl font-bold">Favorite Challenges</h2>

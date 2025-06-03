@@ -1,5 +1,6 @@
+
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Shuffle, Star, Clock, Target, BookOpen, Zap } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
@@ -9,6 +10,28 @@ import { CHALLENGES } from "@/data/challengeData";
 const QuickActionsPanel = () => {
   const navigate = useNavigate();
   const [isRandomizing, setIsRandomizing] = useState(false);
+  const [favoriteCount, setFavoriteCount] = useState(0);
+
+  // Update favorite count when favorites change
+  useEffect(() => {
+    const updateFavoriteCount = () => {
+      const favorites = JSON.parse(localStorage.getItem("favoriteChallenges") || "[]");
+      setFavoriteCount(favorites.length);
+    };
+
+    updateFavoriteCount();
+
+    // Listen for favorites updates
+    const handleFavoritesUpdate = () => {
+      updateFavoriteCount();
+    };
+
+    window.addEventListener("favoritesUpdated", handleFavoritesUpdate);
+
+    return () => {
+      window.removeEventListener("favoritesUpdated", handleFavoritesUpdate);
+    };
+  }, []);
 
   const getRandomChallenge = () => {
     setIsRandomizing(true);
@@ -40,6 +63,22 @@ const QuickActionsPanel = () => {
     }
   };
 
+  const goToFavorites = () => {
+    if (favoriteCount === 0) {
+      // If no favorites, show a random challenge instead
+      getRandomChallenge();
+    } else {
+      // Navigate to favorites section on the main page
+      navigate("/");
+      setTimeout(() => {
+        const favoritesSection = document.querySelector('[data-section="favorites"]');
+        if (favoritesSection) {
+          favoritesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   const actions = [
     {
       icon: <Shuffle className="h-5 w-5" />,
@@ -66,9 +105,11 @@ const QuickActionsPanel = () => {
     {
       icon: <Star className="h-5 w-5" />,
       title: "Favorites",
-      description: "Your bookmarked challenges",
-      action: () => navigate("/favorites"),
-      color: "bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-300"
+      description: favoriteCount > 0 ? `${favoriteCount} saved challenges` : "No favorites yet",
+      action: goToFavorites,
+      color: favoriteCount > 0 
+        ? "bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-300"
+        : "bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800/30 dark:text-gray-400"
     }
   ];
 

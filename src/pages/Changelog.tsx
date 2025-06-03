@@ -21,7 +21,7 @@ const Changelog = () => {
         <div className="space-y-4">
           <div className="flex items-center">
             <h2 className="text-2xl font-bold">v1.6.0</h2>
-            <span className="ml-3 text-sm text-muted-foreground">June 2, 2025</span>
+            <span className="ml-3 text-sm text-muted-foreground">June 3, 2025</span>
           </div>
           <div className="border-l-2 border-primary pl-4 ml-2 space-y-4">
             <div>
@@ -33,6 +33,22 @@ const Changelog = () => {
                 <li>Progress Analytics dashboard with category breakdown and activity charts</li>
                 <li>Enhanced search and filtering capabilities</li>
                 <li>Smart completion tracking with visual progress indicators</li>
+                <li>Functional favorites detection in Quick Actions panel</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">New Quick Win Challenges (5-15 minutes)</h3>
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                <li><strong>Coding:</strong> CSS Animation Showcase - Create smooth animations for UI elements</li>
+                <li><strong>Coding:</strong> Form Validation Helper - Build reusable form validation with real-time feedback</li>
+                <li><strong>Coding:</strong> Quick Calculator Widget - Simple calculator with basic operations</li>
+                <li><strong>Fitness:</strong> 5-Minute Energy Boost - Quick workout with jumping jacks and squats</li>
+                <li><strong>Fitness:</strong> Desk Break Stretches - Relief exercises for desk workers</li>
+                <li><strong>Fitness:</strong> Power Walking Challenge - Brisk walk with proper posture focus</li>
+                <li><strong>Creativity:</strong> Speed Sketching Session - Rapid drawing exercises for skill building</li>
+                <li><strong>Creativity:</strong> Color Palette Creation - Design harmonious color schemes</li>
+                <li><strong>Creativity:</strong> Micro Story Challenge - Write compelling stories in under 100 words</li>
+                <li><strong>Problem-Solving:</strong> Brain Teaser Sprint - Solve quick riddles for mental agility</li>
               </ul>
             </div>
             <div>
@@ -44,6 +60,7 @@ const Changelog = () => {
                 <li>Better color coding and visual feedback</li>
                 <li>Streamlined navigation and quick access features</li>
                 <li>Advanced filtering with show/hide completed challenges option</li>
+                <li>Smart favorites detection and management</li>
               </ul>
             </div>
             <div>
