@@ -178,7 +178,7 @@ const performanceOptimizationSteps: StepDetails = {
 };
 
 const accessibilityAuditSteps: StepDetails = {
-  title: "Accessibility Audit",
+  title: "Web Accessibility Audit",
   instructions: [
     "Use an accessibility testing tool like WAVE or Axe.",
     "Identify accessibility issues in the application.",
@@ -244,7 +244,7 @@ const automatedTestingImplementationSteps: StepDetails = {
   ]
 };
 
-// Add new quick coding challenge steps
+// Add new quick coding challenge steps - these should match the exact titles in quickCodingChallenges.ts
 const cssAnimationShowcaseSteps: StepDetails = {
   title: "CSS Animation Showcase",
   instructions: [
@@ -320,8 +320,9 @@ const quickCalculatorWidgetSteps: StepDetails = {
   ]
 };
 
+// Add steps for challenges that exist in the main challenge files
 const responsiveDesignChallengeSteps: StepDetails = {
-  title: "Responsive Design Challenge",
+  title: "Responsive Design Challenge", // This should match the title in quickCodingChallenges.ts
   instructions: [
     "Create a responsive webpage that looks good on all devices",
     "Implement mobile-first design principles",
@@ -490,6 +491,82 @@ const responsiveEmailTemplateSteps: StepDetails = {
   ]
 };
 
+// Add steps for other challenges that exist in the main challenge files
+const mobileAppIntegrationSteps: StepDetails = {
+  title: "Mobile App Integration",
+  instructions: [
+    "Set up responsive design principles for mobile-first development",
+    "Implement touch-friendly UI components and gestures",
+    "Integrate device-specific features like camera, GPS, or accelerometer",
+    "Optimize performance for mobile devices with slower processors",
+    "Test across different mobile browsers and operating systems",
+    "Implement offline functionality using service workers",
+    "Add mobile-specific features like push notifications"
+  ],
+  verification: [
+    "Application works seamlessly on mobile devices",
+    "Touch interactions feel natural and responsive",
+    "Device features are properly integrated",
+    "Performance is optimized for mobile hardware",
+    "Works consistently across mobile browsers",
+    "Offline functionality works as expected"
+  ],
+  resources: [
+    { title: "Progressive Web App Guide", url: "https://web.dev/progressive-web-apps/" },
+    { title: "Mobile Web Development Best Practices", url: "https://developers.google.com/web/fundamentals/design-and-ux/principles" }
+  ]
+};
+
+const databaseSchemaOptimizationSteps: StepDetails = {
+  title: "Database Schema Optimization",
+  instructions: [
+    "Analyze the current database schema for inefficiencies",
+    "Identify and remove redundant data and normalize tables",
+    "Create appropriate indexes for frequently queried columns",
+    "Optimize data types to reduce storage requirements",
+    "Implement proper foreign key relationships",
+    "Review and optimize slow-performing queries",
+    "Document the optimized schema design"
+  ],
+  verification: [
+    "Database queries execute faster after optimization",
+    "Storage requirements are reduced",
+    "Data integrity is maintained through proper relationships",
+    "Query performance is measurably improved",
+    "Schema follows database design best practices",
+    "All existing functionality remains intact"
+  ],
+  resources: [
+    { title: "Database Design Best Practices", url: "https://www.sqlshack.com/database-design-best-practices/" },
+    { title: "SQL Performance Optimization", url: "https://use-the-index-luke.com/" }
+  ]
+};
+
+const securityAuditImplementationSteps: StepDetails = {
+  title: "Security Audit Implementation",
+  instructions: [
+    "Conduct a comprehensive security assessment of the application",
+    "Identify common vulnerabilities like XSS, CSRF, and SQL injection",
+    "Implement input validation and sanitization",
+    "Set up proper authentication and authorization mechanisms",
+    "Configure secure headers and HTTPS",
+    "Review and secure API endpoints",
+    "Document security measures and create incident response plan"
+  ],
+  verification: [
+    "Common security vulnerabilities are identified and fixed",
+    "Input validation prevents malicious data entry",
+    "Authentication system is secure and robust",
+    "API endpoints are properly secured",
+    "Security headers are correctly configured",
+    "Application passes security scanning tools"
+  ],
+  resources: [
+    { title: "OWASP Security Guidelines", url: "https://owasp.org/www-project-top-ten/" },
+    { title: "Web Application Security Best Practices", url: "https://cheatsheetseries.owasp.org/" }
+  ]
+};
+
 // Update the main steps array to include all challenges
 export const codingSteps: StepDetails[] = [
   reactComponentStylingSteps,
@@ -512,5 +589,8 @@ export const codingSteps: StepDetails[] = [
   buildMobileFirstWebsiteSteps,
   responsiveDashboardDesignSteps,
   buildDarkModeToggleSteps,
-  responsiveEmailTemplateSteps
+  responsiveEmailTemplateSteps,
+  mobileAppIntegrationSteps,
+  databaseSchemaOptimizationSteps,
+  securityAuditImplementationSteps
 ];
