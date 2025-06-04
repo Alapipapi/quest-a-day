@@ -1,4 +1,3 @@
-
 import { CodingChallenge } from "../types";
 import { weatherAppChallenge } from "./coding/weatherApp";
 import { todoAppChallenge } from "./coding/todoApp";
@@ -32,6 +31,8 @@ import { responsivePortfolioChallenge } from "./coding/responsivePortfolio";
 import { cssAnimationShowcaseChallenge } from "./coding/cssAnimationShowcase";
 import { formValidationHelperChallenge } from "./coding/formValidationHelper";
 import { quickCalculatorWidgetChallenge } from "./coding/quickCalculatorWidget";
+import { realtimeChatAppChallenge } from "./coding/realtimeChatApp";
+import { apiRateLimiterChallenge } from "./coding/apiRateLimiter";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -65,5 +66,7 @@ export const codingSteps: CodingChallenge[] = [
   responsivePortfolioChallenge,
   cssAnimationShowcaseChallenge,
   formValidationHelperChallenge,
-  quickCalculatorWidgetChallenge
+  quickCalculatorWidgetChallenge,
+  realtimeChatAppChallenge,
+  apiRateLimiterChallenge
 ];

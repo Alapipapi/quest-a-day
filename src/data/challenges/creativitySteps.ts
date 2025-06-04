@@ -36,6 +36,7 @@ import { storyboardAnimationChallenge } from "./creativity/storyboardAnimation";
 import { speedSketchChallenge } from "./creativity/speedSketch";
 import { colorPaletteCreationChallenge } from "./creativity/colorPaletteCreation";
 import { microPoetryChallenge } from "./creativity/microPoetry";
+import { digitalPortraitStudyChallenge } from "./creativity/digitalPortraitStudy";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -74,5 +75,6 @@ export const creativitySteps: CreativityChallenge[] = [
   storyboardAnimationChallenge,
   speedSketchChallenge,
   colorPaletteCreationChallenge,
-  microPoetryChallenge
+  microPoetryChallenge,
+  digitalPortraitStudyChallenge
 ];

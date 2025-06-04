@@ -29,6 +29,7 @@ import { intervalTrainingChallenge } from "./fitness/intervalTraining";
 import { energyBoostChallenge } from "./fitness/energyBoost";
 import { deskBreakStretchesChallenge } from "./fitness/deskBreakStretches";
 import { powerWalkingChallenge } from "./fitness/powerWalking";
+import { hiitTabataCircuitChallenge } from "./fitness/hiitTabataCircuit";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -60,5 +61,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   intervalTrainingChallenge,
   energyBoostChallenge,
   deskBreakStretchesChallenge,
-  powerWalkingChallenge
+  powerWalkingChallenge,
+  hiitTabataCircuitChallenge
 ];
