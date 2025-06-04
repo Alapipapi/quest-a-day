@@ -83,7 +83,7 @@ const ChallengeOfTheDay = () => {
               : 'border-yellow-500/20'
           }`}>
             {isCompleted && (
-              <div className="absolute top-4 right-4 z-10">
+              <div className="absolute bottom-4 right-4 z-10">
                 <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs font-medium">
                   <Check className="h-3 w-3" />
                   Completed
@@ -100,7 +100,7 @@ const ChallengeOfTheDay = () => {
                   <div className="h-px w-full bg-gray-200 dark:bg-gray-700 my-3"></div>
                   
                   <div className="flex items-center gap-2 mt-4">
-                    <Badge variant={isCompleted ? "default" : "outline"} className="flex items-center gap-1">
+                    <Badge variant={"outline"} className="flex items-center gap-1">
                       <Circle className={`h-2 w-2 fill-current ${getDifficultyColor(dailyChallenge.difficulty)}`} />
                       {dailyChallenge.difficulty}
                     </Badge>
