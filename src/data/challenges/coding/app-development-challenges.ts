@@ -1,3 +1,4 @@
+
 import { Challenge } from "../../types/challenge";
 
 export const appDevelopmentChallenges: Challenge[] = [
