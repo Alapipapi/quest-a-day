@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CHALLENGES } from "@/data/challengeData";
@@ -8,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ChallengeDialogContent from "../challenge-card/ChallengeDialogContent";
 import CategoryBadge from "../CategoryBadge";
-import { Circle, Check } from "lucide-react";
+import { Circle } from "lucide-react";
 
 const ChallengeRecommendations = () => {
   const [recommendedChallenges, setRecommendedChallenges] = useState<Challenge[]>([]);
@@ -16,7 +15,6 @@ const ChallengeRecommendations = () => {
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
   const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [completedChallenges, setCompletedChallenges] = useState<Set<number>>(new Set());
 
   // Helper function to capitalize first letter only
   const capitalizeFirstLetter = (string: string) => {
@@ -37,70 +35,31 @@ const ChallengeRecommendations = () => {
     }
   };
 
-  // Helper function to check if challenge is completed
-  const isChallengeCompleted = (challenge: Challenge) => {
-    return completedChallenges.has(challenge.id);
-  };
-
-  // Deterministic shuffle based on date seed
-  const deterministicShuffle = (array: Challenge[], seed: number) => {
-    const shuffled = [...array];
-    let currentIndex = shuffled.length;
-    let temporaryValue, randomIndex;
-
-    // Use a simple linear congruential generator for deterministic randomness
-    const random = (s: number) => {
-      s = (s * 9301 + 49297) % 233280;
-      return s / 233280;
-    };
-
-    let currentSeed = seed;
-    while (currentIndex !== 0) {
-      currentSeed = (currentSeed * 9301 + 49297) % 233280;
-      randomIndex = Math.floor(random(currentSeed) * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = shuffled[currentIndex];
-      shuffled[currentIndex] = shuffled[randomIndex];
-      shuffled[randomIndex] = temporaryValue;
-    }
-
-    return shuffled;
-  };
-
   useEffect(() => {
     // Get completed challenges
-    const completedData = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
+    const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
     
-    // Find completed challenge categories and IDs
+    // Find completed challenge categories
     const completedCategories = new Set<string>();
-    const completedIds = new Set<number>();
-    
-    Object.keys(completedData).forEach(key => {
+    Object.keys(completedChallenges).forEach(key => {
       if (!key.includes("-progress") && !key.includes("-verification")) {
         const parts = key.split("-");
         if (parts.length >= 2) {
           completedCategories.add(parts[0]);
         }
-        
-        // Also check for ID-based completion
-        const id = parseInt(key);
-        if (!isNaN(id) && completedData[key] === true) {
-          completedIds.add(id);
-        }
       }
     });
     
-    setCompletedChallenges(completedIds);
-    
-    // Create a daily seed based on the current date
-    const now = new Date();
-    const startOfYear = new Date(now.getFullYear(), 0, 0);
-    const diff = now.getTime() - startOfYear.getTime();
-    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-    
-    // Use a different offset than other daily challenges to ensure variety
-    const recommendationSeed = dayOfYear + 123; // Add offset for uniqueness
+    // Get challenge IDs that are already completed
+    const completedIds = new Set(
+      Object.keys(completedChallenges)
+        .filter(key => !key.includes("-progress") && !key.includes("-verification"))
+        .map(key => {
+          const id = parseInt(key);
+          return isNaN(id) ? -1 : id;
+        })
+        .filter(id => id > 0)
+    );
     
     // Recommendation strategy:
     // 1. Prioritize categories user has already completed challenges in
@@ -111,48 +70,24 @@ const ChallengeRecommendations = () => {
     // From each completed category, find a challenge that isn't completed
     Array.from(completedCategories).forEach(category => {
       const categoryChallenges = CHALLENGES
-        .filter(c => c.category === category && !completedIds.has(c.id));
+        .filter(c => c.category === category && !completedIds.has(c.id))
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 1);
       
-      // Use deterministic shuffle with daily seed
-      const shuffledCategoryChallenges = deterministicShuffle(categoryChallenges, recommendationSeed + category.charCodeAt(0));
-      recommendations = [...recommendations, ...shuffledCategoryChallenges.slice(0, 1)];
+      recommendations = [...recommendations, ...categoryChallenges];
     });
     
-    // If we don't have 3 recommendations yet, add challenges from other categories
+    // If we don't have 3 recommendations yet, add random challenges from other categories
     if (recommendations.length < 3) {
       const otherChallenges = CHALLENGES
-        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id));
+        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id))
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3 - recommendations.length);
       
-      // Use deterministic shuffle with daily seed
-      const shuffledOtherChallenges = deterministicShuffle(otherChallenges, recommendationSeed + 456);
-      const additionalRecommendations = shuffledOtherChallenges.slice(0, 3 - recommendations.length);
-      
-      recommendations = [...recommendations, ...additionalRecommendations];
+      recommendations = [...recommendations, ...otherChallenges];
     }
     
     setRecommendedChallenges(recommendations.slice(0, 3));
-
-    // Listen for challenge updates
-    const handleChallengeUpdate = () => {
-      // Re-run the effect when challenges are updated
-      const updatedCompletedData = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
-      const updatedCompletedIds = new Set<number>();
-      
-      Object.keys(updatedCompletedData).forEach(key => {
-        const id = parseInt(key);
-        if (!isNaN(id) && updatedCompletedData[key] === true) {
-          updatedCompletedIds.add(id);
-        }
-      });
-      
-      setCompletedChallenges(updatedCompletedIds);
-    };
-
-    window.addEventListener("challengeUpdated", handleChallengeUpdate);
-    
-    return () => {
-      window.removeEventListener("challengeUpdated", handleChallengeUpdate);
-    };
   }, []);
 
   const handleChallengeClick = (challenge: Challenge) => {
@@ -176,22 +111,11 @@ const ChallengeRecommendations = () => {
         {recommendedChallenges.map((challenge) => (
           <Card 
             key={challenge.id} 
-            className={`cursor-pointer hover:shadow-md transition-shadow relative ${
-              isChallengeCompleted(challenge) ? 'bg-green-50 dark:bg-green-950/20' : ''
-            }`}
+            className="cursor-pointer hover:shadow-md transition-shadow"
             onClick={() => handleChallengeClick(challenge)}
           >
             <CardContent className="p-4">
-              {isChallengeCompleted(challenge) && (
-                <div className="absolute top-2 right-2 bg-green-500 rounded-full p-1">
-                  <Check className="h-3 w-3 text-white" />
-                </div>
-              )}
-              <h3 className={`font-semibold ${
-                isChallengeCompleted(challenge) ? 'text-green-700 dark:text-green-300' : ''
-              }`}>
-                {challenge.title}
-              </h3>
+              <h3 className="font-semibold">{challenge.title}</h3>
               <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{challenge.description}</p>
               <div className="flex items-center justify-between text-xs">
                 <CategoryBadge 

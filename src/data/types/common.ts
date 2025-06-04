@@ -10,11 +10,4 @@ export interface StepDetails {
   resources?: Array<Resource>;
   verification?: string[];
   examples?: string[];
-  // Optional properties from specialized challenge types
-  materials?: string[];
-  equipment?: string[];
-  warmUp?: string;
-  coolDown?: string;
-  inspiration?: string[];
-  tools?: string[];
 }
