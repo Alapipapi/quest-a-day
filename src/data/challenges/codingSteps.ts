@@ -1,4 +1,3 @@
-
 import { StepDetails } from "../types/common";
 
 const reactComponentStylingSteps: StepDetails = {
@@ -347,7 +346,7 @@ const buildChatInterfaceSteps: StepDetails = {
   title: "Build a Chat Interface",
   instructions: [
     "Create a chat container with message display area",
-    "Build message components for sent and received messages",
+    "Build message components for sent and received messages", 
     "Implement an input field with send button",
     "Add message timestamps and user avatars",
     "Create responsive layout using CSS Grid or Flexbox",
@@ -356,7 +355,7 @@ const buildChatInterfaceSteps: StepDetails = {
   ],
   verification: [
     "Messages display correctly for different users",
-    "Input field works with enter key and send button",
+    "Input field works with enter key and send button", 
     "Chat scrolls to show latest messages",
     "Interface is responsive on mobile devices",
     "Timestamps display properly",
@@ -567,7 +566,183 @@ const securityAuditImplementationSteps: StepDetails = {
   ]
 };
 
-// Update the main steps array to include all challenges
+// Add the missing step definitions for coding challenges
+const progressiveWebAppSteps: StepDetails = {
+  title: "Progressive Web App",
+  instructions: [
+    "Assess an existing web application",
+    "Create a web app manifest with app icons",
+    "Implement a service worker for caching",
+    "Set up offline functionality", 
+    "Add install prompts and support",
+    "Test PWA functionality across devices",
+    "Audit performance with Lighthouse"
+  ],
+  verification: [
+    "Web app manifest is properly configured",
+    "Service worker successfully caches assets",
+    "Application works offline",
+    "Install prompt appears on supporting devices",
+    "Lighthouse PWA score of at least 90",
+    "Smooth user experience across devices"
+  ],
+  resources: [
+    { title: "PWA Introduction", url: "https://web.dev/learn/pwa/" },
+    { title: "Service Worker Guide", url: "https://developers.google.com/web/fundamentals/primers/service-workers" }
+  ]
+};
+
+const graphqlIntegrationSteps: StepDetails = {
+  title: "GraphQL Integration",
+  instructions: [
+    "Set up a GraphQL client library (Apollo Client or similar)",
+    "Define GraphQL schema and queries",
+    "Implement data fetching with GraphQL queries",
+    "Handle loading and error states",
+    "Add mutations for data updates",
+    "Implement caching strategies",
+    "Test GraphQL operations"
+  ],
+  verification: [
+    "GraphQL client is properly configured",
+    "Queries fetch data successfully", 
+    "Mutations update data correctly",
+    "Loading and error states are handled",
+    "Caching improves performance",
+    "Operations work consistently"
+  ],
+  resources: [
+    { title: "GraphQL Documentation", url: "https://graphql.org/learn/" },
+    { title: "Apollo Client Guide", url: "https://www.apollographql.com/docs/react/" }
+  ]
+};
+
+const microservicesArchitectureSteps: StepDetails = {
+  title: "Microservices Architecture",
+  instructions: [
+    "Design microservices architecture for a web application",
+    "Break down monolithic application into smaller services",
+    "Implement service communication patterns",
+    "Set up API gateway for routing",
+    "Add service discovery and load balancing",
+    "Implement monitoring and logging",
+    "Test inter-service communication"
+  ],
+  verification: [
+    "Services are properly decoupled",
+    "Communication between services works",
+    "API gateway routes requests correctly",
+    "Load balancing distributes traffic",
+    "Monitoring provides useful insights",
+    "System is scalable and maintainable"
+  ],
+  resources: [
+    { title: "Microservices Patterns", url: "https://microservices.io/patterns/" },
+    { title: "Building Microservices", url: "https://martinfowler.com/articles/microservices.html" }
+  ]
+};
+
+const kanbanBoardSteps: StepDetails = {
+  title: "Kanban Board",
+  instructions: [
+    "Create a Kanban board layout with columns",
+    "Implement draggable task cards",
+    "Add functionality to create, edit, and delete tasks",
+    "Implement drag-and-drop between columns",
+    "Add task filtering and search capabilities",
+    "Store board state in local storage or database",
+    "Make the board responsive for mobile devices"
+  ],
+  verification: [
+    "Tasks can be created and edited",
+    "Drag-and-drop works smoothly",
+    "Board state persists between sessions",
+    "Filtering and search work correctly",
+    "Interface is responsive",
+    "All CRUD operations function properly"
+  ],
+  resources: [
+    { title: "React DnD Library", url: "https://react-dnd.github.io/react-dnd/" },
+    { title: "Kanban Board Design", url: "https://blog.trello.com/kanban-board" }
+  ]
+};
+
+const markdownEditorSteps: StepDetails = {
+  title: "Markdown Editor",
+  instructions: [
+    "Create a split-pane interface with editor and preview",
+    "Implement markdown parsing and rendering",
+    "Add syntax highlighting for the editor",
+    "Include toolbar with common formatting options",
+    "Add real-time preview updates",
+    "Implement file save and load functionality",
+    "Add export options (HTML, PDF)"
+  ],
+  verification: [
+    "Markdown is parsed and rendered correctly",
+    "Syntax highlighting improves readability",
+    "Preview updates in real-time",
+    "Toolbar functions work properly",
+    "Files can be saved and loaded",
+    "Export functionality works"
+  ],
+  resources: [
+    { title: "Markdown Guide", url: "https://www.markdownguide.org/" },
+    { title: "CodeMirror Editor", url: "https://codemirror.net/" }
+  ]
+};
+
+const databaseDesignSteps: StepDetails = {
+  title: "Database Design",
+  instructions: [
+    "Analyze requirements for a database system",
+    "Design entity-relationship diagrams",
+    "Normalize database tables to reduce redundancy",
+    "Define primary and foreign key relationships",
+    "Create indexes for performance optimization",
+    "Write SQL scripts to create the database",
+    "Test database operations and queries"
+  ],
+  verification: [
+    "Database schema meets all requirements",
+    "Tables are properly normalized",
+    "Relationships are correctly defined",
+    "Indexes improve query performance",
+    "SQL scripts execute without errors",
+    "All operations work as expected"
+  ],
+  resources: [
+    { title: "Database Design Principles", url: "https://www.lucidchart.com/pages/database-diagram/database-design" },
+    { title: "SQL Tutorial", url: "https://www.w3schools.com/sql/" }
+  ]
+};
+
+const authSystemSteps: StepDetails = {
+  title: "Authentication System",
+  instructions: [
+    "Set up user registration and login forms",
+    "Implement password hashing and validation",
+    "Add JWT token-based authentication",
+    "Create protected routes and middleware",
+    "Implement password reset functionality",
+    "Add social login options (Google, GitHub)",
+    "Test authentication flow and security"
+  ],
+  verification: [
+    "Users can register and login successfully",
+    "Passwords are securely hashed",
+    "JWT tokens work for authentication",
+    "Protected routes require authentication",
+    "Password reset functionality works",
+    "Social login integrates properly"
+  ],
+  resources: [
+    { title: "JWT Authentication Guide", url: "https://jwt.io/introduction/" },
+    { title: "OAuth 2.0 Documentation", url: "https://oauth.net/2/" }
+  ]
+};
+
+// Update the main codingSteps array to include all challenges
 export const codingSteps: StepDetails[] = [
   reactComponentStylingSteps,
   apiIntegrationSteps,
@@ -592,5 +767,12 @@ export const codingSteps: StepDetails[] = [
   responsiveEmailTemplateSteps,
   mobileAppIntegrationSteps,
   databaseSchemaOptimizationSteps,
-  securityAuditImplementationSteps
+  securityAuditImplementationSteps,
+  progressiveWebAppSteps,
+  graphqlIntegrationSteps,
+  microservicesArchitectureSteps,
+  kanbanBoardSteps,
+  markdownEditorSteps,
+  databaseDesignSteps,
+  authSystemSteps
 ];
