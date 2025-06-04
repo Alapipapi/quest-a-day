@@ -1,17 +1,6 @@
 import { Challenge } from "../../types/challenge";
-import { responsivePortfolioChallenge } from "./responsivePortfolio";
-import { realtimeChatAppChallenge } from "./realtimeChatApp";
-import { apiRateLimiterChallenge } from "./apiRateLimiter";
 
 export const appDevelopmentChallenges: Challenge[] = [
-  {
-    id: 101,
-    title: "Weather Dashboard App",
-    description: "Build a responsive weather app with location-based forecasts and interactive maps.",
-    category: "coding",
-    difficulty: "Medium",
-    timeEstimate: "4-6 hours"
-  },
   {
     id: 1,
     title: "Build a Weather App",
