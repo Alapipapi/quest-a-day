@@ -15,7 +15,7 @@ export const brainTeaserSprintChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Logic Puzzle Techniques",
-      url: "https://www.puzzles.com/puzzles/logicpuzzles/"
+      url: "https://daydreampuzzles.com/advanced-logic-puzzle-techniques/"
     },
     {
       title: "Brain Teaser Strategies",
