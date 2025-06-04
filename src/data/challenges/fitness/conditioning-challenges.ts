@@ -60,10 +60,10 @@ export const conditioningFitnessChallenges: Challenge[] = [
   },
   {
     id: 301,
-    title: "HIIT Workout Circuit",
-    description: "High-intensity interval training combining cardio and strength exercises.",
+    title: "HIIT Tabata Circuit",
+    description: "Push your cardio and muscular endurance to the limit with this high-intensity Tabata-style workout featuring four explosive rounds.",
     category: "fitness",
     difficulty: "Hard",
-    timeEstimate: "30-45 minutes"
+    timeEstimate: "30–35 minutes",
   },
 ];
