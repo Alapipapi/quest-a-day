@@ -58,4 +58,12 @@ export const conditioningFitnessChallenges: Challenge[] = [
     difficulty: "Hard",
     timeEstimate: "45 minutes",
   },
+  {
+    id: 301,
+    title: "HIIT Workout Circuit",
+    description: "High-intensity interval training combining cardio and strength exercises.",
+    category: "fitness",
+    difficulty: "Hard",
+    timeEstimate: "30-45 minutes"
+  },
 ];
