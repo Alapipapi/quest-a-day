@@ -1,54 +1,61 @@
+
 import { Challenge } from "../../types/challenge";
-import { metabolicConditioningChallenge } from "./metabolicConditioning";
-import { functionalMobilityWorkoutChallenge } from "./functionalMobilityWorkout";
-import { pyramidStrengthTrainingChallenge } from "./pyramidStrengthTraining";
-import { intervalCardioStrengthChallenge } from "./intervalCardioStrength";
-import { hiitTabataCircuitChallenge } from "./hiitTabataCircuit";
 
 export const conditioningFitnessChallenges: Challenge[] = [
   {
-    id: 301,
-    title: "HIIT Workout Circuit",
-    description: "High-intensity interval training combining cardio and strength exercises.",
+    id: 2,
+    title: "30-Minute HIIT Workout",
+    description: "Complete a high-intensity interval training session with bodyweight exercises.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "30 minutes",
+  },
+  {
+    id: 43,
+    title: "Functional Fitness Circuit",
+    description: "Perform exercises that mimic everyday movements to improve overall functionality.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "40 minutes",
+  },
+  {
+    id: 58,
+    title: "Balance and Coordination Training",
+    description: "Improve stability and proprioception through targeted balance exercises.",
+    category: "fitness",
+    difficulty: "Medium",
+    timeEstimate: "20 minutes",
+  },
+  {
+    id: 74,
+    title: "Tabata Workout Challenge",
+    description: "Complete a time-efficient, high-intensity Tabata protocol (20s work/10s rest).",
     category: "fitness",
     difficulty: "Hard",
-    timeEstimate: "30-45 minutes"
+    timeEstimate: "20 minutes",
   },
   {
-    id: 302,
-    title: "Metabolic Conditioning",
-    description: "Full-body workout to maximize calorie burn and improve metabolic rate.",
+    id: 90,
+    title: "Strength-Endurance Circuit",
+    description: "Challenge both strength and endurance with a circuit of compound exercises and minimal rest.",
     category: "fitness",
     difficulty: "Medium",
-    timeEstimate: "40-50 minutes"
+    timeEstimate: "40 minutes",
   },
   {
-    id: 303,
-    title: "Functional Mobility Workout",
-    description: "Enhance overall mobility and stability with functional exercises.",
-    category: "fitness",
-    difficulty: "Medium",
-    timeEstimate: "35-45 minutes"
-  },
-  {
-    id: 304,
-    title: "Pyramid Strength Training",
-    description: "Strength training with increasing and decreasing reps to build endurance and strength.",
+    id: 91,
+    title: "Metabolic Conditioning Circuit",
+    description: "Boost your metabolism with a high-intensity circuit targeting multiple energy systems.",
     category: "fitness",
     difficulty: "Hard",
-    timeEstimate: "45-60 minutes"
+    timeEstimate: "35 minutes",
   },
   {
-    id: 305,
-    title: "Interval Cardio & Strength",
-    description: "Alternating cardio and strength intervals for a full-body conditioning effect.",
+    id: 104,
+    title: "Interval Cardio-Strength Circuit",
+    description: "Combine cardio and strength exercises in a high-intensity circuit format.",
     category: "fitness",
-    difficulty: "Medium",
-    timeEstimate: "40-50 minutes"
+    difficulty: "Hard",
+    timeEstimate: "45 minutes",
   },
-  metabolicConditioningChallenge,
-  functionalMobilityWorkoutChallenge,
-  pyramidStrengthTrainingChallenge,
-  intervalCardioStrengthChallenge,
-  hiitTabataCircuitChallenge
 ];
