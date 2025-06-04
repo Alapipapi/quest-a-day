@@ -87,7 +87,7 @@ export const appDevelopmentChallenges: Challenge[] = [
     description: "Create a real-time messaging app with WebSocket connections and user presence.",
     category: "coding",
     difficulty: "Hard",
-    timeEstimate: "6-8 hours"
+    timeEstimate: "6-8 hours",
   },
   {
     id: 152,
@@ -95,6 +95,6 @@ export const appDevelopmentChallenges: Challenge[] = [
     description: "Build a comprehensive rate limiting system with multiple algorithms and Redis support.",
     category: "coding",
     difficulty: "Hard",
-    timeEstimate: "4-6 hours"
+    timeEstimate: "4-6 hours",
   }
 ];
