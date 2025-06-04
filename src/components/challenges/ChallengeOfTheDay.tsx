@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Star, ArrowRight, Circle } from "lucide-react";
+import { Star, ArrowRight, Circle, Check } from "lucide-react";
 import { CHALLENGES } from "@/data/challengeData";
 import { Challenge } from "@/data/types/challenge";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -77,10 +77,22 @@ const ChallengeOfTheDay = () => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Card className="cursor-pointer hover:shadow-md transition-shadow border-2 border-yellow-500/20 relative">
+          <Card className={`cursor-pointer hover:shadow-md transition-shadow border-2 relative ${
+            isCompleted 
+              ? 'border-green-500/50 bg-green-50/50 dark:bg-green-900/10' 
+              : 'border-yellow-500/20'
+          }`}>
+            {isCompleted && (
+              <div className="absolute top-4 right-4 z-10">
+                <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs font-medium">
+                  <Check className="h-3 w-3" />
+                  Completed
+                </div>
+              </div>
+            )}
             <CardContent className="p-6">
               <div className="flex justify-between items-start">
-                <div>
+                <div className="flex-1 pr-4">
                   <h3 className="text-lg font-semibold">{dailyChallenge.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-3">{dailyChallenge.description}</p>
                   
@@ -103,7 +115,7 @@ const ChallengeOfTheDay = () => {
                   </div>
                 </div>
                 
-                <Button size="sm" className="flex items-center gap-1">
+                <Button size="sm" className="flex items-center gap-1 shrink-0">
                   <span>View</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>

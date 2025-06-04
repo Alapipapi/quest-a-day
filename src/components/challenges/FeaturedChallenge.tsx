@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight, Circle } from "lucide-react";
+import { Sparkles, ArrowRight, Circle, Check } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
@@ -65,12 +66,25 @@ const FeaturedChallenge = () => {
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
          <DialogTrigger asChild>
-           <Card className="cursor-pointer overflow-hidden hover:shadow-md transition-shadow border-2 border-primary/20 relative">
+           <Card className={`cursor-pointer overflow-hidden hover:shadow-md transition-shadow border-2 relative ${
+             isCompleted 
+               ? 'border-green-500/50 bg-green-50/50 dark:bg-green-900/10' 
+               : 'border-primary/20'
+           }`}>
             <div className="h-4 bg-gradient-to-r from-blue-500 to-purple-500" />
+            
+            {isCompleted && (
+              <div className="absolute top-6 right-4 z-10">
+                <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs font-medium">
+                  <Check className="h-3 w-3" />
+                  Completed
+                </div>
+              </div>
+            )}
             
             <CardContent className="p-6">
               <div className="flex justify-between items-start">
-                <div>
+                <div className="flex-1 pr-4">
                   <h3 className="text-lg font-semibold">{featuredChallenge.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-3">{featuredChallenge.description}</p>
                   
@@ -93,7 +107,7 @@ const FeaturedChallenge = () => {
                   </div>
                 </div>
                 
-                <Button size="sm" className="flex items-center gap-1">
+                <Button size="sm" className="flex items-center gap-1 shrink-0">
                   <span>View</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
