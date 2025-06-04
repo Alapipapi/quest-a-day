@@ -1,4 +1,3 @@
-
 import { FitnessChallenge } from "../types/fitness";
 import { hiitWorkoutChallenge } from "./fitness/hiitWorkout";
 import { yogaFlowChallenge } from "./fitness/yogaFlow";
@@ -27,6 +26,9 @@ import { intervalCardioStrengthChallenge } from "./fitness/intervalCardioStrengt
 import { jumpRopeChallenge } from "./fitness/jumpRope";
 import { mindfulMovementChallenge } from "./fitness/mindfulMovement";
 import { intervalTrainingChallenge } from "./fitness/intervalTraining";
+import { energyBoostChallenge } from "./fitness/energyBoost";
+import { deskBreakStretchesChallenge } from "./fitness/deskBreakStretches";
+import { powerWalkingChallenge } from "./fitness/powerWalking";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -55,5 +57,8 @@ export const fitnessSteps: FitnessChallenge[] = [
   intervalCardioStrengthChallenge,
   jumpRopeChallenge,
   mindfulMovementChallenge,
-  intervalTrainingChallenge
+  intervalTrainingChallenge,
+  energyBoostChallenge,
+  deskBreakStretchesChallenge,
+  powerWalkingChallenge
 ];

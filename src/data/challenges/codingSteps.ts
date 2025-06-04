@@ -29,6 +29,9 @@ import { responsiveDashboardChallenge } from "./coding/responsiveDashboard";
 import { darkModeToggleChallenge } from "./coding/darkModeToggle";
 import { responsiveEmailTemplateChallenge } from "./coding/responsiveEmailTemplate";
 import { responsivePortfolioChallenge } from "./coding/responsivePortfolio";
+import { cssAnimationShowcaseChallenge } from "./coding/cssAnimationShowcase";
+import { formValidationHelperChallenge } from "./coding/formValidationHelper";
+import { quickCalculatorWidgetChallenge } from "./coding/quickCalculatorWidget";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -59,5 +62,8 @@ export const codingSteps: CodingChallenge[] = [
   responsiveDashboardChallenge,
   darkModeToggleChallenge,
   responsiveEmailTemplateChallenge,
-  responsivePortfolioChallenge
+  responsivePortfolioChallenge,
+  cssAnimationShowcaseChallenge,
+  formValidationHelperChallenge,
+  quickCalculatorWidgetChallenge
 ];

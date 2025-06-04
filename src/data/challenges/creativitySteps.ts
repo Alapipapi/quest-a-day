@@ -1,4 +1,3 @@
-
 import { CreativityChallenge } from "../types";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { digitalArtChallenge } from "./creativity/digitalArt";
@@ -34,6 +33,9 @@ import { creativeWritingPromptChallenge } from "./creativity/creativeWritingProm
 import { foundObjectSculptureChallenge } from "./creativity/foundObjectSculpture";
 import { botanicalDrawingChallenge } from "./creativity/botanicalDrawing";
 import { storyboardAnimationChallenge } from "./creativity/storyboardAnimation";
+import { speedSketchChallenge } from "./creativity/speedSketch";
+import { colorPaletteCreationChallenge } from "./creativity/colorPaletteCreation";
+import { microPoetryChallenge } from "./creativity/microPoetry";
 
 export const creativitySteps: CreativityChallenge[] = [
   dailySketchChallenge,
@@ -69,5 +71,8 @@ export const creativitySteps: CreativityChallenge[] = [
   creativeWritingPromptChallenge,
   foundObjectSculptureChallenge,
   botanicalDrawingChallenge,
-  storyboardAnimationChallenge
+  storyboardAnimationChallenge,
+  speedSketchChallenge,
+  colorPaletteCreationChallenge,
+  microPoetryChallenge
 ];
