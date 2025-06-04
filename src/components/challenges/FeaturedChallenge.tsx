@@ -74,7 +74,7 @@ const FeaturedChallenge = () => {
             <div className="h-4 bg-gradient-to-r from-blue-500 to-purple-500" />
             
             {isCompleted && (
-              <div className="absolute top-6 right-4 z-10">
+              <div className="absolute bottom-4 right-4 z-10">
                 <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs font-medium">
                   <Check className="h-3 w-3" />
                   Completed
