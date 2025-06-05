@@ -59,7 +59,7 @@ export const conditioningFitnessChallenges: Challenge[] = [
     timeEstimate: "45 minutes",
   },
   {
-    id: 301,
+    id: 162,
     title: "HIIT Tabata Circuit",
     description: "Push your cardio and muscular endurance to the limit with this high-intensity Tabata-style workout featuring four explosive rounds.",
     category: "fitness",

@@ -83,7 +83,7 @@ export const appDevelopmentChallenges: Challenge[] = [
     timeEstimate: "4-6 hours",
   },
   {
-    id: 151,
+    id: 160,
     title: "Real-time Chat Application",
     description: "Create a real-time messaging app with WebSocket connections and user presence.",
     category: "coding",
@@ -91,7 +91,7 @@ export const appDevelopmentChallenges: Challenge[] = [
     timeEstimate: "6-8 hours",
   },
   {
-    id: 152,
+    id: 161,
     title: "API Rate Limiter Implementation",
     description: "Build a comprehensive rate limiting system with multiple algorithms and Redis support.",
     category: "coding",
