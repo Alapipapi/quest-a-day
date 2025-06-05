@@ -19,19 +19,19 @@ export const digitalPortraitStudyChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Digital Portrait Painting Tutorial",
-      url: "https://www.youtube.com/watch?v=TcZDDEm9H6g"
+      url: "https://m.youtube.com/watch?v=TsloAXskguw"
     },
     {
       title: "Portrait Drawing Proportions Guide",
-      url: "https://www.proko.com/how-to-draw-the-head-from-any-angle/"
+      url: "https://bingedrawing.com/portrait/face-proportions-guide/"
     },
     {
       title: "Digital Art Color Theory",
-      url: "https://www.adobe.com/creativecloud/design/discover/color-theory.html"
+      url: "https://www.clipstudio.net/how-to-draw/archives/161372"
     },
     {
       title: "Procreate Portrait Techniques",
-      url: "https://procreate.art/handbook/procreate/portraits/"
+      url: "https://folio.procreate.com/discussions/10/28/23139"
     }
   ],
   verification: [
