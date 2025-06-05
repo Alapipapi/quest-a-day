@@ -25,11 +25,11 @@ export const hiitTabataCircuitChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Tabata Training Science and Benefits",
-      url: "https://www.healthline.com/health/fitness-exercise/tabata-training"
+      url: "https://www.everydayhealth.com/fitness/tabata-workouts/guide/"
     },
     {
       title: "HIIT Workout Form Guide",
-      url: "https://www.acefitness.org/education-and-resources/lifestyle/blog/6503/high-intensity-interval-training-hiit-what-you-need-to-know/"
+      url: "https://www.realsimple.com/tabata-workout-8423672"
     }
   ],
   verification: [
