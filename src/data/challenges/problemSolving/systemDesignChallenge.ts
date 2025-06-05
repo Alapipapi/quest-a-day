@@ -31,7 +31,7 @@ export const systemDesignChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "System Design Interview Questions",
-      url: "https://leetcode.com/discuss/interview-question/system-design"
+      url: "https://www.geeksforgeeks.org/top-10-system-design-interview-questions-and-answers/"
     },
     {
       title: "Designing Data-Intensive Applications",
