@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -171,19 +170,21 @@ const Index = () => {
           </Link>
         </div>
 
-        <EnhancedChallengeFilters
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          difficultyFilter={difficultyFilter}
-          setDifficultyFilter={setDifficultyFilter}
-          difficulties={difficulties}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          showCompleted={showCompleted}
-          setShowCompleted={setShowCompleted}
-        />
+        <div className="mb-8">
+          <EnhancedChallengeFilters
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            difficultyFilter={difficultyFilter}
+            setDifficultyFilter={setDifficultyFilter}
+            difficulties={difficulties}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            showCompleted={showCompleted}
+            setShowCompleted={setShowCompleted}
+          />
+        </div>
 
         <ChallengeGrid filteredChallenges={filteredChallenges} />
 
