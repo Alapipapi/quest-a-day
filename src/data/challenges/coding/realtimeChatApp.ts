@@ -32,8 +32,8 @@ export const realtimeChatAppChallenge: CodingChallenge = {
       url: "https://socket.io/get-started/chat"
     },
     {
-      title: "React WebSocket Integration",
-      url: "https://blog.logrocket.com/websockets-tutorial-how-to-go-real-time-with-node-and-react-8fe7c9e65dc3/"
+      title: "React WebSockets Integration",
+      url: "https://ably.com/blog/websockets-react-tutorial"
     }
   ],
   verification: [
