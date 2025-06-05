@@ -97,5 +97,13 @@ export const appDevelopmentChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Hard",
     timeEstimate: "4-6 hours",
+  },
+  {
+    id: 163,
+    title: "Recipe Manager App",
+    description: "Create a full-featured recipe management application with search, categories, and meal planning.",
+    category: "coding",
+    difficulty: "Medium",
+    timeEstimate: "5-7 hours",
   }
 ];

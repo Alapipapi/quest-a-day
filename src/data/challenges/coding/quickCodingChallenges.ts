@@ -25,5 +25,13 @@ export const quickCodingChallenges: Challenge[] = [
     category: "coding",
     difficulty: "Easy",
     timeEstimate: "5-10 minutes",
+  },
+  {
+    id: 162,
+    title: "Color Picker Component",
+    description: "Build a reusable color picker component with hex, RGB, and HSL support.",
+    category: "coding",
+    difficulty: "Easy",
+    timeEstimate: "10-15 minutes",
   }
 ];

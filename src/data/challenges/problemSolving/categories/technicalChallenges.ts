@@ -3,59 +3,35 @@ import { Challenge } from "../../../types/challenge";
 
 export const technicalChallenges: Challenge[] = [
   {
-    id: 13,
-    title: "Algorithm Challenge",
-    description: "Solve three algorithmic problems focusing on arrays and string manipulation.",
-    category: "problem-solving",
-    difficulty: "Hard",
-    timeEstimate: "1 hour",
-  },
-  {
-    id: 29,
-    title: "Data Structures Mastery",
-    description: "Implement and use various data structures to solve algorithmic problems.",
+    id: 138,
+    title: "System Design Challenge",
+    description: "Design a scalable system architecture for a real-world application like a social media platform.",
     category: "problem-solving",
     difficulty: "Hard",
     timeEstimate: "3-4 hours",
   },
   {
-    id: 30,
-    title: "Data Analysis Challenge",
-    description: "Analyze a dataset to clean data, create visualizations, and derive meaningful insights.",
+    id: 139,
+    title: "Algorithm Optimization",
+    description: "Take a slow algorithm and optimize it for better performance using advanced techniques.",
+    category: "problem-solving",
+    difficulty: "Hard",
+    timeEstimate: "2-3 hours",
+  },
+  {
+    id: 140,
+    title: "Data Structure Design",
+    description: "Design and implement a custom data structure to solve a specific problem efficiently.",
     category: "problem-solving",
     difficulty: "Medium",
     timeEstimate: "2-3 hours",
   },
   {
-    id: 40,
-    title: "Basic Cryptography",
-    description: "Learn and apply basic cryptography techniques to encode and decode messages.",
-    category: "problem-solving",
-    difficulty: "Medium",
-    timeEstimate: "1 hour",
-  },
-  {
-    id: 68,
-    title: "Graph Theory Problems",
-    description: "Solve a set of problems using graph theory concepts and algorithms.",
+    id: 166,
+    title: "Network Protocol Design",
+    description: "Design a custom network protocol for efficient data transmission in a specific use case.",
     category: "problem-solving",
     difficulty: "Hard",
-    timeEstimate: "2 hours",
-  },
-  {
-    id: 116,
-    title: "Insight Explorer",
-    description: "Dive into raw datasets to uncover patterns, visualize key trends, and generate actionable insights through data transformation and analysis.",
-    category: "problem-solving",
-    difficulty: "Medium",
-    timeEstimate: "2-3 hours"
-  },
-  {
-    id: 551,
-    title: "System Design Challenge",
-    description: "Design a scalable system architecture for a real-world application with millions of users.",
-    category: "problem-solving",
-    difficulty: "Hard",
-    timeEstimate: "2-3 hours"
+    timeEstimate: "3-5 hours",
   }
 ];
