@@ -1,4 +1,3 @@
-
 import { ProblemSolvingChallenge } from "../../types";
 
 export const systemDesignChallenge: ProblemSolvingChallenge = {
@@ -20,6 +19,28 @@ export const systemDesignChallenge: ProblemSolvingChallenge = {
     "Create architecture for a messaging system",
     "Plan a distributed cache system",
     "Design a social media newsfeed"
+  ],
+  resources: [
+    {
+      title: "System Design Interview Guide",
+      url: "https://github.com/donnemartin/system-design-primer"
+    },
+    {
+      title: "High Scalability Blog",
+      url: "http://highscalability.com/"
+    },
+    {
+      title: "System Design Interview Questions",
+      url: "https://leetcode.com/discuss/interview-question/system-design"
+    },
+    {
+      title: "Designing Data-Intensive Applications",
+      url: "https://dataintensive.net/"
+    },
+    {
+      title: "AWS Architecture Center",
+      url: "https://aws.amazon.com/architecture/"
+    }
   ],
   verification: [
     "Architecture handles specified scale requirements",

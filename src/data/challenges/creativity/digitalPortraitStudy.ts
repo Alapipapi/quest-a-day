@@ -1,4 +1,3 @@
-
 import { CreativityChallenge } from "../../types";
 
 export const digitalPortraitStudyChallenge: CreativityChallenge = {
@@ -17,6 +16,24 @@ export const digitalPortraitStudyChallenge: CreativityChallenge = {
   ],
   materials: ["Digital art software (Procreate, Photoshop, etc.)", "Stylus or drawing tablet", "Reference photograph"],
   inspiration: ["Study classical portrait paintings", "Observe how light affects facial features", "Practice different brush techniques"],
+  resources: [
+    {
+      title: "Digital Portrait Painting Tutorial",
+      url: "https://www.youtube.com/watch?v=TcZDDEm9H6g"
+    },
+    {
+      title: "Portrait Drawing Proportions Guide",
+      url: "https://www.proko.com/how-to-draw-the-head-from-any-angle/"
+    },
+    {
+      title: "Digital Art Color Theory",
+      url: "https://www.adobe.com/creativecloud/design/discover/color-theory.html"
+    },
+    {
+      title: "Procreate Portrait Techniques",
+      url: "https://procreate.art/handbook/procreate/portraits/"
+    }
+  ],
   verification: [
     "Proportions match the reference accurately",
     "Light and shadow create dimensional form",
