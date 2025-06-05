@@ -44,6 +44,45 @@ const ChallengeRecommendations = () => {
     return completedChallenges[keyById] || completedChallenges[keyByTitle];
   };
 
+  // Helper function to get day-based seed for consistent daily recommendations
+  const getDaySeed = () => {
+    const today = new Date();
+    const dayString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+    return dayString;
+  };
+
+  // Seeded random function for consistent results
+  const seededRandom = (seed: string) => {
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      const char = seed.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return Math.abs(hash) / 2147483647; // Normalize to 0-1
+  };
+
+  // Shuffle array with seeded random
+  const shuffleWithSeed = (array: any[], seed: string) => {
+    const shuffled = [...array];
+    let currentIndex = shuffled.length;
+    let randomIndex;
+    let randomValue = seededRandom(seed);
+
+    while (currentIndex !== 0) {
+      // Generate next random number using simple LCG algorithm
+      randomValue = (randomValue * 9301 + 49297) % 233280;
+      randomIndex = Math.floor((randomValue / 233280) * currentIndex);
+      currentIndex--;
+
+      [shuffled[currentIndex], shuffled[randomIndex]] = [
+        shuffled[randomIndex], shuffled[currentIndex]
+      ];
+    }
+
+    return shuffled;
+  };
+
   useEffect(() => {
     // Get completed challenges
     const completedChallengesData = JSON.parse(localStorage.getItem("completedChallenges") || "{}");
@@ -71,6 +110,9 @@ const ChallengeRecommendations = () => {
         .filter(id => id > 0)
     );
     
+    // Get day-based seed for consistent recommendations
+    const daySeed = getDaySeed();
+    
     // Recommendation strategy:
     // 1. Prioritize categories user has already completed challenges in
     // 2. Recommend challenges of similar or slightly higher difficulty
@@ -80,21 +122,21 @@ const ChallengeRecommendations = () => {
     // From each completed category, find a challenge that isn't completed
     Array.from(completedCategories).forEach(category => {
       const categoryChallenges = CHALLENGES
-        .filter(c => c.category === category && !completedIds.has(c.id))
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 1);
+        .filter(c => c.category === category && !completedIds.has(c.id));
       
-      recommendations = [...recommendations, ...categoryChallenges];
+      if (categoryChallenges.length > 0) {
+        const shuffled = shuffleWithSeed(categoryChallenges, `${daySeed}-${category}`);
+        recommendations = [...recommendations, ...shuffled.slice(0, 1)];
+      }
     });
     
     // If we don't have 3 recommendations yet, add random challenges from other categories
     if (recommendations.length < 3) {
       const otherChallenges = CHALLENGES
-        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id))
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3 - recommendations.length);
+        .filter(c => !completedIds.has(c.id) && !recommendations.some(rc => rc.id === c.id));
       
-      recommendations = [...recommendations, ...otherChallenges];
+      const shuffledOthers = shuffleWithSeed(otherChallenges, `${daySeed}-others`);
+      recommendations = [...recommendations, ...shuffledOthers.slice(0, 3 - recommendations.length)];
     }
     
     setRecommendedChallenges(recommendations.slice(0, 3));
