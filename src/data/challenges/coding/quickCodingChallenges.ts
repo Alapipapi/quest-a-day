@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const quickCodingChallenges: Challenge[] = [
@@ -30,6 +29,14 @@ export const quickCodingChallenges: Challenge[] = [
     id: 162,
     title: "Color Picker Component",
     description: "Build a reusable color picker component with hex, RGB, and HSL support.",
+    category: "coding",
+    difficulty: "Easy",
+    timeEstimate: "10-15 minutes",
+  },
+  {
+    id: 180,
+    title: "Accordion Component",
+    description: "Create a collapsible accordion component with smooth animations and keyboard navigation.",
     category: "coding",
     difficulty: "Easy",
     timeEstimate: "10-15 minutes",

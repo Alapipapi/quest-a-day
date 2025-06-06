@@ -1,4 +1,3 @@
-
 import { Challenge } from "../../types/challenge";
 
 export const quickFitnessChallenges: Challenge[] = [
@@ -25,5 +24,13 @@ export const quickFitnessChallenges: Challenge[] = [
     category: "fitness",
     difficulty: "Easy",
     timeEstimate: "10-15 minutes",
+  },
+  {
+    id: 181,
+    title: "Morning Mobility Flow",
+    description: "A gentle 10-minute morning routine combining stretches and mobility exercises to start your day.",
+    category: "fitness",
+    difficulty: "Easy",
+    timeEstimate: "10 minutes",
   }
 ];
