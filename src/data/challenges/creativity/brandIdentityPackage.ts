@@ -33,11 +33,11 @@ export const brandIdentityPackageChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Brand Identity Design Process",
-      url: "https://blog.hubspot.com/marketing/brand-identity"
+      url: "https://medium.com/@BMCreative/design-process-brand-identity-b59fa147c3e2"
     },
     {
       title: "Color Theory for Designers",
-      url: "https://blog.adobe.com/en/publish/2017/06/29/understanding-color-theory-the-color-wheel-and-finding-complementary-colors"
+      url: "https://www.interaction-design.org/literature/topics/color-theory?srsltid=AfmBOopomfF6mmLwl7HfLMWgVpb37Y0lMhE9EolD5svQzPXKBYa_nr1Z"
     },
     {
       title: "Typography Best Practices",
@@ -45,11 +45,11 @@ export const brandIdentityPackageChallenge: CreativityChallenge = {
     },
     {
       title: "Logo Design Principles",
-      url: "https://www.smashingmagazine.com/2009/06/effective-logo-design-symbols-logos-icons/"
+      url: "https://www.canva.com/learn/logo-design-principles/"
     },
     {
       title: "Brand Style Guide Examples",
-      url: "https://99designs.com/blog/tips/brand-style-guide-examples/"
+      url: "https://blog.hubspot.com/marketing/examples-brand-style-guides"
     }
   ],
   verification: [
