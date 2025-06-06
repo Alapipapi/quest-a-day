@@ -27,19 +27,19 @@ export const plyometricPowerTrainingChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Plyometric Training Principles",
-      url: "https://www.acsm.org/blog-detail/acsm-certified-blog/2019/05/28/plyometric-training-principles"
+      url: "https://www.physio-pedia.com/Plyometrics"
     },
     {
       title: "Safe Landing Techniques",
-      url: "https://www.physiotherapyalberta.ca/files/guide_jumping_landing.pdf"
+      url: "https://www.rockstaracademy.com/blog/parkour-landing"
     },
     {
       title: "Progression Guidelines for Plyometrics",
-      url: "https://journals.lww.com/nsca-scj/fulltext/2019/06000/plyometric_training_considerations_for_youth.3.aspx"
+      url: "https://www.sportsmith.co/articles/developing-a-plyometric-training-progression-plan/"
     },
     {
       title: "Injury Prevention in Jump Training",
-      url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6719808/"
+      url: "https://www.continuumsportsrehab.com/blog/injury-prevention-for-high-jumpers"
     }
   ],
   verification: [
