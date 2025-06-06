@@ -4,7 +4,7 @@ import { weatherAppChallenge } from "./coding/weatherApp";
 import { todoAppChallenge } from "./coding/todoApp";
 import { apiClientChallenge } from "./coding/apiClient";
 import { portfolioWebsiteChallenge } from "./coding/portfolioWebsite";
-import { authSystemChallenge } from "./coding/authSystem";Add commentMore actions
+import { authSystemChallenge } from "./coding/authSystem";
 import { progressiveWebAppChallenge } from "./coding/progressiveWebApp";
 import { markdownEditorChallenge } from "./coding/markdownEditor";
 import { kanbanBoardChallenge } from "./coding/kanbanBoard";
@@ -24,7 +24,7 @@ import { microanimationsChallenge } from "./coding/microanimations";
 import { reactHooksChallenge } from "./coding/reactHooks";
 import { responsiveDesignChallenge } from "./coding/responsiveDesign";
 import { stateManagementChallenge } from "./coding/stateManagement";
-import { databaseDesignChallenge } from "./coding/databaseDesign";Add commentMore actions
+import { databaseDesignChallenge } from "./coding/databaseDesign";
 import { microservicesArchitectureChallenge } from "./coding/microservicesArchitecture";
 import { graphqlIntegrationChallenge } from "./coding/graphqlIntegration";
 import { mobileAppIntegrationChallenge } from "./coding/mobileAppIntegration";
@@ -44,7 +44,7 @@ export const codingSteps: CodingChallenge[] = [
   todoAppChallenge,
   apiClientChallenge,
   portfolioWebsiteChallenge,
-  authSystemChallenge,Add commentMore actions
+  authSystemChallenge,
   progressiveWebAppChallenge,
   markdownEditorChallenge,
   kanbanBoardChallenge,
@@ -76,6 +76,6 @@ export const codingSteps: CodingChallenge[] = [
   databaseSchemaOptimizationChallenge,
   quickCalculatorWidgetChallenge,
   colorPickerComponentChallenge,
-  recipeManagerAppChallenge
-  taskManagerAppChallenge
+  recipeManagerAppChallenge,
+  taskManagerAppChallenge,
 ];
