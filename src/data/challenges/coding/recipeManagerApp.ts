@@ -26,7 +26,7 @@ export const recipeManagerAppChallenge: CodingChallenge = {
   resources: [
     {
       title: "React Router Documentation",
-      url: "https://reactrouter.com/en/main"
+      url: "https://reactrouter.com/home"
     },
     {
       title: "React Hook Form Guide",
