@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Shuffle, Star, Clock, Target, BookOpen, Zap } from "lucide-react";
@@ -51,12 +50,22 @@ const QuickActionsPanel = () => {
   };
 
   const getQuickChallenge = () => {
-    const quickChallenges = CHALLENGES.filter(c => 
-      c.timeEstimate.includes("5-10") || 
-      c.timeEstimate.includes("10-15") ||
-      c.timeEstimate.includes("5 minutes") ||
-      c.timeEstimate.includes("10 minutes")
-    );
+    const quickChallenges = CHALLENGES.filter(c => {
+      const timeStr = c.timeEstimate.toLowerCase();
+      
+      // Check for exact patterns that indicate short challenges
+      return (
+        timeStr.includes("5-10 minutes") ||
+        timeStr.includes("10-15 minutes") ||
+        timeStr.includes("5-15 minutes") ||
+        timeStr === "5 minutes" ||
+        timeStr === "10 minutes" ||
+        timeStr === "15 minutes" ||
+        (timeStr.includes("5-10") && timeStr.includes("minute")) ||
+        (timeStr.includes("10-15") && timeStr.includes("minute"))
+      );
+    });
+    
     if (quickChallenges.length > 0) {
       const challenge = quickChallenges[Math.floor(Math.random() * quickChallenges.length)];
       navigate(`/challenge/${challenge.category}/${encodeURIComponent(challenge.title)}`);
