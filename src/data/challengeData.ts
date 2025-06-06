@@ -7,19 +7,28 @@ import { fitnessChallenges } from "./challenges/fitness";
 import { creativityChallenges } from "./challenges/creativity";
 import { problemSolvingChallenges } from "./challenges/problemSolving";
 
-// Import steps files for detailed challenge information
-import { codingSteps } from "./challenges/codingSteps";
-import { fitnessSteps } from "./challenges/fitnessSteps";
-import { creativitySteps } from "./challenges/creativitySteps";
-import { problemSolvingSteps } from "./challenges/problemSolvingSteps";
+// Function to ensure unique IDs across all challenges
+const assignUniqueIds = (challenges: Challenge[]): Challenge[] => {
+  return challenges.map((challenge, index) => ({
+    ...challenge,
+    id: index + 1
+  }));
+};
 
-// Combine all challenges into one array
-export const CHALLENGES: Challenge[] = [
+// Combine all challenges and ensure unique IDs
+const allChallenges = [
   ...codingChallenges,
   ...fitnessChallenges,
   ...creativityChallenges,
   ...problemSolvingChallenges
 ];
+
+// Remove duplicates based on category and title, then assign unique IDs
+const uniqueChallenges = allChallenges.filter((challenge, index, array) => {
+  return array.findIndex(c => c.category === challenge.category && c.title === challenge.title) === index;
+});
+
+export const CHALLENGES: Challenge[] = assignUniqueIds(uniqueChallenges);
 
 // Export Challenge interface
 export type { Challenge };
