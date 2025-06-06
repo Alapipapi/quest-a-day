@@ -25,7 +25,7 @@ export const networkProtocolDesignChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Network Protocol Design Principles",
-      url: "https://tools.ietf.org/html/rfc1958"
+      url: "https://www.ncsc.gov.uk/whitepaper/protocol-design-principles"
     },
     {
       title: "OSI Model Reference",
@@ -33,15 +33,15 @@ export const networkProtocolDesignChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Protocol Specification Writing Guide",
-      url: "https://www.ietf.org/standards/rfcs/"
+      url: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://dipl.nt.gov.au/__data/assets/pdf_file/0020/234155/specification-writing-guide.pdf&ved=2ahUKEwjBwoHqj9yNAxVUR2cHHSm_JI8QFnoECCQQAQ&usg=AOvVaw1F5PAPZJASxumPkh5H-X8_"
     },
     {
       title: "Network Security Best Practices",
-      url: "https://www.nist.gov/cybersecurity"
+      url: "https://www.netwrix.com/network_security_best_practices.html"
     },
     {
       title: "TCP/IP Protocol Suite Analysis",
-      url: "https://www.rfc-editor.org/rfc/rfc793.html"
+      url: "https://www.linkedin.com/pulse/tcpip-protocol-suite-design-implementation-dynamics-hani-fahmi-z24xe"
     }
   ],
   verification: [
