@@ -22,7 +22,6 @@ import { mobileFirstWebsiteChallenge } from "./coding/mobileFirstWebsite";
 import { responsiveEmailTemplateChallenge } from "./coding/responsiveEmailTemplate";
 import { microanimationsChallenge } from "./coding/microanimations";
 import { reactHooksChallenge } from "./coding/reactHooks";
-import { responsiveDesignChallenge } from "./coding/responsiveDesign";
 import { stateManagementChallenge } from "./coding/stateManagement";
 import { databaseDesignChallenge } from "./coding/databaseDesign";
 import { microservicesArchitectureChallenge } from "./coding/microservicesArchitecture";
@@ -62,7 +61,6 @@ export const codingSteps: CodingChallenge[] = [
   responsiveEmailTemplateChallenge,
   microanimationsChallenge,
   reactHooksChallenge,
-  responsiveDesignChallenge,
   stateManagementChallenge,
   databaseDesignChallenge,
   microservicesArchitectureChallenge,
