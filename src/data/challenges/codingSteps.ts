@@ -34,6 +34,8 @@ import { securityAuditImplementationChallenge } from "./coding/securityAuditImpl
 import { apiDocChallenge } from "./coding/apiDoc";
 import { databaseSchemaOptimizationChallenge } from "./coding/databaseSchemaOptimization";
 import { quickCalculatorWidgetChallenge } from "./coding/quickCalculatorWidget";
+import { colorPickerComponentChallenge } from "./coding/colorPickerComponent";
+import { recipeManagerAppChallenge } from "./coding/recipeManagerApp";
 
 export const codingSteps: CodingChallenge[] = [
   weatherAppChallenge,
@@ -69,5 +71,7 @@ export const codingSteps: CodingChallenge[] = [
   securityAuditImplementationChallenge,
   apiDocChallenge,
   databaseSchemaOptimizationChallenge,
-  quickCalculatorWidgetChallenge
+  quickCalculatorWidgetChallenge,
+  colorPickerComponentChallenge,
+  recipeManagerAppChallenge
 ];
