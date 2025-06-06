@@ -2,7 +2,7 @@
 import { CreativityChallenge } from "../types";
 import { digitalArtChallenge } from "./creativity/digitalArt";
 import { storyWritingChallenge } from "./creativity/storyWriting";
-import { naturePhotographyChallenge } from "./creativity/naturePhotography";
+import { photographyChallenge } from "./creativity/naturePhotography";
 import { musicCreationChallenge } from "./creativity/musicCreation";
 import { dailySketchChallenge } from "./creativity/dailySketch";
 import { creativeWritingPromptChallenge } from "./creativity/creativeWritingPrompt";
@@ -46,7 +46,7 @@ import { podcastSeriesCreationChallenge } from "./creativity/podcastSeriesCreati
 export const creativitySteps: CreativityChallenge[] = [
   digitalArtChallenge,
   storyWritingChallenge,
-  naturePhotographyChallenge,
+  photographyChallenge,
   musicCreationChallenge,
   dailySketchChallenge,
   creativeWritingPromptChallenge,
