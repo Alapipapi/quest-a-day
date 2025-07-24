@@ -30,11 +30,11 @@ export const functionalFitnessWorkoutChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Functional Movement Patterns",
-      url: "https://www.acsm.org/education-resources/trending-topics-resources/resource-library/resource_detail?id=4a0abfc6-5e8f-4c3c-9f83-e6a38a3a3f74"
+      url: "https://www.opexfit.com/blog/seven-functional-movement-patterns"
     },
     {
       title: "Progressive Overload Principles",
-      url: "https://www.verywellfit.com/the-principle-of-progressive-overload-3498344"
+      url: "https://blog.nasm.org/progressive-overload-explained"
     },
     {
       title: "Core Stability Exercises",
