@@ -34,7 +34,7 @@ export const podcastSeriesCreationChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Podcast Planning and Production Guide",
-      url: "https://blog.anchor.fm/resources/podcast-planning-guide"
+      url: "https://www.cuepodcasts.com/post/how-to-plan-a-podcast"
     },
     {
       title: "Audio Recording Best Practices",
@@ -46,7 +46,7 @@ export const podcastSeriesCreationChallenge: CreativityChallenge = {
     },
     {
       title: "Interview Techniques for Podcasters",
-      url: "https://www.podcastinsights.com/podcast-interview-tips/"
+      url: "https://podcastmarketingacademy.com/how-to-become-better-podcast-interviewer/"
     }
   ],
   verification: [
