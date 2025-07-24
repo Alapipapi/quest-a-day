@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LayoutGrid } from "lucide-react";
+import { LayoutGrid, Calendar, Trophy, Bell } from "lucide-react";
 import Hero from "@/components/Hero";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CompletionSummary from "@/components/challenges/CompletionSummary";
 import ChallengeGrid from "@/components/challenges/ChallengeGrid";
 import ResultsCount from "@/components/challenges/ResultsCount";
@@ -17,8 +18,14 @@ import ChallengeStatistics from "@/components/challenges/ChallengeStatistics";
 import ChallengeRecommendations from "@/components/challenges/ChallengeRecommendations";
 import EnhancedChallengeFilters from "@/components/challenges/EnhancedChallengeFilters";
 import StreakCounter from "@/components/challenges/StreakCounter";
+import StreakTracker from "@/components/challenges/StreakTracker";
 import QuickActionsPanel from "@/components/challenges/QuickActionsPanel";
 import ProgressAnalytics from "@/components/challenges/ProgressAnalytics";
+import ProgressTrackingChart from "@/components/challenges/ProgressTrackingChart";
+import ChallengeSearch from "@/components/challenges/ChallengeSearch";
+import ChallengeNotifications from "@/components/challenges/ChallengeNotifications";
+import ChallengeCalendar from "@/components/challenges/ChallengeCalendar";
+import ChallengeLeaderboard from "@/components/challenges/ChallengeLeaderboard";
 import { Challenge, CHALLENGES } from "@/data/challengeData";
 
 const Index = () => {
@@ -133,62 +140,115 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <ThemeSwitcher />
+      {/* Header with navigation and notifications */}
+      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <h1 className="text-xl font-bold">Challenges v1.7.0</h1>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChallengeNotifications />
+              <ThemeSwitcher />
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Hero />
 
-        <div className="space-y-8">
-          <CompletionSummary completedChallengesCount={completedChallengesCount} />
-          
-          <StreakCounter />
-          
-          <QuickActionsPanel />
-          
-          <ChallengeOfTheDay />
-          
-          <FeaturedChallenge />
-          
-          <ScheduledChallenges />
-
-          <ChallengeRecommendations />
-          
-          <FavoriteChallenges />
-
-          <ProgressAnalytics />
-
-          <ChallengeStatistics />
-        </div>
-        
-        <div className="flex justify-between items-center mb-6 mt-12">
-          <h2 className="text-xl font-bold">All Challenges</h2>
-          <Link to="/categories">
-            <Button variant="outline" size="sm" className="flex items-center gap-1">
+        {/* Main Content Tabs */}
+        <Tabs defaultValue="overview" className="mt-8">
+          <TabsList className="grid w-full grid-cols-4 mb-8">
+            <TabsTrigger value="overview" className="flex items-center gap-2">
               <LayoutGrid className="h-4 w-4" />
-              Browse by Category
-            </Button>
-          </Link>
-        </div>
+              Overview
+            </TabsTrigger>
+            <TabsTrigger value="calendar" className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              Calendar
+            </TabsTrigger>
+            <TabsTrigger value="leaderboard" className="flex items-center gap-2">
+              <Trophy className="h-4 w-4" />
+              Leaderboard
+            </TabsTrigger>
+            <TabsTrigger value="analytics" className="flex items-center gap-2">
+              <Bell className="h-4 w-4" />
+              Analytics
+            </TabsTrigger>
+          </TabsList>
 
-        <div className="mb-8">
-          <EnhancedChallengeFilters
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            difficultyFilter={difficultyFilter}
-            setDifficultyFilter={setDifficultyFilter}
-            difficulties={difficulties}
-            sortBy={sortBy}
-            setSortBy={setSortBy}
-            showCompleted={showCompleted}
-            setShowCompleted={setShowCompleted}
-          />
-        </div>
+          <TabsContent value="overview" className="space-y-8">
+            <CompletionSummary completedChallengesCount={completedChallengesCount} />
+            
+            <StreakCounter />
+            <StreakTracker />
+            
+            <QuickActionsPanel />
+            
+            <ChallengeOfTheDay />
+            
+            <FeaturedChallenge />
+            
+            <ScheduledChallenges />
 
-        <ChallengeGrid filteredChallenges={filteredChallenges} />
+            <ChallengeRecommendations />
+            
+            <FavoriteChallenges />
 
-        <ResultsCount count={filteredChallenges.length} />
+            <ChallengeStatistics />
+            
+            {/* Enhanced Search and Filters */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-bold">All Challenges</h2>
+                <Link to="/categories">
+                  <Button variant="outline" size="sm" className="flex items-center gap-1">
+                    <LayoutGrid className="h-4 w-4" />
+                    Browse by Category
+                  </Button>
+                </Link>
+              </div>
+
+              <ChallengeSearch 
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              />
+
+              <EnhancedChallengeFilters
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                difficultyFilter={difficultyFilter}
+                setDifficultyFilter={setDifficultyFilter}
+                difficulties={difficulties}
+                sortBy={sortBy}
+                setSortBy={setSortBy}
+                showCompleted={showCompleted}
+                setShowCompleted={setShowCompleted}
+              />
+
+              <ChallengeGrid filteredChallenges={filteredChallenges} />
+
+              <ResultsCount count={filteredChallenges.length} />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="calendar">
+            <ChallengeCalendar />
+          </TabsContent>
+
+          <TabsContent value="leaderboard">
+            <ChallengeLeaderboard />
+          </TabsContent>
+
+          <TabsContent value="analytics" className="space-y-8">
+            <ProgressAnalytics />
+            <ProgressTrackingChart />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
