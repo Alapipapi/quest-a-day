@@ -33,7 +33,7 @@ export const personalBrandDesignChallenge: CreativityChallenge = {
   resources: [
     {
       title: "Personal Branding Guide",
-      url: "https://blog.hubspot.com/marketing/personal-branding"
+      url: "https://www.canva.com/learn/personal-branding/"
     },
     {
       title: "Color Psychology in Branding",
@@ -41,7 +41,7 @@ export const personalBrandDesignChallenge: CreativityChallenge = {
     },
     {
       title: "Typography for Personal Brands",
-      url: "https://www.fonts.com/content/learning/fyti/using-type/typography-for-branding"
+      url: "https://www.masterclass.com/articles/how-to-pick-a-font"
     }
   ],
   verification: [
