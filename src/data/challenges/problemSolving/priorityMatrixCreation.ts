@@ -26,11 +26,11 @@ export const priorityMatrixCreationChallenge: ProblemSolvingChallenge = {
     },
     {
       title: "Time Management Strategies",
-      url: "https://www.mindtools.com/pages/article/newHTE_91.htm"
+      url: "https://extension.uga.edu/publications/detail.html?number=C1042&title=time-management-10-strategies-for-better-time-management"
     },
     {
       title: "Priority Setting Techniques",
-      url: "https://www.atlassian.com/blog/productivity/how-to-prioritize-tasks"
+      url: "https://fibery.io/blog/product-management/7-prioritization-techniques/"
     }
   ],
   verification: [
