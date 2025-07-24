@@ -25,19 +25,19 @@ export const productLaunchStrategyChallenge: ProblemSolvingChallenge = {
   resources: [
     {
       title: "Product Launch Framework",
-      url: "https://blog.hubspot.com/marketing/elements-perfect-product-launch"
+      url: "https://productschool.com/blog/product-marketing/product-launch-checklist-for-product-marketers"
     },
     {
       title: "Market Research Techniques",
-      url: "https://blog.hubspot.com/marketing/how-to-do-market-research"
+      url: "https://www.indeed.com/career-advice/career-development/methods-of-market-research"
     },
     {
       title: "Customer Persona Development",
-      url: "https://blog.hubspot.com/marketing/buyer-persona-research"
+      url: "https://qualaroo.com/building-customer-personas/"
     },
     {
       title: "Go-to-Market Strategy Guide",
-      url: "https://blog.hubspot.com/service/what-does-go-to-market-strategy-actually-mean"
+      url: "https://www.coursera.org/articles/go-to-market-strategy"
     }
   ],
   verification: [
