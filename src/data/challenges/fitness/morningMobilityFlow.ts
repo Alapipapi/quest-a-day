@@ -23,15 +23,15 @@ export const morningMobilityFlowChallenge: FitnessChallenge = {
   resources: [
     {
       title: "Morning Mobility Routine",
-      url: "https://www.healthline.com/health/fitness/morning-stretches"
+      url: "https://thereadystate.com/blogs/10-minute-morning-mobility-routine/"
     },
     {
       title: "Joint Mobility Exercises",
-      url: "https://www.verywellfit.com/joint-mobility-exercises-1230955"
+      url: "https://www.healthline.com/health/fitness-exercise/joint-mobility-exercises"
     },
     {
       title: "Benefits of Morning Movement",
-      url: "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/stretching/art-20047931"
+      url: "https://www.hingehealth.com/resources/articles/benefits-of-working-out-in-the-morning/"
     }
   ],
   verification: [
