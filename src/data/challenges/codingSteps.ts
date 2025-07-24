@@ -35,6 +35,7 @@ import { apiDocChallenge } from "./coding/apiDoc";
 import { databaseSchemaOptimizationChallenge } from "./coding/databaseSchemaOptimization";
 import { quickCalculatorWidgetChallenge } from "./coding/quickCalculatorWidget";
 import { colorPickerComponentChallenge } from "./coding/colorPickerComponent";
+import { accordionComponentChallenge } from "./coding/accordionComponent";
 import { recipeManagerAppChallenge } from "./coding/recipeManagerApp";
 import { taskManagerAppChallenge } from "./coding/taskManagerApp";
 
@@ -74,6 +75,7 @@ export const codingSteps: CodingChallenge[] = [
   databaseSchemaOptimizationChallenge,
   quickCalculatorWidgetChallenge,
   colorPickerComponentChallenge,
+  accordionComponentChallenge,
   recipeManagerAppChallenge,
   taskManagerAppChallenge
 ];

@@ -33,6 +33,7 @@ import { brainTeaserSprintChallenge } from "./problemSolving/brainTeaserSprint";
 import { systemDesignChallenge } from "./problemSolving/systemDesignChallenge";
 import { networkProtocolDesignChallenge } from "./problemSolving/networkProtocolDesign";
 import { productLaunchStrategyChallenge } from "./problemSolving/productLaunchStrategy";
+import { priorityMatrixCreationChallenge } from "./problemSolving/priorityMatrixCreation";
 
 export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   logicPuzzleChallenge,
@@ -68,5 +69,6 @@ export const problemSolvingSteps: ProblemSolvingChallenge[] = [
   brainTeaserSprintChallenge,
   systemDesignChallenge,
   networkProtocolDesignChallenge,
-  productLaunchStrategyChallenge
+  productLaunchStrategyChallenge,
+  priorityMatrixCreationChallenge
 ];

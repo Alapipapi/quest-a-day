@@ -33,6 +33,7 @@ import { pyramidStrengthTrainingChallenge } from "./fitness/pyramidStrengthTrain
 import { hiitTabataCircuitChallenge } from "./fitness/hiitTabataCircuit";
 import { intervalCardioStrengthChallenge } from "./fitness/intervalCardioStrength";
 import { functionalFitnessWorkoutChallenge } from "./fitness/functionalFitnessWorkout";
+import { morningMobilityFlowChallenge } from "./fitness/morningMobilityFlow";
 
 export const fitnessSteps: FitnessChallenge[] = [
   hiitWorkoutChallenge,
@@ -67,5 +68,6 @@ export const fitnessSteps: FitnessChallenge[] = [
   pyramidStrengthTrainingChallenge,
   hiitTabataCircuitChallenge,
   intervalCardioStrengthChallenge,
-  functionalFitnessWorkoutChallenge
+  functionalFitnessWorkoutChallenge,
+  morningMobilityFlowChallenge
 ];

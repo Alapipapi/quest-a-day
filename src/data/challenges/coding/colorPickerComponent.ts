@@ -1,49 +1,44 @@
-
 import { CodingChallenge } from "../../types";
 
 export const colorPickerComponentChallenge: CodingChallenge = {
   category: "coding",
   title: "Color Picker Component",
   instructions: [
-    "Create a new React component called ColorPicker",
-    "Implement a visual color selection interface with a color wheel or palette",
-    "Add input fields for hex, RGB, and HSL color values",
-    "Ensure all three formats sync when any value changes",
-    "Include a preview area showing the selected color",
-    "Add copy-to-clipboard functionality for color values",
-    "Make the component responsive and accessible",
-    "Add proper TypeScript types for all props and state"
+    "Create a color picker interface with visual color selection",
+    "Implement support for HEX, RGB, and HSL color formats",
+    "Add a color palette with predefined colors",
+    "Include sliders for RGB and HSL value adjustment",
+    "Display live preview of selected color",
+    "Add input fields for manual color value entry",
+    "Implement color format conversion between HEX, RGB, and HSL",
+    "Include copy-to-clipboard functionality for color codes"
   ],
   tools: [
-    "React with TypeScript",
-    "CSS or styled-components for styling",
-    "Color conversion utilities",
-    "Clipboard API"
+    "HTML5 (including input type='color')",
+    "CSS3 for styling",
+    "JavaScript for color conversion logic",
+    "Canvas API for custom color picker"
   ],
   resources: [
     {
-      title: "Color Theory and Web Colors",
-      url: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors"
+      title: "Color Theory and Conversion",
+      url: "https://en.wikipedia.org/wiki/HSL_and_HSV"
     },
     {
-      title: "React Color Library Documentation",
-      url: "https://casesandberg.github.io/react-color/"
+      title: "HTML Color Input",
+      url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color"
     },
     {
-      title: "Color Conversion Algorithms",
-      url: "https://www.rapidtables.com/convert/color/index.html"
-    },
-    {
-      title: "Clipboard API Usage",
-      url: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API"
+      title: "JavaScript Color Conversion",
+      url: "https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb"
     }
   ],
   verification: [
-    "Component accepts and displays colors in hex, RGB, and HSL formats",
-    "All color format inputs are synchronized",
-    "Color preview updates in real-time",
+    "Color picker accurately displays and selects colors",
+    "All color format conversions work correctly",
+    "Manual input fields update the color picker",
     "Copy functionality works for all color formats",
-    "Component is responsive on different screen sizes",
-    "Proper accessibility attributes are implemented"
+    "Color preview updates in real-time",
+    "Component is accessible and user-friendly"
   ]
 };

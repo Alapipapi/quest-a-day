@@ -1,32 +1,44 @@
-
 import { CodingChallenge } from "../../types";
 
 export const formValidationHelperChallenge: CodingChallenge = {
   category: "coding",
   title: "Form Validation Helper",
   instructions: [
-    "Create a reusable form validation component in React",
-    "Implement real-time validation for email, password, and required fields",
-    "Add custom validation rules support",
-    "Display error messages below each field",
-    "Show success states when validation passes",
-    "Create a demo form showcasing all validation features"
+    "Create a reusable form validation component",
+    "Implement real-time validation for email, password, and text fields",
+    "Add visual indicators for valid and invalid states",
+    "Display helpful error messages below each field",
+    "Include password strength indicator with visual feedback",
+    "Add form submission validation with error summary",
+    "Implement debounced validation to avoid excessive API calls",
+    "Create custom validation rules for different field types"
+  ],
+  tools: [
+    "React or vanilla JavaScript",
+    "HTML5 form validation API",
+    "CSS for styling validation states",
+    "Regular expressions for pattern matching"
   ],
   resources: [
     {
-      title: "React Hook Form Documentation",
-      url: "https://react-hook-form.com/get-started"
+      title: "Form Validation Guide",
+      url: "https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation"
     },
     {
-      title: "Form Validation Best Practices",
-      url: "https://uxdesign.cc/form-validation-best-practices-8e3bec7d0549"
+      title: "JavaScript Form Validation",
+      url: "https://www.w3schools.com/js/js_validation.asp"
+    },
+    {
+      title: "UX Patterns for Form Validation",
+      url: "https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f"
     }
   ],
   verification: [
-    "Form validates input in real-time",
+    "Validation triggers appropriately on input events",
     "Error messages are clear and helpful",
-    "Success states are visually distinct",
-    "Component is reusable across different forms",
-    "Validation rules are customizable"
+    "Visual feedback clearly indicates field status",
+    "Form prevents submission when validation fails",
+    "Password strength indicator works accurately",
+    "Component is reusable across different forms"
   ]
 };
